@@ -1,0 +1,27 @@
+
+// section tags.
+section{
+  padding: $section-gap 0;
+}
+
+.section-main{
+
+  background-color: #fff;
+  background-image: linear-gradient(to right top, #eee 0%, white 100%);
+}
+
+.sidebar{
+  padding-top: 0;
+}
+
+//
+// Override WooCommerce columns
+//
+.woocommerce .col2-set{
+  @extend .row;
+  .col-1,
+  .col-2{
+    flex: 1;
+    max-width: 100%;
+  }
+}
