@@ -21,11 +21,20 @@
 				</main>
 				
 				<div class="col-sm-12 col-md-3">
-					<?php get_sidebar( get_post_type() ) ?>
+					<?php if ( $parent = hakama_document_parent() ) {
+						get_sidebar( 'product' );
+					} else {
+						get_sidebar( get_post_type() );
+					} ?>
 				</div>
 			</div>
+			
+			<?php hakama_template( 'after-main', hakama_template_group() ) ?>
+			
 		</div>
-	
+		
+		
 	</section>
+
 
 <?php get_footer();

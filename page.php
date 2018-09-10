@@ -10,6 +10,9 @@
 				<?php the_post(); ?>
 
 				<article class="entry">
+					<?php if ( has_post_thumbnail() ) : ?>
+						<?php the_post_thumbnail( 'large' ) ?>
+					<?php endif; ?>
 					<header class="entry-meta">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</header>

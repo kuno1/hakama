@@ -6,7 +6,7 @@
 				<p>
 
 					<a class="btn btn-outline-primary btn-lg btn-block" href="<?php echo home_url( "/faq/of/{$post->post_parent}" ) ?>">
-						<i class="fa fa-book"></i>
+						<i class="fa fa-file-signature"></i>
 						<?php esc_html_e( 'All Documentation', 'hakama' ) ?>
 					</a>
 				</p>

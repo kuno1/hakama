@@ -1,6 +1,3 @@
-
-
-
 // Sizing
 $section-gap: 40px;
 
@@ -53,8 +50,8 @@ $ease-in-out-back:cubic-bezier(0.68, -0.55, 0.265, 1.55);
   text-overflow: ellipsis;
 }
 
-$header-gradient-start: #c471f5;
-$header-gradient-end: #fa71cd;
+$header-gradient-start: #343a40;
+$header-gradient-end:   #6c757d;
 
 %header-gradient{
   background-color: $header-gradient-start;

@@ -1,0 +1,21 @@
+.card{
+
+  &-icon{
+    display: block;
+    margin: 0 auto 1rem;
+    text-align: center;
+    font-size: 3rem;
+    &-image{
+      text-align: center;
+      max-width: 100%;
+      width: 200px;
+      margin: 0 auto 1rem;
+      img{
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        border-radius: 50%;
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+<?php get_footer( 'entry' ); ?>
+
 <footer id="colophon" role="contentinfo" class="colophon section-footer">
 	
 	<div class="container">

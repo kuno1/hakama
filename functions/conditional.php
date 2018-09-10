@@ -26,3 +26,13 @@ function hakama_document_parent() {
 		return (int) get_query_var( 'post_parent' );
 	}
 }
+
+/**
+ * Detect if user is japanese speaker.
+ *
+ * @param int $user_id
+ * @return bool
+ */
+function hakama_is_jp( $user_id = 0 ) {
+	return 'jp' === get_user_locale( $user_id );
+}
