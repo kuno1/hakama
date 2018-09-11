@@ -1,18 +1,34 @@
 .entry {
 
   &-title {
-    font-weight: normal;
+    font-weight: 200;
     margin-bottom: 0;
     small{
       font-size: 0.6em;
       @extend .text-muted;
       margin-left: 0.5em;
     }
+    &-wide{
+      text-align: center;
+      padding-bottom: 0.5em;
+      position: relative;
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+        max-width: 100px;
+        height: 3px;
+        @include gradient-bg($gray-200);
+      }
+    }
   }
 
   &-meta {
     padding-bottom: $section-gap;
-
     &-data {
       padding: 0;
       margin: 10px 0 0;
@@ -69,6 +85,15 @@
       content: "";
       display: block;
       clear: both;
+    }
+  }
+
+  &-footer{
+    &-title{
+      border-left: 5px solid $gray-200;
+      color: $secondary;
+      padding-left: 10px;
+      margin: $section-gap 0 $section-gap / 2;
     }
   }
 }

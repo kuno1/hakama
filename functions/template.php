@@ -71,7 +71,11 @@ function hakama_copyright_year() {
  */
 function hakama_archive_title() {
 	$title = '';
-	if  ( is_post_type_archive() ) {
+	if ( is_search() ) {
+		$title = sprintf( __( 'Search results for "%s"', 'hakama' ), get_search_query() );
+	} elseif ( is_home() ) {
+		$title = __( 'Blog' );
+	} elseif  ( is_post_type_archive() ) {
 		$title = sprintf( __( 'Archives: %s', 'hakama' ), post_type_archive_title( '', false ) );
 	} else {
 		$title = get_the_archive_title();

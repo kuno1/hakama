@@ -121,3 +121,16 @@ function hakama_brand_title( $post = null ) {
 function hakama_is_ex_customer() {
 	return false;
 }
+
+/**
+ * Get total count of cart item.
+ *
+ * @return int
+ */
+function hakama_cart_count() {
+	if ( ! function_exists( 'WC' ) ) {
+		return 0;
+	} else {
+		return min( 99, WC()->cart->get_cart_contents_count() );
+	}
+}

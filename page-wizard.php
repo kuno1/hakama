@@ -27,14 +27,12 @@ get_header( 'meta' );
 					<?php the_post(); ?>
 					<article class="entry">
 						<header class="entry-meta">
-							<h1 class="entry-title text-center"><?php the_title(); ?></h1>
+							<h1 class="entry-title entry-title-wide text-center"><?php the_title(); ?></h1>
 						</header>
 						<div class="entry-content">
 							<?php the_content(); ?>
 						</div>
-						<footer class="entry-footer">
-							aaa
-						</footer>
+						<?php hakama_template( 'entry-footer-page', get_post()->post_name ); ?>
 					</article>
 				</main>
 			</div>

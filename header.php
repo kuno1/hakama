@@ -36,18 +36,26 @@
 		<?php endif; ?>
 		
 			<li class="site-header-list site-header-list-search">
-				<button class="btn btn-outline-light">
+				<button class="btn btn-outline-light" data-toggle="modal" data-target="#search-form">
 					<i class="fa fa-search"></i>
 					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'hakama' ) ?></span>
 				</button>
 			</li>
 		
+			<?php if ( hakama_has_woo() ) : ?>
 			<li class="site-header-list site-header-list-cart">
-				<button class="btn btn-outline-light">
+				<button class="btn btn-outline-light cart-btn" data-toggle="dropdown">
 					<i class="fa fa-shopping-cart"></i>
 					<span class="screen-reader-text"><?php esc_html_e( 'Cart', 'hakama' ) ?></span>
+					<?php if ( $count = hakama_cart_count() ) : ?>
+					<span class="cart-count"><?php echo $count ?></span>
+					<?php endif; ?>
 				</button>
+				<div class="dropdown-menu dropdown-menu-right cart-dropdown">
+					<?php the_widget( 'WC_Widget_Cart' ) ?>
+				</div>
 			</li>
+			<?php endif; ?>
 		</ul>
 		
 	</nav>

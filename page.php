@@ -19,9 +19,7 @@
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div>
-					<footer class="entry-footer">
-						aaa
-					</footer>
+					<?php hakama_template( 'entry-footer-page-normal', get_post()->post_name ); ?>
 				</article>
 			</main>
 

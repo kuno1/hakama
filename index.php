@@ -13,7 +13,17 @@
 					<div class="entry-meta">
 						<h1 class="entry-title">
 							<?php hakama_archive_title() ?>
-							<small><?php global $wp_query; printf( esc_html__( '%s Found', 'hakama' ), number_format( $wp_query->found_posts ) ) ?></small>
+							<small>
+								<?php
+								global $wp_query;
+								printf(
+									esc_html__( '%s Found( %d / %d Page)', 'hakama' ),
+									number_format( $wp_query->found_posts ),
+									max( 1, (int) $wp_query->get( 'paged' ) ),
+									$wp_query->max_num_pages
+								);
+								?>
+							</small>
 						</h1>
 					</div>
 					
