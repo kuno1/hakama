@@ -42,7 +42,7 @@
 				</button>
 			</li>
 		
-			<?php if ( hakama_has_woo() ) : ?>
+			<?php if ( hakama_has_woo() && ! is_cart() ) : ?>
 			<li class="site-header-list site-header-list-cart">
 				<button class="btn btn-outline-light cart-btn" data-toggle="dropdown">
 					<i class="fa fa-shopping-cart"></i>

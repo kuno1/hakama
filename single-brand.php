@@ -1,0 +1,66 @@
+<?php get_header(); ?>
+
+<?php hakama_template( 'before-main', hakama_template_group() ) ?>
+	
+	<section class="section-main">
+		
+		<div class="container">
+			
+			<div class="row">
+				
+				<main id="content" class="col-sm-12 col-lg-9">
+					
+					<?php the_post(); ?>
+					
+					<?php hakama_template( 'header', 'product' ); ?>
+					
+					<?php hakama_template( 'entry-nav', hakama_template_group() ) ?>
+					
+					<h2 class="brand-title"><?php esc_html_e( 'Products', 'hakama' ) ?></h2>
+					
+					<?php
+					$query = new WP_Query( [
+						'post_parent'    => get_the_ID(),
+						'post_type'      => 'product',
+						'post_status'    => 'publish',
+						'posts_per_page' => -1,
+					] );
+					if ( $query->have_posts() ) : ?>
+						<ul class="loop-list card-columns card-columns-small woocommerce">
+							<?php global $product; while ( $query->have_posts() ) {
+								$query->the_post();
+								$product = wc_get_product();
+								hakama_template( 'loop', get_post_type() );
+							} wp_reset_postdata(); ?>
+						</ul>
+						<div class="text-center">
+							<?php hakama_pagination() ?>
+						</div>
+					<?php else : ?>
+						<?php hakama_template( 'content-no', hakama_template_group() ) ?>
+					<?php endif; ?>
+					
+					<?php hakama_template( 'after-main', hakama_template_group() ) ?>
+					
+				</main>
+
+				<div class="col-sm-12 col-lg-3">
+					<?php if ( $parent = hakama_document_parent() ) {
+						get_sidebar( 'product' );
+					} else {
+						get_sidebar( get_post_type() );
+					} ?>
+				</div>
+				
+				
+				
+			</div>
+			
+		
+		</div>
+	
+	
+	</section>
+
+
+<?php get_footer();

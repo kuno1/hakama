@@ -1,6 +1,9 @@
 <?php
 global $product;
-$brand = get_post( get_post( $product->get_id() )->post_parent );
+if ( ! ( $post_parent = get_post( $product->get_id() )->post_parent ) ) {
+	return;
+}
+$brand = get_post( $post_parent );
 if ( ! $brand || 'publish' !== $brand->post_status ) {
 	return;
 }

@@ -8,6 +8,7 @@
 
   $(document).ready(()=>{
 
+    // Global Nav
     let $toggle = $('.global-nav-toggle');
     if ($toggle.length) {
       $toggle.click((e) => {
@@ -15,6 +16,7 @@
       });
     }
 
+    // Update cart
     const updateCart = (event, fragments) => {
       let total = fragments.cart_total;
       if( ! /^\d+$/.test(total)){
@@ -43,6 +45,7 @@
 
     $(document.body).on('added_to_cart', updateCart);
     $(document.body).on('removed_from_cart', updateCart);
+
   });
 
 

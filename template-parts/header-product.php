@@ -10,17 +10,20 @@
 		<div class="product-header-content">
 			<h1 class="entry-title">
 				<?php the_title() ?>
-				<span class="badge badge-secondary">
 					<?php
 					$cats = get_the_terms( get_the_ID(), 'product_cat' );
-					if ( $cats && ! is_wp_error( $cats ) ) {
-						echo implode( ', ', array_map( function( $cat ) {
+					if ( $cats && ! is_wp_error( $cats ) ) :
+					?>
+						<span class="badge badge-muted">
+						<?php echo implode( ', ', array_map( function( $cat ) {
 							return esc_html( $cat->name );
-						}, $cats ) );
-					}?>
-				</span>
+						}, $cats ) ); ?>
+						</span>
+					<?php endif; ?>
 			</h1>
-			<?php woocommerce_template_single_rating(); ?>
+			<?php if ( 'product' === get_post_type() ) {
+				woocommerce_template_single_rating();
+			} ?>
 			<?php if ( has_excerpt() ) : ?>
 				<div class="product-header-excerpt">
 					<?php the_excerpt() ?>

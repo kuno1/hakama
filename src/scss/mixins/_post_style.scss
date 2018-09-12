@@ -1,5 +1,16 @@
 @mixin post-styles(){
 
+  font-weight: 200;
+
+  h1, h2, h3, h4, h5, h6{
+    margin: 1em 0 0.5em;
+  }
+
+  p{
+    text-align: justify;
+    text-justify: inter-ideograph;
+    margin: 1em 0;
+  }
 
 
   img{
@@ -15,7 +26,16 @@
   }
 
 
+  blockquote{
+    margin: 1em 0 1em 1em;
+    font-weight: 400;
+    padding-left: 0.75em;
+    border-left: $gray-200 solid 0.25em;
+  }
 
 
+  table{
+    @extend .table;
+  }
 
 }

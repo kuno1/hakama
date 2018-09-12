@@ -19,7 +19,7 @@ add_action( 'init', function() {
 	$version = wp_get_theme()->get( 'Version' );
 	wp_register_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', ['jquery'], '1.14.4', true );
 	wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', [ 'jquery', 'popper' ], '4.1.3', true );
-	wp_register_script( 'hakama', get_template_directory_uri() . '/assets/js/hakama.app.js', [ 'bootstrap' ], $version, true );
+	wp_register_script( 'hakama', get_template_directory_uri() . '/assets/js/hakama.app.js', [ 'bootstrap', 'jquery-masonry' ], $version, true );
 	wp_register_style( 'fontawesome5', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', null,  '5.2.0' );
 	$style_deps = [ 'fontawesome5' ];
 	if ( hakama_has_woo() ) {

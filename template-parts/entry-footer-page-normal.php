@@ -6,7 +6,7 @@
 	
 	<h2 class="entry-footer-title"><?php esc_html_e( 'Related Pages', 'hakama' ); ?></h2>
 	
-	<ul class="loop-list loop-list-with-sidebar related-page">
+	<ul class="loop-list card-columns card-columns-small related-page">
 		<?php
 		foreach ( $pages as $post ) {
 			setup_postdata( $post );

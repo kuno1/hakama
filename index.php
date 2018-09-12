@@ -30,7 +30,7 @@
 					<?php hakama_template( 'entry-nav', hakama_template_group() ) ?>
 					
 					<?php if ( have_posts() ) : ?>
-						<ul class="loop-list">
+						<ul class="loop-list card-columns">
 							<?php while ( have_posts() ) {
 								the_post();
 								hakama_template( 'loop', get_post_type() );

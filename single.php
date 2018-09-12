@@ -8,7 +8,7 @@
 			
 			<div class="row">
 				
-				<main id="content" class="col-sm-12 col-md-9">
+				<main id="content" class="col-sm-12 col-lg-9">
 					<?php the_post(); ?>
 					
 					<article class="entry">
@@ -20,7 +20,7 @@
 					</article>
 				</main>
 				
-				<div class="col-sm-12 col-md-3">
+				<div class="col-sm-12 col-lg-3">
 					<?php if ( $parent = hakama_document_parent() ) {
 						get_sidebar( 'product' );
 					} else {
