@@ -1,0 +1,53 @@
+.woocommerce{
+
+  .shop_table{
+    th, td{
+      background-color: $white;
+    }
+    &.cart tbody tr:nth-child(odd){
+      th, td{
+        background-color: $gray-100;
+      }
+    }
+    &.cart .coupon #coupon_code.input-text{
+      width: 12em ;
+      font-size: 0.85rem;
+    }
+  }
+
+  .hakama-chekout-billing h3,
+  #order_review_heading{
+    @extend %dividing-header;
+  }
+
+  .form-row.place-order{
+    display: block;
+  }
+
+  .woocommerce-billing-fields,
+  .woocommerce-additional-fields
+  {
+    .form-row{
+      display: block;
+      input[type=text],
+      input[type=email],
+      input[type=tel],
+      input[type=password],
+      textarea{
+        @extend .form-control;
+      }
+    }
+  }
+
+  .hakama-checkout-review-order #payment #place_order{
+    float: none;
+    display: block;
+    width: 100%;
+  }
+
+  form.woocommerce-checkout{
+
+  }
+
+}
+

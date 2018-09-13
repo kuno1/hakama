@@ -44,3 +44,26 @@ add_filter( 'wc_get_template_part', function( $template, $slug, $name ) {
 	}
 	return $template;
 }, 10, 3 );
+
+/**
+ * Add return link at the end of checkout.
+ */
+add_action( 'woocommerce_checkout_after_order_review', function() {
+	?>
+	<p class="mt-4 text-center">
+		<a class="btn btn-link btn-sm" href="<?php echo wc_get_page_permalink( 'shop' ) ?>">
+			<i class="far fa-arrow-alt-circle-left"></i>
+			<?php esc_html_e( 'Continue Shopping', 'hakama' ) ?>
+		</a>
+	</p>
+	<?php
+} );
+
+
+/**
+ * Arrange order.
+ */
+add_filter( 'woocommerce_checkout_fields', function( $fields ) {
+	// Arrange.
+	return $fields;
+} );

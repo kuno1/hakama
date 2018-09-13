@@ -5,6 +5,16 @@
 }
 
 .woocommerce{
+  &-address-fields{
+    .form-row{
+      display: block;
+    }
+    input[type=text],
+    input[type=tel],
+    input[type=email]{
+      @extend .form-control;
+    }
+  }
   &-form{
     @at-root .woocommerce-account &{
       background: #fff;

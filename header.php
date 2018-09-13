@@ -73,7 +73,7 @@
 			<?php esc_html_e( 'Menu', 'hakama' ) ?>
 		</button>
 		<?php wp_nav_menu( [
-			'location'        => 'global_menu',
+			'theme_location'  => 'global_menu',
 			'container_class' => 'global-nav-list',
 			'menu_class'      => 'global-nav-item',
 			'depth'           => 3,
