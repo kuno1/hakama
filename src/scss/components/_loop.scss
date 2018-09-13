@@ -27,7 +27,8 @@
   }
 }
 
-.price{
+.price,
+.product_list_widget{
   font-family: $price-font-family;
   .amount{
     color: $warning;

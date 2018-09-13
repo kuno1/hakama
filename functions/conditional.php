@@ -34,5 +34,5 @@ function hakama_document_parent() {
  * @return bool
  */
 function hakama_is_jp( $user_id = 0 ) {
-	return 'jp' === get_user_locale( $user_id );
+	return 'ja' === get_user_locale( $user_id );
 }

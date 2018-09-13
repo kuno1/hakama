@@ -52,7 +52,7 @@
 							],
 						];
 						if ( hakama_is_jp() ) {
-							rsort( $cols );
+							$cols = array_reverse( $cols );
 						}
 						array_map( function ( $col ) {
 							list( $id, $label, $input ) = $col;

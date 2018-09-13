@@ -14,7 +14,6 @@
 	
 	<nav class="site-header-nav">
 		<ul class="site-header-lists">
-		
 		<?php if ( is_user_logged_in() ) : ?>
 			<li class="site-header-list">
 				<a class="site-header-list-link btn btn-link" href="<?php echo hakama_account_url(); ?>">
@@ -22,7 +21,7 @@
 					<span class="d-none d-md-inline"><?php printf( __( 'Howdy, %s!', 'hakama' ), hakama_short_name() ) ?></span>
 				</a>
 			</li>
-		<?php else : ?>
+		<?php elseif ( !hakama_has_woo() || ! is_page( wc_get_page_id( 'myaccount' ) ) ) : ?>
 			<li class="site-header-list">
 				<a class="site-header-list-link btn btn-link" href="<?php echo hakama_login_url( $_SERVER['REQUEST_URI'] ) ?>">
 					<?php esc_html_e( 'Sign In', 'hakama' ) ?>
@@ -34,7 +33,7 @@
 				</a>
 			</li>
 		<?php endif; ?>
-		
+			
 			<li class="site-header-list site-header-list-search">
 				<button class="btn btn-outline-light" data-toggle="modal" data-target="#search-form">
 					<i class="fa fa-search"></i>

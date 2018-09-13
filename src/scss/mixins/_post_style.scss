@@ -3,7 +3,11 @@
   font-weight: 200;
 
   h1, h2, h3, h4, h5, h6{
-    margin: 1em 0 0.5em;
+    margin: 2em 0 0.5em;
+  }
+
+  .centering{
+    @extend %header-centered;
   }
 
   & > p{
@@ -12,6 +16,21 @@
     margin: 1em 0;
   }
 
+  hr{
+    display: block;
+    border: none;
+    text-align: center;
+    line-height: 1;
+    font-size: 2rem;
+    height: 2rem;
+    margin: 2rem 0;
+    &:before{
+      color: $gray-300;
+      content: "\f069";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free", sans-serif;
+    }
+  }
 
   img{
     max-width: 100%;

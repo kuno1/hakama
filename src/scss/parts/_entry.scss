@@ -13,21 +13,7 @@
       margin-left: 0.5em;
     }
     &-wide{
-      text-align: center;
-      padding-bottom: 0.5em;
-      position: relative;
-      &:after{
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 30%;
-        max-width: 100px;
-        height: 3px;
-        @include gradient-bg($gray-200);
-      }
+      @extend %header-centered;
     }
   }
 
