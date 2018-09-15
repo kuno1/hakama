@@ -1,23 +1,5 @@
 @mixin post-styles(){
 
-  a:not([class]){
-
-    transition: color .3s $ease-in-out-sine;
-    &:link{
-      color: $primary;
-      text-decoration: underline;
-    }
-    &:visited{
-      color: $gray-600;
-      text-decoration: underline;
-    }
-    &:hover, &:active{
-      text-decoration: none;
-      color: $info;
-    }
-
-  }
-
   & > *:first-child{
     margin-top: 0;
   }
