@@ -1,0 +1,410 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Hakama\n"
+"POT-Creation-Date: 2018-09-15 11:24+0900\n"
+"PO-Revision-Date: 2018-09-15 11:22+0900\n"
+"Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
+"Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+"X-Poedit-SearchPathExcluded-3: assets\n"
+
+#: comments.php:15
+#, php-format
+msgid "One response to %s"
+msgstr ""
+
+#: comments.php:18
+#, php-format
+msgid "%1$s response to %2$s"
+msgid_plural "%1$s responses to %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:44
+msgid "Comments are closed."
+msgstr ""
+
+#: footer-entry.php:13
+msgid "Join Newsletter for Early Access!"
+msgstr ""
+
+#: footer-entry.php:16
+msgid "Get interested? Please subscribe news letter and get updated!"
+msgstr ""
+
+#: footer-entry.php:21
+msgid "Email"
+msgstr ""
+
+#: footer-entry.php:26
+msgid "Language"
+msgstr ""
+
+#: footer-entry.php:45
+msgid "First Name"
+msgstr ""
+
+#: footer-entry.php:50
+msgid "Last Name"
+msgstr ""
+
+#: footer-entry.php:78
+msgid "Subscribe!"
+msgstr ""
+
+#: functions/account.php:50
+msgid "Guest"
+msgstr ""
+
+#: functions/posts.php:50
+msgid "Product"
+msgstr ""
+
+#: functions/posts.php:54
+msgid "Document"
+msgstr ""
+
+#: functions/posts.php:57 template-parts/content-product.php:13
+msgid "Support"
+msgstr ""
+
+#: functions/posts.php:60
+msgid "Brand"
+msgstr ""
+
+#: functions/posts.php:63 functions/template.php:77
+msgid "Blog"
+msgstr ""
+
+#: functions/template.php:75
+#, php-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: functions/template.php:79
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#: functions/template.php:120
+msgid "Pagination."
+msgstr ""
+
+#: header-meta.php:19
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:21
+#, php-format
+msgid "Howdy, %s!"
+msgstr ""
+
+#: header.php:27
+msgid "Sign In"
+msgstr ""
+
+#: header.php:32
+msgid "Sign Up"
+msgstr ""
+
+#: header.php:40 searchform.php:21 template-parts/content-no.php:11
+msgid "Search"
+msgstr ""
+
+#: header.php:48
+msgid "Cart"
+msgstr ""
+
+#: header.php:72
+msgid "Menu"
+msgstr ""
+
+#: hooks/admin-product-meta.php:11
+msgid "WordPress Requirements"
+msgstr ""
+
+#: hooks/admin-product-meta.php:13
+msgid "Enter required version. No minor version required. e.g. 4.9"
+msgstr ""
+
+#: hooks/admin-product-meta.php:16 template-parts/product-meta.php:17
+msgid "Required WordPress Version"
+msgstr ""
+
+#: hooks/admin-product-meta.php:20 template-parts/product-meta.php:18
+msgid "Tested Up To"
+msgstr ""
+
+#: hooks/admin-product-meta.php:24 template-parts/product-meta.php:19
+msgid "Required PHP Version"
+msgstr ""
+
+#: hooks/cart.php:56
+msgid "Continue Shopping"
+msgstr ""
+
+#: hooks/editor.php:68
+msgid "WordPress Admin"
+msgstr ""
+
+#: hooks/editor.php:71
+msgid "Seller Dashboard"
+msgstr ""
+
+#: hooks/menu.php:11
+msgctxt "admin"
+msgid "Global menu."
+msgstr ""
+
+#: hooks/notification.php:14
+msgid "Notification"
+msgstr ""
+
+#: hooks/notification.php:19
+msgid "e.g. This site is a demo of our service."
+msgstr ""
+
+#: hooks/notification.php:21
+msgid ""
+"This strings will be shown on every page. Only anchor(a) and strong tag will "
+"work."
+msgstr ""
+
+#: hooks/widgets.php:11
+msgid "Sidebar"
+msgstr ""
+
+#: hooks/widgets.php:13
+msgid "Displayed as sidebar."
+msgstr ""
+
+#: hooks/widgets.php:21
+msgid "Footer"
+msgstr ""
+
+#: hooks/widgets.php:23
+msgid "Displayed on footer. Limit 4 widgets."
+msgstr ""
+
+#: index.php:20
+#, php-format
+msgid "%s Found( %d / %d Page)"
+msgstr ""
+
+#: searchform.php:7
+msgid "Search Form"
+msgstr ""
+
+#: searchform.php:9
+msgid "Cancel"
+msgstr ""
+
+#: searchform.php:18
+msgid "Enter keyword..."
+msgstr ""
+
+#: single-brand.php:19
+msgid "Products"
+msgstr ""
+
+#: template-parts/after-main-thread.php:7
+msgid "Product Support"
+msgstr ""
+
+#: template-parts/after-main-thread.php:19 template-parts/content-product.php:8
+#: template-parts/product-support.php:8
+msgid "Documentation"
+msgstr ""
+
+#: template-parts/after-main-thread.php:21
+#, php-format
+msgid ""
+"You may find helpful documents for %s. And if not, please feel free to "
+"request."
+msgstr ""
+
+#: template-parts/after-main-thread.php:25
+msgid "See Documents"
+msgstr ""
+
+#: template-parts/after-main-thread.php:36
+msgid "Get Supported By"
+msgstr ""
+
+#: template-parts/after-main-thread.php:43
+msgid ""
+"All customers can get supported by product creator. You can refer resolved "
+"threads or start new one!"
+msgstr ""
+
+#: template-parts/after-main-thread.php:49
+msgid "Start Thread"
+msgstr ""
+
+#: template-parts/after-main-thread.php:56
+msgid "See Threads"
+msgstr ""
+
+#: template-parts/after-main-thread.php:68
+msgid "Contact Platform"
+msgstr ""
+
+#: template-parts/after-main-thread.php:70
+msgid ""
+"Need platform support? Please feel free to contact KUNOICHI support team."
+msgstr ""
+
+#: template-parts/after-main-thread.php:74
+msgid "Contact"
+msgstr ""
+
+#: template-parts/before-main-faq.php:15
+#, php-format
+msgid "Help document of <a href=\"%s\">%s</a>"
+msgstr ""
+
+#: template-parts/before-main-faq.php:17
+msgid "Help Center"
+msgstr ""
+
+#: template-parts/before-main-faq.php:29
+msgid "See all document"
+msgstr ""
+
+#: template-parts/before-main-faq.php:33 template-parts/entry-footer-faq.php:19
+msgid "Product page"
+msgstr ""
+
+#: template-parts/before-main-faq.php:38
+msgid "Help Center Home"
+msgstr ""
+
+#: template-parts/content-no.php:4
+msgid "Nothing found for your criteria..."
+msgstr ""
+
+#: template-parts/content-no.php:9
+msgid "Please try searching with other keywords."
+msgstr ""
+
+#: template-parts/content-no.php:15
+msgid "If you are from external site, link might be wrong. Please check URL."
+msgstr ""
+
+#: template-parts/content-no.php:18
+#, php-format
+msgid ""
+"In case you find any alternatives, please get our <a href=\"%s\">support</a>."
+msgstr ""
+
+#: template-parts/content-product-gallery.php:33
+msgid "Previous"
+msgstr ""
+
+#: template-parts/content-product-gallery.php:37
+msgid "Next"
+msgstr ""
+
+#: template-parts/entry-footer-faq.php:10
+msgid "All Documentation"
+msgstr ""
+
+#: template-parts/entry-footer-page-normal.php:7
+msgid "Related Pages"
+msgstr ""
+
+#: template-parts/entry-nav-faq.php:11
+msgid "All"
+msgstr ""
+
+#: template-parts/entry-nav-faq.php:24
+msgid "Searching:"
+msgstr ""
+
+#: template-parts/header-admin.php:6
+msgid "Back to List"
+msgstr ""
+
+#: template-parts/header-admin.php:11
+msgid "Dashboard"
+msgstr ""
+
+#: template-parts/loop.php:22
+msgid "on Sale!"
+msgstr ""
+
+#: template-parts/loop.php:42
+msgid "0 comment"
+msgstr ""
+
+#: template-parts/loop.php:73
+msgid "Detail"
+msgstr ""
+
+#: template-parts/loop.php:81
+msgid "Read More"
+msgstr ""
+
+#: template-parts/product-brand.php:12
+msgid "Crafted By"
+msgstr ""
+
+#: template-parts/product-meta.php:17 template-parts/product-meta.php:19
+msgid " and over"
+msgstr ""
+
+#: template-parts/product-support.php:23
+msgid "This product has no document!"
+msgstr ""
+
+#: template-parts/product-support.php:28
+msgid "Support Forum"
+msgstr ""
+
+#: template-parts/product-support.php:34
+msgid "See Support Forum"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:29
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:63
+msgid "Your order"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Hakama"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://kunoichi.shop"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Market place theme for WooCommerce."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Kunoichi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://kunoichiwp.com"
+msgstr ""
