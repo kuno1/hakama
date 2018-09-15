@@ -5,7 +5,7 @@
  * @package hakama
  */
 
-load_theme_textdomain( 'hakama', 'languages' );
+load_theme_textdomain( 'hakama', __DIR__ . '/languages' );
 
 // Load autoloader
 $autoloader = __DIR__ . '/vendor/autoload.php';
