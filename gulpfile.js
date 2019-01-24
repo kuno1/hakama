@@ -2,11 +2,18 @@ var gulp        = require('gulp'),
     fs          = require('fs'),
     $           = require('gulp-load-plugins')(),
     pngquant    = require('imagemin-pngquant'),
-    eventStream = require('event-stream');
+    eventStream = require('event-stream'),
+    bulkImport  = require('./src/gulp/bulk-importer');
 
 
 // Sassのタスク
 gulp.task('sass', function () {
+  let includePath = [
+    './src/scss',
+    '../../lib/hashboard/src/scss',
+    '../../plugins/makibishi/vendor/hametuha/hashboard/src/scss',
+    './node_modules/bootstrap/scss'
+  ];
   return gulp.src([
     './src/scss/**/*.scss'
   ])
@@ -14,14 +21,13 @@ gulp.task('sass', function () {
       errorHandler: $.notify.onError('<%= error.message %>')
     }))
     .pipe($.sourcemaps.init({loadMaps: true}))
-    .pipe($.sassBulkImport())
+    .pipe(bulkImport({
+      includePaths: includePath
+    }))
     .pipe($.sass({
       errLogToConsole: true,
       outputStyle    : 'compressed',
-      includePaths   : [
-        './src/scss',
-        './node_modules/bootstrap/scss'
-      ]
+      includePaths   : includePath
     }))
     .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
     .pipe($.sourcemaps.write('./map'))
@@ -88,7 +94,10 @@ gulp.task('imagemin', function () {
 // watch
 gulp.task('watch', function () {
   // Make SASS
-  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch([
+    'src/scss/**/*.scss',
+    '../../lib/hashboard/src/scss/**/*.scss',
+  ], ['sass']);
   // JS
   gulp.watch(['src/js/**/*.js'], ['js', 'jshint']);
   // Minify Image

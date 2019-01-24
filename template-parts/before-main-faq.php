@@ -27,7 +27,7 @@ $product_id = hakama_document_parent();
 					<a href="<?php echo home_url( "/faq/of/$product_id" ) ?>" class="header-section-return-link">
 						<i class="fa fa-file-alt"></i>
 						<?php esc_html_e( 'See all document', 'hakama' ) ?>
-					</a>
+					</a><br />
 					<a href="<?php echo get_permalink( $product_id ) ?>" class="header-section-return-link">
 						<i class="fa fa-arrow-alt-circle-left"></i>
 						<?php esc_html_e( 'Product page', 'hakama' ) ?>

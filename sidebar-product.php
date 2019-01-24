@@ -1,8 +1,10 @@
 <div class="entry-summary woocommerce">
 
 <?php
-global $product;
-$product = wc_get_product( hakama_document_parent() );
+if ( ( $parent = hakama_document_parent() ) && 'product' === get_post_type( $parent ) ) {
+	global $product;
+	$product = wc_get_product( $parent );
+}
 do_action( 'woocommerce_single_product_summary' );
 ?>
 

@@ -4,3 +4,8 @@
 @mixin bg-gradient($angle: to right, $start-color: #0bd, $stop-color: yellow) {
   background-image: linear-gradient($angle, $start-color 0%, $stop-color 100%);
 }
+
+// Set box shadow.
+@mixin white-box-shadow($color: rgba( 0, 0, 0, .6 ), $x: 0, $y: 0, $blur: 5px, $spread: 0){
+  box-shadow: $x, $y, $blur, $spread, $color;
+}

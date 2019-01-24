@@ -12,7 +12,7 @@
  * @return string
  */
 function hakama_support_page( $post = null, $topic = null ) {
-	return hakama_child_url( $post, $topic, 'topic', 'support/%d' );
+	return hakama_child_url( $post, $topic, 'topic', 'support/%d', 'in/%s',  get_post_type_archive_link( 'thread' ) );
 }
 
 /**
@@ -24,7 +24,7 @@ function hakama_support_page( $post = null, $topic = null ) {
  * @return string
  */
 function hakama_documentation_url( $post = null, $cat = null ) {
-	return hakama_child_url( $post, $cat, 'faq_cat', 'faq/of/%d' );
+	return hakama_child_url( $post, $cat, 'faq_cat', 'faq/of/%d', 'in/%s', get_post_type_archive_link( 'faq' ) );
 }
 
 /**
@@ -33,15 +33,18 @@ function hakama_documentation_url( $post = null, $cat = null ) {
  * @param null|int|WP_Post          $post
  * @param int|string|object|WP_Term $term
  * @param string                    $taxonomy
- * @param string $single_url
- * @param string $child_suffix
+ * @param string                    $single_url
+ * @param string                    $child_suffix
+ * @param string                    $root         If set, this URL is used.
  *
  * @return string
  */
-function hakama_child_url( $post = null, $term = null, $taxonomy = '', $single_url = '', $child_suffix = 'in/%s' ) {
-	$post = get_post( $post );
-	if ( ! $post ) {
-		return home_url();
+function hakama_child_url( $post = null, $term = null, $taxonomy = '', $single_url = '', $child_suffix = 'in/%s', $root = '' ) {
+	if ( 0 !== $post ) {
+		$post = get_post( $post );
+	}
+	if ( ! $post || 'product' !== $post->post_type ) {
+		return $root ?: home_url();
 	}
 	if ( ! $single_url ) {
 		$single_url = "{$post->post_type}/%d";
@@ -133,4 +136,51 @@ function hakama_cart_count() {
 	} else {
 		return min( 99, WC()->cart->get_cart_contents_count() );
 	}
+}
+
+/**
+ * Display documentation button.
+ *
+ * @param int    $product_id
+ * @param string $label
+ * @param string $class
+ * @param string $icon
+ */
+function hakama_document_link( $product_id, $label = '', $class = '', $icon = '' ) {
+	if ( ! $label ) {
+		$label = __( 'Documentation', 'hakama' );
+	}
+	$icon = $icon ? sprintf( '<i class="fa fa-%s"></i> ', esc_attr( $icon ) ) : '';
+	$label = $icon . esc_html( $label );
+	if ( hakama_document_exists( $product_id ) ) {
+		printf(
+			'<a href="%s" class="%s">%s</a>',
+			hakama_documentation_url( $product_id ),
+			esc_attr( $class ),
+			$label
+		);
+	} else {
+		$class = str_replace( '-primary', '-secondary', $class . ' disabled' );
+		printf(
+			'<a href="#" class="%s" aria-disabled="true">%s</a>',
+			esc_attr( $class ),
+			$label
+		);
+	}
+}
+
+/**
+ * Detect if document exists.
+ *
+ * @param int $product_id
+ *
+ * @return bool
+ */
+function hakama_document_exists( $product_id ) {
+	return (bool) get_posts( [
+		'post_type'      => 'faq',
+		'post_status'    => 'publish',
+		'posts_per_page' => 1,
+		'post_parent'    => $product_id,
+	] );
 }

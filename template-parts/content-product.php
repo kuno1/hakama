@@ -4,9 +4,7 @@
 	
 	<div class="row product-main-buttons">
 		<div class="col">
-			<a class="btn btn-outline-primary btn-lg btn-block" href="<?php echo hakama_documentation_url() ?>">
-				<i class="fa fa-file-signature"></i> <?php esc_html_e( 'Documentation', 'hakama' ); ?>
-			</a>
+			<?php hakama_document_link( get_the_ID(), '', 'btn btn-outline-primary btn-lg btn-block', 'file-signature' ) ?>
 		</div>
 		<div class="col">
 			<a class="btn btn-outline-primary btn-lg btn-block" href="<?php echo hakama_support_page() ?>">

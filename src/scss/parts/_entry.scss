@@ -12,6 +12,9 @@
       @extend .text-muted;
       margin-left: 0.5em;
     }
+    &-private{
+      color: $brand-yellow;
+    }
     &-wide{
       @extend %header-centered;
     }
@@ -23,6 +26,11 @@
     &-data {
       padding: 0;
       margin: 10px 0 0;
+      &-resolved{
+        .fa-check-circle{
+          color: $success !important;
+        }
+      }
       li {
         list-style: none;
         display: inline-block;

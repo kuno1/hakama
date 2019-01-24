@@ -13,20 +13,18 @@
  * @see        https://docs.woocommerce.com/document/template-structure/
  * @author        WooThemes
  * @package    WooCommerce/Templates
- * @version     2.3.0
+ * @version     3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-wc_print_notices();
-
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
-// If checkout registration is disabled and not logged in, the user cannot checkout
+// If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
-	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) );
+	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) );
 	
 	return;
 }
@@ -60,7 +58,9 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<div class="col-xs-12 col-lg-6">
 			
-			<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+			<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
+			
+			<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
 			
 			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 

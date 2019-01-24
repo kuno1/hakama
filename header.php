@@ -28,7 +28,7 @@
 				</a>
 			</li>
 			<li class="site-header-list">
-				<a class="site-header-list-link btn btn-link" href="<?php echo wp_registration_url() ?>">
+				<a class="site-header-list-link btn btn-link" href="<?php echo hakama_registration_url() ?>">
 					<?php esc_html_e( 'Sign Up', 'hakama' ) ?>
 				</a>
 			</li>

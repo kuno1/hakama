@@ -17,6 +17,9 @@
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</header>
 					<div class="entry-content">
+						<?php if ( function_exists( 'shouyaku_post_notification' ) ) {
+							shouyaku_post_notification();
+						} ?>
 						<?php the_content(); ?>
 					</div>
 					<?php hakama_template( 'entry-footer-page-normal', get_post()->post_name ); ?>

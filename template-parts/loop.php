@@ -21,6 +21,9 @@ if ( ( $on_sale = $product && $product->is_on_sale() ) ) {
 				<?php if ( $on_sale ) : ?>
 				<small class="text-danger"><?php esc_html_e( 'on Sale!', 'hakama' ) ?></small>
 				<?php endif; ?>
+				<?php if ( 'private' === get_post_status() ) : ?>
+					<i class="fa fa-lock"></i>
+				<?php endif; ?>
 			</h2>
 			
 			<?php if ( $product ) : ?>

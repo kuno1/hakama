@@ -21,6 +21,8 @@ function hakama_page_link( $post = null ) {
 			'post_parent' => $post->post_parent,
 			'post_status' => 'publish',
 			'posts_per_page' => -1,
+			'suppress_filters' => false,
+			'post__not_in' => [ $post->ID ],
 		] ) );
 	}
 	$posts = array_merge( $posts, get_posts( [
@@ -28,6 +30,7 @@ function hakama_page_link( $post = null ) {
 		'post_parent' => $post->ID,
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
+		'suppress_filters' => false,
 	] ) );
 	return $posts;
 }

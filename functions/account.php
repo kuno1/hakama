@@ -25,12 +25,37 @@ function hakama_account_url() {
  */
 function hakama_login_url( $redirect_to = '' ) {
 	if ( hakama_has_woo() ) {
-		return add_query_arg( [
-			'redirect_to' => $redirect_to,
-		], wc_get_page_permalink( 'myaccount' ) );
+		$url = wc_get_page_permalink( 'myaccount' );
+		if ( $redirect_to ) {
+			$url = add_query_arg( [
+				'redirect_to' => $redirect_to,
+			], $url );
+		}
+		return $url;
 	} else {
 		return wp_login_url( $redirect_to );
 	}
+}
+
+/**
+ * Get registration URL
+ *
+ * @param string $redirect_to
+ *
+ * @return string
+ */
+function hakama_registration_url( $redirect_to = '' ) {
+	if ( hakama_has_woo() ) {
+		$url = wc_get_page_permalink( 'myaccount' );
+	} else {
+		$url = wp_registration_url();
+	}
+	if ( $redirect_to ) {
+		$url = add_query_arg( [
+			'redirect_to' => $redirect_to,
+		], $url );
+	}
+	return $url;
 }
 
 /**
@@ -69,7 +94,7 @@ function hakama_admin_back_link() {
 		}
 		return $url;
 	} else {
-		return home_url();
+		return \Hametuha\Hashboard::screen_url();
 	}
 }
 

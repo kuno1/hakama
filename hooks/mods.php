@@ -38,3 +38,6 @@ add_action( 'after_setup_theme', function() {
 // Hide admin bar.
 add_filter( 'show_admin_bar', '__return_false' );
 
+add_filter( 'private_title_format', function( $filter, $post ) {
+	return '%s';
+}, 10, 2 );

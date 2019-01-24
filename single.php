@@ -14,6 +14,11 @@
 					<article class="entry">
 						<?php hakama_template( 'entry-meta', get_post_type() ) ?>
 						<div class="entry-content">
+							
+							<?php if ( function_exists( 'shouyaku_post_notification' ) ) {
+								shouyaku_post_notification();
+							} ?>
+							
 							<?php the_content(); ?>
 						</div>
 						<?php hakama_template( 'entry-footer', get_post_type() ) ?>

@@ -21,6 +21,11 @@
   &-card{
 
   }
+  &-title{
+    .fa-lock{
+      color: $brand-yellow;
+    }
+  }
   &-products{
     clear: both;
     padding-top: $section-gap;

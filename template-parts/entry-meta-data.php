@@ -3,6 +3,18 @@
 		<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
 		<?php the_author_posts_link(); ?>
 	</li>
+	<?php if ( 'private' === get_post_status() ) : ?>
+		<li>
+			<i class="fa fa-lock"></i>
+			<?php esc_html_e( 'Private', 'hakama' ) ?>
+		</li>
+	<?php endif; ?>
+	<?php if ( hamethread_is_resolved() ) : ?>
+		<li class="entry-meta-data-resolved">
+			<i class="fa fa-check-circle"></i>
+			<?php esc_html_e( 'Resolved', 'hakama' ) ?>
+		</li>
+	<?php endif; ?>
 	<li>
 		<i class="fa fa-calendar"></i>
 		<?php the_date() ?>
@@ -15,9 +27,4 @@
 			</li>
 		<?php endif; ?>
 	<?php endforeach; ?>
-	<?php if ( current_user_can( 'edit_post', get_the_ID() ) ) : ?>
-		<li>
-			<i class="fa fa-edit"></i> <?php edit_post_link() ?>
-		</li>
-	<?php endif; ?>
 </ul>

@@ -13,6 +13,7 @@
 					<div class="entry-meta">
 						<h1 class="entry-title">
 							<?php hakama_archive_title() ?>
+							<?php if ( have_posts() ) : ?>
 							<small>
 								<?php
 								global $wp_query;
@@ -24,6 +25,7 @@
 								);
 								?>
 							</small>
+							<?php endif; ?>
 						</h1>
 					</div>
 					

@@ -61,8 +61,9 @@ add_action( 'woocommerce_single_product_summary', function(){
 // Add formats.
 foreach ( [
 	'product-meta'    => 40,
-	'product-brand'   => 41,
-	'product-support' => 42,
+	'product-files'   => 41,
+	'product-brand'   => 42,
+	'product-support' => 43,
 ] as $template => $priority ) {
 	add_action( 'woocommerce_single_product_summary', function() use ( $template ) {
 		hakama_template( $template );

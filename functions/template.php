@@ -36,6 +36,19 @@ function hakama_template( $slug, $suffix = '', $args = [], $echo = true ) {
 }
 
 /**
+ * Trim html of short code.
+ *
+ * @param string $string
+ *
+ * @return string
+ */
+function hakama_trim( $string ) {
+	return implode( "\n", array_filter( array_map( function( $line ) {
+		return trim( $line );
+	}, explode( "\n", $string ) ) ) );
+}
+
+/**
  * Get template group name.
  *
  * @return string
