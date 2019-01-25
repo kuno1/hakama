@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-09-15 11:24+0900\n"
-"PO-Revision-Date: 2018-09-15 11:45+0900\n"
+"POT-Creation-Date: 2019-01-25 17:17+0900\n"
+"PO-Revision-Date: 2019-01-25 17:26+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
@@ -22,7 +22,7 @@ msgstr "%sへの1件の返信"
 #, php-format
 msgid "%1$s response to %2$s"
 msgid_plural "%1$s responses to %2$s"
-msgstr[0] ""
+msgstr[0] "%2$sへの%1$s件の反応"
 
 #: comments.php:44
 msgid "Comments are closed."
@@ -36,7 +36,7 @@ msgstr "ニュースレターを購読"
 msgid "Get interested? Please subscribe news letter and get updated!"
 msgstr ""
 "興味を持っていただけましたか？　ニュースレターを購読して、最新の情報を受け"
-"取ってください。"
+"取ってください！"
 
 #: footer-entry.php:21
 msgid "Email"
@@ -58,43 +58,48 @@ msgstr "姓"
 msgid "Subscribe!"
 msgstr "購読！"
 
-#: functions/account.php:50
+#: functions/account.php:75
 msgid "Guest"
 msgstr "ゲスト"
 
-#: functions/posts.php:50
+#: functions/posts.php:53
 msgid "Product"
 msgstr "商品"
 
-#: functions/posts.php:54
+#: functions/posts.php:57
 msgid "Document"
 msgstr "ドキュメント"
 
-#: functions/posts.php:57 template-parts/content-product.php:13
+#: functions/posts.php:60 template-parts/content-product.php:17
 msgid "Support"
 msgstr "サポート"
 
-#: functions/posts.php:60
+#: functions/posts.php:63
 msgid "Brand"
 msgstr "ブランド"
 
-#: functions/posts.php:63 functions/template.php:77
+#: functions/posts.php:66 functions/template.php:90
 msgid "Blog"
 msgstr "ブログ"
 
-#: functions/template.php:75
+#: functions/product.php:151 template-parts/after-main-thread.php:29
+#: template-parts/product-support.php:8
+msgid "Documentation"
+msgstr "ドキュメンテーション"
+
+#: functions/template.php:88
 #, php-format
 msgid "Search results for \"%s\""
 msgstr "\"%s\" の検索結果"
 
-#: functions/template.php:79
+#: functions/template.php:92
 #, php-format
 msgid "Archives: %s"
 msgstr "アーカイブ: %s"
 
-#: functions/template.php:120
+#: functions/template.php:133
 msgid "Pagination."
-msgstr "ページネーション"
+msgstr "ページネーション。"
 
 #: header-meta.php:19
 msgid "Skip to content"
@@ -103,17 +108,18 @@ msgstr "コンテンツへスキップ"
 #: header.php:21
 #, php-format
 msgid "Howdy, %s!"
-msgstr "こんにちは、%sさん"
+msgstr "こんにちは、%sさん！"
 
 #: header.php:27
 msgid "Sign In"
 msgstr "ログイン"
 
-#: header.php:32
+#: header.php:32 template-parts/form-register.php:40
 msgid "Sign Up"
 msgstr "登録"
 
-#: header.php:40 searchform.php:21 template-parts/content-no.php:11
+#: header.php:40 searchform.php:21 template-parts/content-no-faq.php:16
+#: template-parts/content-no.php:11
 msgid "Search"
 msgstr "検索"
 
@@ -145,17 +151,21 @@ msgstr "テスト済みバージョン"
 msgid "Required PHP Version"
 msgstr "必須PHPバージョン"
 
+#: hooks/admin-product-meta.php:40
+msgid "Demo Setting"
+msgstr "デモ設定"
+
+#: hooks/admin-product-meta.php:43
+msgid "Enter demo URL for your theme/plugin."
+msgstr "テーマ/プラグインのデモURLを入力してください。"
+
+#: hooks/admin-product-meta.php:47
+msgid "Demo URL"
+msgstr "デモURL"
+
 #: hooks/cart.php:56
 msgid "Continue Shopping"
 msgstr "ショッピングを続ける"
-
-#: hooks/editor.php:68
-msgid "WordPress Admin"
-msgstr "WordPress管理画面"
-
-#: hooks/editor.php:71
-msgid "Seller Dashboard"
-msgstr "販売者ダッシュボード"
 
 #: hooks/menu.php:11
 msgctxt "admin"
@@ -194,7 +204,7 @@ msgstr "フッター"
 msgid "Displayed on footer. Limit 4 widgets."
 msgstr "フッターに表示。4つのウィジェットまで。"
 
-#: index.php:20
+#: index.php:21
 #, php-format
 msgid "%s Found( %d / %d Page)"
 msgstr "%s 件が見つかりました。（%d / %d ページ）"
@@ -209,22 +219,30 @@ msgstr "キャンセル"
 
 #: searchform.php:18
 msgid "Enter keyword..."
-msgstr "キーワードを入れてください"
+msgstr "キーワードを入れてください。"
 
 #: single-brand.php:19
 msgid "Products"
 msgstr "プロダクト"
 
-#: template-parts/after-main-thread.php:7
+#: template-parts/after-main-thread.php:8
 msgid "Product Support"
 msgstr "プロダクトサポート"
 
-#: template-parts/after-main-thread.php:19 template-parts/content-product.php:8
-#: template-parts/product-support.php:8
-msgid "Documentation"
-msgstr "ドキュメンテーション"
+#: template-parts/after-main-thread.php:10
+msgid "Kunoichi Support"
+msgstr "Kunoichi サポート"
 
-#: template-parts/after-main-thread.php:21
+#: template-parts/after-main-thread.php:16
+#, php-format
+msgid "Get Supported for %s."
+msgstr "%s のカスタマーサポートを受ける。"
+
+#: template-parts/after-main-thread.php:18
+msgid "Market Place Support."
+msgstr "マーケットプレースサポート。"
+
+#: template-parts/after-main-thread.php:32
 #, php-format
 msgid ""
 "You may find helpful documents for %s. And if not, please feel free to "
@@ -233,44 +251,56 @@ msgstr ""
 "%s に関して有用なドキュメントを見つけることができるかもしれません。もし見つか"
 "らない場合はお気軽にリクエストをしてください。"
 
-#: template-parts/after-main-thread.php:25
+#: template-parts/after-main-thread.php:34
+msgid ""
+"These documents are for Kunoichi Market Place. Feel free to make request for "
+"what you want to know!"
+msgstr ""
+"これらのドキュメントはKunoichi マーケットプレースのものです。気になることが"
+"あったら、お気軽にお尋ねください！"
+
+#: template-parts/after-main-thread.php:38
 msgid "See Documents"
 msgstr "ドキュメントを見る"
 
-#: template-parts/after-main-thread.php:36
+#: template-parts/after-main-thread.php:49
 msgid "Get Supported By"
 msgstr "サポート提供"
 
-#: template-parts/after-main-thread.php:43
+#: template-parts/after-main-thread.php:56
 msgid ""
 "All customers can get supported by product creator. You can refer resolved "
 "threads or start new one!"
 msgstr ""
 "すべてのお客様はプロダクトの制作者によってサポートを受けることができます。解"
-"決済みのスレッドを見ることもできますし、新しくはじめることもできます。"
+"決済みのスレッドを見ることもできますし、新しくはじめることもできます！"
 
-#: template-parts/after-main-thread.php:49
+#: template-parts/after-main-thread.php:63
+msgid "Get Customer Support"
+msgstr "カスタマーサポートを受ける"
+
+#: template-parts/after-main-thread.php:66
 msgid "Start Thread"
 msgstr "スレッドを開始"
 
-#: template-parts/after-main-thread.php:56
+#: template-parts/after-main-thread.php:74
 msgid "See Threads"
 msgstr "スレッドを見る"
 
-#: template-parts/after-main-thread.php:68
+#: template-parts/after-main-thread.php:86
 msgid "Contact Platform"
 msgstr "プラットフォームにコンタクト"
 
-#: template-parts/after-main-thread.php:70
+#: template-parts/after-main-thread.php:88
 msgid ""
 "Need platform support? Please feel free to contact KUNOICHI support team."
 msgstr ""
 "プラットフォームによるサポートが必要ですか？　Kunoichiのサポートチームにお問"
 "い合わせください。"
 
-#: template-parts/after-main-thread.php:74
-msgid "Contact"
-msgstr "コンタクト"
+#: template-parts/after-main-thread.php:92
+msgid "Get Support"
+msgstr "サポートを受ける"
 
 #: template-parts/before-main-faq.php:15
 #, php-format
@@ -285,7 +315,9 @@ msgstr "ヘルプセンター"
 msgid "See all document"
 msgstr "すべてのドキュメントを見る"
 
-#: template-parts/before-main-faq.php:33 template-parts/entry-footer-faq.php:19
+#: template-parts/before-main-faq.php:33
+#: template-parts/before-main-thread.php:32
+#: template-parts/entry-footer-faq.php:19
 msgid "Product page"
 msgstr "プロダクトページ"
 
@@ -293,26 +325,52 @@ msgstr "プロダクトページ"
 msgid "Help Center Home"
 msgstr "ヘルプセンターホーム"
 
-#: template-parts/content-no.php:4
+#: template-parts/before-main-thread.php:15
+#, php-format
+#| msgid "Help document of <a href=\"%s\">%s</a>"
+msgid "Support Forum of <a href=\"%s\">%s</a>"
+msgstr "<a href=\"%s\">%s</a>のサポートフォーラム"
+
+#: template-parts/before-main-thread.php:17
+#: template-parts/product-support.php:28
+msgid "Support Forum"
+msgstr "サポートフォーラム"
+
+#: template-parts/before-main-thread.php:28
+#: template-parts/before-main-thread.php:37
+msgid "Support Forum Home"
+msgstr "サポートフォーラムホーム"
+
+#: template-parts/content-no-faq.php:9 template-parts/content-no.php:4
 msgid "Nothing found for your criteria..."
 msgstr "お探しのものは見つかりませんでした。"
 
-#: template-parts/content-no.php:9
+#: template-parts/content-no-faq.php:14 template-parts/content-no.php:9
 msgid "Please try searching with other keywords."
 msgstr "別のキーワードで検索してみてください。"
 
-#: template-parts/content-no.php:15
+#: template-parts/content-no-faq.php:20 template-parts/content-no.php:15
 msgid "If you are from external site, link might be wrong. Please check URL."
 msgstr ""
 "外部サイトからお越しになった場合は、リンクが間違っているかもしれません。URLを"
 "チェックしてください。"
 
-#: template-parts/content-no.php:18
+#: template-parts/content-no-faq.php:24
+#, php-format
+msgid "You can <a href=\"%s\">request support</a> for the product author."
+msgstr ""
+"商品の開発者に<a href=\"%s\">サポートをリクエスト</a>することができます。"
+
+#: template-parts/content-no-faq.php:28 template-parts/content-no.php:18
 #, php-format
 msgid ""
 "In case you find any alternatives, please get our <a href=\"%s\">support</a>."
 msgstr ""
 "なにも見つからなかった場合は<a href=\"%s\">サポート</a>をお試しください。"
+
+#: template-parts/content-no-thread.php:9
+msgid "There's no support yet."
+msgstr "サポートはまだありません。"
 
 #: template-parts/content-product-gallery.php:33
 msgid "Previous"
@@ -322,6 +380,10 @@ msgstr "前のページ"
 msgid "Next"
 msgstr "次のページ"
 
+#: template-parts/content-product.php:12
+msgid "Demo"
+msgstr "デモ"
+
 #: template-parts/entry-footer-faq.php:10
 msgid "All Documentation"
 msgstr "すべてのドキュメンテーション"
@@ -330,13 +392,70 @@ msgstr "すべてのドキュメンテーション"
 msgid "Related Pages"
 msgstr "関連ページ"
 
-#: template-parts/entry-nav-faq.php:11
-msgid "All"
-msgstr "すべて"
+#: template-parts/entry-meta-data.php:9
+msgid "Private"
+msgstr "非公開"
 
-#: template-parts/entry-nav-faq.php:24
-msgid "Searching:"
-msgstr "検索："
+#: template-parts/entry-meta-data.php:15
+msgid "Resolved"
+msgstr "解決済み"
+
+#: template-parts/entry-meta.php:9
+msgid "Customer Only"
+msgstr "購入者のみ"
+
+#: template-parts/form-register.php:19
+msgid "Congratulations!"
+msgstr "おめでとうございます！"
+
+#: template-parts/form-register.php:22
+msgid ""
+"Now you became seller, so please go to dashboard and start setting up your "
+"products."
+msgstr ""
+"これであなたは販売者になりました。ダッシュボードへ行き、商品の設定を始めてく"
+"ださい。"
+
+#: template-parts/form-register.php:26
+msgid "Go Dashboard"
+msgstr "ダッシュボードへ行く"
+
+#: template-parts/form-register.php:29
+msgid "Your Business Information"
+msgstr "あなたのビジネス情報"
+
+#: template-parts/form-register.php:36
+msgid ""
+"To become seller, you need Kunoichi account. Please sign up and come back "
+"this page again!"
+msgstr ""
+"販売者になるには、Kunoichiアカウントが必要です。登録のうえ、このページにお戻"
+"りください！"
+
+#: template-parts/form-register.php:43
+#, php-format
+msgid "Do you have account? Please <a href=\"%s\">login</a>."
+msgstr "アカウントをお持ちですか？　<a href=\"%s\">ログイン</a>してください。"
+
+#: template-parts/form-register.php:60
+msgid ""
+"Please connect stripe account to prove your business entity. If you don't "
+"have one, you can create new account through the connection process."
+msgstr ""
+"ビジネスを行なっている証明のために、Stripeアカウントに接続してください。"
+
+#: template-parts/form-register.php:66
+msgid "Connect with Stripe"
+msgstr "Stripeに接続"
+
+#: template-parts/form-register.php:70
+#, php-format
+msgid ""
+"Do you have something to hesitate yourself? See our <a href=\"%s"
+"\">documentation</a>."
+msgstr ""
+"まだ気になるところがありますか？　私たちの<a href=\"%s\">ドキュメンテーション"
+"</a>をご覧ください。"
 
 #: template-parts/header-admin.php:6
 msgid "Back to List"
@@ -350,21 +469,25 @@ msgstr "ダッシュボード"
 msgid "on Sale!"
 msgstr "セール中！"
 
-#: template-parts/loop.php:42
+#: template-parts/loop.php:45
 msgid "0 comment"
 msgstr "0コメント"
 
-#: template-parts/loop.php:73
+#: template-parts/loop.php:76
 msgid "Detail"
 msgstr "くわしく"
 
-#: template-parts/loop.php:81
+#: template-parts/loop.php:84
 msgid "Read More"
 msgstr "続きを読む"
 
 #: template-parts/product-brand.php:12
 msgid "Crafted By"
 msgstr "作者"
+
+#: template-parts/product-files.php:12
+msgid "Files"
+msgstr "ファイル"
 
 #: template-parts/product-meta.php:17 template-parts/product-meta.php:19
 msgid " and over"
@@ -374,15 +497,11 @@ msgstr "以上"
 msgid "This product has no document!"
 msgstr "このプロダクトにはドキュメントがありません。"
 
-#: template-parts/product-support.php:28
-msgid "Support Forum"
-msgstr "サポートフォーラム"
-
 #: template-parts/product-support.php:34
 msgid "See Support Forum"
 msgstr "サポートフォーラムを見る"
 
-#: woocommerce/checkout/form-checkout.php:29
+#: woocommerce/checkout/form-checkout.php:27
 msgid "You must be logged in to checkout."
 msgstr "チェックアウトするためにはログインしてください。"
 
@@ -396,7 +515,7 @@ msgstr "袴"
 
 #. Theme URI of the plugin/theme
 msgid "https://kunoichi.shop"
-msgstr ""
+msgstr "https://kunoichi.shop"
 
 #. Description of the plugin/theme
 msgid "Market place theme for WooCommerce."
@@ -404,8 +523,31 @@ msgstr "WooCommerceのためのマーケットプレース"
 
 #. Author of the plugin/theme
 msgid "Kunoichi"
-msgstr ""
+msgstr "株式会社KUNOICHI"
 
 #. Author URI of the plugin/theme
 msgid "https://kunoichiwp.com"
-msgstr ""
+msgstr "https://kunoichiwp.com"
+
+#. Template Name of the plugin/theme
+msgid "Wizard Page"
+msgstr "ウィザード型ページ"
+
+#. Template Name of the plugin/theme
+msgid "Wide Page"
+msgstr "ワイドページ"
+
+#~ msgid "WordPress Admin"
+#~ msgstr "WordPress管理画面"
+
+#~ msgid "Seller Dashboard"
+#~ msgstr "販売者ダッシュボード"
+
+#~ msgid "Contact"
+#~ msgstr "コンタクト"
+
+#~ msgid "All"
+#~ msgstr "すべて"
+
+#~ msgid "Searching:"
+#~ msgstr "検索："

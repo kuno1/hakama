@@ -66,7 +66,7 @@ global $wp_scripts;
 				   href="<?php echo esc_url( $url ) ?>"><?php esc_html_e( 'Connect with Stripe', 'hakama' ) ?></a>
 			</p>
 
-			<p class="text-center text-muted">
+			<p class="text-muted">
 				<?php echo wp_kses_post( sprintf( __( 'Do you have something to hesitate yourself? See our <a href="%s">documentation</a>.', 'hakama' ), get_post_type_archive_link( 'faq' ) ) ) ?>
 			</p>
 		
