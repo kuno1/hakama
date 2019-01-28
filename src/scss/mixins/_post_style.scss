@@ -6,9 +6,50 @@
 
   font-weight: 200;
 
+  // Headings
   h1, h2, h3, h4, h5, h6{
-    margin: 2em 0 0.5em;
+    margin: 2.5em 0 1em;
   }
+  h2{
+    position: relative;
+    padding-bottom: 13px;
+    &:after{
+      position: absolute;
+      content: "";
+      display: block;
+      height: 3px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @include moving-gradient( $color1: #f9d423, $color2: #e14fad, $color3: #fffc24 );
+    }
+  }
+  h3{
+    position: relative;
+    padding-left: 10px;
+    &:after{
+      position: absolute;
+      content: "";
+      display: block;
+      width: 5px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      @include moving-gradient( $color1: #f9d423, $color2: #e14fad, $color3: #fffc24 );
+    }
+  }
+  h4{
+
+  }
+  h5{
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  h6{
+    font-weight: bold;
+    color: #888;
+  }
+
 
   .centering{
     @extend %header-centered;
@@ -59,11 +100,35 @@
 
   table{
     @extend .table;
+    margin: 2em 0;
   }
 
   fieldset{
     margin-top: 3em;
     margin-bottom: 2em;
+  }
+
+  // Inline styles
+  strong{
+    font-weight: bold;
+  }
+
+  // List items.
+  ol, dl, ul{
+    margin: 2em 0;
+    ul, dl, ol{
+      margin: 0;
+    }
+  }
+
+
+  // Code blocks.
+  pre{
+    background-color: #f0f0f0;
+    color: #000;
+    margin: 2em 0;
+    padding: 2em;
+    border-radius: 3px;
   }
 
 }
