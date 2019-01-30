@@ -21,7 +21,7 @@ add_action( 'makibishi_user_is_connected', function( $user_id ) {
 	if ( ! current_user_can( 'seller' ) ) {
 		// Make him seller.
 		$user = new WP_User( $user_id );
-		$user->add_role( 'seller' );
+		$user->set_role( 'seller' );
 	}
 } );
 

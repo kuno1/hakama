@@ -78,6 +78,11 @@ function hakama_short_name( $user = null ) {
 	return $fist_name ?: $user->display_name;
 }
 
+/**
+ * Get back link.
+ *
+ * @return string
+ */
 function hakama_admin_back_link() {
 	$screen = get_current_screen();
 	if ( 'post' === $screen->base ) {
@@ -85,6 +90,11 @@ function hakama_admin_back_link() {
 		switch ( $screen->post_type ) {
 			case 'post':
 				// Do nothing.
+				break;
+			case 'brand':
+				if ( current_user_can( 'seller' ) ) {
+					$url = \Hametuha\Hashboard::screen_url( 'brand' );
+				}
 				break;
 			default:
 				$url = add_query_arg( [
