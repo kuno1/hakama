@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php
+
+get_header(); ?>
 
 <?php hakama_template( 'before-main', hakama_template_group() ) ?>
 	
@@ -37,7 +39,20 @@
 							<?php hakama_pagination() ?>
 						</div>
 					<?php else : ?>
-						<?php hakama_template( 'content-no', hakama_template_group() ) ?>
+						<div class="alert alert-secondary">
+							<?php esc_html_e( 'This brand has no content yet.', 'hakama' ); ?>
+						</div>
+					
+					<?php endif; ?>
+					
+					<h2 class="brand-title"><?php esc_html_e( 'Business Information', 'hakama' ) ?></h2>
+					
+					<?php if ( hakama_brand_has_business() ) : ?>
+						<?php hakama_template( 'brand', 'detail', [ 'user_id' => get_the_author_meta( 'ID' ) ] ) ?>
+					<?php else : ?>
+						<div class="alert alert-secondary">
+							<?php esc_html_e( 'This brand has no business information yet.', 'hakama' ); ?>
+						</div>
 					<?php endif; ?>
 					
 					<?php hakama_template( 'after-main', hakama_template_group() ) ?>

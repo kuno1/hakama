@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-01-25 17:17+0900\n"
-"PO-Revision-Date: 2019-01-25 17:26+0900\n"
+"POT-Creation-Date: 2019-01-30 15:49+0900\n"
+"PO-Revision-Date: 2019-01-30 15:50+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -114,7 +114,7 @@ msgstr "こんにちは、%sさん！"
 msgid "Sign In"
 msgstr "ログイン"
 
-#: header.php:32 template-parts/form-register.php:40
+#: header.php:32 template-parts/form-register.php:30
 msgid "Sign Up"
 msgstr "登録"
 
@@ -221,9 +221,21 @@ msgstr "キャンセル"
 msgid "Enter keyword..."
 msgstr "キーワードを入れてください。"
 
-#: single-brand.php:19
+#: single-brand.php:21
 msgid "Products"
 msgstr "プロダクト"
+
+#: single-brand.php:43
+msgid "This brand has no content yet."
+msgstr "このブランドにはまだ商品がありません。"
+
+#: single-brand.php:48
+msgid "Business Information"
+msgstr "ビジネス情報"
+
+#: single-brand.php:54
+msgid "This brand has no business information yet."
+msgstr "このブランドにはビジネス情報が設定されていません。"
 
 #: template-parts/after-main-thread.php:8
 msgid "Product Support"
@@ -327,7 +339,6 @@ msgstr "ヘルプセンターホーム"
 
 #: template-parts/before-main-thread.php:15
 #, php-format
-#| msgid "Help document of <a href=\"%s\">%s</a>"
 msgid "Support Forum of <a href=\"%s\">%s</a>"
 msgstr "<a href=\"%s\">%s</a>のサポートフォーラム"
 
@@ -404,11 +415,11 @@ msgstr "解決済み"
 msgid "Customer Only"
 msgstr "購入者のみ"
 
-#: template-parts/form-register.php:19
+#: template-parts/form-register.php:10
 msgid "Congratulations!"
 msgstr "おめでとうございます！"
 
-#: template-parts/form-register.php:22
+#: template-parts/form-register.php:13
 msgid ""
 "Now you became seller, so please go to dashboard and start setting up your "
 "products."
@@ -416,15 +427,15 @@ msgstr ""
 "これであなたは販売者になりました。ダッシュボードへ行き、商品の設定を始めてく"
 "ださい。"
 
-#: template-parts/form-register.php:26
+#: template-parts/form-register.php:17
 msgid "Go Dashboard"
 msgstr "ダッシュボードへ行く"
 
-#: template-parts/form-register.php:29
+#: template-parts/form-register.php:20
 msgid "Your Business Information"
 msgstr "あなたのビジネス情報"
 
-#: template-parts/form-register.php:36
+#: template-parts/form-register.php:26
 msgid ""
 "To become seller, you need Kunoichi account. Please sign up and come back "
 "this page again!"
@@ -432,23 +443,23 @@ msgstr ""
 "販売者になるには、Kunoichiアカウントが必要です。登録のうえ、このページにお戻"
 "りください！"
 
-#: template-parts/form-register.php:43
+#: template-parts/form-register.php:33
 #, php-format
 msgid "Do you have account? Please <a href=\"%s\">login</a>."
 msgstr "アカウントをお持ちですか？　<a href=\"%s\">ログイン</a>してください。"
 
-#: template-parts/form-register.php:60
+#: template-parts/form-register.php:50
 msgid ""
 "Please connect stripe account to prove your business entity. If you don't "
 "have one, you can create new account through the connection process."
 msgstr ""
 "ビジネスを行なっている証明のために、Stripeアカウントに接続してください。"
 
-#: template-parts/form-register.php:66
+#: template-parts/form-register.php:56
 msgid "Connect with Stripe"
 msgstr "Stripeに接続"
 
-#: template-parts/form-register.php:70
+#: template-parts/form-register.php:60
 #, php-format
 msgid ""
 "Do you have something to hesitate yourself? See our <a href=\"%s"

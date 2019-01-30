@@ -2,17 +2,8 @@
 /** @var bool $is_connected */
 /** @var bool $is_seller */
 /** @var string $url */
-wp_enqueue_script( 'makibishi-shop-detail' );
-$js = <<<JS
-	new Vue({
-		el: '#brand-detail'
-	});
-JS;
-wp_add_inline_script( 'makibishi-shop-detail', $js );
-global $wp_scripts;
 ?>
 <div class="seller-submission">
-	
 	
 	<?php if ( $is_seller ) : ?>
 
@@ -25,10 +16,9 @@ global $wp_scripts;
 			<a class="btn btn-outline-primary btn-lg"
 			   href="<?php echo \Hametuha\Hashboard::screen_url() ?>"><?php esc_html_e( 'Go Dashboard', 'hakama' ) ?></a>
 		</p>
-		<div id="brand-detail" class="seller-submission-business" style="position: relative">
-			<h2 class="seller-submission-title"><?php esc_html_e( 'Your Business Information', 'hakama' ) ?></h2>
-			<shop-detail id="<?php echo get_current_user_id() ?>"></shop-detail>
-		</div>
+	
+		<h2 class="seller-submission-title"><?php esc_html_e( 'Your Business Information', 'hakama' ) ?></h2>
+		<?php hakama_template( 'brand', 'detail', [ 'user_id' => get_current_user_id() ] ) ?>
 	
 	<?php elseif ( ! current_user_can( 'read' ) ) : ?>
 

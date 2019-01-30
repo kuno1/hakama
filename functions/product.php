@@ -184,3 +184,22 @@ function hakama_document_exists( $product_id ) {
 		'post_parent'    => $product_id,
 	] );
 }
+
+/**
+ * Detect if user has business information.
+ *
+ * @param null|int|WP_Post $post
+ *
+ * @return bool
+ */
+function hakama_brand_has_business( $post = null ) {
+	$post = get_post( $post );
+	if ( 'brand' !== $post->post_type ) {
+		return false;
+	}
+	$instance = \Kunoichi\Makibishi\Controller\BrandManager::get_instance();
+	if ( ! method_exists( $instance, 'has_valid_gateway' ) ) {
+		return false;
+	}
+	return $instance->has_valid_gateway( $post );
+}
