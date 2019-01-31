@@ -45,10 +45,24 @@ get_header(); ?>
 					
 					<?php endif; ?>
 					
-					<h2 class="brand-title"><?php esc_html_e( 'Business Information', 'hakama' ) ?></h2>
+					<h2 class="brand-title"><?php echo esc_html( \Kunoichi\Makibishi\Hooks\ActOnSpecifiedCommercialTransaction::get_instance()->get_label() ) ?></h2>
 					
 					<?php if ( hakama_brand_has_business() ) : ?>
+						
 						<?php hakama_template( 'brand', 'detail', [ 'user_id' => get_the_author_meta( 'ID' ) ] ) ?>
+
+						<table class="table shop-detail-table">
+							<?php foreach ( \Kunoichi\Makibishi\Hooks\ActOnSpecifiedCommercialTransaction::get_instance()->values() as $key => $values ): ?>
+							<tr>
+								<th>
+									<?php echo esc_html( $values['label'] ) ?>
+								</th>
+								<td>
+									<?php echo esc_html( $values['value'] ) ?>
+								</td>
+							</tr>
+							<?php endforeach; ?>
+						</table>
 					<?php else : ?>
 						<div class="alert alert-secondary">
 							<?php esc_html_e( 'This brand has no business information yet.', 'hakama' ); ?>
