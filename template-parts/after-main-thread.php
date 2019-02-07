@@ -88,9 +88,15 @@ $parent = hakama_document_parent();
 						<?php esc_html_e( 'Need platform support? Please feel free to contact KUNOICHI support team.', 'hakama' ) ?>
 					</p>
 					<p class="text-center">
-						<a class="btn btn-outline-secondary" href="<?php echo get_post_type_archive_link( 'thread' ) ?>">
-							<?php esc_html_e( 'Get Support', 'hakama' ) ?>
-						</a>
+						<?php if ( is_user_logged_in() ) : ?>
+							<?php if ( function_exists( 'hamethread_button' ) ) {
+								hamethread_button( 0, __( 'Contact To Support', 'hakama' ) );
+							} ?>
+						<?php else : ?>
+							<a class="btn btn-outline-secondary btn-block" href="<?php hakama_login_url( $_SERVER['REQUEST_URI'] ) ?>">
+								<?php esc_html_e( 'Login to Get Support', 'hakama' ) ?>
+							</a>
+						<?php endif; ?>
 					</p>
 					
 				</div>

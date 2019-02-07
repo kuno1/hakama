@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2019-01-30 15:49+0900\n"
+"POT-Creation-Date: 2019-02-07 19:26+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -177,6 +177,16 @@ msgstr ""
 msgid "Continue Shopping"
 msgstr ""
 
+#: hooks/comment.php:21
+msgid "e.g. Let me know how to use this plugin."
+msgstr ""
+
+#: hooks/comment.php:24
+msgid ""
+"e.g. Today, I bought this plugin. Would you let me know how to install and "
+"how to use it?"
+msgstr ""
+
 #: hooks/menu.php:11
 msgctxt "admin"
 msgid "Global menu."
@@ -237,11 +247,7 @@ msgstr ""
 msgid "This brand has no content yet."
 msgstr ""
 
-#: single-brand.php:48
-msgid "Business Information"
-msgstr ""
-
-#: single-brand.php:54
+#: single-brand.php:68
 msgid "This brand has no business information yet."
 msgstr ""
 
@@ -310,8 +316,12 @@ msgid ""
 "Need platform support? Please feel free to contact KUNOICHI support team."
 msgstr ""
 
-#: template-parts/after-main-thread.php:92
-msgid "Get Support"
+#: template-parts/after-main-thread.php:93
+msgid "Contact To Support"
+msgstr ""
+
+#: template-parts/after-main-thread.php:97
+msgid "Login to Get Support"
 msgstr ""
 
 #: template-parts/before-main-faq.php:15

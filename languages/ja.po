@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-01-30 15:49+0900\n"
-"PO-Revision-Date: 2019-01-30 15:50+0900\n"
+"POT-Creation-Date: 2019-02-07 19:26+0900\n"
+"PO-Revision-Date: 2019-02-07 19:27+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -167,6 +167,17 @@ msgstr "デモURL"
 msgid "Continue Shopping"
 msgstr "ショッピングを続ける"
 
+#: hooks/comment.php:21
+msgid "e.g. Let me know how to use this plugin."
+msgstr "例・このプラグインの利用方法を教えてください。"
+
+#: hooks/comment.php:24
+msgid ""
+"e.g. Today, I bought this plugin. Would you let me know how to install and "
+"how to use it?"
+msgstr ""
+"例・今日プラグインを購入しました。インストール方法と使い方を教えてください。"
+
 #: hooks/menu.php:11
 msgctxt "admin"
 msgid "Global menu."
@@ -229,11 +240,7 @@ msgstr "プロダクト"
 msgid "This brand has no content yet."
 msgstr "このブランドにはまだ商品がありません。"
 
-#: single-brand.php:48
-msgid "Business Information"
-msgstr "ビジネス情報"
-
-#: single-brand.php:54
+#: single-brand.php:68
 msgid "This brand has no business information yet."
 msgstr "このブランドにはビジネス情報が設定されていません。"
 
@@ -310,9 +317,13 @@ msgstr ""
 "プラットフォームによるサポートが必要ですか？　Kunoichiのサポートチームにお問"
 "い合わせください。"
 
-#: template-parts/after-main-thread.php:92
-msgid "Get Support"
-msgstr "サポートを受ける"
+#: template-parts/after-main-thread.php:93
+msgid "Contact To Support"
+msgstr "サポートにお問い合わせ"
+
+#: template-parts/after-main-thread.php:97
+msgid "Login to Get Support"
+msgstr "ログインしてサポートを受ける"
 
 #: template-parts/before-main-faq.php:15
 #, php-format
@@ -547,6 +558,9 @@ msgstr "ウィザード型ページ"
 #. Template Name of the plugin/theme
 msgid "Wide Page"
 msgstr "ワイドページ"
+
+#~ msgid "Business Information"
+#~ msgstr "ビジネス情報"
 
 #~ msgid "WordPress Admin"
 #~ msgstr "WordPress管理画面"
