@@ -47,7 +47,7 @@ global $product;
 	<a href="<?php echo add_query_arg( [ 'product-id' => get_the_ID() ], home_url( 'contact-author' ) ); ?>" class="btn btn-block btn-outline-secondary"><?php esc_html_e( 'Contact', 'hakama' ) ?></a>
 	
 	<p class="description text-muted mt-1">
-		<?php esc_html_e( 'If you want to contact to plugin\'s author, feel free to contact.', '' ) ?>
+		<?php esc_html_e( 'Do you have something to ask plugin/theme to? Feel free to contact.', 'hakama' ) ?>
 	</p>
 	
 </div>

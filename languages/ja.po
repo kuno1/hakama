@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-02-12 17:10+0900\n"
-"PO-Revision-Date: 2019-02-12 17:12+0900\n"
+"POT-Creation-Date: 2019-02-12 18:48+0900\n"
+"PO-Revision-Date: 2019-02-12 18:49+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -536,9 +536,10 @@ msgid "Contact"
 msgstr "コンタクト"
 
 #: template-parts/product-support.php:50
-msgid "If you want to contact to plugin's author, feel free to contact."
+msgid "Do you have something to ask plugin/theme to? Feel free to contact."
 msgstr ""
-"プラグインの作者にコンタクトを取りたい場合は、お気軽にお問い合わせください。"
+"プラグイン／テーマの作者にコンタクトを取りたい場合は、お気軽にお問い合わせく"
+"ださい。"
 
 #: woocommerce/checkout/form-checkout.php:27
 msgid "You must be logged in to checkout."
