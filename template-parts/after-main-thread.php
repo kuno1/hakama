@@ -60,7 +60,7 @@ $parent = hakama_document_parent();
 						<?php if ( function_exists( 'hamethread_button' ) ) : ?>
 							<?php if ( $parent && ! \Kunoichi\Makibishi::is_customer( $parent, get_current_user_id() ) ) : ?>
 								<a href="<?php the_permalink( $parent ) ?>" class="btn btn-primary btn-block">
-									<?php esc_html_e( 'Get Customer Support', 'hakama' ) ?>
+									<?php esc_html_e( 'Buy Product & Get Supported', 'hakama' ) ?>
 								</a>
 							<?php else : ?>
 								<?php hamethread_button( $parent, __( 'Start Thread', 'hakama' ) ); ?>

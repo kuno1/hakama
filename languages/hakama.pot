@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2019-02-07 19:26+0900\n"
+"POT-Creation-Date: 2019-02-12 17:10+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -296,7 +296,7 @@ msgid ""
 msgstr ""
 
 #: template-parts/after-main-thread.php:63
-msgid "Get Customer Support"
+msgid "Buy Product & Get Supported"
 msgstr ""
 
 #: template-parts/after-main-thread.php:66
@@ -511,6 +511,22 @@ msgstr ""
 msgid "See Support Forum"
 msgstr ""
 
+#: template-parts/product-support.php:37
+msgid "Every customer can make new thread to get support."
+msgstr ""
+
+#: template-parts/product-support.php:44
+msgid "Contact Author"
+msgstr ""
+
+#: template-parts/product-support.php:47
+msgid "Contact"
+msgstr ""
+
+#: template-parts/product-support.php:50
+msgid "If you want to contact to plugin's author, feel free to contact."
+msgstr ""
+
 #: woocommerce/checkout/form-checkout.php:27
 msgid "You must be logged in to checkout."
 msgstr ""
@@ -541,6 +557,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Wizard Page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Single Column"
 msgstr ""
 
 #. Template Name of the plugin/theme

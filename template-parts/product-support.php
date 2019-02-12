@@ -30,10 +30,24 @@ global $product;
 	<ul class="product-support-list nav flex-column  nav-pills">
 		<li class="nav-item">
 			<a href="<?php echo hakama_support_page( $product->get_id() ) ?>"
-			   class="btn btn-outline-secondary btn-block">
+			   class="btn btn-outline-secondary btn-block text-center">
 				<?php esc_html_e( 'See Support Forum', 'hakama' ) ?>
 			</a>
+			<div class="description text-muted mt-1">
+				<?php esc_html_e( 'Every customer can make new thread to get support.', 'hakama' ) ?>
+			</div>
 		</li>
 	</ul>
 
+	<h2 class="widget-title widget-product-contact">
+		<i class="far fa-envelope"></i>
+		<?php esc_html_e( 'Contact Author', 'hakama' ) ?>
+	</h2>
+	
+	<a href="<?php echo add_query_arg( [ 'product-id' => get_the_ID() ], home_url( 'contact-author' ) ); ?>" class="btn btn-block btn-outline-secondary"><?php esc_html_e( 'Contact', 'hakama' ) ?></a>
+	
+	<p class="description text-muted mt-1">
+		<?php esc_html_e( 'If you want to contact to plugin\'s author, feel free to contact.', '' ) ?>
+	</p>
+	
 </div>

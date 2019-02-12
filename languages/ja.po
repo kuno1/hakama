@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-02-07 19:26+0900\n"
-"PO-Revision-Date: 2019-02-07 19:27+0900\n"
+"POT-Creation-Date: 2019-02-12 17:10+0900\n"
+"PO-Revision-Date: 2019-02-12 17:12+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -295,8 +295,8 @@ msgstr ""
 "決済みのスレッドを見ることもできますし、新しくはじめることもできます！"
 
 #: template-parts/after-main-thread.php:63
-msgid "Get Customer Support"
-msgstr "カスタマーサポートを受ける"
+msgid "Buy Product & Get Supported"
+msgstr "購入してサポートを受ける"
 
 #: template-parts/after-main-thread.php:66
 msgid "Start Thread"
@@ -523,6 +523,23 @@ msgstr "このプロダクトにはドキュメントがありません。"
 msgid "See Support Forum"
 msgstr "サポートフォーラムを見る"
 
+#: template-parts/product-support.php:37
+msgid "Every customer can make new thread to get support."
+msgstr "お客様はサポートを受けるためにスレッドを始めることができます。"
+
+#: template-parts/product-support.php:44
+msgid "Contact Author"
+msgstr "作者に問い合わせ"
+
+#: template-parts/product-support.php:47
+msgid "Contact"
+msgstr "コンタクト"
+
+#: template-parts/product-support.php:50
+msgid "If you want to contact to plugin's author, feel free to contact."
+msgstr ""
+"プラグインの作者にコンタクトを取りたい場合は、お気軽にお問い合わせください。"
+
 #: woocommerce/checkout/form-checkout.php:27
 msgid "You must be logged in to checkout."
 msgstr "チェックアウトするためにはログインしてください。"
@@ -556,8 +573,15 @@ msgid "Wizard Page"
 msgstr "ウィザード型ページ"
 
 #. Template Name of the plugin/theme
+msgid "Single Column"
+msgstr "シングルカラム"
+
+#. Template Name of the plugin/theme
 msgid "Wide Page"
 msgstr "ワイドページ"
+
+#~ msgid "Get Customer Support"
+#~ msgstr "カスタマーサポートを受ける"
 
 #~ msgid "Business Information"
 #~ msgstr "ビジネス情報"
@@ -567,9 +591,6 @@ msgstr "ワイドページ"
 
 #~ msgid "Seller Dashboard"
 #~ msgstr "販売者ダッシュボード"
-
-#~ msgid "Contact"
-#~ msgstr "コンタクト"
 
 #~ msgid "All"
 #~ msgstr "すべて"
