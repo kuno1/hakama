@@ -9,6 +9,9 @@
   // Headings
   h1, h2, h3, h4, h5, h6{
     margin: 2.5em 0 1em;
+    &:first-child{
+      margin-top: 0;
+    }
   }
   h2{
     position: relative;
@@ -50,6 +53,11 @@
     color: #888;
   }
 
+  strong,
+  .bold{
+    color: #000;
+    font-weight: bold;
+  }
 
   .centering{
     @extend %header-centered;
@@ -68,12 +76,33 @@
     line-height: 1;
     font-size: 2rem;
     height: 2rem;
-    margin: 2rem 0;
+    margin: 3rem auto;
+    clear: both;
     &:before{
       color: $gray-300;
       content: "\f069";
       font-weight: 900;
       font-family: "Font Awesome 5 Free", sans-serif;
+    }
+    &.is-style-wide{
+      border-bottom: 1px solid #ddd;
+      width: 30%;
+      max-width: 600px;
+      &:before{
+        content: none;
+      }
+    }
+    &-is-style-dots:before{
+      color: $gray-600;
+    }
+  }
+
+  p.has-drop-cap:first-letter{
+    font-size: 4.5em;
+    line-height: 1;
+    margin: 0 .125em .125em 0;
+    @include media-breakpoint-down( sm ){
+      font-size: 3em;
     }
   }
 
@@ -131,4 +160,55 @@
     border-radius: 3px;
   }
 
+  // Pull quote
+  .wp-block-pullquote {
+    position: relative;
+    &:before{
+      content: "\f101";
+      font-weight: 900;
+      color: $gray-300;
+      font-size: 4em;
+      z-index: 1;
+      position: absolute;
+      font-family: "Font Awesome 5 Free", sans-serif;
+      top: 0;
+      left: 0;
+    }
+    blockquote {
+      position: relative;
+      z-index: 2;
+      border-left: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+
+  // Buttons
+  .wp-block-button{
+    &__link{
+      transition: color .3s $ease-in-out-sine, background-color .3s $ease-in-out-sine, border-color .3s $ease-in-out-sine;
+      background-color: $gray-700;
+      color: #fff;
+      border-color: $gray-700;
+      text-decoration: none;
+
+      &:hover {
+        border-color: $primary;
+        background-color: $primary;
+        text-decoration: none;
+      }
+    }
+    &.is-style-outline{
+      a{
+        background-color: transparent;
+        border-color: $gray-700;
+        color: $gray-700;
+        &:hover {
+          background-color: $gray-700;
+          color: #fff;
+          border-color: $gray-700;
+        }
+      }
+    }
+  }
 }

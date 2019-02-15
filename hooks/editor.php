@@ -54,3 +54,65 @@ add_action( 'admin_enqueue_scripts', function( $page ) {
 add_filter( 'get_user_option_admin_color', function( $result, $option, $user ) {
 	return 'midnight';
 }, 10, 3 );
+
+/**
+ * Add admin body class.
+ */
+add_filter( 'admin_body_class', function( $classes ) {
+	$screen = get_current_screen();
+	if ( 'post' !== $screen->base ) {
+		return $classes;
+	}
+	$classes = array_filter( explode( ' ', $classes ) );
+	global $post;
+	$classes[] = 'editing-post';
+	$classes[] = 'editing-type-' . $post->post_type;
+	$template = get_page_template_slug( $post->ID );
+	if ( $template ) {
+		$classes[] = 'editing-in-' . str_replace( '.php', '', $template );
+	}
+	return implode( ' ', $classes );
+} );
+
+/**
+ * Load editor style.
+ */
+add_action( 'enqueue_block_editor_assets', function() {
+	wp_enqueue_style( 'hakama-block-editor-style', get_stylesheet_directory_uri() . '/assets/css/editor-style.css', [ 'fontawesome5' ], wp_get_theme()->get( 'Version' ) );
+} );
+
+/**
+ * Add Blocks for editor.
+ */
+add_action( 'init', function() {
+	if ( ! function_exists( 'register_block_type' ) ) {
+		return;
+	}
+	foreach ( [
+		'section'   => [],
+		'container' => [],
+	] as $block => $setting ) {
+		$block_name = "hakama/{$block}";
+		$default = [];
+		foreach ( [
+			'style'  => 'css',
+			'script' => 'js',
+		] as $asset => $dir ) {
+			$rel_path = "/assets/{$dir}/block/{$block}.{$dir}";
+			$path = get_template_directory() . $rel_path;
+			if ( ! file_exists( $path ) ) {
+				continue;
+			}
+			$handle  = "hakama-block-{$block}";
+			$version = filemtime( $path );
+			$url     = get_template_directory_uri() . $rel_path;
+			if ( 'style' === $asset ) {
+				wp_register_style( $handle, $url, [], $version );
+			} else {
+				wp_register_script( $handle, $url, [ 'wp-i18n', 'wp-editor', 'wp-blocks' ], $version );
+			}
+			$default[ 'editor_' . $asset ] = $handle;
+		}
+		register_block_type( $block_name, array_merge( $default, $setting ) );
+	}
+} );

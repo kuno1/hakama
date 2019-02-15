@@ -1,9 +1,12 @@
-var gulp        = require('gulp'),
-    fs          = require('fs'),
-    $           = require('gulp-load-plugins')(),
-    pngquant    = require('imagemin-pngquant'),
-    eventStream = require('event-stream'),
-    bulkImport  = require('./src/gulp/bulk-importer');
+var gulp          = require('gulp'),
+    fs            = require('fs'),
+    $             = require('gulp-load-plugins')(),
+    pngquant      = require('imagemin-pngquant'),
+    eventStream   = require('event-stream'),
+    webpack       = require('webpack-stream'),
+    webpackBundle = require('webpack'),
+    named         = require('vinyl-named'),
+    bulkImport    = require('./src/gulp/bulk-importer');
 
 
 // Sassのタスク
@@ -29,7 +32,7 @@ gulp.task('sass', function () {
       outputStyle    : 'compressed',
       includePaths   : includePath
     }))
-    .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
+    .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%', 'ie >= 11']}))
     .pipe($.sourcemaps.write('./map'))
     .pipe(gulp.dest('./assets/css'));
 });
@@ -37,23 +40,43 @@ gulp.task('sass', function () {
 
 // Minify All
 gulp.task('js', function () {
+  let tmp = {};
   return gulp.src(['./src/js/**/*.js'])
     .pipe($.plumber({
       errorHandler: $.notify.onError('<%= error.message %>')
     }))
-    .pipe($.sourcemaps.init({
-      loadMaps: true
+    .pipe(named())
+    .pipe($.rename(function (path) {
+      tmp[path.basename] = path.dirname;
+      console.log(tmp, path);
     }))
-    .pipe($.babel({
-      presets: ['env']
+    .pipe(webpack({
+      mode: 'production',
+      devtool: 'source-map',
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env'],
+                plugins: ['@babel/plugin-transform-react-jsx']
+              }
+            }
+          }
+        ]
+      }
+    }, webpackBundle))
+    .pipe($.rename(function (path) {
+      if ( tmp[path.basename] ) {
+        path.dirname = tmp[path.basename];
+      } else if ( '.map' === path.extname && tmp[path.basename.replace(/\.js$/, '')] ) {
+        path.dirname = tmp[path.basename.replace(/\.js$/, '')];
+      }
+      return path;
     }))
-	  .pipe($.uglify({
-		  output: {
-			  comments: /^!/
-		  }
-	  }))
-    .on('error', $.util.log)
-    .pipe($.sourcemaps.write('./map'))
     .pipe(gulp.dest('./assets/js/'));
 });
 
@@ -75,7 +98,6 @@ gulp.task('copylib', function () {
         './node_modules/popper.js/dist/umd/popper.min.js.map'
       ])
         .pipe(gulp.dest('assets/js'))
-
     );
 });
 
@@ -97,15 +119,15 @@ gulp.task('watch', function () {
   gulp.watch([
     'src/scss/**/*.scss',
     '../../lib/hashboard/src/scss/**/*.scss',
-  ], ['sass']);
+  ], gulp.task('sass'));
   // JS
-  gulp.watch(['src/js/**/*.js'], ['js', 'jshint']);
+  gulp.watch(['src/js/**/*.js'], gulp.parallel('js', 'jshint'));
   // Minify Image
-  gulp.watch('src/img/**/*', ['imagemin']);
+  gulp.watch('src/img/**/*', gulp.task('imagemin') );
 });
 
 // Build
-gulp.task('build', ['copylib', 'jshint', 'js', 'sass', 'imagemin']);
+gulp.task('build', gulp.parallel('copylib', 'jshint', 'js', 'sass', 'imagemin'));
 
 // Default Tasks
-gulp.task('default', ['watch']);
+gulp.task('default', gulp.task('watch'));
