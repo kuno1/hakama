@@ -20,7 +20,6 @@ registerBlockType( 'hakama/container', {
   keywords: [ 'container', 'layout' ],
 
   edit({attributes, setAttributes, className}){
-    console.log( className );
     return (
         <div className={className}>
           <InnerBlocks templateLock={false}/>
