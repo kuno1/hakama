@@ -2,7 +2,7 @@ var gulp          = require('gulp'),
     fs            = require('fs'),
     $             = require('gulp-load-plugins')(),
     pngquant      = require('imagemin-pngquant'),
-    eventStream   = require('event-stream'),
+    mergeStream   = require('merge-stream'),
     webpack       = require('webpack-stream'),
     webpackBundle = require('webpack'),
     named         = require('vinyl-named'),
@@ -90,7 +90,7 @@ gulp.task('jshint', function () {
 
 // Build modernizr
 gulp.task('copylib', function () {
-	return eventStream.merge(
+	return mergeStream(
 	  gulp.src([
 	    './node_modules/bootstrap/dist/js/bootstrap.min.js',
         './node_modules/bootstrap/dist/js/bootstrap.min.js.map',
