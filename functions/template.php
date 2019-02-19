@@ -97,6 +97,17 @@ function hakama_archive_title() {
 }
 
 /**
+ * Trim each line and remove empty line to avoid 'the_content' filter.
+ *
+ * @param string $string
+ *
+ * @return string
+ */
+function hakama_avoid_the_content( $string ) {
+	return implode( "\n", array_filter( array_map( 'trim', explode( "\n", $string ) ) ) );
+}
+
+/**
  * Render pagination
  *
  * @param null|WP_Query $query

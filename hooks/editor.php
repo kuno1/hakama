@@ -91,6 +91,21 @@ add_action( 'init', function() {
 	foreach ( [
 		'section'   => [],
 		'container' => [],
+		'blogs'     => [
+			'attributes' => [
+				'category' => [
+					'type'    => 'int',
+					'default' => 0,
+				],
+				'limit' => [
+					'type'    => 'int',
+					'default' => 3,
+				],
+			],
+			'render_callback' => function( $attributes = [], $content = '' ) {
+				return hakama_avoid_the_content( hakama_template( 'block', 'blogs', $attributes, false ) );
+			}
+		],
 	] as $block => $setting ) {
 		$block_name = "hakama/{$block}";
 		$default = [];
@@ -109,7 +124,7 @@ add_action( 'init', function() {
 			if ( 'style' === $asset ) {
 				wp_register_style( $handle, $url, [], $version );
 			} else {
-				wp_register_script( $handle, $url, [ 'wp-i18n', 'wp-editor', 'wp-blocks' ], $version );
+				wp_register_script( $handle, $url, [ 'wp-i18n', 'wp-editor', 'wp-blocks', 'wp-components' ], $version );
 			}
 			$default[ 'editor_' . $asset ] = $handle;
 		}

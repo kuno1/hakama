@@ -18,12 +18,18 @@
     font-size: 0.7rem;
     border-top-right-radius: $card-border-radius;
   }
+  &-meta{
+    line-height: 1.8;
+  }
   &-card{
 
   }
   &-title{
     .fa-lock{
       color: $brand-yellow;
+    }
+    h2#{&}:after{
+      content: none;
     }
   }
   &-products{

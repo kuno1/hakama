@@ -63,10 +63,6 @@ if ( ( $on_sale = $product && $product->is_on_sale() ) ) {
 				?>
 			</p>
 
-			<div class="card-text text-muted">
-				<?php the_excerpt() ?>
-			</div>
-		
 			<?php switch ( get_post_type() ) : case 'product': ?>
 				<p>
 					<?php woocommerce_template_loop_add_to_cart() ?>

@@ -31,3 +31,18 @@ $align-padding: 20px;
   display: block;
   margin: $align-padding auto;
 }
+
+article{
+  a:link{
+    text-decoration: underline;
+    color: $info;
+  }
+  a:visited{
+    text-decoration: underline;
+    color: $primary;
+  }
+  a:hover, a:active{
+    text-decoration: none;
+    color: $danger;
+  }
+}

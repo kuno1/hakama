@@ -13,9 +13,36 @@
       margin-top: 0;
     }
   }
+
+  h1{
+    font-weight: normal;
+    font-family: $font-family-serif;
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+    small{
+      display: block;
+      color: $gray-400;
+      margin-top: 0.5em;
+      font-size: 0.5em;
+    }
+    position: relative;
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left :50%;
+      transform: translateX( -50% );
+      height: 3px;
+      width: 20%;
+      max-width: 150px;
+      background-color: #000;
+      border-radius: 2px;
+    }
+  }
+
   h2{
     position: relative;
-    padding-bottom: 13px;
+    padding-bottom: 23px;
     &:after{
       position: absolute;
       content: "";
@@ -25,6 +52,13 @@
       right: 0;
       bottom: 0;
       @include moving-gradient( $color1: #f9d423, $color2: #e14fad, $color3: #fffc24 );
+    }
+    &[style*=center]:after{
+      left: 50%;
+      right: auto;
+      width: 30%;
+      max-width: 200px;
+      transform: translateX( -50% );
     }
   }
   h3{
@@ -39,6 +73,12 @@
       left: 0;
       bottom: 0;
       @include moving-gradient( $color1: #f9d423, $color2: #e14fad, $color3: #fffc24 );
+    }
+    &[style*=center]{
+      color: $primary;
+      &:after{
+        content: none;
+      }
     }
   }
   h4{
@@ -183,6 +223,19 @@
     }
   }
 
+  // Label
+  .label{
+    display: inline-block;
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+    color: #fff;
+    background-color: $danger;
+    font-size: 0.85em;
+    padding: 0.25em 0.5em;
+    font-family: $font-family-monospace;
+    border-radius: 2px;
+  }
+
   // Buttons
   .wp-block-button{
     &__link{
@@ -191,11 +244,22 @@
       color: #fff;
       border-color: $gray-700;
       text-decoration: none;
-
       &:hover {
         border-color: $primary;
         background-color: $primary;
         text-decoration: none;
+      }
+    }
+    &.is-style-squared{
+      a{
+        background-color: $info;
+        border: 2px solid $info;
+        color: #fff;
+        &:hover {
+          background-color: transparent;
+          color: $info;
+          border-color: $info;
+        }
       }
     }
     &.is-style-outline{

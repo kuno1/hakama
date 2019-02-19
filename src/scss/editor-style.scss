@@ -20,7 +20,8 @@ $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/im
      padding: 0 20px;
     }
     &__layout{
-      padding: 0 28px;
+      font-family: $font-family-sans-serif;
+      padding: 0 46px;
       @include post-styles();
       .wp-block {
         max-width: 1180px;

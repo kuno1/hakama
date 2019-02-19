@@ -2,5 +2,14 @@ $enable-gradients: true;
 
 $primary: #a46497;
 
+// Link color.
+$link-color: $primary;
+$link-hover-color: lighten( $primary, 10 );
+$link-decoration: underline;
+$link-hover-decoration: none;
+
+// Typography
+$font-family-serif: Georgia, 游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN","Hiragino Mincho Pro",HGS明朝E,メイリオ,Meiryo,serif;
+
 // Modal
 $modal-content-border-radius: 0;
