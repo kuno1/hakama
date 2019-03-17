@@ -99,6 +99,9 @@
     }
     a{
       text-align: left;
+      &.btn{
+        text-align: center;
+      }
     }
   }
 }
