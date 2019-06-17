@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2019-02-12 18:48+0900\n"
+"POT-Creation-Date: 2019-06-17 20:32+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -40,31 +40,33 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer-entry.php:13
-msgid "Join Newsletter for Early Access!"
+#: footer-entry.php:14
+msgid "Subscribe to our Newsletter!"
 msgstr ""
 
-#: footer-entry.php:16
-msgid "Get interested? Please subscribe news letter and get updated!"
+#: footer-entry.php:18
+msgid ""
+"Subscribe to our newsletter for the latest updates and early access our new "
+"features."
 msgstr ""
 
-#: footer-entry.php:21
+#: footer-entry.php:23
 msgid "Email"
 msgstr ""
 
-#: footer-entry.php:26
+#: footer-entry.php:28
 msgid "Language"
 msgstr ""
 
-#: footer-entry.php:45
+#: footer-entry.php:47
 msgid "First Name"
 msgstr ""
 
-#: footer-entry.php:50
+#: footer-entry.php:52
 msgid "Last Name"
 msgstr ""
 
-#: footer-entry.php:78
+#: footer-entry.php:80
 msgid "Subscribe!"
 msgstr ""
 
@@ -107,7 +109,7 @@ msgstr ""
 msgid "Archives: %s"
 msgstr ""
 
-#: functions/template.php:133
+#: functions/template.php:144
 msgid "Pagination."
 msgstr ""
 
@@ -141,35 +143,15 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: hooks/admin-product-meta.php:11
-msgid "WordPress Requirements"
-msgstr ""
-
 #: hooks/admin-product-meta.php:13
-msgid "Enter required version. No minor version required. e.g. 4.9"
-msgstr ""
-
-#: hooks/admin-product-meta.php:16 template-parts/product-meta.php:17
-msgid "Required WordPress Version"
-msgstr ""
-
-#: hooks/admin-product-meta.php:20 template-parts/product-meta.php:18
-msgid "Tested Up To"
-msgstr ""
-
-#: hooks/admin-product-meta.php:24 template-parts/product-meta.php:19
-msgid "Required PHP Version"
-msgstr ""
-
-#: hooks/admin-product-meta.php:40
 msgid "Demo Setting"
 msgstr ""
 
-#: hooks/admin-product-meta.php:43
+#: hooks/admin-product-meta.php:16
 msgid "Enter demo URL for your theme/plugin."
 msgstr ""
 
-#: hooks/admin-product-meta.php:47
+#: hooks/admin-product-meta.php:20
 msgid "Demo URL"
 msgstr ""
 
@@ -265,7 +247,7 @@ msgid "Get Supported for %s."
 msgstr ""
 
 #: template-parts/after-main-thread.php:18
-msgid "Market Place Support."
+msgid "Marketplace Support."
 msgstr ""
 
 #: template-parts/after-main-thread.php:32
@@ -277,7 +259,7 @@ msgstr ""
 
 #: template-parts/after-main-thread.php:34
 msgid ""
-"These documents are for Kunoichi Market Place. Feel free to make request for "
+"These documents are for Kunoichi Marketplace. Feel free to make request for "
 "what you want to know!"
 msgstr ""
 
@@ -441,13 +423,18 @@ msgstr ""
 
 #: template-parts/form-register.php:26
 msgid ""
-"To become seller, you need Kunoichi account. Please sign up and come back "
-"this page again!"
+"First, create Kunoichi account. Then you will need to connect the Kunoichi "
+"account with your Stripe account."
 msgstr ""
 
 #: template-parts/form-register.php:33
 #, php-format
-msgid "Do you have account? Please <a href=\"%s\">login</a>."
+msgid "Do you have Kunoichi account? Please <a href=\"%s\">login</a>."
+msgstr ""
+
+#: template-parts/form-register.php:49
+#, php-format
+msgid "You are logged in as %s."
 msgstr ""
 
 #: template-parts/form-register.php:50
@@ -483,11 +470,11 @@ msgstr ""
 msgid "0 comment"
 msgstr ""
 
-#: template-parts/loop.php:76
+#: template-parts/loop.php:72
 msgid "Detail"
 msgstr ""
 
-#: template-parts/loop.php:84
+#: template-parts/loop.php:80
 msgid "Read More"
 msgstr ""
 
@@ -499,8 +486,20 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
+#: template-parts/product-meta.php:17
+msgid "Required WordPress Version"
+msgstr ""
+
 #: template-parts/product-meta.php:17 template-parts/product-meta.php:19
 msgid " and over"
+msgstr ""
+
+#: template-parts/product-meta.php:18
+msgid "Tested Up To"
+msgstr ""
+
+#: template-parts/product-meta.php:19
+msgid "Required PHP Version"
 msgstr ""
 
 #: template-parts/product-support.php:23

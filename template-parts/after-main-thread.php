@@ -15,7 +15,7 @@ $parent = hakama_document_parent();
 		if ( $parent ) {
 			echo esc_html( sprintf( __( 'Get Supported for %s.', 'hakama' ), get_the_title( $parent ) ) );
 		} else {
-			esc_html_e( 'Market Place Support.', 'hakama' );
+			esc_html_e( 'Marketplace Support.', 'hakama' );
 		}
 		?>
 	</p>
@@ -31,7 +31,7 @@ $parent = hakama_document_parent();
 						<?php if ( $parent ) : ?>
 							<?php printf( esc_html__( 'You may find helpful documents for %s. And if not, please feel free to request.', 'hakama' ), esc_html( get_the_title( $parent ) ) )  ?>
 						<?php else : ?>
-							<?php esc_html_e( 'These documents are for Kunoichi Market Place. Feel free to make request for what you want to know!', 'hakama' ) ?>
+							<?php esc_html_e( 'These documents are for Kunoichi Marketplace. Feel free to make request for what you want to know!', 'hakama' ) ?>
 						<?php endif; ?>
 					</p>
 					<p class="text-center">

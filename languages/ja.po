@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-02-12 18:48+0900\n"
-"PO-Revision-Date: 2019-02-12 18:49+0900\n"
+"POT-Creation-Date: 2019-06-17 20:32+0900\n"
+"PO-Revision-Date: 2019-06-17 20:32+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -28,33 +28,35 @@ msgstr[0] "%2$sへの%1$s件の反応"
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: footer-entry.php:13
-msgid "Join Newsletter for Early Access!"
-msgstr "ニュースレターを購読"
+#: footer-entry.php:14
+msgid "Subscribe to our Newsletter!"
+msgstr "ニュースレター購読"
 
-#: footer-entry.php:16
-msgid "Get interested? Please subscribe news letter and get updated!"
+#: footer-entry.php:18
+msgid ""
+"Subscribe to our newsletter for the latest updates and early access our new "
+"features."
 msgstr ""
-"興味を持っていただけましたか？　ニュースレターを購読して、最新の情報を受け"
-"取ってください！"
+"最新情報や新機能をいち早く知るためにもニュースレターの購読をお願いいたしま"
+"す。"
 
-#: footer-entry.php:21
+#: footer-entry.php:23
 msgid "Email"
 msgstr "メールアドレス"
 
-#: footer-entry.php:26
+#: footer-entry.php:28
 msgid "Language"
 msgstr "言語"
 
-#: footer-entry.php:45
+#: footer-entry.php:47
 msgid "First Name"
 msgstr "名"
 
-#: footer-entry.php:50
+#: footer-entry.php:52
 msgid "Last Name"
 msgstr "姓"
 
-#: footer-entry.php:78
+#: footer-entry.php:80
 msgid "Subscribe!"
 msgstr "購読！"
 
@@ -97,7 +99,7 @@ msgstr "\"%s\" の検索結果"
 msgid "Archives: %s"
 msgstr "アーカイブ: %s"
 
-#: functions/template.php:133
+#: functions/template.php:144
 msgid "Pagination."
 msgstr "ページネーション。"
 
@@ -131,35 +133,15 @@ msgstr "カート"
 msgid "Menu"
 msgstr "メニュー"
 
-#: hooks/admin-product-meta.php:11
-msgid "WordPress Requirements"
-msgstr "WordPressの要件"
-
 #: hooks/admin-product-meta.php:13
-msgid "Enter required version. No minor version required. e.g. 4.9"
-msgstr "必須バージョンを入力。マイナーバージョンは不要です。例・4.9"
-
-#: hooks/admin-product-meta.php:16 template-parts/product-meta.php:17
-msgid "Required WordPress Version"
-msgstr "必須WordPressバージョン"
-
-#: hooks/admin-product-meta.php:20 template-parts/product-meta.php:18
-msgid "Tested Up To"
-msgstr "テスト済みバージョン"
-
-#: hooks/admin-product-meta.php:24 template-parts/product-meta.php:19
-msgid "Required PHP Version"
-msgstr "必須PHPバージョン"
-
-#: hooks/admin-product-meta.php:40
 msgid "Demo Setting"
 msgstr "デモ設定"
 
-#: hooks/admin-product-meta.php:43
+#: hooks/admin-product-meta.php:16
 msgid "Enter demo URL for your theme/plugin."
 msgstr "テーマ/プラグインのデモURLを入力してください。"
 
-#: hooks/admin-product-meta.php:47
+#: hooks/admin-product-meta.php:20
 msgid "Demo URL"
 msgstr "デモURL"
 
@@ -258,7 +240,7 @@ msgid "Get Supported for %s."
 msgstr "%s のカスタマーサポートを受ける。"
 
 #: template-parts/after-main-thread.php:18
-msgid "Market Place Support."
+msgid "Marketplace Support."
 msgstr "マーケットプレースサポート。"
 
 #: template-parts/after-main-thread.php:32
@@ -272,7 +254,7 @@ msgstr ""
 
 #: template-parts/after-main-thread.php:34
 msgid ""
-"These documents are for Kunoichi Market Place. Feel free to make request for "
+"These documents are for Kunoichi Marketplace. Feel free to make request for "
 "what you want to know!"
 msgstr ""
 "これらのドキュメントはKunoichi マーケットプレースのものです。気になることが"
@@ -448,16 +430,23 @@ msgstr "あなたのビジネス情報"
 
 #: template-parts/form-register.php:26
 msgid ""
-"To become seller, you need Kunoichi account. Please sign up and come back "
-"this page again!"
+"First, create Kunoichi account. Then you will need to connect the Kunoichi "
+"account with your Stripe account."
 msgstr ""
-"販売者になるには、Kunoichiアカウントが必要です。登録のうえ、このページにお戻"
-"りください！"
+"まずは Kunoichi アカウントを作成してください。その後、Kunoichi アカウントを "
+"Stripe アカウントに接続する必要があります。"
 
 #: template-parts/form-register.php:33
 #, php-format
-msgid "Do you have account? Please <a href=\"%s\">login</a>."
-msgstr "アカウントをお持ちですか？　<a href=\"%s\">ログイン</a>してください。"
+msgid "Do you have Kunoichi account? Please <a href=\"%s\">login</a>."
+msgstr ""
+"Kunoichi アカウントをお持ちですか？　<a href=\"%s\">ログイン</a>してくださ"
+"い。"
+
+#: template-parts/form-register.php:49
+#, php-format
+msgid "You are logged in as %s."
+msgstr "%s としてログインしています。"
 
 #: template-parts/form-register.php:50
 msgid ""
@@ -495,11 +484,11 @@ msgstr "セール中！"
 msgid "0 comment"
 msgstr "0コメント"
 
-#: template-parts/loop.php:76
+#: template-parts/loop.php:72
 msgid "Detail"
 msgstr "くわしく"
 
-#: template-parts/loop.php:84
+#: template-parts/loop.php:80
 msgid "Read More"
 msgstr "続きを読む"
 
@@ -511,9 +500,21 @@ msgstr "作者"
 msgid "Files"
 msgstr "ファイル"
 
+#: template-parts/product-meta.php:17
+msgid "Required WordPress Version"
+msgstr "必須WordPressバージョン"
+
 #: template-parts/product-meta.php:17 template-parts/product-meta.php:19
 msgid " and over"
 msgstr "以上"
+
+#: template-parts/product-meta.php:18
+msgid "Tested Up To"
+msgstr "テスト済みバージョン"
+
+#: template-parts/product-meta.php:19
+msgid "Required PHP Version"
+msgstr "必須PHPバージョン"
 
 #: template-parts/product-support.php:23
 msgid "This product has no document!"
@@ -580,6 +581,27 @@ msgstr "シングルカラム"
 #. Template Name of the plugin/theme
 msgid "Wide Page"
 msgstr "ワイドページ"
+
+#~ msgid "Join Newsletter for Early Access!"
+#~ msgstr "ニュースレターを購読"
+
+#~ msgid "Get interested? Please subscribe news letter and get updated!"
+#~ msgstr ""
+#~ "興味を持っていただけましたか？　ニュースレターを購読して、最新の情報を受け"
+#~ "取ってください！"
+
+#~ msgid "WordPress Requirements"
+#~ msgstr "WordPressの要件"
+
+#~ msgid "Enter required version. No minor version required. e.g. 4.9"
+#~ msgstr "必須バージョンを入力。マイナーバージョンは不要です。例・4.9"
+
+#~ msgid ""
+#~ "To become seller, you need Kunoichi account. Please sign up and come back "
+#~ "this page again!"
+#~ msgstr ""
+#~ "販売者になるには、Kunoichiアカウントが必要です。登録のうえ、このページにお"
+#~ "戻りください！"
 
 #~ msgid "Get Customer Support"
 #~ msgstr "カスタマーサポートを受ける"
