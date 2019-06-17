@@ -8,12 +8,14 @@
 				  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
 				  target="_blank" novalidate>
 				<div id="mc_embed_signup_scroll">
+					
 					<h2 class="submission-title">
 						<i class="far fa-envelope-open"></i><br/>
-						<?php esc_html_e( 'Join Newsletter for Early Access!', 'hakama' ) ?>
+						<?php esc_html_e( 'Subscribe to our Newsletter!', 'hakama' ) ?>
 					</h2>
+					
 					<p class="submission-lead">
-						<?php esc_html_e( 'Get interested? Please subscribe news letter and get updated!', 'hakama' ) ?>
+						<?php esc_html_e( 'Subscribe to our newsletter for the latest updates and early access our new features.', 'hakama' ) ?>
 					</p>
 
 					<div class="form-row">

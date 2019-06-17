@@ -23,14 +23,14 @@
 	<?php elseif ( ! current_user_can( 'read' ) ) : ?>
 
 		<p class="seller-submission-description">
-			<?php esc_html_e( 'To become seller, you need Kunoichi account. Please sign up and come back this page again!', 'hakama' ) ?>
+			<?php esc_html_e( 'First, create Kunoichi account. Then you will need to connect the Kunoichi account with your Stripe account.', 'hakama' ) ?>
 		</p>
 		<p class="text-center">
 			<a class="btn btn-outline-primary btn-lg"
 			   href="<?php echo hakama_registration_url( get_permalink() ) ?>"><?php esc_html_e( 'Sign Up', 'hakama' ) ?></a>
 		</p>
 		<p class="text-center text-muted">
-			<?php echo wp_kses_post( sprintf( __( 'Do you have account? Please <a href="%s">login</a>.', 'hakama' ), hakama_login_url( get_permalink() ) ) ) ?>
+			<?php echo wp_kses_post( sprintf( __( 'Do you have Kunoichi account? Please <a href="%s">login</a>.', 'hakama' ), hakama_login_url( get_permalink() ) ) ) ?>
 		</p>
 	
 	<?php else : ?>
@@ -44,9 +44,9 @@
 		
 		
 		<?php if ( ! $is_connected ) : ?>
-
-
+		
 			<p class="seller-submission-description">
+				<?php echo wp_kses_post( sprintf( __( 'You are logged in as %s.', 'hakama' ), esc_html( wp_get_current_user()->display_name ) ) ); ?>
 				<?php esc_html_e( 'Please connect stripe account to prove your business entity. If you don\'t have one, you can create new account through the connection process.', 'hakama' ) ?>
 			</p>
 
