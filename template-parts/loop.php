@@ -39,7 +39,14 @@ if ( ( $on_sale = $product && $product->is_on_sale() ) ) {
 						<i class="fa fa-calendar"></i> <?php the_time( get_option( 'date_format' ) ) ?>
 					</span>
 					<span class="d-inline-block">
-						<i class="fa fa-user"></i> <?php the_author(); ?>
+						<i class="fa fa-user"></i> <?php
+							$brand = hakama_get_author_brand();
+							if ( $brand ) {
+								echo esc_html( get_the_title( $brand ) );
+							} else {
+								the_author();
+							}
+						?>
 					</span>
 					<span class="d-inline-block">
 						<i class="far fa-comment"></i> <?php comments_number( __( '0 comment', 'hakama' ) ) ?>

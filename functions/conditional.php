@@ -36,3 +36,14 @@ function hakama_document_parent() {
 function hakama_is_jp( $user_id = 0 ) {
 	return 'ja' === get_user_locale( $user_id );
 }
+
+/**
+ * Detect if post author is admin.
+ *
+ * @param null|int|WP_Post $post
+ * @return bool
+ */
+function hakama_author_is_admin( $post = null ) {
+	$post = get_post( $post );
+	return user_can( $post->post_author, 'edit_others_posts' );
+}

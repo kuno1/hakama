@@ -1,7 +1,7 @@
 <ul class="entry-meta-data">
 	<li>
-		<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
-		<?php the_author_posts_link(); ?>
+		<?php echo hakama_post_author_icon();  ?>
+		<?php hakama_the_author(); ?>
 	</li>
 	<?php if ( 'private' === get_post_status() ) : ?>
 		<li>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-06-17 20:32+0900\n"
-"PO-Revision-Date: 2019-06-17 20:32+0900\n"
+"PO-Revision-Date: 2019-06-19 17:41+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -87,7 +87,7 @@ msgstr "ブログ"
 #: functions/product.php:151 template-parts/after-main-thread.php:29
 #: template-parts/product-support.php:8
 msgid "Documentation"
-msgstr "ドキュメンテーション"
+msgstr "ドキュメント"
 
 #: functions/template.php:88
 #, php-format

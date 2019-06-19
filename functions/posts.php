@@ -84,3 +84,76 @@ function hakama_the_loop_type( $before = '', $after = '', $post = null ) {
 		echo $before . esc_html( $string ) . $after;
 	}
 }
+
+/**
+ * Get author's brand.
+ *
+ * @return WP_Post
+ */
+function hakama_get_author_brand( $post = null ) {
+	$post   = get_post( $post );
+	if ( 'brand' === get_post_type( $post->post_parent ) ) {
+		$brand = get_post( $post->post_parent );
+		if ( $brand ) {
+			return $brand;
+		}
+	}
+	$brands = \Kunoichi\Makibishi\Models\Brand::get_brands( $post->post_author );
+	foreach ( $brands as $brand ) {
+		return $brand;
+	}
+	return null;
+}
+
+/**
+ * Get brand link.
+ *
+ * @param null|int|WP_Post $post
+ *
+ * @return string
+ */
+function hakama_get_author_brand_link( $post = null ) {
+	if ( hakama_author_is_admin( $post ) ) {
+		return 'Kunoichi';
+	} else {
+		$brand = hakama_get_author_brand( $post );
+		return ! $brand ? '' : sprintf( '<a href="%s">%s</a>', get_permalink( $brand ), get_the_title( $brand ) );
+	}
+}
+
+/**
+ * Get avatar for post author.
+ *
+ * @param null|int|WP_Post $post
+ */
+function hakama_post_author_icon( $post = null ) {
+	$post           = get_post( $post );
+	if ( hakama_author_is_admin( $post ) ) {
+		return sprintf( '<img src="%s/assets/img/kunoichi-girl-thumbnail.png" alt="Kunoichi" class="avatar"/>', get_stylesheet_directory_uri() );
+	}
+	$brand          = hakama_get_author_brand( $post );
+	$thumbnail_size = get_option( 'thumbnail_size_w', 150 );
+	$avatar         = get_avatar( $post->post_author, $thumbnail_size );
+	if ( ! $brand ) {
+		return $avatar;
+	}
+	$thumbnail = get_the_post_thumbnail( $brand, 'thumbnail', [
+		'class' => 'avatar',
+	] );
+	return $thumbnail ?: $avatar;
+}
+
+/**
+ * Display the author's name.
+ *
+ * @param null|int|WP_Post $post
+ */
+function hakama_the_author( $post = null ) {
+	$post = get_post( $post );
+	$brand_link = hakama_get_author_brand_link();
+	if ( $brand_link ) {
+		echo wp_kses_post( sprintf( __( '%1$s from %2$s', 'hakama' ), get_the_author_posts_link(), $brand_link ) );
+	} else {
+		the_author_posts_link();
+	}
+}
