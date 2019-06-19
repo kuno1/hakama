@@ -80,6 +80,7 @@
 
   &-content{
     @include post-styles();
+
     line-height: 1.8;
     &:after{
       content: "";

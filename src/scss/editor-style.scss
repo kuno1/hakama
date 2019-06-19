@@ -23,6 +23,7 @@ $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/im
       font-family: $font-family-sans-serif;
       padding: 0 46px;
       @include post-styles();
+      @include link-style();
       .wp-block {
         max-width: 1180px;
         @at-root .editing-in-page-1column &{

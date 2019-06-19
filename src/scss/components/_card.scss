@@ -1,7 +1,7 @@
 .card{
 
   &.on-sale{
-    animation: keyframe-shadow 2s $ease-in-out-sine infinite;
+    // box-shadow: 0 0 10px transparentize( white, .4 );
   }
   &-price{
     margin-bottom: 0.5em;

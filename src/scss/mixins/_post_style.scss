@@ -1,11 +1,4 @@
-@mixin post-styles(){
-
-  & > *:first-child{
-    margin-top: 0;
-  }
-
-  font-weight: 200;
-
+@mixin link-style(){
   // inline links.
   a:not([class]){
     &:link {
@@ -22,6 +15,16 @@
       color: $link-color;
     }
   }
+}
+
+@mixin post-styles(){
+
+  font-weight: 200;
+
+  & > *:first-child{
+    margin-top: 0;
+  }
+
 
   // Headings
   h1, h2, h3, h4, h5, h6{
