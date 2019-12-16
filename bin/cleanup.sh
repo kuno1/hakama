@@ -3,7 +3,7 @@
 set -e
 
 # Install packages.
-composer install --no-dev --no-suggest
+composer install --prefer-dist --no-suggest
 
 # Install NPM.
 npm install
