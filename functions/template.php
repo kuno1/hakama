@@ -39,10 +39,11 @@ function hakama_template( $slug, $suffix = '', $args = [], $echo = true ) {
  * Trim html of short code.
  *
  * @param string $string
+ * @param string $glue
  *
  * @return string
  */
-function hakama_trim( $string ) {
+function hakama_trim( $string, $glue = "\n" ) {
 	return implode( "\n", array_filter( array_map( function( $line ) {
 		return trim( $line );
 	}, explode( "\n", $string ) ) ) );
@@ -118,7 +119,7 @@ function hakama_pagination( $query = null ) {
 		$query = $wp_query;
 	}
 	$big = 999999999; // need an unlikely integer
-	
+
 	$pagination = paginate_links( [
 		'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 		'format'  => '?paged=%#%',
@@ -136,10 +137,10 @@ function hakama_pagination( $query = null ) {
 		if ( false !== strpos( $line, 'dots' ) ) {
 			$classes[] = 'disabled';
 		}
-		
+
 		$line = str_replace( 'page-numbers', 'page-link', $line );
 		return sprintf( '<li class="%s">%s</li>', implode( ' ', $classes ), $line );
 	}, explode( "\n", $pagination ) ) );
-	
+
 	echo sprintf( '<nav aria-label="%s"><ul class="pagination">%s</ul></nav>', esc_attr__( 'Pagination.', 'hakama' ), $pagination );
 }

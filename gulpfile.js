@@ -1,133 +1,178 @@
-var gulp          = require('gulp'),
-    fs            = require('fs'),
-    $             = require('gulp-load-plugins')(),
-    pngquant      = require('imagemin-pngquant'),
-    mergeStream   = require('merge-stream'),
-    webpack       = require('webpack-stream'),
-    webpackBundle = require('webpack'),
-    named         = require('vinyl-named'),
-    bulkImport    = require('./src/gulp/bulk-importer');
+const gulp = require( 'gulp' );
+const $ = require( 'gulp-load-plugins' )();
+const mozjpeg = require( 'imagemin-mozjpeg' );
+const pngquant = require( 'imagemin-pngquant' );
+const mergeStream = require( 'merge-stream' );
+const webpack = require( 'webpack-stream' );
+const webpackBundle = require( 'webpack' );
+const named = require( 'vinyl-named' );
+const bulkImport = require( './src/gulp/bulk-importer' );
 
+//
+// SCSS tasks
+// ================
+//
 
-// Sassのタスク
-gulp.task('sass', function () {
-  let includePath = [
-    './src/scss',
-    '../../lib/hashboard/src/scss',
-    '../../plugins/makibishi/vendor/hametuha/hashboard/src/scss',
-    './node_modules/bootstrap/scss'
-  ];
-  return gulp.src([
-    './src/scss/**/*.scss'
-  ])
-    .pipe($.plumber({
-      errorHandler: $.notify.onError('<%= error.message %>')
-    }))
-    .pipe($.sourcemaps.init({loadMaps: true}))
-    .pipe(bulkImport({
-      includePaths: includePath
-    }))
-    .pipe($.sass({
-      errLogToConsole: true,
-      outputStyle    : 'compressed',
-      includePaths   : includePath
-    }))
-    .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%', 'ie >= 11']}))
-    .pipe($.sourcemaps.write('./map'))
-    .pipe(gulp.dest('./assets/css'));
-});
+// Lint SCSS
+gulp.task( 'scss:lint', function() {
+	return gulp.src( './src/scss/**/*.scss' )
+		.pipe( $.plumber( {
+			errorHandler: $.notify.onError( 'Stylelint: <%= error.message %>' ),
+		} ) )
+		.pipe( $.stylelint( {
+			reporters: [
+				{
+					formatter: 'string',
+					console: true,
+				},
+			],
+		} ) );
+} );
 
+gulp.task( 'scss:generate', function() {
+	const includePath = [
+		'./src/scss',
+		'./vendor/hametuha/hashboard/src/scss',
+		'../../lib/hashboard/src/scss',
+		'../../plugins/makibishi/vendor/hametuha/hashboard/src/scss',
+		'./node_modules/bootstrap/scss',
+	];
+	return gulp.src( [
+		'./src/scss/**/*.scss',
+	] )
+		.pipe( $.plumber( {
+			errorHandler: $.notify.onError( 'SCSS: <%= error.message %>' ),
+		} ) )
+		.pipe( $.sourcemaps.init( { loadMaps: true } ) )
+		.pipe( bulkImport( {
+			includePaths: includePath,
+		} ) )
+		.pipe( $.sass( {
+			errLogToConsole: true,
+			outputStyle: 'compressed',
+			includePaths: includePath,
+		} ) )
+		.pipe( $.autoprefixer() )
+		.pipe( $.sourcemaps.write( './map' ) )
+		.pipe( gulp.dest( './assets/css' ) );
+} );
+
+gulp.task( 'scss', gulp.parallel( 'scss:generate', 'scss:lint' ) );
+
+//
+// JS Bundle
+// ===============
+//
 
 // Minify All
-gulp.task('js', function () {
-  let tmp = {};
-  return gulp.src(['./src/js/**/*.js'])
-    .pipe($.plumber({
-      errorHandler: $.notify.onError('<%= error.message %>')
-    }))
-    .pipe(named())
-    .pipe($.rename(function (path) {
-      tmp[path.basename] = path.dirname;
-      console.log(tmp, path);
-    }))
-    .pipe(webpack({
-      mode: 'production',
-      devtool: 'source-map',
-      module: {
-        rules: [
-          {
-            test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-env'],
-                plugins: ['@babel/plugin-transform-react-jsx']
-              }
-            }
-          }
-        ]
-      }
-    }, webpackBundle))
-    .pipe($.rename(function (path) {
-      if ( tmp[path.basename] ) {
-        path.dirname = tmp[path.basename];
-      } else if ( '.map' === path.extname && tmp[path.basename.replace(/\.js$/, '')] ) {
-        path.dirname = tmp[path.basename.replace(/\.js$/, '')];
-      }
-      return path;
-    }))
-    .pipe(gulp.dest('./assets/js/'));
-});
+gulp.task( 'js:bundle', function() {
+	const tmp = {};
+	return gulp.src( [ './src/js/**/*.js' ] )
+		.pipe( $.plumber( {
+			errorHandler: $.notify.onError( '<%= error.message %>' ),
+		} ) )
+		.pipe( named() )
+		.pipe( $.rename( function( path ) {
+			tmp[ path.basename ] = path.dirname;
+		} ) )
+		.pipe( webpack( require( './webpack.config.js' ), webpackBundle ) )
+		.pipe( $.rename( function( path ) {
+			if ( tmp[ path.basename ] ) {
+				path.dirname = tmp[ path.basename ];
+			} else if ( '.map' === path.extname && tmp[ path.basename.replace( /\.js$/, '' ) ] ) {
+				path.dirname = tmp[ path.basename.replace( /\.js$/, '' ) ];
+			}
+			return path;
+		} ) )
+		.pipe( gulp.dest( './assets/js/' ) );
+} );
 
+// ESLint
+gulp.task( 'js:eslint', function() {
+	return gulp.src( [ 'src/**/*.js' ] )
+		.pipe( $.eslint( { useEslintrc: true } ) )
+		.pipe( $.eslint.format() );
+} );
 
-// JS Hint
-gulp.task('jshint', function () {
-  return gulp.src(['src/**/*.js'])
-    .pipe($.eslint({ useEslintrc: true }))
-    .pipe($.eslint.format());
-});
+// JS task.
+gulp.task( 'js', gulp.parallel( 'js:bundle', 'js:eslint' ) );
 
-// Build modernizr
-gulp.task('copylib', function () {
+//
+// Copy Library
+// ==============
+//
+
+// Just copy.
+gulp.task( 'copy', function() {
 	return mergeStream(
-	  gulp.src([
-	    './node_modules/bootstrap/dist/js/bootstrap.min.js',
-        './node_modules/bootstrap/dist/js/bootstrap.min.js.map',
-        './node_modules/popper.js/dist/umd/popper.min.js',
-        './node_modules/popper.js/dist/umd/popper.min.js.map'
-      ])
-        .pipe(gulp.dest('assets/js'))
-    );
-});
+		gulp.src( [
+			'./node_modules/bootstrap/dist/js/bootstrap.min.js',
+			'./node_modules/bootstrap/dist/js/bootstrap.min.js.map',
+			'./node_modules/popper.js/dist/umd/popper.min.js',
+			'./node_modules/popper.js/dist/umd/popper.min.js.map',
+		] )
+			.pipe( gulp.dest( 'assets/js' ) )
+	);
+} );
+
+//
+// Image min
+// ==============
+//
+
+// SVG Minify and copy
+gulp.task( 'imagemin:svg', function() {
+	return gulp.src( './src/img/**/*.svg' )
+		.pipe( $.svgmin() )
+		.pipe( gulp.dest( './assets/icon ' ) );
+} );
 
 // Image min
-gulp.task('imagemin', function () {
-  return gulp.src('./src/img/**/*')
-    .pipe($.imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use        : [pngquant()]
-    }))
-    .pipe(gulp.dest('./assets/img'));
-});
+gulp.task( 'imagemin:misc', function() {
+	return gulp.src( './src/img/**/*' )
+		.pipe( $.imagemin( [
+			pngquant( {
+				quality: [ .65, .8 ],
+				speed: 1,
+				floyd: 0,
+			} ),
+			mozjpeg( {
+				quality: 85,
+				progressive: true,
+			} ),
+			$.imagemin.svgo(),
+			$.imagemin.optipng(),
+			$.imagemin.gifsicle(),
+		] ) )
+		.pipe( gulp.dest( './assets/img' ) );
+} );
 
+// minify all images.
+gulp.task( 'imagemin', gulp.parallel( 'imagemin:misc', 'imagemin:svg' ) );
 
-// watch
-gulp.task('watch', function () {
-  // Make SASS
-  gulp.watch([
-    'src/scss/**/*.scss',
-    '../../lib/hashboard/src/scss/**/*.scss',
-  ], gulp.task('sass'));
-  // JS
-  gulp.watch(['src/js/**/*.js'], gulp.parallel('js', 'jshint'));
-  // Minify Image
-  gulp.watch('src/img/**/*', gulp.task('imagemin') );
-});
+//
+// Watch
+// =================
+//
+gulp.task( 'watch', function() {
+	// Make SASS
+	gulp.watch( [
+		'src/scss/**/*.scss',
+		'../../lib/hashboard/src/scss/**/*.scss',
+	], gulp.task( 'scss' ) );
+	// JS
+	gulp.watch( [ 'src/js/**/*.js' ], gulp.task( 'js' ) );
+	// Minify Image
+	gulp.watch( 'src/img/**/*', gulp.task( 'imagemin' ) );
+} );
+
+//
+// Global commands.
+// ================
+//
 
 // Build
-gulp.task('build', gulp.parallel('copylib', 'jshint', 'js', 'sass', 'imagemin'));
+gulp.task( 'build', gulp.parallel( 'copy', 'js:bundle', 'scss:generate', 'imagemin' ) );
 
 // Default Tasks
-gulp.task('default', gulp.task('watch'));
+gulp.task( 'default', gulp.task( 'watch' ) );
