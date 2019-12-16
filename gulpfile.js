@@ -75,25 +75,7 @@ gulp.task( 'js:bundle', function() {
 		.pipe( $.rename( function( path ) {
 			tmp[ path.basename ] = path.dirname;
 		} ) )
-		.pipe( webpack( {
-			mode: 'production',
-			devtool: 'source-map',
-			module: {
-				rules: [
-					{
-						test: /\.js$/,
-						exclude: /(node_modules|bower_components)/,
-						use: {
-							loader: 'babel-loader',
-							options: {
-								presets: [ '@babel/preset-env' ],
-								plugins: [ '@babel/plugin-transform-react-jsx' ],
-							},
-						},
-					},
-				],
-			},
-		}, webpackBundle ) )
+		.pipe( webpack( require( './webpack.config.js' ), webpackBundle ) )
 		.pipe( $.rename( function( path ) {
 			if ( tmp[ path.basename ] ) {
 				path.dirname = tmp[ path.basename ];
