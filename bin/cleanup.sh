@@ -3,22 +3,25 @@
 set -e
 
 # Install packages.
-composer install --no-dev --prefer-dist
+composer install --no-dev --no-suggest
 
 # Install NPM.
 npm install
 npm start
 
+# Re install for production build.
+composer install --no-dev --prefer-dist --no-suggest
+
 # Remove unwanted files.
 rm -rf .git
 rm -rf .github
-rm -rf .phpcs.xml.dist
 rm -rf .gitignore
 rm -rf .browserslistrc
 rm -rf .eslintrc
 rm -rf bin
 rm -rf node_modules
 rm -rf tests
+rm -rf phpcs.xml.dist
 rm -rf phpunit.xml.dist
 rm -rf stylelint.config.js
 rm -rf webpack.config.js
