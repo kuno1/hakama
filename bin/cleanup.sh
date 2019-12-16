@@ -3,11 +3,14 @@
 set -e
 
 # Install packages.
-composer install --no-dev --prefer-dist
+composer install --no-dev --no-suggest
 
 # Install NPM.
 npm install
 npm start
+
+# Re install for production build.
+composer install --no-dev --prefer-dist --no-suggest
 
 # Remove unwanted files.
 rm -rf .git
