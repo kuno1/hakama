@@ -2,8 +2,14 @@
 
 set -e
 
-# Remove unwanted files.
+# Install packages.
 composer install --no-dev --prefer-dist
+
+# Install NPM.
+npm install
+npm start
+
+# Remove unwanted files.
 rm -rf .git
 rm -rf .github
 rm -rf .phpcs.xml.dist
