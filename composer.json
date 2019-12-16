@@ -19,13 +19,14 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": ">=5.4.0",
+    "php": "^7.0",
     "kuno1/redirect-to-woocommerce": "^1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.8",
+    "phpunit/phpunit": "~5.7",
     "squizlabs/php_codesniffer": "~2.8",
-    "wp-coding-standards/wpcs": "~0.11"
+    "wp-coding-standards/wpcs": "~0.11",
+    "hametuha/hashboard": "^0.8"
   },
   "autoload": {
     "psr-0": {
