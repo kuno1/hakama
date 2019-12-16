@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Bootstrap file for Kunoichi theme.
  *
  * @package hakama
  */
@@ -10,7 +10,7 @@ load_theme_textdomain( 'hakama', __DIR__ . '/languages' );
 // Load autoloader
 $autoloader = __DIR__ . '/vendor/autoload.php';
 if ( file_exists( $autoloader ) ) {
-	require $autoloader;
+	require_once $autoloader;
 	$base_dir = __DIR__ . '/app/Kunoichi/Hakama';
 	foreach ( [ 'Widgets' ] as $dir ) {
 		$path = $base_dir . '/' . $dir;
@@ -21,7 +21,7 @@ if ( file_exists( $autoloader ) ) {
 			if ( preg_match( '#^([^._].*)\.php$#u', $file, $matches ) ) {
 				$class_name = 'Kunoichi\\Hakama\\' . $dir . '\\' . $matches[1];
 				if ( class_exists( $class_name ) ) {
-				
+
 				}
 			}
 		}
