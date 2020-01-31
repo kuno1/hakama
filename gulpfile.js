@@ -129,7 +129,10 @@ gulp.task( 'imagemin:svg', function() {
 
 // Image min
 gulp.task( 'imagemin:misc', function() {
-	return gulp.src( './src/img/**/*' )
+	return gulp.src( [
+		'./src/img/**/*',
+		'!./src/img/**/*.svg',
+	] )
 		.pipe( $.imagemin( [
 			pngquant( {
 				quality: [ .65, .8 ],

@@ -2,6 +2,8 @@ $footer-gap: $section-gap !default;
 
 
 .colophon{
+  background-color: $primary;
+  color: $white;
   padding: $footer-gap 0 0;
   &-divider{
     margin: $footer-gap / 2 auto;
@@ -18,17 +20,17 @@ $footer-gap: $section-gap !default;
     font-size: 0.8rem;
     margin: 0;
     padding-bottom: $footer-gap;
-    color: #888;
+    color: $white;
     a{
       transition: color .3s $ease-in-out-sine;
     }
     a:link, a:visited{
       text-decoration: underline;
-      color: #666;
+      color: $white;
     }
     a:hover, a:active{
       text-decoration: none;
-      color: #aaa;
+      color: $white;
     }
   }
 }

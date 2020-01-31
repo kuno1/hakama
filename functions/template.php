@@ -77,7 +77,7 @@ function hakama_copyright_year() {
 	 * @param string $year
 	 * @return string
 	 */
-	return (string) apply_filters( 'hakama_copyright_year', date_i18n( 'Y' ) );
+	return (string) apply_filters( 'hakama_copyright_year', 2018 );
 }
 
 /**
