@@ -17,6 +17,8 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'init', function() {
 	$version = wp_get_theme()->get( 'Version' );
+	wp_register_script( 'hakama-i18n', get_template_directory_uri() . '/assets/js/hakama.js', [ 'wp-i18n' ], $version, true );
+	wp_set_script_translations( 'hakama-i18n', 'hakama', get_template_directory() . '/languages' );
 	wp_register_script( 'hakama', get_template_directory_uri() . '/assets/js/hakama.app.js', [ 'bootstrap', 'jquery-masonry' ], $version, true );
 	wp_register_style( 'fontawesome5', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', null,  '5.2.0' );
 	wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/style.css', [ 'material-design-icon' ], $version );

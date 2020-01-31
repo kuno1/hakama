@@ -203,3 +203,20 @@ function hakama_brand_has_business( $post = null ) {
 	}
 	return $instance->has_valid_gateway( $post );
 }
+
+/**
+ * Get document owner
+ *
+ * @param null|int|WP_Post $post
+ * @return string
+ */
+function hakama_document_owner( $post = null ) {
+	$post = get_post( $post );
+
+	$user = get_userdata( $post->post_author );
+	if ( $user->has_cap( 'edit_others_posts' ) ) {
+		return 'Kunoichi INC';
+	} else {
+		return $user->display_name;
+	}
+}

@@ -1,8 +1,10 @@
+$is-editor: false !default;
+
 $enable-gradients: true;
 
 // Typography
-$font-family-sans-serif: Helvetica, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
-$font-family-serif: Georgia, "Yu Mincho Medium", "游明朝 Medium", YuMincho, "游明朝体", serif;
+$font-family-sans-serif: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
+$font-family-serif: "Palatino Linotype", "Book Antiqua", Palatino, "Yu Mincho Medium", "游明朝 Medium", YuMincho, "游明朝体", serif;
 
 
 // Font size
@@ -17,6 +19,7 @@ $h6-font-size: 0.925rem;
 
 $primary: #000;
 $gray-100: #f6f6f6;
+$gray-200: #e1e1e1;
 
 // Link color.
 $link-color: $primary;

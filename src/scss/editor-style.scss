@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+$is-editor: true;
+
 @import "overrides";
 
 $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/img' !default;
@@ -34,5 +36,6 @@ $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/im
 			}
 		}
 	}
-}
 
+	@import "block/*";
+}

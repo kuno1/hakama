@@ -157,3 +157,25 @@ function hakama_the_author( $post = null ) {
 		the_author_posts_link();
 	}
 }
+
+/**
+ * Get top categories.
+ *
+ * @param null|int|WP_Post $post
+ * @return WP_Term
+ */
+function hakama_top_category( $post = null ) {
+	$post = get_post( $post );
+	$result = null;
+	foreach ( get_post_taxonomies( $post ) as $taxonomy ) {
+		$terms = get_the_terms( $post, $taxonomy );
+		if ( ! $terms || is_wp_error( $terms ) ) {
+			continue;
+		}
+		foreach ( $terms as $term ) {
+			$result = $term;
+			break 2;
+		}
+	}
+	return $result;
+}

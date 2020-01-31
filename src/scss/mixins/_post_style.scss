@@ -35,97 +35,15 @@
 	h5,
 	h6 {
 		margin: 2em 0 1em;
+		font-family: $font-family-serif;
 
 		&:first-child {
 			margin-top: 0;
 		}
 	}
 
-	h1 {
-		font-weight: $font-weight-normal;
-		font-family: $font-family-serif;
-		padding-bottom: 3em;
-		margin-bottom: 3em;
-
-		small {
-			display: block;
-			color: $gray-400;
-			margin-top: 0.5em;
-			font-size: 0.5em;
-		}
-
-		position: relative;
-
-		&:after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			transform: translateX(-50%);
-			height: 3px;
-			width: 20%;
-			max-width: 150px;
-			background-color: #000;
-			border-radius: 2px;
-		}
-	}
-
-	h2 {
-		position: relative;
-		padding-bottom: 23px;
-
-		&:after {
-			position: absolute;
-			content: "";
-			display: block;
-			height: 3px;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			@include moving-gradient($color1: #f9d423, $color2: #e14fad, $color3: #fffc24);
-		}
-
-		&[style*=center]:after {
-			left: 50%;
-			right: auto;
-			width: 30%;
-			max-width: 200px;
-			transform: translateX(-50%);
-		}
-	}
-	h3 {
-		position: relative;
-		padding-left: 10px;
-
-		&:after {
-			position: absolute;
-			content: "";
-			display: block;
-			width: 5px;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			@include moving-gradient($color1: #f9d423, $color2: #e14fad, $color3: #fffc24);
-		}
-
-		&[style*=center] {
-			color: $primary;
-
-			&:after {
-				content: none;
-			}
-		}
-	}
-	h4 {
-
-	}
-	h5 {
-		font-size: 1.1em;
-		font-weight: bold;
-	}
 	h6 {
 		font-weight: bold;
-		color: #888;
 	}
 
 	strong,

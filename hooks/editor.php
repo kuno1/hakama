@@ -78,7 +78,11 @@ add_filter( 'admin_body_class', function( $classes ) {
  * Load editor style.
  */
 add_action( 'enqueue_block_editor_assets', function() {
-	wp_enqueue_style( 'hakama-block-editor-style', get_stylesheet_directory_uri() . '/assets/css/editor-style.css', [ 'fontawesome5' ], wp_get_theme()->get( 'Version' ) );
+	$version = wp_get_theme()->get( 'Version' );
+	// Default editor styles.
+	wp_enqueue_style( 'hakama-block-editor-style', get_stylesheet_directory_uri() . '/assets/css/editor-style.css', [ 'fontawesome5' ], $version );
+	// Register block styles.
+	wp_enqueue_script( 'hakama-block-style', get_template_directory_uri() . '/assets/js/editor-styles.js', [ 'hakama-i18n', 'wp-blocks' ], $version, true );
 } );
 
 /**

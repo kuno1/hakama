@@ -8,10 +8,10 @@ $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/im
 @import "bootstrap";
 @import "hb_globals";
 @import "hb-components/*";
-
+// Import theme pats.
 @import "mixins/*";
 @import "globals";
 @import "front_global";
 @import "components/*";
 @import "parts/*";
-
+@import "block/*";
