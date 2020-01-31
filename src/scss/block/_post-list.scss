@@ -1,5 +1,15 @@
-.post-list {
+%term-badge {
+	font-size: $font-size-sm;
+	line-height: 1;
+	display: inline-block;
+	margin-right: 10px;
+	padding: 2px 1em;
+	background-color: $black;
+	color: $white;
+}
 
+/* List */
+.post-list {
 	margin: $section-gap 0 $section-gap / 2;
 	padding: 0;
 
@@ -67,13 +77,8 @@
 	}
 
 	&-term {
-		font-size: $font-size-sm;
-		line-height: 1;
-		display: inline-block;
-		margin-right: 10px;
-		padding: 2px 1em;
-		background-color: $black;
-		color: $white;
+
+		@extend %term-badge;
 	}
 
 	&-title {
@@ -100,5 +105,82 @@
 
 		@extend .btn;
 		@extend .btn-outline-primary;
+	}
+}
+
+/* Card */
+.post-card {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	margin: $section-gap 0 $section-gap / 2;
+
+	&-item {
+		margin-right: 20px;
+		flex-basis: 100%;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&-thumbnail {
+		height: 210px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: $white;
+	}
+
+	&-title {
+		font-size: $font-size-base;
+		font-weight: $font-weight-bold;
+		margin: 0 0 10px;
+	}
+
+	&-meta {
+		margin: 0;
+
+		& + & {
+			margin-top: 10px;
+		}
+	}
+
+	&-link {
+		display: block;
+		position: relative;
+		border: 1px solid $gray-200;
+		font-size: $font-size-sm;
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+		background-color: $white;
+		&:link,
+		&:visited {
+			color: $black;
+			text-decoration: none;
+		}
+
+		&:active,
+		&:hover {
+			color: $black;
+			text-decoration: none;
+			background-color: $light;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&-body {
+		padding: 20px 10px 40px;
+	}
+
+	&-term {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 100%;
+
+		@extend %term-badge;
+
+		padding: 1em 2px;
 	}
 }

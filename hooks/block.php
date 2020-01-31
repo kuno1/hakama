@@ -24,6 +24,14 @@ add_filter( 'kbl_post_list_templates', function( $templates ) {
 } );
 
 /**
+ * Change class name.
+ */
+add_filter( 'kbl_post_list_class_name', function( $class, $attributes ) {
+	$class[] = 'post-' . ( $attributes['template'] ?: 'list' );
+	return $class;
+}, 10, 2 );
+
+/**
  * Change Post list pre
  */
 add_filter( 'kbl_post_list_pre', function( $pre, $attributes ) {
