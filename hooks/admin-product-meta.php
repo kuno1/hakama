@@ -8,9 +8,9 @@
 
 add_action( 'add_meta_boxes', function( $post_type ) {
 	if ( 'product' === $post_type ) {
-		wp_nonce_field( 'hakama_product_meta', '_hakamaproductnonce', false );
 		 // Demo Setting.
 		add_meta_box( 'hakama-product-demo', __( 'Demo Setting', 'hakama' ), function( $post ) {
+		    wp_nonce_field( 'hakama_product_meta', '_hakamaproductnonce', false );
 			?>
 			<p class="description">
 				<?php esc_html_e( 'Enter demo URL for your theme/plugin.', 'hakama' ) ?>
@@ -34,9 +34,9 @@ add_action( 'add_meta_boxes', function( $post_type ) {
  * @param WP_Post $post
  */
 add_action( 'save_post', function( $post_id, $post ) {
-	if ( ! isset( $_REQUEST['_hakamaproductnonce'] ) || ! wp_verify_nonce( $_REQUEST['_hakamaproductnonce'], 'hakama_product_meta' ) ) {
-		return;
-	}
+    if ( ( 'product' !== $post->post_type ) || ! wp_verify_nonce( filter_input( INPUT_POST, '_hakamaproductnonce' ), 'hakama_product_meta' ) ) {
+        return;
+    }
 	foreach ( [
 		'_demo_url'
 	] as $key ) {
