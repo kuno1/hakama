@@ -1,34 +1,35 @@
-
 // section tags.
-section{
-  padding: $section-gap * 2 0;
+section {
+	padding: $section-gap * 2 0;
 }
 
-.section-main{
+.section-main {
 
-  background-color: #fff;
-  background-image: linear-gradient(to right top, #eee 0%, white 100%);
-  &-single{
-    padding: 0;
-  }
+	background-color: #fff;
+	background-image: linear-gradient(to right top, #eee 0%, white 100%);
+
+	&-single {
+		padding: 0;
+	}
 }
 
-.wp-block-hakama-container{
-  @extend .container;
+.wp-block-hakama-container {
+	@extend .container;
 }
 
-.sidebar{
-  padding-top: 0;
+.sidebar {
+	padding-top: 0;
 }
 
 //
 // Override WooCommerce columns
 //
-.woocommerce .col2-set{
-  @extend .row;
-  .col-1,
-  .col-2{
-    flex: 1;
-    max-width: 100%;
-  }
+.woocommerce .col2-set {
+	@extend .row;
+
+	.col-1,
+	.col-2 {
+		flex: 1;
+		max-width: 100%;
+	}
 }

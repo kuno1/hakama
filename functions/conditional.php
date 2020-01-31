@@ -47,3 +47,25 @@ function hakama_author_is_admin( $post = null ) {
 	$post = get_post( $post );
 	return user_can( $post->post_author, 'edit_others_posts' );
 }
+
+/**
+ * Detect if this page is transactional
+ *
+ * @reutrn bool
+ */
+function hakama_is_transactional_page() {
+	if ( ! hakama_has_woo() ) {
+		return false;
+	}
+	return (
+		is_cart()
+		||
+		is_checkout()
+		||
+		is_checkout_pay_page()
+		||
+		is_account_page()
+		||
+		is_edit_account_page()
+	);
+}

@@ -1,21 +1,21 @@
-.seller-submission{
+.seller-submission {
 
-  margin: 3em auto;
-  padding: 2em;
-  max-width: 680px;
-  background: #fff;
-  border-radius: 3px;
-  @include white-box-shadow();
+	margin: 3em auto;
+	padding: 2em;
+	max-width: 680px;
+	background: #fff;
+	border-radius: 3px;
+	@include white-box-shadow();
 
-  &-title{
-    @extend .entry-title;
-    @extend .entry-title-wide;
-    @extend .text-center;
-    margin-bottom: 1em !important;
-  }
+	&-title {
+		@extend .entry-title;
+		@extend .entry-title-wide;
+		@extend .text-center;
+		margin-bottom: 1em !important;
+	}
 
-  &-business{
-    padding: 1em;
-  }
+	&-business {
+		padding: 1em;
+	}
 
 }

@@ -1,64 +1,72 @@
-.header-section{
-  position: relative;
-  &-faq{
-    background: transparent url("../img/help-center-bg.png") left top repeat;
-    background-size: 400px 473px;
-  }
+.header-section {
+	position: relative;
 
-  &-cover{
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    &-faq{
-      $faq-bg: rgb(210, 214, 64 );
-      $faq-bg-start: $faq-bg;
-      $faq-bg-end: transparentize( $faq-bg, .9 );
+	&-faq {
+		background: transparent url(../img/help-center-bg.png) left top repeat;
+		background-size: 400px 473px;
+	}
 
-      background-image: linear-gradient(to right , $faq-bg-start 0, $faq-bg-start 30%, $faq-bg-end 100%);
-    }
-  }
+	&-cover {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
 
-  &-text{
-    font-size: 1.4rem;
-    font-weight: 200;
-    a:link, a:visited{
-      text-decoration: underline;
-      color: inherit;
-    }
-    a:hover, a:active{
-      text-decoration: none;
-      color: inherit;
-      opacity: .8;
-    }
-  }
+		&-faq {
+			$faq-bg: rgb(210, 214, 64);
+			$faq-bg-start: $faq-bg;
+			$faq-bg-end: transparentize($faq-bg, .9);
 
-  &-return{
-    font-size: 0.85rem;
-    &-link{
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: color .3s $ease-in-out-sine, background-color .3s $ease-in-out-sine;
-      & + &{
-        margin-left: 1em;
-      }
-      &:link, &:visited{
-        color: #666;
-        text-decoration: none;
-      }
-      &:hover, &:active{
-        color: #000;
-        text-decoration: none;
-        background-color: rgba(0, 0, 0, .2);
-      }
-    }
-  }
+			background-image: linear-gradient(to right, $faq-bg-start 0, $faq-bg-start 30%, $faq-bg-end 100%);
+		}
+	}
 
-  &-container{
-    position: relative;
-    z-index: 2;
-  }
+	&-text {
+		font-size: 1.4rem;
+		font-weight: 200;
+
+		a:link, a:visited {
+			text-decoration: underline;
+			color: inherit;
+		}
+
+		a:hover, a:active {
+			text-decoration: none;
+			color: inherit;
+			opacity: .8;
+		}
+	}
+
+	&-return {
+		font-size: 0.85rem;
+
+		&-link {
+			display: inline-block;
+			padding: 5px 10px;
+			border-radius: 5px;
+			transition: color .3s $ease-in-out-sine, background-color .3s $ease-in-out-sine;
+
+			& + & {
+				margin-left: 1em;
+			}
+
+			&:link, &:visited {
+				color: #666;
+				text-decoration: none;
+			}
+
+			&:hover, &:active {
+				color: #000;
+				text-decoration: none;
+				background-color: rgba(0, 0, 0, .2);
+			}
+		}
+	}
+
+	&-container {
+		position: relative;
+		z-index: 2;
+	}
 }

@@ -4,14 +4,17 @@
 }
 
 .wp-block-hakama-container {
-  @extend .container;
+
+	@extend .container;
 }
 
-.block-blog{
-  &-wrapper{
+.block-blog {
 
-  }
-  &-item{
+	&-wrapper {
 
-  }
+	}
+
+	&-item {
+
+	}
 }

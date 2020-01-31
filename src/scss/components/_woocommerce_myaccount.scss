@@ -1,69 +1,77 @@
-.woocommerce-MyAccount-navigation{
+.woocommerce-MyAccount-navigation {
 
-  ul{
-    @extend .list-group;
-    li{
-      @extend .list-group-item;
-      @extend .list-group-item-action;
-      padding: 0;
-      &.is-active{
-        @extend .list-group-item.active;
-      }
-      a {
-        display: block;
-        padding: $list-group-item-padding-y $list-group-item-padding-x;
-        &:link, &:visited{
-          text-decoration: none;
-          color: $primary;
-        }
-        &:hover, &:active{
-          text-decoration: none;
-          color: lighten($primary, 10);
-        }
-        &:before{
-          display: inline-block;
-          width: 1.5em;
-          text-align: center;
-          margin-right: 0.25em;
-          font-weight: 900;
-          font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", sans-serif;
-        }
-      }
-      &.is-active a{
-        &:link, &:visited{
-          color: #fff;
-        }
-        &:hover, &:active{
-          color: #eee;
-        }
-      }
-    }
-  }
+	ul {
+		@extend .list-group;
+
+		li {
+			@extend .list-group-item;
+			@extend .list-group-item-action;
+			padding: 0;
+
+			&.is-active {
+				@extend .list-group-item.active;
+			}
+
+			a {
+				display: block;
+				padding: $list-group-item-padding-y $list-group-item-padding-x;
+
+				&:link, &:visited {
+					text-decoration: none;
+					color: $primary;
+				}
+
+				&:hover, &:active {
+					text-decoration: none;
+					color: lighten($primary, 10);
+				}
+
+				&:before {
+					display: inline-block;
+					width: 1.5em;
+					text-align: center;
+					margin-right: 0.25em;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", sans-serif;
+				}
+			}
+
+			&.is-active a {
+				&:link, &:visited {
+					color: #fff;
+				}
+
+				&:hover, &:active {
+					color: #eee;
+				}
+			}
+		}
+	}
 }
 
 // Add icons.
 @each $selector, $string in (
-        dashboard:        "\f2bd",
-        seller:           "\f3fd",
-        wp-admin:         "\f19a",
-        support:          "\f1cd",
-        subscriptions:    "\f2f1",
-        orders:           "\f543",
-        downloads:        "\f56d",
-        edit-address:     "\f2b9",
-        payment-methods:  "\f09d",
-        edit-account:     "\f2c2",
-        license:          "\f084",
-        customer-logout:  "\f2f5",
-){
-  .woocommerce-MyAccount-navigation-link--#{$selector} a:before{
-    content: $string;
-  }
+		dashboard: "\f2bd",
+		seller: "\f3fd",
+		wp-admin: "\f19a",
+		support: "\f1cd",
+		subscriptions: "\f2f1",
+		orders: "\f543",
+		downloads: "\f56d",
+		edit-address: "\f2b9",
+		payment-methods: "\f09d",
+		edit-account: "\f2c2",
+		license: "\f084",
+		customer-logout: "\f2f5",
+) {
+	.woocommerce-MyAccount-navigation-link--#{$selector} a:before {
+		content: $string;
+	}
 }
 
-.woocommerce-form-row span em{
-  @extend .text-muted;
-  font-style: normal;
-  margin-top: 0.25em;
-  font-size: 0.85rem;
+.woocommerce-form-row span em {
+	@extend .text-muted;
+	font-style: normal;
+	margin-top: 0.25em;
+	font-size: 0.85rem;
 }

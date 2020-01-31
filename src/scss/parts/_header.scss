@@ -1,87 +1,93 @@
 $header-height: 48px;
 $header-side-pad: 15px;
 
-body.with-header-nav{
-  padding-top: $header-height;
+body.with-header-nav {
+	padding-top: $header-height;
 
 }
 
-.site-header{
-  @extend %header-gradient;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  height: $header-height;
+.site-header {
+	@extend %header-gradient;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	height: $header-height;
 
-  &-lists{
-    position: absolute;
-    padding: 5px $header-side-pad;
-    margin: 0;
-    right: 0;
-    top: 0;
-  }
+	&-lists {
+		position: absolute;
+		padding: 5px $header-side-pad;
+		margin: 0;
+		right: 0;
+		top: 0;
+	}
 
-  &-list{
-    display: inline-block;
-    list-style: none;
-    position: relative;
-    & + & {
-      margin-left: 5px;
-    }
-  }
+	&-list {
+		display: inline-block;
+		list-style: none;
+		position: relative;
 
-  &-avatar{
-    border-radius: 50%;
-    & + span{
-      margin-left: 5px;
-    }
-  }
+		& + & {
+			margin-left: 5px;
+		}
+	}
 
-  .btn-link{
-    transition: color .3s linear, background-color .3s linear;
-    &, &:link, &:visited{
-      text-decoration: none;
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0);
-    }
-    &:hover, &:active{
-      text-decoration: none;
-      color: #fff;
-      background-color: rgba(0, 0, 0, .1);
-    }
-  }
+	&-avatar {
+		border-radius: 50%;
 
-  .btn-outline-light{
-    &:hover, &:active{
-      color: $primary;
-    }
-  }
+		& + span {
+			margin-left: 5px;
+		}
+	}
+
+	.btn-link {
+		transition: color .3s linear, background-color .3s linear;
+
+		&, &:link, &:visited {
+			text-decoration: none;
+			color: #fff;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		&:hover, &:active {
+			text-decoration: none;
+			color: #fff;
+			background-color: rgba(0, 0, 0, .1);
+		}
+	}
+
+	.btn-outline-light {
+		&:hover, &:active {
+			color: $primary;
+		}
+	}
 
 }
 
-.custom-logo{
-  width: auto;
-  height: auto;
-  max-height: 26px;
-  @include media-breakpoint-down(sm){
-    max-height: 18px;
-  }
-  &-link{
-    display: inline-block;
-    padding: 11px $header-side-pad;
-    &:hover{
-      opacity: .8;
-    }
-  }
+.custom-logo {
+	width: auto;
+	height: auto;
+	max-height: 26px;
+	@include media-breakpoint-down(sm) {
+		max-height: 18px;
+	}
+
+	&-link {
+		display: inline-block;
+		padding: 11px $header-side-pad;
+
+		&:hover {
+			opacity: .8;
+		}
+	}
 }
 
-.woocommerce-breadcrumb{
-  a:first-child:before{
-    content: "\f015";
-    font-weight: 900;
-    font-family: "Font Awesome 5 Free";
-    margin-right: 0.25em;
-  }
+.woocommerce-breadcrumb {
+	a:first-child:before {
+		content: "\f015";
+		font-weight: 900;
+		font-family: "Font Awesome 5 Free";
+		margin-right: 0.25em;
+	}
 }

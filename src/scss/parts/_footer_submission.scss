@@ -1,37 +1,41 @@
-.submission{
+.submission {
+	padding: $section-gap 0;
+	background-color: $light;
 
-  padding: $section-gap 0;
-  @include gradient-bg($secondary);
+	.container {
+		max-width: 680px;
+	}
 
-  .form-group{
-    label{
-      color: $gray-400;
-      &.form-check-label{
-        color: $white;
-      }
-    }
-  }
+	.form-group {
 
-  &-title{
-    i{
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    text-align: center;
-    font-size: 1.4rem;
-    margin-bottom: 0.25em;
-    text-shadow: 0 0 5px transparentize(#fff, .4);
-  }
+		label {
+			color: $black;
 
-  &-lead{
-    font-size: 1.1rem;
-    text-align: center;
-    color: $gray-300;
-    margin-bottom: $section-gap;
-  }
+			&.form-check-label {
+				color: $white;
+			}
+		}
+	}
 
-  &-submit{
-    margin-top: $section-gap;
-  }
+	&-title {
+		text-align: center;
+		font-size: 1.4rem;
+		margin-bottom: 0.25em;
+	}
+
+	&-lead {
+		font-size: 1.1rem;
+		text-align: center;
+		color: $dark;
+		margin-bottom: $section-gap;
+	}
+
+	&-submit {
+		margin-top: $section-gap;
+
+		@at-root html[lang=ja] & {
+			letter-spacing: 1em;
+		}
+	}
 
 }

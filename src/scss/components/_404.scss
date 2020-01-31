@@ -1,21 +1,23 @@
-.no-content{
+.no-content {
 
-  padding-bottom: $section-gap;
+	padding-bottom: $section-gap;
 
-  &-title{
-    font-size: 3rem;
-    color: $gray-400;
-    margin-bottom: $section-gap;
-  }
-  &-img{
-   width: auto;
-    height: auto;
-    max-width: 100%;
-  }
-  &-list{
-    li{
-      font-size: 1.4rem;
-      margin-bottom: $section-gap / 2;
-    }
-  }
+	&-title {
+		font-size: 3rem;
+		color: $gray-400;
+		margin-bottom: $section-gap;
+	}
+
+	&-img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+	}
+
+	&-list {
+		li {
+			font-size: 1.4rem;
+			margin-bottom: $section-gap / 2;
+		}
+	}
 }

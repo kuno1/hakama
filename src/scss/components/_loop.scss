@@ -1,83 +1,96 @@
-.loop{
-  // Wrapper
-  &-list{
-    padding: 0;
-    margin: 0 0 $section-gap;
-  }
-  &-item{
-    list-style: none;
-  }
-  &-type{
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    @include gradient-bg($gray-800);
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 0.7rem;
-    border-top-right-radius: $card-border-radius;
-  }
-  &-meta{
-    line-height: 1.8;
-  }
-  &-card{
+.loop {
+	// Wrapper
+	&-list {
+		padding: 0;
+		margin: 0 0 $section-gap;
+	}
 
-  }
-  &-title{
-    .fa-lock{
-      color: $brand-yellow;
-    }
-    h2#{&}:after{
-      content: none;
-    }
-  }
-  &-products{
-    clear: both;
-    padding-top: $section-gap;
-  }
+	&-item {
+		list-style: none;
+	}
+
+	&-type {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		@include gradient-bg($gray-800);
+		color: #fff;
+		padding: 5px 10px;
+		font-size: 0.7rem;
+		border-top-right-radius: $card-border-radius;
+	}
+
+	&-meta {
+		line-height: 1.8;
+	}
+
+	&-card {
+
+	}
+
+	&-title {
+		.fa-lock {
+			color: $brand-yellow;
+		}
+
+		h2#{&}:after {
+			content: none;
+		}
+	}
+
+	&-products {
+		clear: both;
+		padding-top: $section-gap;
+	}
 }
 
 .price,
-.product_list_widget{
-  font-family: $price-font-family;
-  .amount{
-    color: $warning;
-  }
-  del{
-    color: $warning;
-    opacity: .5;
-    margin-right: 0.25em;
-    .widget-product & .amount{
-      font-size: 1rem !important;
-    }
-  }
-  ins{
-    color: $warning;
-    text-decoration: none;
-  }
+.product_list_widget {
+	font-family: $price-font-family;
+
+	.amount {
+		color: $warning;
+	}
+
+	del {
+		color: $warning;
+		opacity: .5;
+		margin-right: 0.25em;
+
+		.widget-product & .amount {
+			font-size: 1rem !important;
+		}
+	}
+
+	ins {
+		color: $warning;
+		text-decoration: none;
+	}
 }
 
 // Add to cart button
 .btn-outline-primary {
-  &.loading{
-    @extend %loading-pos;
-  }
-  &.added {
-    &:after {
-      content: "\f058";
-      font-family: "Font Awesome 5 Free", sans-serif;
-      margin-left: 0.25em;
-    }
-    & + .added_to_cart {
-      display: block;
-      text-align: center;
-      padding: 5px;
-      font-size: 0.8rem;
-    }
-  }
+	&.loading {
+		@extend %loading-pos;
+	}
+
+	&.added {
+		&:after {
+			content: "\f058";
+			font-family: "Font Awesome 5 Free", sans-serif;
+			margin-left: 0.25em;
+		}
+
+		& + .added_to_cart {
+			display: block;
+			text-align: center;
+			padding: 5px;
+			font-size: 0.8rem;
+		}
+	}
 }
 
-.pagination{
-  justify-content: center;
+.pagination {
+	justify-content: center;
 }
