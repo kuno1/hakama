@@ -28,7 +28,9 @@ add_action( 'after_setup_theme', function() {
 	}
 	// Icons
 	if ( class_exists( 'Kunoichi\Icon\Manager' ) ) {
-		Kunoichi\Icon\Manager::register();
+		Kunoichi\Icon\Manager::register( [
+			'dashicons' => false,
+		] );
 	}
 	// Block Library
 	if ( class_exists( 'Kunoichi\BlockLibrary' ) ) {
