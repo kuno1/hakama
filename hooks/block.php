@@ -145,3 +145,10 @@ HTML;
 	}
 	return $block_content;
 }, 10, 2 );
+
+/**
+ * Change image size of cards.
+ */
+add_filter( 'kbl_link_card_size', function () {
+	return 'large';
+} );
