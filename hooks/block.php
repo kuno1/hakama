@@ -21,6 +21,7 @@ add_filter( 'kbl_post_list_templates', function( $templates ) {
 	return array_merge( $templates, [
 		'card' => __( 'Card List', 'hakama' ),
 		'circle' => __( 'Circle List', 'hakama' ),
+		'product' => __( 'Product List', 'hakama' ),
 	] );
 } );
 
@@ -32,6 +33,7 @@ add_filter( 'kbl_post_list_class_name', function( $class, $attributes ) {
 	switch ( $attributes['template'] ) {
 		case 'circle':
 			$class[] = 'swiper-wrapper';
+			break;
 		default:
 			// Do nothing.
 			break;
@@ -47,6 +49,8 @@ add_filter( 'kbl_post_list_pre', function( $pre, $attributes ) {
 		case '':
 		case 'default':
 			return '<ul class="post-list">';
+		case 'product':
+			return '<ul class="product-list">';
 		default:
 			return $pre;
 	}
@@ -58,6 +62,7 @@ add_filter( 'kbl_post_list_pre', function( $pre, $attributes ) {
 add_filter( 'kbl_post_list_after', function( $after, $attributes ) {
 	switch ( $attributes[ 'template' ] ) {
 		case '':
+		case 'product':
 		case 'default':
 			return '</ul>';
 		default:
