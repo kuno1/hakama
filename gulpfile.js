@@ -36,6 +36,7 @@ gulp.task( 'scss:generate', function() {
 		'../../lib/hashboard/src/scss',
 		'../../plugins/makibishi/vendor/hametuha/hashboard/src/scss',
 		'./node_modules/bootstrap/scss',
+		'./node_modules/swiper/src',
 	];
 	return gulp.src( [
 		'./src/scss/**/*.scss',
@@ -110,6 +111,8 @@ gulp.task( 'copy', function() {
 			'./node_modules/bootstrap/dist/js/bootstrap.min.js.map',
 			'./node_modules/popper.js/dist/umd/popper.min.js',
 			'./node_modules/popper.js/dist/umd/popper.min.js.map',
+			'./node_modules/swiper/js/swiper.min.js',
+			'./node_modules/swiper/js/swiper.min.js.map',
 		] )
 			.pipe( gulp.dest( 'assets/js' ) )
 	);

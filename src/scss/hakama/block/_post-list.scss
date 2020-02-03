@@ -2,10 +2,15 @@
 	font-size: $font-size-sm;
 	line-height: 1;
 	display: inline-block;
-	margin-right: 10px;
 	padding: 2px 1em;
 	background-color: $black;
 	color: $white;
+}
+
+%post-list-bg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /* List */
@@ -77,6 +82,7 @@
 	}
 
 	&-term {
+		margin-right: 10px;
 
 		@extend %term-badge;
 	}
@@ -115,6 +121,11 @@
 	flex-wrap: nowrap;
 	margin: $section-gap 0 $section-gap / 2;
 
+	&-container {
+		margin-top: $section-gap / 2;
+		margin-bottom: $section-gap / 2;
+	}
+
 	&-item {
 		margin-right: 20px;
 		flex-basis: 100%;
@@ -125,11 +136,10 @@
 	}
 
 	&-thumbnail {
-		height: 210px;
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		height: auto;
 		background-color: $white;
+
+		@extend %post-list-bg;
 	}
 
 	&-title {
@@ -182,5 +192,119 @@
 		@extend %term-badge;
 
 		padding: 1em 2px;
+	}
+}
+
+
+// Slider circle
+.post-circle {
+
+	&-thumbnail {
+		margin-bottom: 20px;
+	}
+
+	&-link {
+		text-align: center;
+		display: block;
+		transition: color 0.3s ease-in-out;
+
+		&:link,
+		&:visited {
+			text-decoration: none;
+			color: $primary;
+		}
+
+		&:hover,
+		&:active {
+			text-decoration: none;
+			color: $danger;
+		}
+	}
+
+	&-img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		border-radius: 50%;
+		background-color: $light;
+		transition: box-shadow 0.3s ease-in-out;
+
+	}
+
+	a:hover &-img,
+	a:active &-img {
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	}
+
+	&-category {
+		margin: 0;
+	}
+
+	&-title {
+		font-weight: $font-weight-bold;
+		margin: 10px 0 0;
+		overflow-x: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&-term {
+		display: block;
+		padding: 3px 0.8em;
+		max-width: 100%;
+		background-color: $gray-600;
+		overflow-x: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		@extend %term-badge;
+	}
+}
+
+@if $is-editor {
+
+	.post-circle {
+		white-space: nowrap;
+		overflow-x: hidden;
+		margin: $section-gap 0;
+
+		&-item {
+			display: inline-block;
+			margin-right: $section-gap - 10px;
+			width: 200px;
+		}
+	}
+} @else {
+
+	.post-circle {
+
+		&-item {
+			display: block;
+			width: 100%;
+		}
+
+		&-container + .kbl-post-list-button {
+			margin-top: $section-gap / 2;
+			margin-bottom: $section-gap;
+		}
+
+		&-container:not(.swiper-container-initialized) {
+
+			.post-circle-wrapper {
+				display: flex;
+				flex-wrap: nowrap;
+				overflow-x: hidden;
+			}
+
+			.post-circle-item {
+				margin-right: 40px;
+				flex-basis: 20%;
+				max-width: 20%;
+			}
+
+			.post-circle-img {
+				min-height: 120px;
+			}
+		}
 	}
 }

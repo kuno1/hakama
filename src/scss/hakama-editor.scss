@@ -1,8 +1,8 @@
 @import "hb_bootstrap_override";
-@import "overrides";
-@import "mixins/color_helper";
-@import "mixins/animation";
-@import "globals";
+@import "hakama/overrides";
+@import "hakama/mixins/color_helper";
+@import "hakama/mixins/animation";
+@import "hakama/globals";
 
 $hakama-admin-header-height: 48px;
 $hakama-admin-btn-size: 32px;

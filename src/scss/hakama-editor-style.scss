@@ -2,7 +2,7 @@
 
 $is-editor: true;
 
-@import "overrides";
+@import "hakama/overrides";
 
 $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/img' !default;
 
@@ -14,8 +14,8 @@ $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/im
 	@import "hb_globals";
 	@import "hb-components/*";
 
-	@import "mixins/*";
-	@import "globals";
+	@import "hakama/mixins/*";
+	@import "hakama/globals";
 
 	.editor-block-list {
 		&__block {
@@ -37,5 +37,5 @@ $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/im
 		}
 	}
 
-	@import "block/*";
+	@import "hakama/block/*";
 }

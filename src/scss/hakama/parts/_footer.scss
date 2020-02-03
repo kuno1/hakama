@@ -1,4 +1,5 @@
 $footer-gap: $section-gap !default;
+
 .colophon {
 	background-color: $primary;
 	color: $white;
@@ -22,7 +23,7 @@ $footer-gap: $section-gap !default;
 		color: $white;
 
 		a {
-			transition: color .3s $ease-in-out-sine;
+			transition: color 0.3s $ease-in-out-sine;
 		}
 
 		a:link,
