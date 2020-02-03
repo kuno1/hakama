@@ -357,6 +357,7 @@
 		background-color: $gray-200;
 		padding: 0 10px 20px;
 		margin: 0;
+
 		p {
 			margin: 0;
 			line-height: 1.2;
@@ -370,6 +371,7 @@
 		text-align: center;
 		font-weight: $font-weight-bold;
 		transition: background-color 0.3s ease-in-out;
+		text-transform: uppercase;
 
 		&:link,
 		&:visited {

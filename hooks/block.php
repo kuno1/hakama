@@ -9,9 +9,39 @@
  * Enable block library
  */
 add_action( 'after_setup_theme', function() {
+	// Color setting.
+	if ( class_exists( 'Kunoichi\BootstraPress\Css\Extractor' ) ) {
+		$extractor = new Kunoichi\BootstraPress\Css\Extractor( get_template_directory() . '/assets/css/style.css' );
+		$pallets = $extractor->get_color_palette();
+		if ( ! $pallets ) {
+			return;
+		}
+		$colors = [];
+		foreach ( $pallets as $slug => $color ) {
+			$colors[] = [
+				'name' => ucfirst( $slug ),
+				'slug' => $slug,
+				'color' => $color,
+			];
+		}
+		add_theme_support( 'editor-color-palette', $colors );
+	}
+	// Icons
+	if ( class_exists( 'Kunoichi\Icon\Manager' ) ) {
+		Kunoichi\Icon\Manager::register();
+	}
+	// Block Library
 	if ( class_exists( 'Kunoichi\BlockLibrary' ) ) {
 		\Kunoichi\BlockLibrary::enable();
 	}
+} );
+
+/**
+ * Grab colors.
+ */
+add_filter( 'bootstrapress_themes', function( $themes ) {
+	$themes[] = 'pink';
+	return $themes;
 } );
 
 /**

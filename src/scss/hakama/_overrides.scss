@@ -17,14 +17,38 @@ $h4-font-size: 1.125rem;
 $h5-font-size: 1rem;
 $h6-font-size: 0.925rem;
 
-$primary: #000;
+// Grays.
 $gray-100: #f6f6f6;
-$gray-200: #e1e1e1;
+$gray-200: #f0f0f0;
+$gray-300: #e1e1e1;
 $gray-600: #666666;
+$gray-900: #292929;
+
+// Colors.
+$black: #000000;
+$red: #cc4040;
+$purple: #9a4396;
+$green: #84c175;
+$teal: #3d8383;
+$yellow: #be9e49;
+$pink: #da6f6f;
+
+
+// Theme colors.
+$primary: $black;
+$secondary: $purple;
+$info: $teal;
+$attention: $pink;
+$dark: $gray-900;
+
+// Override themes.
+$theme-colors: (
+	"attention": $attention
+);
 
 // Link color.
 $link-color: $primary;
-$link-hover-color: lighten( $primary, 10 );
+$link-hover-color: $gray-600;
 $link-decoration: underline;
 $link-hover-decoration: none;
 

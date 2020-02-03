@@ -35,3 +35,19 @@ $header-gradient-end: #6c757d;
 		@include bg-gradient(to bottom right, #eee, #f2f2f2);
 	}
 }
+$block-theme-colors: map-merge( (
+		"pink": $pink,
+		"white": $white,
+		"black": $black,
+), $theme-colors );
+
+@each $color, $value in $block-theme-colors {
+
+	.has-#{$color}-color {
+		color: $value;
+	}
+
+	.has-#{$color}-background-color {
+		background-color: $value;
+	}
+}

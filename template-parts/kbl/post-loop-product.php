@@ -19,7 +19,7 @@ $thumbnail = has_post_thumbnail() ? sprintf( 'background-image: url(\'%s\')', es
 
 
 		<a href="<?php the_permalink(); ?>" class="product-list-link">
-			<?php esc_html_e( '詳しく', 'hakama' ) ?> &raquo;
+			<?php echo esc_html_x( 'Detail', 'product-link', 'hakama' ) ?> &raquo;
 		</a>
 	</div>
 </li>
