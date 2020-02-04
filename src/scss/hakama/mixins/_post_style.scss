@@ -1,6 +1,7 @@
 @mixin link-style() {
 	// inline links.
 	a:not([class]) {
+
 		&:link {
 			text-decoration: underline;
 			color: $gray-800;
@@ -11,7 +12,8 @@
 			color: $gray-400;
 		}
 
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			text-decoration: none;
 			color: $link-color;
 		}
@@ -22,12 +24,16 @@
 
 	font-weight: 200;
 
-	& > *:first-child {
+	> *:first-child {
 		margin-top: 0;
 	}
 
 
 	// Headings
+	h6 {
+		font-weight: $font-weight-bold;
+	}
+
 	h1,
 	h2,
 	h3,
@@ -42,21 +48,13 @@
 		}
 	}
 
-	h6 {
-		font-weight: bold;
-	}
-
 	strong,
 	.bold {
 		color: #000;
-		font-weight: bold;
+		font-weight: $font-weight-bold;
 	}
 
-	.centering {
-		@extend %header-centered;
-	}
-
-	& > p {
+	> p {
 		text-align: justify;
 		text-justify: inter-ideograph;
 		margin: 1em 0;
@@ -72,7 +70,7 @@
 		margin: 3rem auto;
 		clear: both;
 
-		&:before {
+		&::before {
 			color: $gray-300;
 			content: "\f069";
 			font-weight: 900;
@@ -89,12 +87,12 @@
 			}
 		}
 
-		&-is-style-dots:before {
+		&-is-style-dots::before {
 			color: $gray-600;
 		}
 	}
 
-	p.has-drop-cap:first-letter {
+	p.has-drop-cap::first-letter {
 		font-size: 4.5em;
 		line-height: 1;
 		margin: 0 .125em .125em 0;
@@ -125,8 +123,9 @@
 
 
 	table {
-		@extend .table;
 		margin: 2em 0;
+
+		@extend .table;
 	}
 
 	fieldset {
@@ -136,14 +135,18 @@
 
 	// Inline styles
 	strong {
-		font-weight: bold;
+		font-weight: $font-weight-bold;
 	}
 
 	// List items.
-	ol, dl, ul {
+	ol,
+	dl,
+	ul {
 		margin: 2em 0;
 
-		ul, dl, ol {
+		ul,
+		dl,
+		ol {
 			margin: 0;
 		}
 	}
@@ -151,8 +154,8 @@
 
 	// Code blocks.
 	pre {
-		background-color: #f0f0f0;
-		color: #000;
+		background-color: $gray-200;
+		color: $black;
 		margin: 2em 0;
 		padding: 2em;
 		border-radius: 3px;

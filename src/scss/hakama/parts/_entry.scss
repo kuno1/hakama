@@ -5,8 +5,8 @@
 .entry {
 
 	&-title {
-		font-weight: 200;
-		margin-bottom: 0;
+		font-size: $h1-font-size;
+		font-family: $font-family-serif;
 
 		small {
 			font-size: 0.6em;
@@ -16,10 +16,6 @@
 
 		&-private {
 			color: $brand-yellow;
-		}
-
-		&-wide {
-			@extend %header-centered;
 		}
 	}
 

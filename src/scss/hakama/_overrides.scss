@@ -5,10 +5,11 @@ $enable-gradients: true;
 // Typography
 $font-family-sans-serif: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
 $font-family-serif: "Palatino Linotype", "Book Antiqua", Palatino, "Yu Mincho Medium", "游明朝 Medium", YuMincho, "游明朝体", serif;
-
+$font-family-fa: "Font Awesome 5 Free";
 
 // Font size
 $font-size-base: 0.875rem;
+$font-size-sm: 0.75rem;
 
 $h1-font-size: 3rem;
 $h2-font-size: 1.625rem;
@@ -67,3 +68,10 @@ $btn-border-radius-sm: 0;
 $input-border-radius: 0;
 $input-border-radius-lg: 0;
 $input-border-radius-sm: 0;
+
+// Breadcrumb
+$breadcrumb-font-size: $font-size-sm;
+$breadcrumb-bg: transparent;
+$breadcrumb-divider: "\f105";
+$breadcrumb-divider-color: $black;
+$breadcrumb-active-color: $info;

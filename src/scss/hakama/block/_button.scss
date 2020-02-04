@@ -18,13 +18,15 @@ $button-theme-colors: map-merge( (
 
 		&.is-style-#{$color}-outlined .wp-block-button__link{
 			background-color: transparent;
+
 			@extend .btn-outline-#{$color};
 		}
 	}
 }
 
 @if $is-editor {
+
 	.wp-block-button[class*="outlined"] .wp-block-button__link {
-		backgroudn-color: transparent !important;
+		background-color: transparent !important;
 	}
 }

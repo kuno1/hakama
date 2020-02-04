@@ -23,7 +23,7 @@ add_action( 'init', function() {
 	foreach ( [
 		[ 'hakama-i18n', 'js/hakama.js', [ 'wp-i18n' ] ],
 		[ 'hakama', 'js/hakama.js', [ 'wp-i18n' ] ],
-		[ 'bootstrap', 'css/hakama.css', [ 'fontawesome5' ] ],
+		[ 'bootstrap', 'css/hakama.css', [ 'fontawesome5', 'material-design-icon' ] ],
 		[ 'hakama-editor', 'css/hakama-editor.css', [] ],
 		[ 'hakama-block-editor-style', 'css/hakama-editor-style.css', [ 'fontawesome5' ] ],
 		[ 'hakama-block-style', 'js/editor-styles.js', [ 'hakama-i18n', 'wp-blocks'] ],
