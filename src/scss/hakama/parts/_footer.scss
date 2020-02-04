@@ -3,7 +3,11 @@ $footer-gap: $section-gap !default;
 .colophon {
 	background-color: $primary;
 	color: $white;
-	padding: $footer-gap 0 0;
+	padding: $footer-gap 0;
+
+	&-narrow {
+		padding: $footer-gap / 2 0;
+	}
 
 	&-divider {
 		margin: $footer-gap / 2 auto;
@@ -19,7 +23,6 @@ $footer-gap: $section-gap !default;
 		text-align: center;
 		font-size: 0.8rem;
 		margin: 0;
-		padding-bottom: $footer-gap;
 		color: $white;
 
 		a {
