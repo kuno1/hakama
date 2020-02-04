@@ -1,0 +1,35 @@
+.wp-block-table,
+.entry-content {
+
+	table {
+
+		@extend .table;
+
+		th {
+			background-color: $gray-600;
+			color: $white;
+		}
+
+		td {
+			background-color: $white;
+		}
+
+		th,
+		td {
+			border: 1px solid $table-border-color;
+		}
+	}
+}
+
+.wp-block-table.is-style-stripes table {
+
+	@extend .table-striped;
+
+	tr:nth-child(even) {
+
+		th,
+		td {
+			background-color: $gray-100;
+		}
+	}
+}

@@ -19,14 +19,15 @@ $h5-font-size: 1rem;
 $h6-font-size: 0.925rem;
 
 // Grays.
+$white: #fff;
 $gray-100: #f6f6f6;
 $gray-200: #f0f0f0;
 $gray-300: #e1e1e1;
-$gray-600: #666666;
+$gray-600: #666;
 $gray-900: #292929;
 
 // Colors.
-$black: #000000;
+$black: #000;
 $red: #cc4040;
 $purple: #9a4396;
 $green: #84c175;
@@ -75,3 +76,14 @@ $breadcrumb-bg: transparent;
 $breadcrumb-divider: "\f105";
 $breadcrumb-divider-color: $black;
 $breadcrumb-active-color: $info;
+
+// Inline elements.
+$code-color: $info;
+
+// Table
+$table-cell-padding: 1rem;
+$table-cell-padding-sm: 0.5rem;
+$table-accent-bg: $gray-600;
+$table-head-bg: $gray-600;
+$table-head-color: $white;
+$table-border-color: $gray-200;

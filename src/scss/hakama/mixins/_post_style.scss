@@ -70,25 +70,23 @@
 		margin: 3rem auto;
 		clear: both;
 
-		&::before {
-			color: $gray-300;
-			content: "\f069";
-			font-weight: 900;
-			font-family: "Font Awesome 5 Free", sans-serif;
+		&:not(.is-style-wide):not(.is-style-dots) {
+			border-bottom: 1px solid $gray-800;
+			width: 20px;
 		}
 
 		&.is-style-wide {
-			border-bottom: 1px solid #ddd;
+			border-bottom: 1px solid $gray-400;
 			width: 30%;
 			max-width: 600px;
 
-			&:before {
+			&::before {
 				content: none;
 			}
 		}
 
 		&-is-style-dots::before {
-			color: $gray-600;
+			color: $gray-800;
 		}
 	}
 
@@ -110,17 +108,10 @@
 
 	iframe {
 		display: block;
+		margin-right: auto;
+		margin-left: auto;
 		max-width: 100%;
 	}
-
-
-	blockquote {
-		margin: 1em 0 1em 1em;
-		font-weight: 400;
-		padding-left: 0.75em;
-		border-left: $gray-200 solid 0.25em;
-	}
-
 
 	table {
 		margin: 2em 0;
@@ -161,29 +152,10 @@
 		border-radius: 3px;
 	}
 
-	// Pull quote
-	.wp-block-pullquote {
-		position: relative;
 
-		&:before {
-			content: "\f101";
-			font-weight: 900;
-			color: $gray-300;
-			font-size: 4em;
-			z-index: 1;
-			position: absolute;
-			font-family: "Font Awesome 5 Free", sans-serif;
-			top: 0;
-			left: 0;
-		}
 
-		blockquote {
-			position: relative;
-			z-index: 2;
-			border-left: none;
-			padding-left: 0;
-			margin-left: 0;
-		}
+	address {
+		font-style: italic;
 	}
 
 	// Label

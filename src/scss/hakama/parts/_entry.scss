@@ -18,6 +18,39 @@
 		padding: 0 $grid-gutter-width / 2;
 	}
 
+	// Alignment
+	.alignleft,
+	.alignright {
+		max-width: 50%;
+	}
+
+	.aligncenter {
+		clear: both;
+	}
+
+	.alignwide {
+		margin: 0 -1 * $grid-gutter-width;
+		width: calc(100% + #{$grid-gutter-width} * 2);
+
+		@include media-breakpoint-down(md) {
+			margin: 0 -0.5 * $grid-gutter-width;
+			width: calc(100% + #{$grid-gutter-width});
+		}
+	}
+
+	.alignfull {
+		margin-right: calc(50% - 50vw);
+		margin-left: calc(50% - 50vw);
+		width: 100vw;
+	}
+
+	// Group
+	.wp-block-group {
+		&.has-background {
+			padding: $grid-gutter-width;
+		}
+	}
+
 	&-title {
 		font-size: $h1-font-size;
 		font-family: $font-family-serif;

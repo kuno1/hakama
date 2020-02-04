@@ -10,6 +10,8 @@ add_action( 'after_setup_theme', function() {
 	set_post_thumbnail_size( 512, 512, true );
 	// For slide show, same aspect ratio with WP plugin dir. (772x250)
 	add_image_size( 'carousel', 2316, 750, true );
+	// Support alignfull
+	add_theme_support( 'align-wide' );
 } );
 
 /**
