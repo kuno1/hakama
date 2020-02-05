@@ -2,33 +2,37 @@
 
 	text-align: center;
 
-	@include moving-gradient($color1: #f9d423, $color2: #e14fad, $color3: #fffc24);
-
-
 	&-text {
-		$notification-color: #fff !default;
-		padding: 20px 0;
-		font-weight: 100;
-		color: $notification-color;
+		padding: 0.75rem 0;
+		color: $white;
 
 		@extend %ellipsis;
 
+		@include media-breakpoint-down(sm) {
+			overflow: auto;
+			white-space: normal;
+			text-overflow: "";
+			text-align: justify;
+			text-justify: inter-ideograph;
+		}
+
 		a {
+
 			&:link,
 			&:visited {
-				color: $notification-color;
+				color: $white;
 				text-decoration: underline;
 			}
 
-			&:hover, &:active {
-				color: lighten($notification-color, 30);
+			&:hover,
+			&:active {
+				color: $gray-200;
 				text-decoration: none;
 			}
 		}
 
 		strong {
-			font-weight: 800;
+			font-weight: $font-weight-bold;
 		}
 	}
-
 }

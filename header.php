@@ -1,7 +1,7 @@
 <?php get_header( 'meta' ); ?>
 
 <header class="site-header" role="banner">
-	
+
 	<div class="site-header-brand">
 		<?php if ( has_custom_logo() ) : ?>
 			<?php the_custom_logo() ?>
@@ -11,7 +11,7 @@
 			</a>
 		<?php endif; ?>
 	</div>
-	
+
 	<nav class="site-header-nav">
 		<ul class="site-header-lists">
 		<?php if ( is_user_logged_in() ) : ?>
@@ -33,14 +33,14 @@
 				</a>
 			</li>
 		<?php endif; ?>
-			
+
 			<li class="site-header-list site-header-list-search">
 				<button class="btn btn-outline-light" data-toggle="modal" data-target="#search-form">
 					<i class="fa fa-search"></i>
 					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'hakama' ) ?></span>
 				</button>
 			</li>
-		
+
 			<?php if ( hakama_has_woo() && ! is_cart() ) : ?>
 			<li class="site-header-list site-header-list-cart">
 				<button class="btn btn-outline-light cart-btn" data-toggle="dropdown">
@@ -56,12 +56,10 @@
 			</li>
 			<?php endif; ?>
 		</ul>
-		
-	</nav>
-	
-</header>
 
-<?php do_action( 'hakama_header_notification' ); ?>
+	</nav>
+
+</header>
 
 <?php if ( has_nav_menu( 'global_menu' ) ) : ?>
 <nav class="global-nav" role="navigation">
@@ -81,3 +79,4 @@
 </nav>
 <?php endif; ?>
 
+<?php do_action( 'hakama_header_notification' ); ?>
