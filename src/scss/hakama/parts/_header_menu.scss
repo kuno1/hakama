@@ -1,11 +1,10 @@
-$nav-item-padding: 10px;
+$nav-item-padding: 1rem;
 
 
 .global-nav {
 	position: relative;
 	z-index: 99;
-	background: #fff;
-	border-bottom: #eee;
+	background: $gray-100;
 
 	ul {
 		padding: 0;
@@ -17,69 +16,33 @@ $nav-item-padding: 10px;
 
 		a {
 			display: block;
-			padding: $nav-item-padding;
-			font-weight: 200;
-			transition: color .3s linear, background-color .3s linear;
+			padding: $nav-item-padding $nav-item-padding / 2;
 
-			&:link, &:visited {
+			&:link,
+			&:visited {
 				text-decoration: none;
-				color: #000;
-				background: #fff;
+				color: $black;
+				background: $gray-100;
 			}
 
-			&:hover, &:active, &.active {
+			&:hover,
+			&:active,
+			&.active {
 				text-decoration: none;
-				color: #888;
-				background: #eee;
+				color: $white;
+				background: $black;
 			}
 		}
 	}
 
-	.container {
-		@include media-breakpoint-down(sm) {
-			padding-top: 1px;
-			padding-bottom: 1px;
+	.sub-menu li {
+		border-top: 1px solid $gray-900;
+
+		&:first-child {
+			border-top: none;
 		}
 	}
 
-	&-toggle {
-		margin: 14px 0;
-		display: none;
-		cursor: pointer;
-		background: #fff;
-		border: 2px solid $primary;
-		border-radius: 3px;
-		color: $primary;
-		width: 100%;
-		transition: color .3s linear, background-color .3s linear;
-
-		&:hover {
-			background: $primary;
-			color: #fff;
-		}
-
-		@include media-breakpoint-down(sm) {
-			display: block;
-		}
-
-		.fa {
-			margin-right: 0.5em;
-		}
-
-		.fa-times {
-			display: none;
-		}
-
-		&.toggle {
-			.fa-times {
-				display: inline-block;
-			}
-
-			.fa-bars {
-				display: none;
-			}
-		}
-	}
 
 	&-list {
 
@@ -88,108 +51,152 @@ $nav-item-padding: 10px;
 	&-item {
 
 		// Menu for wide screen
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			display: flex;
 			flex-wrap: nowrap;
+
+			%line-sep {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				display: block;
+				width: 1px;
+				height: 1em;
+				background-color: $gray-300;
+			}
+
 			// List
-			& > li {
+			> li {
 				position: relative;
 				flex: 1;
 				overflow: visible;
 
-				& > a {
+				&:first-child > a::before {
+
+					@extend %line-sep;
+					left: 0;
+				}
+
+
+				> a {
 					text-align: center;
 					position: relative;
 
-					&:after {
-						position: absolute;
-						bottom: 0;
-						left: 50%;
-						transform: translateX(-50%);
-						content: "";
-						display: block;
-						width: 0;
-						height: 2px;
-						background: #888;
-						transition: width .2s $ease-in-out-sine;
+					&::after {
+
+						@extend %line-sep;
+						right: 0;
 					}
 
-					&:link, &:visited {
-						background: #fff;
-					}
+					&:hover,
+					&:active,
+					&.active {
 
-					&:hover, &:active {
-						background: #fff;
-
-						&:after {
-							width: 100%;
+						&::before,
+						&::after {
+							content: none;
 						}
 					}
 				}
 
-			}
-
-			// Child list
-			& > li > .sub-menu {
-				position: absolute;
-				width: 100%;
-				left: 0;
-				display: none;
-				font-size: 0.8rem;
-
-				& > li {
-					border: 1px solid #ddd;
-					border-top: none;
-				}
-			}
-			& > li:hover > .sub-menu {
-				display: block;
-			}
-
-			// Grand child list
-			& > li > .sub-menu .sub-menu {
-				li {
-					border-top: 1px dotted #ddd;
-					font-size: 0.85em;
+				// Child list
+				> .sub-menu {
+					position: absolute;
+					width: 100%;
+					left: 0;
+					display: none;
 
 					a {
-						&:before {
-							content: "- ";
+						position: relative;
+
+						&:link,
+						&:visited {
+							background-color: $black;
+							color: $white;
+						}
+
+						&:hover,
+						&:active {
+							background-color: $black;
+							color: $white;
+
+							&::after {
+								position: absolute;
+								content: "\f105";
+								font-family: $font-family-fa;
+								font-weight: 900;
+								top: 50%;
+								right: 10px;
+								transform: translateY(-50%);
+							}
 						}
 					}
 				}
-			}
 
-		}
-
-		// Menu for small device
-		@include media-breakpoint-down(sm) {
-			display: none;
-			.toggle + .global-nav-list & {
-				display: block;
-			}
-			// List
-			& > li {
-				border-bottom: 1px solid #ddd;
-			}
-			// Child list
-			& > li > .sub-menu {
-				& > li > a:before {
-					content: "- ";
-					font-size: 0.85em;
-				}
-			}
-			// Grand child list
-			& > li > .sub-menu .sub-menu {
-				font-size: 0.85em;
-
-				& > li > a:before {
-					padding-left: $nav-item-padding * 2;
-					content: "- ";
+				&:hover > .sub-menu {
+					display: block;
 				}
 			}
 		}
+	}
 
+	// Menu for small device
+	@include media-breakpoint-down(md) {
+		display: none;
+		background-color: $black;
+
+		&.toggle {
+			position: fixed;
+			display: block;
+			width: 400px;
+			max-width: 80%;
+			top: 90px;
+			left: 0;
+			bottom: 0;
+		}
+		// List
+		li a {
+
+			&:link,
+			&:visited {
+				background-color: $black;
+				color: $white;
+			}
+
+			&:hover,
+			&:active {
+				background-color: $gray-900;
+				color: $white;
+			}
+		}
+
+		&-item > li {
+
+			border-bottom: 1px solid $gray-900;
+
+			> a {
+				position: relative;
+
+				&::after {
+					position: absolute;
+					content: "\f105";
+					font-family: $font-family-fa;
+					font-weight: 900;
+					top: 50%;
+					right: 10px;
+					transform: translateY(-50%);
+				}
+			}
+		}
+
+		.sub-menu li {
+			padding-left: 1rem;
+
+			&:first-child {
+				border-top: 1px solid $gray-900;
+			}
+		}
 	}
 
 }

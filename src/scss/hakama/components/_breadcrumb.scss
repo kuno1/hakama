@@ -6,7 +6,7 @@
 	}
 
 	&-link {
-		transition: color .3s ease-in-out;
+		transition: color 0.3s ease-in-out;
 
 		&:link,
 		&:visited {
@@ -33,6 +33,13 @@
 			padding-right: $breadcrumb-item-padding;
 			color: $breadcrumb-divider-color;
 			content: "\f015";
+		}
+	}
+
+	&-wrapper {
+
+		@include media-breakpoint-down(md) {
+			background-color: $gray-100;
 		}
 	}
 }

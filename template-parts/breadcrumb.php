@@ -11,4 +11,7 @@ defined( 'ABSPATH' ) || die();
 if ( ! class_exists( '\Kunoichi\BootstraPress\Breadcrumb' ) ) {
 	return;
 }
-\Kunoichi\BootstraPress\Breadcrumb::display();
+?>
+<div class="breadcrumb-wrapper">
+	<?php \Kunoichi\BootstraPress\Breadcrumb::display(); ?>
+</div>
