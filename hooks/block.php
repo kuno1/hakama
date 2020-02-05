@@ -154,3 +154,19 @@ HTML;
 add_filter( 'kbl_link_card_size', function () {
 	return 'large';
 } );
+
+/**
+ * Alert styles.
+ */
+add_filter( 'kbl_alert_styles', function( $styles ) {
+	$styles = [];
+	foreach ( [ '', '-outlined' ] as $suffix ) {
+		foreach ( [ 'primary', 'secondary', 'warning', 'success', 'info', 'danger', 'dark', 'light' ] as $theme ) {
+			$name = $theme.$suffix;
+			$styles[ $name ] = implode( ' ', array_map( 'ucfirst', explode( '-', $name ) ) );
+		}
+	}
+	return [
+		'styles' => $styles,
+	];
+} );
