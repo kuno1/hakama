@@ -3,7 +3,18 @@
  * Block related functions.
  *
  * @package hakama
+ *
  */
+
+// Original blocks.
+// Register blocks assets.
+\Hametuha\WpBlockCreator::register( [
+	'namespace' => "Kunoichi\\Hakama\\Blocks",
+	'dir' => get_template_directory() . '/app/Kunoichi/Hakama/Blocks',
+	'scripts' => get_template_directory() . '/assets/js/blocks',
+	'styles' => get_template_directory() . '/assets/css/blocks',
+	'prefix' => 'hakama-block-',
+] );
 
 /**
  * Enable block library

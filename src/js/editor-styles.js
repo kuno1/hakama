@@ -41,5 +41,11 @@ wp.domReady( function() {
 
 	unregisterBlockStyle( 'core/button', 'outline' );
 	unregisterBlockStyle( 'core/button', 'fill' );
+
+	// Group
+	registerBlockStyle( 'core/group', {
+		name: 'bordered',
+		label: __( 'Bordered', 'hakama' ),
+	} );
 } );
 

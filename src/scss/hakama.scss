@@ -14,4 +14,7 @@ $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/im
 @import "hakama/front_global";
 @import "hakama/components/*";
 @import "hakama/parts/*";
-@import "hakama/block/*";
+
+.entry-content {
+	@import "hakama/block/*";
+}

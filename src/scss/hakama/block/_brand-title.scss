@@ -1,0 +1,22 @@
+
+.brand-title-block {
+	margin: $section-gap 0;
+	text-align: center;
+
+	&-img {
+		max-width: 80px;
+		width: auto;
+		height: auto;
+		border: 1px solid $gray-300;
+		border-radius: 50%;
+		background-color: $white;
+		margin-bottom: $section-gap / 2;
+	}
+
+	&-text {
+		margin: 0 $section-gap;
+		font-weight: $font-weight-bold;
+		font-size: $h4-font-size;
+		font-family: $font-family-base;
+	}
+}
