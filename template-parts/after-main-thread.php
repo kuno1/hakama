@@ -1,8 +1,8 @@
 <?php
 $parent = hakama_document_parent();
 ?>
-<footer class="main-footer thread-footer">
-	
+<footer class="main-footer entry">
+
 	<h2 class="main-footer-title thread-footer-title text-center">
 		<?php if ( $parent ) : ?>
 			<?php esc_html_e( 'Product Support', 'hakama' ) ?>
@@ -19,9 +19,9 @@ $parent = hakama_document_parent();
 		}
 		?>
 	</p>
-	
+
 	<div class="row">
-		
+
 		<div class="col-xs-12 col-md-4">
 			<div class="card">
 				<div class="card-body">
@@ -44,14 +44,14 @@ $parent = hakama_document_parent();
 		<div class="col-xs-12 col-md-4">
 			<div class="card">
 				<div class="card-body">
-					
+
 					<i class="card-icon fa fa-life-ring text-primary"></i>
 					<h3 class="card-title text-center text-primary"><?php esc_html_e( 'Get Supported By', 'hakama' ) ?></h3>
 
 					<div class="card-icon-image">
 						<?php echo hakama_brand_thumbnail( $parent ) ?>
 					</div>
-					
+
 					<p class="card-text">
 						<?php esc_html_e( 'All customers can get supported by product creator. You can refer resolved threads or start new one!', 'hakama' ) ?>
 					</p>
@@ -67,7 +67,7 @@ $parent = hakama_document_parent();
 							<?php endif; ?>
 						<?php endif; ?>
 					</p>
-					
+
 					<?php if ( ! is_post_type_archive( 'thread' ) ) : ?>
 						<p class="text-center">
 							<a class="btn btn-outline-primary btn-block" href="<?php echo hakama_support_page( $parent ) ?>">
@@ -78,31 +78,12 @@ $parent = hakama_document_parent();
 				</div>
 			</div>
 		</div>
-		
-		<div class="col-xs-12 col-md-4">
-			<div class="card">
-				<div class="card-body">
-					<i class="fa fa-users card-icon text-warning"></i>
-					<h3 class="card-title text-center text-warning"><?php esc_html_e( 'Contact Platform', 'hakama' ) ?></h3>
-					<p class="card-text">
-						<?php esc_html_e( 'Need platform support? Please feel free to contact KUNOICHI support team.', 'hakama' ) ?>
-					</p>
-					<p class="text-center">
-						<?php if ( is_user_logged_in() ) : ?>
-							<?php if ( function_exists( 'hamethread_button' ) ) {
-								hamethread_button( 0, __( 'Contact To Support', 'hakama' ) );
-							} ?>
-						<?php else : ?>
-							<a class="btn btn-outline-secondary btn-block" href="<?php hakama_login_url( $_SERVER['REQUEST_URI'] ) ?>">
-								<?php esc_html_e( 'Login to Get Support', 'hakama' ) ?>
-							</a>
-						<?php endif; ?>
-					</p>
-					
-				</div>
-				
-			</div>
-		</div>
+
+
 	</div><!-- // .row -->
+
+	<?php get_template_part( 'template-parts/support-author' ); ?>
+
+	<?php get_template_part( 'template-parts/support-platform' ); ?>
 
 </footer><!-- //main-footer -->

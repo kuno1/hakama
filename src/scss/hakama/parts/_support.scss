@@ -1,0 +1,55 @@
+%support-container {
+	margin: $section-gap 0;
+	padding: $section-gap;
+
+	p {
+		margin: 0 0 $section-gap / 2;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.platform-support {
+	text-align: center;
+	background-color: $gray-100;
+
+	@extend %support-container;
+
+	&-title {
+		margin: $section-gap / 2 0;
+	}
+
+}
+
+.support-by-author {
+	border: 1px solid $gray-300;
+
+	@extend %support-container;
+
+	&-thumbnail {
+		max-width: 90px;
+	}
+
+	&-title {
+		font-weight: $font-weight-base !important;
+		font-size: $h4-font-size !important;
+		font-family: $font-family-serif !important;
+	}
+
+	&-brand {
+		height: 60px;
+		line-height: 60px;
+		margin-bottom: $section-gap / 2 !important;
+		font-weight: $font-weight-bold !important;
+		font-size: $h4-font-size !important;
+		font-family: $font-family-sans-serif !important;
+
+		img {
+			max-width: 60px;
+			margin: 0 10px 0 0;
+		}
+	}
+
+}

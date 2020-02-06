@@ -93,6 +93,32 @@ function hakama_get_brand( $post = null ) {
 	return get_post( get_post( $post )->post_parent );
 }
 
+
+/**
+ * Get current product.
+ *
+ * @return WP_Post|null
+ */
+function hakama_get_current_product() {
+	global $wp_query;
+	$post_parent = null;
+	if ( is_singular() ) {
+		if ( is_singular( 'product' ) ) {
+			return get_queried_object();
+		}
+		$post_parent = get_queried_object()->post_parent;
+	} else {
+		$post_parent = $wp_query->get( 'post_parent' );
+	}
+	if ( $post_parent ) {
+		$post_parent = get_post( $post_parent );
+		if ( 'product' === $post_parent->post_type ) {
+			return $post_parent;
+		}
+	}
+	return null;
+}
+
 /**
  * Get brand thumbnail
  *
