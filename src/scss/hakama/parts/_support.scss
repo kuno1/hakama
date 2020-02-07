@@ -36,6 +36,10 @@
 		font-weight: $font-weight-base !important;
 		font-size: $h4-font-size !important;
 		font-family: $font-family-serif !important;
+
+		small {
+			display: block;
+		}
 	}
 
 	&-brand {

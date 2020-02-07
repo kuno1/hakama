@@ -246,3 +246,21 @@ function hakama_document_owner( $post = null ) {
 		return $user->display_name;
 	}
 }
+
+/**
+ * Get document title.
+ *
+ * @param null|WP_Post $post
+ * @return string
+ */
+function hakama_product_title( $post = null ) {
+	$post = get_post( $post );
+	if ( is_singular( 'faq' ) || is_post_type_archive( 'faq' ) || is_tax( 'faq_cat' ) ) {
+		$title = sprintf( '%s<small>%s</small>', get_the_title( $post ), __( 'Document', 'hakama' ) );
+	} elseif ( is_singular( 'thread' ) || is_post_type_archive( 'thread' ) || is_tax( 'topic' ) ) {
+		$title = sprintf( '%s<small>%s</small>', get_the_title( $post ), __( 'Support Forum', 'hakama' ) );
+	} else {
+		$title = get_the_title( $post );
+	}
+	return wp_kses_post( $title );
+}

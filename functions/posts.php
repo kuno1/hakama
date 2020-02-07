@@ -179,3 +179,16 @@ function hakama_top_category( $post = null ) {
 	}
 	return $result;
 }
+
+/**
+ * Get subscribers.
+ *
+ * @param null|int|WP_Post $post
+ * @return int[]
+ */
+function hakama_thread_subscribers( $post = null ) {
+	if ( ! class_exists( '\Hametuha\Thread\Hooks\SupportNotification' ) ) {
+		return [];
+	}
+	return \Hametuha\Thread\Hooks\SupportNotification::get_instance()->get_subscribers( $post );
+}

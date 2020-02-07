@@ -11,6 +11,10 @@
 		border-radius: 50%;
 		background-color: $white;
 		margin-bottom: $section-gap / 2;
+
+		@at-root .entry-content & {
+			max-width: 80px;
+		}
 	}
 
 	&-text {
@@ -18,5 +22,9 @@
 		font-weight: $font-weight-bold !important;
 		font-size: $h4-font-size !important;
 		font-family: $font-family-sans-serif !important;
+
+		small {
+			display: block;
+		}
 	}
 }

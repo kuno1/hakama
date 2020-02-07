@@ -29,7 +29,7 @@ $brand = get_post( $product->post_parent );
 	<?php endif; ?>
 
 	<p class="text-center">
-		<a href="<?php echo add_query_arg( [ 'product-id' => get_the_ID() ], home_url( 'contact-author' ) ); ?>" class="btn btn-outline-primary">
+		<a href="<?php echo add_query_arg( [ 'product-id' => $product->ID ], home_url( 'contact-author' ) ); ?>" class="btn btn-outline-primary">
 			<i class="far fa-envelope"></i>
 			<?php esc_html_e( 'Contact About Product', 'hakama' ) ?>
 		</a>

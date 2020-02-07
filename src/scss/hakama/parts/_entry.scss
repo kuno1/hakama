@@ -4,19 +4,7 @@
 
 .entry {
 
-	// Entry is always 960px maximum.
-	padding: 0;
-	margin: 0 auto;
-	$entry-max-width: map_get($container-max-widths, "lg");
-	max-width: $entry-max-width;
-
-	@include media-breakpoint-down(lg) {
-		padding: 0 $grid-gutter-width;
-	}
-
-	@include media-breakpoint-down(md) {
-		padding: 0 $grid-gutter-width / 2;
-	}
+	@extend %entry-wrapper;
 
 	// Alignment
 	.alignleft,

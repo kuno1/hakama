@@ -56,9 +56,11 @@ function hakama_trim( $string, $glue = "\n" ) {
  */
 function hakama_template_group() {
 	if ( is_singular( 'faq' ) || is_post_type_archive( 'faq' ) || is_tax( 'faq_cat' ) ) {
-		return 'faq';
+		// FAQ.
+		return 'support';
 	} elseif ( is_singular( 'thread' ) || is_post_type_archive( 'thread' ) || is_tax( 'topic' ) ) {
-		return 'thread';
+		// Thead
+		return 'support';
 	} else {
 		return '';
 	}
@@ -114,33 +116,7 @@ function hakama_avoid_the_content( $string ) {
  * @param null|WP_Query $query
  */
 function hakama_pagination( $query = null ) {
-	if ( ! $query ) {
-		global $wp_query;
-		$query = $wp_query;
+	if ( class_exists( 'Kunoichi\BootstraPress\PageNavi' ) ) {
+		\Kunoichi\BootstraPress\PageNavi::pagination();
 	}
-	$big = 999999999; // need an unlikely integer
-
-	$pagination = paginate_links( [
-		'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format'  => '?paged=%#%',
-		'current' => max( 1, $query->get('paged') ),
-		'total'   => $query->max_num_pages
-	] );
-	if ( ! $pagination ) {
-		return;
-	}
-	$pagination = implode( "\n", array_map( function( $line ) {
-		$classes = [ 'page-item' ];
-		if ( false !== strpos( $line, 'current' ) ) {
-			$classes[] = 'active';
-		}
-		if ( false !== strpos( $line, 'dots' ) ) {
-			$classes[] = 'disabled';
-		}
-
-		$line = str_replace( 'page-numbers', 'page-link', $line );
-		return sprintf( '<li class="%s">%s</li>', implode( ' ', $classes ), $line );
-	}, explode( "\n", $pagination ) ) );
-
-	echo sprintf( '<nav aria-label="%s"><ul class="pagination">%s</ul></nav>', esc_attr__( 'Pagination.', 'hakama' ), $pagination );
 }

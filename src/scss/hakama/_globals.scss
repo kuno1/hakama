@@ -34,3 +34,7 @@ $block-theme-colors: map-merge( (
 		background-color: $value;
 	}
 }
+
+.f-serif {
+	font-family: $font-family-serif !important;
+}
