@@ -15,5 +15,10 @@
 				<i class="fas fa-user"></i> <?php echo esc_html( hakama_document_owner() ) ?>
 			</span>
 		</p>
+		<div class="loop-icon">
+			<?php if ( function_exists( 'hamelp_get_accessibility' ) && hamelp_get_accessibility() ) : ?>
+			<i class="fas fa-lock"><span class="sr-only"><?php esc_html_e( 'This post is restricted.', 'hakama' ) ?></span></i>
+			<?php endif; ?>
+		</div>
 	</a>
 </li>

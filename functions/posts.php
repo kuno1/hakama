@@ -192,3 +192,21 @@ function hakama_thread_subscribers( $post = null ) {
 	}
 	return \Hametuha\Thread\Hooks\SupportNotification::get_instance()->get_subscribers( $post );
 }
+
+/**
+ * Get latest updated time.
+ *
+ * @param null|int|WP_Post $post
+ * @return string
+ */
+function hakama_post_updated( $post = null ) {
+	$post = get_post( $post );
+	$updated = get_post_modified_time( 'Y-m-d H:i:s', false, $post );
+	if ( function_exists( 'hamethread_get_latest_comment_date' ) ) {
+		$comment_updated = hamethread_get_latest_comment_date( $post );
+		if ( $comment_updated && $comment_updated > $updated ) {
+			$updated = $comment_updated;
+		}
+	}
+	return $post->post_date < $updated ? $updated : '';
+}

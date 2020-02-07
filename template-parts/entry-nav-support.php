@@ -19,7 +19,7 @@ if ( ! $product ) {
 				</li>
 
 				<li class="entry-nav-item">
-					<a class="entry-nav-link" href="<?php echo home_url( sprintf( '/faq/of/%d', $product->ID ) ) ?>">
+					<a class="entry-nav-link<?php echo ( is_singular( 'faq' ) || is_post_type_archive( 'faq' ) || is_tax( 'faq_cat' ) ) ? ' active' : '' ?>" href="<?php echo home_url( sprintf( '/faq/of/%d', $product->ID ) ) ?>">
 						<?php esc_html_e( 'Documents','hakama' ) ?></a>
 				</li>
 

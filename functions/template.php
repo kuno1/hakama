@@ -6,7 +6,51 @@
  */
 
 /**
+ * Get date diff.
  *
+ * @param string $date
+ * @param string $from
+ * @return int
+ */
+function hakama_date_diff( $date, $from = '' ) {
+	if ( ! $from ) {
+		$from = date_i18n( 'Y-m-d H:i:s' );
+	}
+	return strtotime( $from ) - strtotime( $date );
+}
+
+/**
+ * Display date diff like "2 years ago"
+ *
+ * @param string $date
+ * @param string $from
+ * @return string
+ */
+function hakama_the_date_diff( $date, $from = '' ) {
+	$diff = (int) hakama_date_diff( $date, $from );
+	if ( 0 > $diff ) {
+		return __( 'Just Now', 'hakama' );
+	}
+	$diff = $diff / 60;
+	$days = $diff / 60 / 24;
+	if ( $diff < 60 ) {
+		return sprintf( _n( __( '%d minute ago', 'hakama' ), __( '%d minutes ago', 'hakama' ), $diff, 'hakama' ), $diff );
+	} elseif ( $days < 1 ) {
+		$hour = floor( $diff / 60 );
+		return sprintf( _n( __( '%d hour ago', 'hakama' ), __( '%d hours ago', 'hakama' ), $hour, 'hakama' ), $hour / 60 );
+	} elseif ( $days < 30 ) {
+		return sprintf( _n( __( '%d day ago', 'hakama' ), __( '%d days ago', 'hakama' ), $days, 'hakama' ), $days );
+	} elseif ( $days < 365 ) {
+		$month = max( 1, floor( $days / 30.5 ) );
+		return sprintf( _n( __( '%d month ago', 'hakama' ), __( '%d months ago', 'hakama' ), $month, 'hakama' ), $month );
+	} else {
+		$year = floor( $days / 365 );
+		return sprintf( _n( __( '%d year ago', 'hakama' ), __( '%d years ago', 'hakama' ), $year, 'hakama' ), $year );
+	}
+}
+
+/**
+ * Get template part.
  *
  * @param string $slug
  * @param string $suffix

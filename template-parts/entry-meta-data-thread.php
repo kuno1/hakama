@@ -5,11 +5,12 @@ $subscribers = hakama_thread_subscribers();
 <p class="loop-thread-meta">
 	<span class="loop-meta-item">
 		<?php esc_html_e( 'Published', 'hakama' ) ?>
-		<?php the_time( get_option( 'date_format' ) ) ?>
+		<?php echo hakama_the_date_diff( get_post()->post_date ) ?>
 	</span>
-	<?php if ( true ) : ?>
+	<?php if ( $updated = hakama_post_updated() ) : ?>
 		<span class="loop-meta-item">
-
+			<?php esc_html_e( 'Updated: ', 'hakama' ) ?>
+			<?php echo hakama_the_date_diff( $updated ) ?>
 		</span>
 	<?php endif; ?>
 	<span class="loop-meta-item" aria-label="<?php esc_attr_e( 'Comment Count', 'hakama' ) ?>">
