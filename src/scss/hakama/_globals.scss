@@ -38,3 +38,11 @@ $block-theme-colors: map-merge( (
 .f-serif {
 	font-family: $font-family-serif !important;
 }
+.f-bold {
+	font-weight: $font-weight-bold !important;
+}
+
+.gap-element {
+	padding-top: $section-gap;
+	padding-bottom: $section-gap;
+}

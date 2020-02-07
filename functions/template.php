@@ -54,13 +54,13 @@ function hakama_trim( $string, $glue = "\n" ) {
  *
  * @return string
  */
-function hakama_template_group() {
+function hakama_template_group( $prefix = '' ) {
 	if ( is_singular( 'faq' ) || is_post_type_archive( 'faq' ) || is_tax( 'faq_cat' ) ) {
 		// FAQ.
-		return 'support';
+		return $prefix . 'faq';
 	} elseif ( is_singular( 'thread' ) || is_post_type_archive( 'thread' ) || is_tax( 'topic' ) ) {
 		// Thead
-		return 'support';
+		return $prefix . 'support';
 	} else {
 		return '';
 	}

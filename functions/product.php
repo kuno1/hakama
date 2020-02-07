@@ -243,7 +243,18 @@ function hakama_document_owner( $post = null ) {
 	if ( $user->has_cap( 'edit_others_posts' ) ) {
 		return 'Kunoichi INC';
 	} else {
-		return $user->display_name;
+		$brand = null;
+		switch ( $post->post_type ) {
+			case 'product':
+				$brand = get_post( $post->post_parent );
+				break;
+			default:
+				if ( $post->post_parent ) {
+					$brand = wp_get_post_parent_id( $post->post_parent );
+				}
+				break;
+		}
+		return $brand ? get_the_title( $brand ) : $user->display_name;
 	}
 }
 

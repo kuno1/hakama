@@ -6,6 +6,10 @@
 
 	@extend %entry-wrapper;
 
+	&-thread {
+		margin-bottom: $section-gap;
+	}
+
 	// Alignment
 	.alignleft,
 	.alignright {
@@ -34,11 +38,34 @@
 
 
 	&-title {
-		font-size: $h1-font-size;
+		font-size: $h2-font-size;
 		font-family: $font-family-serif;
+		line-height: 1.2;
 
 		&-private {
 			color: $brand-yellow;
+		}
+
+		&-with-icon {
+
+			&::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+		}
+
+		&-icon {
+			float: left;
+			margin-right: $section-gap / 2;
+			text-align: center;
+			i {
+				font-size: 36px;
+			}
+			span {
+				display: block;
+				font-size: $font-size-sm;
+			}
 		}
 	}
 
@@ -46,11 +73,34 @@
 		padding-bottom: $section-gap;
 		margin-bottom: $section-gap;
 
+		&-thread {
+			padding: $section-gap $section-gap / 2 0;
+			margin-bottom: 0;
+			position: relative;
+		}
+
+		&-author {
+			margin-top: $section-gap;
+			height: 60px;
+			line-height: 60px;
+			border-bottom: 1px solid $gray-300;
+			overflow: visible;
+
+			img {
+				width: auto;
+				height: auto;
+				max-width: 80px;
+				border-radius: 50%;
+				border: 1px solid $gray-300;
+			}
+		}
+
 		&-data {
 			padding: 0;
 			margin: 10px 0 0;
 
 			&-resolved {
+
 				.fa-check-circle {
 					color: $success !important;
 				}
@@ -61,6 +111,7 @@
 				display: inline-block;
 				margin-right: 0.5em;
 				font-size: 0.8rem;
+
 				@extend .text-muted;
 
 				.fa {
@@ -76,12 +127,14 @@
 				}
 
 				a {
-					&:link, &:visited {
+					&:link,
+					&:visited {
 						text-decoration: underline;
 						color: $blue;
 					}
 
-					&:hover, &:active {
+					&:hover,
+					&:active {
 						text-decoration: none;
 						color: lighten($blue, 10);
 					}
@@ -95,12 +148,14 @@
 					margin-right: 10px;
 					border-radius: 10px;
 
-					&:link, &:visited {
+					&:link,
+					&:visited {
 						text-decoration: none;
 						color: $blue;
 					}
 
-					&:hover, &:active {
+					&:hover,
+					&:active {
 						text-decoration: none;
 						color: #fff;
 						background-color: $blue;
@@ -111,19 +166,29 @@
 	}
 
 	&-content {
-		@include post-styles();
-
 		line-height: 1.8;
 
-		&:after {
+		@include post-styles();
+
+		&::after {
 			content: "";
 			display: block;
 			clear: both;
 		}
+
+		&-thread {
+			padding: 0 $section-gap / 2 $section-gap;
+		}
+	}
+
+	&-thread {
+		background-color: $gray-100;
 	}
 
 	&-footer {
+
 		&-title {
+
 			@extend %dividing-header;
 		}
 	}

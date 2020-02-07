@@ -13,7 +13,7 @@
 				<?php hakama_template( 'entry-nav', hakama_template_group() ) ?>
 
 				<?php if ( have_posts() ) : ?>
-					<ul class="loop-list">
+					<ul class="loop-list <?php echo hakama_template_group( 'loop-list-' ) ?>">
 						<?php while ( have_posts() ) {
 							the_post();
 							hakama_template( 'loop', get_post_type() );

@@ -25,14 +25,14 @@ if ( ( $on_sale = $product && $product->is_on_sale() ) ) {
 					<i class="fa fa-lock"></i>
 				<?php endif; ?>
 			</h2>
-			
+
 			<?php if ( $product ) : ?>
 			<div class="card-sub-title clearfix card-price">
 				<?php woocommerce_template_loop_rating(); ?>
 				<?php woocommerce_template_loop_price(); ?>
 			</div>
 			<?php endif; ?>
-			
+
 			<p class="card-subtitle entry-meta-subtitle text-muted loop-meta mb-2">
 				<?php if ( in_array( get_post_type(), [ 'post', 'faq', 'thread' ] ) ) : ?>
 					<span class="d-inline-block">
@@ -53,20 +53,7 @@ if ( ( $on_sale = $product && $product->is_on_sale() ) ) {
 					</span>
 				<?php endif; ?>
 				<?php
-				$terms = [
-					'post'    => 'category',
-					'faq'     => 'faq_cat',
-					'product' => 'product_tag',
-					'thread'  => 'topic',
-				];
-				if ( isset( $terms[get_post_type()] ) ) {
-					$terms = get_the_terms( get_post(), $terms[ get_post_type() ] );
-					if ( $terms && ! is_wp_error( $terms ) ) {
-						printf( '<span class="d-inline-block"><i class="fa fa-tag"></i> %s</span>', implode( ', ', array_map( function( $term ){
-							return sprintf( '<a href="%s">%s</a>', get_term_link( $term ), esc_html( $term->name ) );
-						}, $terms ) ) );
-					}
-				}
+
 				?>
 			</p>
 
@@ -80,7 +67,7 @@ if ( ( $on_sale = $product && $product->is_on_sale() ) ) {
 						<i class="fa fa-arrow-alt-circle-right"></i>
 					</a>
 				</p>
-			
+
 			<?php break; default : ?>
 				<div class="text-center">
 					<a href="<?php the_permalink() ?>" class="btn btn-link btn-sm">
@@ -89,7 +76,7 @@ if ( ( $on_sale = $product && $product->is_on_sale() ) ) {
 					</a>
 				</div>
 			<?php break; endswitch; ?>
-	
+
 		</div>
 		<?php hakama_the_loop_type( '<span class="loop-type">', '</span>' ) ?>
 	</div>
