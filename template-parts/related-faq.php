@@ -15,7 +15,10 @@ if ( is_singular( 'faq' ) ) {
 }
 $query = new WP_Query( $args );
 ?>
-<div class="related-blocks">
+<div class="<?php hakama_class_names( [
+	'related-blocks' => true,
+	'border-top'     => get_query_var( 'border-top'),
+] ) ; ?>">
 	<h3 class="f-bold related-blocks-title"><?php esc_html_e( 'Related Documents', 'hakama' ) ?></h3>
 
 	<?php if ( $query->have_posts() ) : ?>

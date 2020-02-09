@@ -46,3 +46,11 @@ section {
 		padding: 0 $grid-gutter-width / 2;
 	}
 }
+
+.border-top {
+	border-top: 1px solid $gray-300;
+}
+
+.border-bottom {
+	border-bottom: 1px solid $gray-300;
+}

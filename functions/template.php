@@ -20,6 +20,22 @@ function hakama_date_diff( $date, $from = '' ) {
 }
 
 /**
+ * Echo class names.
+ *
+ * @param array $class_names
+ * @return void
+ */
+function hakama_class_names( $class_names = [] ) {
+	$valid = [];
+	foreach ( $class_names as $class_name => $is_valid ) {
+		if ( $is_valid ) {
+			$valid[] = $class_name;
+		}
+	}
+	echo esc_attr( implode( ' ', $valid ) );
+}
+
+/**
  * Display date diff like "2 years ago"
  *
  * @param string $date
@@ -164,3 +180,4 @@ function hakama_pagination( $query = null ) {
 		\Kunoichi\BootstraPress\PageNavi::pagination();
 	}
 }
+

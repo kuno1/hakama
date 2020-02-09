@@ -11,7 +11,7 @@
  * Register supports.
  */
 add_action( 'after_setup_theme', function() {
-	
+
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
@@ -60,3 +60,12 @@ add_action( 'template_redirect', function () {
 		exit();
 	}
 }, 9 );
+
+// Change author's role for dropdown users.
+add_filter( 'wp_dropdown_users_args', function( $query_args, $parsed_args ) {
+	if ( 'authors' === $query_args['who'] ) {
+		$query_args['who'] = '';
+		$query_args['role__in'] = [ 'administrator', 'seller', 'editor' ];
+	}
+	return $query_args;
+}, 10, 2 );

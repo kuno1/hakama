@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+get_header();
+hakama_template( 'breadcrumb' );
+?>
 
 	<?php hakama_template( 'before-main', hakama_template_group() ) ?>
 

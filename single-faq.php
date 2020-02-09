@@ -11,9 +11,9 @@
 
 			<?php hakama_template( 'entry-nav', hakama_template_group() ) ?>
 
-			<article class="entry entry-thread">
+			<article class="entry entry-faq">
 				<?php hakama_template( 'entry-meta', get_post_type() ) ?>
-				<div class="entry-content entry-content-thread">
+				<div class="entry-content">
 					<?php if ( function_exists( 'shouyaku_post_notification' ) ) {
 						shouyaku_post_notification();
 					} ?>
@@ -22,13 +22,23 @@
 			</article>
 
 			<?php hakama_template( 'entry-footer', get_post_type() ) ?>
+
+			<div class="entry">
+				<?php hakama_template( 'related-faq', '', [
+					'border-top' => true,
+				] ) ?>
+			</div>
 		</main>
 
-		<div class="entry">
-			<?php hakama_template( 'related-faq' ) ?>
-		</div>
+
+		<?php hakama_template( 'entry-nav-parent', '', [
+			'border-bottom' => true,
+			'pt-0'          => true,
+		] ); ?>
 
 		<?php hakama_template( 'after-main', 'support' ) ?>
+
+
 	</section>
 
 <?php get_footer();

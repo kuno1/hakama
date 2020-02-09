@@ -34,3 +34,6 @@ if ( ! $product ) {
 	</div>
 
 </div>
+
+<?php
+hakama_template( 'entry-nav-parent' );

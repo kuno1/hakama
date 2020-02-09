@@ -275,3 +275,19 @@ function hakama_product_title( $post = null ) {
 	}
 	return wp_kses_post( $title );
 }
+
+/**
+ *
+ *
+ * @param null|int|WP_Post $post
+ * @param int|null         $user
+ * @return bool
+ */
+function hakama_can_read_post( $post = null, $user = null ) {
+	$post = get_post( $post );
+	if ( is_null( $user ) ) {
+		$user = get_current_user_id();
+	}
+	return false;
+
+}

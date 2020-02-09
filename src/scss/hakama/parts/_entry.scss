@@ -23,6 +23,7 @@
 	.alignwide {
 		margin: 0 -1 * $grid-gutter-width;
 		width: calc(100% + #{$grid-gutter-width} * 2);
+		max-width: calc(100% + #{$grid-gutter-width} * 2);
 
 		@include media-breakpoint-down(md) {
 			margin: 0 -0.5 * $grid-gutter-width;
@@ -34,6 +35,7 @@
 		margin-right: calc(50% - 50vw);
 		margin-left: calc(50% - 50vw);
 		width: 100vw;
+		max-width: 100vw;
 	}
 
 
