@@ -38,135 +38,6 @@
 		max-width: 100vw;
 	}
 
-
-	&-title {
-		font-size: $h2-font-size;
-		font-family: $font-family-serif;
-		line-height: 1.2;
-
-		&-private {
-			color: $brand-yellow;
-		}
-
-		&-with-icon {
-
-			&::after {
-				content: "";
-				display: block;
-				clear: both;
-			}
-		}
-
-		&-icon {
-			float: left;
-			margin-right: $section-gap / 2;
-			text-align: center;
-			i {
-				font-size: 36px;
-			}
-			span {
-				display: block;
-				font-size: $font-size-sm;
-			}
-		}
-	}
-
-	&-meta {
-		padding-bottom: $section-gap;
-		margin-bottom: $section-gap;
-
-		&-thread {
-			padding: $section-gap $section-gap / 2 0;
-			margin-bottom: 0;
-			position: relative;
-		}
-
-		&-author {
-			margin-top: $section-gap;
-			height: 60px;
-			line-height: 60px;
-			border-bottom: 1px solid $gray-300;
-			overflow: visible;
-
-			img {
-				width: auto;
-				height: auto;
-				max-width: 80px;
-				border-radius: 50%;
-				border: 1px solid $gray-300;
-			}
-		}
-
-		&-data {
-			padding: 0;
-			margin: 10px 0 0;
-
-			&-resolved {
-
-				.fa-check-circle {
-					color: $success !important;
-				}
-			}
-
-			li {
-				list-style: none;
-				display: inline-block;
-				margin-right: 0.5em;
-				font-size: 0.8rem;
-
-				@extend .text-muted;
-
-				.fa {
-					color: #ccc;
-					margin-right: 0.25em;
-				}
-
-				.avatar {
-					width: 24px;
-					height: 24px;
-					border-radius: 50%;
-					margin-right: 0.25em;
-				}
-
-				a {
-					&:link,
-					&:visited {
-						text-decoration: underline;
-						color: $blue;
-					}
-
-					&:hover,
-					&:active {
-						text-decoration: none;
-						color: lighten($blue, 10);
-					}
-				}
-
-				&.entry-tags a {
-					transition: color .3s linear, background-color .3s linear;
-					border: 1px solid $blue;
-					padding: 2px 5px;
-					display: inline-block;
-					margin-right: 10px;
-					border-radius: 10px;
-
-					&:link,
-					&:visited {
-						text-decoration: none;
-						color: $blue;
-					}
-
-					&:hover,
-					&:active {
-						text-decoration: none;
-						color: #fff;
-						background-color: $blue;
-					}
-				}
-			}
-		}
-	}
-
 	&-content {
 		line-height: 1.8;
 
@@ -192,6 +63,137 @@
 		&-title {
 
 			@extend %dividing-header;
+		}
+	}
+}
+
+
+.entry-title {
+	font-size: $h2-font-size;
+	font-family: $font-family-serif;
+	line-height: 1.2;
+
+	> i {
+		margin-right: 0.25em;
+	}
+
+	&-divider {
+		padding-bottom: $section-gap;
+		border-bottom: 1px solid $black;
+	}
+
+	&-private {
+		color: $brand-yellow;
+	}
+
+	&-with-icon {
+
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+
+	&-icon {
+		float: left;
+		margin-right: $section-gap / 2;
+		text-align: center;
+		i {
+			font-size: 36px;
+		}
+		span {
+			display: block;
+			font-size: $font-size-sm;
+		}
+	}
+}
+
+.entry-meta {
+	padding-bottom: $section-gap;
+	margin-bottom: $section-gap;
+	position: relative;
+
+	&-thread {
+		padding: $section-gap $section-gap / 2 0;
+		margin-bottom: 0;
+		position: relative;
+	}
+
+	&-author {
+		margin-top: $section-gap;
+		height: 60px;
+		line-height: 60px;
+		border-bottom: 1px solid $gray-300;
+		overflow: visible;
+
+		img {
+			width: auto;
+			height: auto;
+			max-width: 80px;
+			border-radius: 50%;
+			border: 1px solid $gray-300;
+		}
+	}
+
+	&-data {
+		padding: 0;
+		margin: 20px 0 0;
+
+		li {
+			list-style: none;
+			display: inline-block;
+			margin-left: 1em;
+			font-size: $font-size-sm;
+			color: $black;
+
+			i {
+				margin-right: 0.25em;
+			}
+
+			.avatar {
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				margin-right: 0.25em;
+			}
+
+			a {
+
+				&:link,
+				&:visited {
+					text-decoration: underline;
+					color: $black;
+				}
+
+				&:hover,
+				&:active {
+					text-decoration: none;
+					color: $info;
+				}
+			}
+		}
+	}
+
+	&-top-term {
+		margin: 0 0 20px;
+
+		.loop-faq-term {
+			margin-bottom: 0;
+		}
+	}
+
+	&-icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		text-align: right;
+		i {
+			color: $black;
+			font-size: 18px;
+		}
+		i + i {
+			margin-left: 0.25em;
 		}
 	}
 }
