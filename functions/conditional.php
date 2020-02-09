@@ -15,6 +15,24 @@ function hakama_has_woo() {
 }
 
 /**
+ * Detect if this page if for platform or not.
+ *
+ * @return bool
+ */
+function hakama_is_platform_page() {
+	if ( is_singular() ) {
+		switch ( get_queried_object()->post_type ) {
+			case 'page':
+				return true;
+			case 'product':
+				return false;
+			default:
+				return ! get_queried_object()->post_parent;
+		}
+	}
+}
+
+/**
  * Return parent product ID if exists.
  *
  * @return int

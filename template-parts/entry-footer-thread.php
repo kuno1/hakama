@@ -1,5 +1,7 @@
 <footer class="entry-footer entry-footer-thread">
 
+	<?php hakama_template( 'link-share' ) ?>
+
 	<?php if ( hakama_can_read_post() ) : ?>
 		<?php comments_template() ?>
 	<?php else : ?>

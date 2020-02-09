@@ -1,5 +1,5 @@
 <?php
-if ( ! hakama_is_transactional_page() ) {
+if ( ! hakama_is_transactional_page() && hakama_is_platform_page() ) {
     get_footer( 'entry' );
 }
 ?>
@@ -8,6 +8,7 @@ if ( ! hakama_is_transactional_page() ) {
 
 	<div class="container">
 
+		<?php if ( hakama_is_platform_page() ) : ?>
 		<div class="row">
 
 			<?php dynamic_sidebar( 'footer' ) ?>
@@ -15,6 +16,8 @@ if ( ! hakama_is_transactional_page() ) {
 		</div>
 
 		<hr class="colophon-divider" />
+
+		<?php endif; ?>
 
 		<?php hakama_template( 'footer', 'copyright' ) ?>
 

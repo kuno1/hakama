@@ -1,0 +1,56 @@
+.share-this {
+
+	display: flex;
+	padding: 20px 0;
+
+	&-title {
+		position: relative;
+		padding-top: 14px;
+		font-weight: $font-weight-bold;
+		font-size: 24px;
+		padding-right: 1em;
+		line-height: 1;
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 1px;
+			width: 150px;
+			max-width: 40%;
+			background-color: $black;
+		}
+	}
+
+	&-buttons {
+		font-size: $h3-font-size;
+	}
+
+	a {
+		margin-right: 0.5em;
+		display: inline-block;
+		width: 36px;
+		height: 36px;
+		line-height: 36px;
+		text-align: center;
+		background-color: transparent;
+		border: 1px solid $black;
+		color: $black;
+		border-radius: 50%;
+
+		transition: background-color .3s ease-in-out;
+
+		&:link,
+		&:visited {
+			text-decoration: none;
+			color: $black;
+		}
+
+		&:hover,
+		&:active {
+			color: $white;
+			text-decoration: none;
+			background-color: $black;
+		}
+	}
+}

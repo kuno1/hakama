@@ -1,3 +1,5 @@
 <footer class="entry-footer">
-	<?php comments_template() ?>
+
+	<?php hakama_template( 'link-share' ) ?>
+
 </footer>
