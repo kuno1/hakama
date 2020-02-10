@@ -11,7 +11,9 @@
 	<p class="text-center">
 		<?php if ( is_user_logged_in() ) : ?>
 			<?php if ( function_exists( 'hamethread_button' ) ) {
-				hamethread_button( 0, __( 'Contact To Support', 'hakama' ) );
+				hamethread_button( 0, __( 'Contact to Kunoichi Support', 'hakama' ), [
+					'class'  => 'btn btn-outline-primary',
+				] );
 			} ?>
 		<?php else : ?>
 			<a class="btn btn-outline-primary" href="<?php hakama_login_url( $_SERVER['REQUEST_URI'] ) ?>">

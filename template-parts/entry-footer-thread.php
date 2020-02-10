@@ -21,4 +21,6 @@
 
 	<?php endif; ?>
 
+	<?php hakama_template( 'support-thread' ); ?>
+	
 </footer>

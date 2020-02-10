@@ -9,6 +9,10 @@
 	p:last-child {
 		margin-bottom: 0;
 	}
+
+	h2 {
+		margin: $section-gap / 2 0;
+	}
 }
 
 .platform-support {
@@ -16,9 +20,18 @@
 	background-color: $gray-100;
 
 	@extend %support-container;
+}
 
-	&-title {
-		margin: $section-gap / 2 0;
+.platform-thread {
+	text-align: center;
+	background-color: $black;
+	color: $white;
+
+	@extend %support-container;
+
+	&-logo {
+		font-size: 50px;
+		color: $pink;
 	}
 
 }

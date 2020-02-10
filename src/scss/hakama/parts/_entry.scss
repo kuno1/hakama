@@ -54,10 +54,6 @@
 		}
 	}
 
-	&-thread {
-		background-color: $gray-100;
-	}
-
 	&-footer {
 
 		&-title {
@@ -66,7 +62,6 @@
 		}
 	}
 }
-
 
 .entry-title {
 	font-size: $h2-font-size;
@@ -196,4 +191,14 @@
 			margin-left: 0.25em;
 		}
 	}
+}
+
+// Thred
+.entry-meta-thread,
+.entry-content-thread {
+	background-color: $gray-100;
+}
+
+.entry-meta-thread .loop-thread-meta {
+	margin-bottom: 0;
 }
