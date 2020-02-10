@@ -11,11 +11,10 @@ hakama_template( 'breadcrumb' );
 
 			<main id="content">
 
-				<?php hakama_template( 'header', hakama_template_group() ) ?>
-
-				<?php hakama_template( 'entry-nav', hakama_template_group() ) ?>
-
-				<?php if ( have_posts() ) : ?>
+				<?php if ( have_posts() ) :
+					hakama_template( 'header', hakama_template_group() );
+					hakama_template( 'entry-nav', hakama_template_group() );
+					?>
 					<ul class="loop-list <?php echo hakama_template_group( 'loop-list-' ) ?>">
 						<?php while ( have_posts() ) {
 							the_post();
