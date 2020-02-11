@@ -5,7 +5,6 @@
 const $ = jQuery;
 
 $( document ).ready( () => {
-
 	// Global Nav
 	const $toggle = $( '#global-nav-toggle' );
 	if ( $toggle.length ) {
@@ -45,4 +44,8 @@ $( document ).ready( () => {
 	$( document.body ).on( 'added_to_cart', updateCart );
 	$( document.body ).on( 'removed_from_cart', updateCart );
 
+	// Review form.
+	$( '.comment-reply-title', '#review_form' ).click( function() {
+		$( this ).toggleClass( 'toggle' );
+	} );
 } );

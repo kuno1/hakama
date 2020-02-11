@@ -1,0 +1,149 @@
+.woocommerce-Reviews {
+	max-width: 600px;
+	margin: 0 auto;
+
+	ol.commentlist {
+		padding: 0 !important;
+		margin: 40px 0 20px !important;
+	}
+}
+
+.review {
+
+	&-item {
+		padding: 20px 0 !important;
+		margin: 0 !important;
+		border-bottom: 1px solid $gray-300 !important;
+	}
+
+	&-title {
+		font-size: $h5-font-size;
+		font-weight: $font-weight-bold;
+		margin-bottom: 8px;
+	}
+
+	&-author {
+		font-size: $font-size-sm;
+		margin-bottom: 5px;
+	}
+
+	&-date {
+		font-size: $font-size-sm;
+	}
+
+	&-meta {
+		margin-bottom: 10px;
+	}
+
+	&-body {
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.woocommerce-verification-required {
+
+	@extend .alert;
+
+	color: $gray-600;
+	text-align: center;
+	font-size: $font-size-sm;
+}
+
+.hakama-stars {
+	position: relative;
+	width: 5em;
+	display: inline-block;
+	height: 1em;
+	line-height: 1;
+
+	$stars: "★★★★★";
+
+	&::before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 1em;
+		content: $stars;
+		color: $gray-300;
+	}
+
+	&-value {
+		position: absolute;
+		display: inline-block;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+		overflow: hidden;
+		height: 1em;
+
+		&::before {
+			content: $stars;
+			color: $warning;
+			white-space: nowrap;
+		}
+	}
+}
+
+#review_form {
+
+	.comment-reply-title {
+		font-size: $font-size-sm;
+		cursor: pointer;
+		text-decoration: underline;
+		display: inline-block;
+		padding: 3px 10px;
+		color: $gray-600;
+	}
+
+	.comment-form {
+		display: none;
+		padding: 40px;
+		margin: 40px 0;
+		background-color: $gray-200;
+
+		label {
+			font-weight: $font-weight-bold;
+			display: block;
+			margin: 0 0 10px;
+		}
+
+		.required {
+			color: $danger;
+			font-weight: $font-weight-base;
+		}
+
+		textarea {
+
+			@extend .form-control;
+			@extend textarea.form-control;
+		}
+
+		.comment-form-rating {
+			margin-bottom: 20px;
+		}
+
+		.stars a {
+			color: $warning !important;
+		}
+
+		.form-submit {
+			text-align: center;
+		}
+	}
+
+	.toggle + .comment-form {
+		display: block;
+	}
+}
+
+// Override buttons.
+.woocommerce #review_form #respond input#submit {
+
+	@extend .btn;
+	@extend .btn-primary;
+}

@@ -32,3 +32,5 @@ add_filter( 'gettext', function( $translation, $text, $domain ) {
 add_action( 'init', function() {
 	wp_deregister_style( 'hamethread' );
 }, 21 );
+
+//add_filter( '' );

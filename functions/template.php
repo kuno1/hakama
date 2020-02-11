@@ -181,3 +181,16 @@ function hakama_pagination( $query = null ) {
 	}
 }
 
+/**
+ * Render star rating.
+ *
+ * @param float $rating
+ * @return string
+ */
+function hakama_review_stars( $rating ) {
+	$rating = min( max( 0, $rating ), 5 );
+	$ratio  = floor( $rating / 5 * 100 );
+	$label = sprintf( esc_html__( 'Rated %s out of 5', 'woocommerce' ), $rating );
+	return sprintf( '<span class="hakama-stars" aria-label="%s"><span class="hakama-stars-value" style="width: %d%%;"></span></span>', esc_attr( $label ), $ratio );
+}
+

@@ -7,6 +7,16 @@
 		padding-bottom: 20px;
 		margin-top: $section-gap;
 		margin-bottom: $section-gap;
+
+		&.no-border-top {
+			border-top: none;
+			margin-top: 0;
+		}
+
+		&.no-border-bottom {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
 	}
 
 	&-list {

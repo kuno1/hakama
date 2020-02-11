@@ -167,7 +167,24 @@ function hakama_the_author( $post = null ) {
 function hakama_top_category( $post = null ) {
 	$post = get_post( $post );
 	$result = null;
-	foreach ( get_post_taxonomies( $post ) as $taxonomy ) {
+	switch ( $post->post_type ) {
+		case 'product':
+			$taxonomies = [ 'product_cat' ];
+			break;
+		case 'post':
+			$taxonomies = [ 'category' ];
+			break;
+		case 'thread':
+			$taxonomies = [ 'topic' ];
+			break;
+		case 'faq':
+			$taxonomies = [ 'faq_cat' ];
+			break;
+		default:
+			$taxonomies = get_post_taxonomies( $post );
+			break;
+	}
+	foreach ( $taxonomies as $taxonomy ) {
 		$terms = get_the_terms( $post, $taxonomy );
 		if ( ! $terms || is_wp_error( $terms ) ) {
 			continue;

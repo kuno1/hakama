@@ -291,3 +291,36 @@ function hakama_can_read_post( $post = null, $user = null ) {
 	return false;
 
 }
+
+/**
+ * Get latest version
+ *
+ * @param null|int|WP_Post $post
+ * @return string
+ */
+function hakama_get_latest_version( $post = null ) {
+	$info = hakama_get_plugin_info( $post );
+	return isset( $info['version'] ) ? $info['version'] : '';
+}
+
+/**
+ * Get plugin updated.
+ *
+ * @param null|int|WP_Post $post
+ * @return mixed|string
+ */
+function hakama_get_last_updated( $post = null ) {
+	$info = hakama_get_plugin_info( $post );
+	return ! empty( $info['last_updated'] ) ? get_date_from_gmt( $info['last_updated'] ) : '';
+}
+
+/**
+ * Get latest plugin information.
+ *
+ * @param null|int|WP_Post $post
+ * @return array
+ */
+function hakama_get_plugin_info( $post = null ) {
+	$product = wc_get_product( $post );
+	return \Kunoichi\Makibishi\Controller\FileManager::get_downloads_api_value( $product );
+}

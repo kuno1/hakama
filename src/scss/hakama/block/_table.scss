@@ -10,6 +10,12 @@
 			color: $white;
 		}
 
+		tbody th {
+			background-color: $white;
+			color: $black;
+			font-weight: $font-weight-bold;
+		}
+
 		td {
 			background-color: $white;
 		}

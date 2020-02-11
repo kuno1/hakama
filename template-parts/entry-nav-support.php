@@ -3,10 +3,20 @@ $product = hakama_get_current_product();
 if ( ! $product ) {
 	return;
 }
+
+$classes = hakama_class_names( [
+
+] );
+$no_border_top = get_query_var(' no-border-top' ) ? ' no-' : '';
 ?>
 <div class="entry">
 
-	<div class="alignfull entry-nav-divider">
+	<div class="<?php hakama_class_names( [
+		'alignfull'         => true,
+		'entry-nav-divider' => true,
+		'no-border-top'     => get_query_var( 'no-border-top' ),
+		'no-border-bottom'  => get_query_var( 'no-border-bottom' ),
+	] ); ?>">
 
 		<nav class="container">
 
