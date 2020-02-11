@@ -38,6 +38,11 @@ $block-theme-colors: map-merge( (
 .f-serif {
 	font-family: $font-family-serif !important;
 }
+
+.f-sans {
+	font-family: $font-family-sans-serif !important;
+}
+
 .f-bold {
 	font-weight: $font-weight-bold !important;
 }
@@ -45,4 +50,9 @@ $block-theme-colors: map-merge( (
 .gap-element {
 	padding-top: $section-gap;
 	padding-bottom: $section-gap;
+}
+
+.margin-auto {
+	margin-right: auto !important;
+	margin-left: auto !important;
 }

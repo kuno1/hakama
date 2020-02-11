@@ -39,6 +39,10 @@
 .support-by-author {
 	border: 1px solid $gray-300;
 
+	@at-root .product-brand & {
+		border: none;
+	}
+
 	@extend %support-container;
 
 	&-thumbnail {
@@ -49,6 +53,11 @@
 		font-weight: $font-weight-base !important;
 		font-size: $h4-font-size !important;
 		font-family: $font-family-serif !important;
+
+		@at-root .product-brand & {
+			font-weight: $font-weight-bold !important;
+			font-family: $font-family-sans-serif !important;
+		}
 
 		small {
 			display: block;
@@ -64,9 +73,17 @@
 		font-family: $font-family-sans-serif !important;
 
 		img {
-			max-width: 60px;
+			max-width: 60px !important;
 			margin: 0 10px 0 0;
 		}
 	}
 
+}
+
+.brand-info {
+	max-width: 600px;
+
+	@extend .gap-element;
+
+	@extend .margin-auto;
 }

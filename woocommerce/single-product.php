@@ -132,6 +132,28 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 					</div>
 				</div>
 
+
+				<div class="product-brand">
+
+					<?php hakama_template( 'support-brand' ) ?>
+
+				</div>
+
+				<div class="product-see-also alignfull">
+
+					<div class="product-see-also-inner">
+						<?php hakama_template( 'product-see-also' ); ?>
+					</div>
+
+				</div>
+
+				<div class="product-popular">
+
+					<div class="product-popular-inner">
+						<?php hakama_template( 'product-popular' ); ?>
+					</div>
+
+				</div>
 			</article>
 
 			<?php do_action( 'woocommerce_after_single_product' ); ?>
