@@ -13,10 +13,7 @@ get_header();
 hakama_template( 'breadcrumb' );
 the_post();
 
-// Change rating html.
-add_filter( 'woocommerce_product_get_rating_html', function( $html, $score, $count ) {
-	return sprintf( '<span class="star-rating-average">%s</span> %s', number_format( $score, '1' ), $html );
-}, 10, 3 );
+
 // Change reivew title
 add_filter( 'woocommerce_reviews_title', function( $title ) {
 	return '';

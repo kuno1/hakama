@@ -67,7 +67,7 @@
 		left: 0;
 		z-index: 2;
 		width: 100%;
-		height: 1em;
+		height: 100%;
 		content: $stars;
 		color: $gray-300;
 	}
@@ -79,13 +79,17 @@
 		left: 0;
 		z-index: 3;
 		overflow: hidden;
-		height: 1em;
+		height: 100%;
 
 		&::before {
 			content: $stars;
 			color: $warning;
 			white-space: nowrap;
 		}
+	}
+
+	@at-root .product-header & {
+		line-height: 1.4;
 	}
 }
 
@@ -146,4 +150,78 @@
 
 	@extend .btn;
 	@extend .btn-primary;
+}
+
+.review-summary {
+	max-width: 600px;
+	margin: 40px auto;
+	display: flex;
+	align-items: center;
+
+	&-rating {
+		flex-basis: 40%;
+		width: 100%;
+		text-align: center;
+
+		.star-rating {
+
+			&-average {
+				display: block;
+				font-size: 40px;
+				line-height: 1;
+				font-weight: $font-weight-bold;
+			}
+
+
+		}
+
+		.hakama-stars {
+			display: block;
+			font-size: 20px;
+			margin: 10px auto;
+		}
+
+		.woocommerce-review-link {
+			display: block;
+		}
+	}
+
+	&-graph {
+		flex-basis: 60%;
+		width: 100%;
+
+		&-table {
+			width: 100%;
+			table-layout: auto;
+
+			th {
+				width: 2em;
+			}
+
+			th,
+			td {
+				padding: 5px;
+			}
+		}
+
+		&-bar {
+			height: 1em;
+			background-color: $gray-300;
+
+			&-inner {
+				height: 100%;
+				background-color: $warning;
+			}
+		}
+	}
+
+	&-ratio {
+		width: 3em;
+	}
+
+	@include media-breakpoint-down(sm) {
+		display: block;
+	}
+
+
 }

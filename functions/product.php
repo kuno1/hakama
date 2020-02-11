@@ -324,3 +324,24 @@ function hakama_get_plugin_info( $post = null ) {
 	$product = wc_get_product( $post );
 	return \Kunoichi\Makibishi\Controller\FileManager::get_downloads_api_value( $product );
 }
+
+/**
+ * Get rating counts.
+ *
+ * @param int|null|WP_Post $post
+ * @return array Array of [ rate => count ];
+ */
+function hakama_get_rating_counts( $post = null ) {
+	$rate = [];
+	for ( $i = 1; $i <= 5; $i++ ) {
+		$rate[ $i ] = 0;
+	}
+	$product = wc_get_product( get_post( $post ) );
+	if ( ! $product ) {
+		return $rate;
+	}
+	foreach ( $product->get_rating_counts() as $i => $count ) {
+		$rate[ $i ] = $count;
+	}
+	return $rate;
+}

@@ -33,4 +33,7 @@ add_action( 'init', function() {
 	wp_deregister_style( 'hamethread' );
 }, 21 );
 
-//add_filter( '' );
+// Change rating html.
+add_filter( 'woocommerce_product_get_rating_html', function( $html, $score, $count ) {
+	return sprintf( '<span class="star-rating-average">%s</span> %s', number_format( $score, '1' ), hakama_review_stars( $score ) );
+}, 10, 3 );
