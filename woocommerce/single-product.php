@@ -22,7 +22,7 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 
 	<section class="section-main">
 
-		<main id="content" class="col-sm-12">
+		<main id="content">
 
 			<article id="product-<?php the_ID(); ?>" <?php wc_product_class( 'entry entry-product', $product ); ?>>
 
@@ -42,7 +42,7 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 					<?php woocommerce_template_single_rating() ?>
 				</header>
 
-				// Thumbnail
+				<?php hakama_template( 'product-gallery' ) ?>
 
 				<div class="product-meta alignfull">
 
@@ -69,7 +69,16 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 				] ) ?>
 
 				<div class="entry-content entry-content-product">
-					<?php the_content(); ?>
+					<?php if ( get_post()->post_content ) : ?>
+						<?php the_content(); ?>
+					<?php else : ?>
+						<divc class="alert alert-warning text-center">
+							<div class="alert-heading"><i class="fas fa-exclamation-circle"></i> <?php esc_html_e( 'No Description', 'hakama' ) ?></div>
+							<div class="alert-body">
+								<?php esc_html_e( 'This product has no description. Request author about details.', 'hakama' ) ?>
+							</div>
+						</divc>
+					<?php endif; ?>
 				</div>
 				<?php hakama_template( 'link-share' ) ?>
 

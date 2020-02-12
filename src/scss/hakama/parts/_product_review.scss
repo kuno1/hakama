@@ -6,6 +6,21 @@
 		padding: 0 !important;
 		margin: 40px 0 20px !important;
 	}
+
+	&-title {
+		text-align: center;
+
+		@extend .is-style-overline;
+
+		@extend .is-style-overline.has-text-align-center;
+
+		@extend .f-serif;
+	}
+
+	.woocommerce-noreviews {
+		text-align: center;
+		color: $gray-600;
+	}
 }
 
 .review {

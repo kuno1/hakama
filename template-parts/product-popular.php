@@ -14,8 +14,6 @@ $sub_query = new WP_Query( [
 if ( ! $sub_query->have_posts() ) {
 	return;
 }
-wp_enqueue_script( 'swiper-helper' );
-wp_enqueue_style( 'swiper-custom' );
 ?>
 	<div class="product-popular-block">
 		<h2 class="has-text-align-center is-style-overline f-serif mb-5">

@@ -75,4 +75,9 @@ add_action('wp_enqueue_scripts', function() {
 	}
 	wp_enqueue_script( 'hakama' );
 	wp_enqueue_style( 'bootstrap' );
+
+	if ( is_singular( 'product' ) ) {
+		wp_enqueue_script( 'swiper-helper' );
+		wp_enqueue_style( 'swiper-custom' );
+	}
 });
