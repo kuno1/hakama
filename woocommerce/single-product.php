@@ -47,6 +47,21 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 				<div class="product-meta alignfull">
 
 					<div class="product-meta-inner">
+
+						<div class="product-demo text-center">
+							<?php $demo_url = get_post_meta( get_the_ID(), '_demo_url', true ); ?>
+							<a class="product-demo-btn btn btn-<?php echo $demo_url ? 'primary' : 'outline-primary disabled' ?>"
+								href="<?php echo $demo_url ? esc_url( $demo_url ) : '#' ?>" target="_blank"
+								title="<?php echo $demo_url ? '' : esc_attr__( 'This product has no demo.', 'hakama' ) ?>">
+								<i class="far fa-eye"></i>
+								<?php esc_html_e( 'See Demo', 'hakama' ) ?>
+							</a>
+							<a class="product-demo-btn btn btn-outline-primary disabled" href="#" title="<?php esc_html_e( 'Coming Soon', 'hakama' ) ?>">
+								<i class="fas fa-tachometer-alt"></i>
+								<?php esc_html_e( 'Try Admin Demo', 'hakama' ) ?>
+							</a>
+						</div>
+
 						<div class="product-tags">
 							<i class="fas fa-tag"></i>
 							<?php the_terms( get_the_ID(), 'product_tag' ) ?>
