@@ -1,4 +1,4 @@
-name: WordPress Plugin Test
+name: Kunoichi Theme Test
 
 on:
   push:
