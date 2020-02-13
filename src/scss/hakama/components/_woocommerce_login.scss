@@ -1,0 +1,60 @@
+#customer_login {
+	h2 {
+		text-align: center;
+	}
+}
+
+.woocommerce {
+	&-address-fields {
+		.form-row {
+			display: block;
+		}
+
+		input[type=text],
+		input[type=tel],
+		input[type=email] {
+			@extend .form-control;
+		}
+	}
+
+	&-form {
+		@at-root .woocommerce-account & {
+			background: #fff;
+			border: none !important;
+		}
+
+		&-row {
+			label {
+				color: #888;
+			}
+
+			input[type=text], input[type=password], input[type=email] {
+				@extend .form-control;
+			}
+
+			.woocommerce-password-strength {
+				width: 100%;
+				display: block;
+				margin-top: 0.25em;
+			}
+
+			.woocommerce-password-hint {
+				margin-top: 0.25em;
+				@extend .text-muted;
+			}
+		}
+
+		&-login {
+			// submit butotn
+			.form-row:nth-child(3) {
+				display: block;
+
+				.woocommerce-form__label-for-checkbox {
+					display: block;
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+
+}

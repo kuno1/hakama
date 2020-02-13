@@ -1,0 +1,204 @@
+.category-nav {
+	margin-bottom: $section-gap;
+}
+
+.entry {
+
+	@extend %entry-wrapper;
+
+	&-thread {
+		margin-bottom: $section-gap;
+	}
+
+	// Alignment
+	.alignleft,
+	.alignright {
+		max-width: 50%;
+	}
+
+	.aligncenter {
+		clear: both;
+	}
+
+	.alignwide {
+		margin: 0 -1 * $grid-gutter-width;
+		width: calc(100% + #{$grid-gutter-width} * 2);
+		max-width: calc(100% + #{$grid-gutter-width} * 2);
+
+		@include media-breakpoint-down(md) {
+			margin: 0 -0.5 * $grid-gutter-width;
+			width: calc(100% + #{$grid-gutter-width});
+		}
+	}
+
+	.alignfull {
+		margin-right: calc(50% - 50vw);
+		margin-left: calc(50% - 50vw);
+		width: 100vw;
+		max-width: 100vw;
+	}
+
+	&-content {
+		line-height: 1.8;
+
+		@include post-styles();
+
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		&-thread {
+			padding: 0 $section-gap / 2 $section-gap;
+		}
+	}
+
+	&-footer {
+
+		&-title {
+
+			@extend %dividing-header;
+		}
+	}
+}
+
+.entry-title {
+	font-size: $h2-font-size;
+	font-family: $font-family-serif;
+	line-height: 1.2;
+
+	> i {
+		margin-right: 0.25em;
+	}
+
+	&-divider {
+		padding-bottom: $section-gap;
+		border-bottom: 1px solid $black;
+	}
+
+	&-private {
+		color: $brand-yellow;
+	}
+
+	&-with-icon {
+
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+
+	&-icon {
+		float: left;
+		margin-right: $section-gap / 2;
+		text-align: center;
+		i {
+			font-size: 36px;
+		}
+		span {
+			display: block;
+			font-size: $font-size-sm;
+		}
+	}
+}
+
+.entry-meta {
+	padding-bottom: $section-gap;
+	margin-bottom: $section-gap;
+	position: relative;
+
+	&-thread {
+		padding: $section-gap $section-gap / 2 0;
+		margin-bottom: 0;
+		position: relative;
+	}
+
+	&-author {
+		margin-top: $section-gap;
+		height: 60px;
+		line-height: 60px;
+		border-bottom: 1px solid $gray-300;
+		overflow: visible;
+
+		img {
+			width: auto;
+			height: auto;
+			max-width: 80px;
+			border-radius: 50%;
+			border: 1px solid $gray-300;
+		}
+	}
+
+	&-data {
+		padding: 0;
+		margin: 20px 0 0;
+
+		li {
+			list-style: none;
+			display: inline-block;
+			margin-left: 1em;
+			font-size: $font-size-sm;
+			color: $black;
+
+			i {
+				margin-right: 0.25em;
+			}
+
+			.avatar {
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				margin-right: 0.25em;
+			}
+
+			a {
+
+				&:link,
+				&:visited {
+					text-decoration: underline;
+					color: $black;
+				}
+
+				&:hover,
+				&:active {
+					text-decoration: none;
+					color: $info;
+				}
+			}
+		}
+	}
+
+	&-top-term {
+		margin: 0 0 20px;
+
+		.loop-faq-term {
+			margin-bottom: 0;
+		}
+	}
+
+	&-icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		text-align: right;
+		i {
+			color: $black;
+			font-size: 18px;
+		}
+		i + i {
+			margin-left: 0.25em;
+		}
+	}
+}
+
+// Thred
+.entry-meta-thread,
+.entry-content-thread {
+	background-color: $gray-100;
+}
+
+.entry-meta-thread .loop-thread-meta {
+	margin-bottom: 0;
+}

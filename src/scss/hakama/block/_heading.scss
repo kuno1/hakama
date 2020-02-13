@@ -1,0 +1,74 @@
+h1, h2, h3, h4, h5, h6 {
+	&.is-style-overline {
+		padding-top: 0.55em;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: "";
+			border-width: 0;
+			border-top-width: 1px;
+			border-top-style: solid;
+			width: 20px;
+			height: 1px;
+			top: 0;
+			left: 0;
+		}
+		&.has-text-align-center::before {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&.has-text-align-right::before {
+			right: 0;
+			left: auto;
+		}
+	}
+
+	&.is-style-separator {
+		display: flex;
+		white-space: nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		&::after,
+		&::before {
+			display: block;
+			height: 1px;
+			background-color: $gray-200;
+			flex-basis: 100%;
+		}
+
+		&::before {
+			content: none;
+			margin-right: $section-gap / 2;
+		}
+
+		&::after {
+			content: "";
+			margin-left: $section-gap / 2;
+		}
+
+		&.has-text-align-center::before,
+		&.has-text-align-right::before {
+			content: "";
+		}
+
+		&.has-text-align-right::after {
+			content: none;
+		}
+	}
+
+	&.is-style-underline {
+		padding-bottom: 0.25em;
+		border-bottom: 5px solid $gray-200;
+	}
+
+
+}
+
+@if $is-editor {
+	.is-style-separator {
+		white-space: nowrap !important;
+	}
+}

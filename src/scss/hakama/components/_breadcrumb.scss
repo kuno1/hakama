@@ -1,0 +1,45 @@
+.breadcrumb {
+
+	&-container {
+
+		@extend .container;
+	}
+
+	&-link {
+		transition: color 0.3s ease-in-out;
+
+		&:link,
+		&:visited {
+			color: $primary;
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:active {
+			color: $secondary-color;
+			text-decoration: none;
+		}
+	}
+
+	&-item {
+
+		&::before {
+			font-family: $font-family-fa;
+			font-weight: 600;
+		}
+
+		&:first-child::before {
+			display: inline-block;
+			padding-right: $breadcrumb-item-padding;
+			color: $breadcrumb-divider-color;
+			content: "\f015";
+		}
+	}
+
+	&-wrapper {
+
+		@include media-breakpoint-down(md) {
+			background-color: $gray-100;
+		}
+	}
+}

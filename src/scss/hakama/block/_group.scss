@@ -1,0 +1,23 @@
+.wp-block-group {
+
+	margin-top: $section-gap;
+	margin-bottom: $section-gap;
+
+	&.is-style-bordered {
+		border: 1px solid $black;
+	}
+
+	// Group
+	&.has-background,
+	&.is-style-bordered {
+		padding: $grid-gutter-width;
+
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

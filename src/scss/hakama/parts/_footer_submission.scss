@@ -1,0 +1,42 @@
+.submission {
+	padding: $section-gap 0;
+	background-color: $light;
+
+	.container {
+		max-width: 680px;
+	}
+
+	.form-group {
+
+		label {
+			color: $black;
+
+			&.form-check-label {
+				color: $white;
+			}
+		}
+	}
+
+	&-title {
+		font-family: $font-family-serif;
+		text-align: center;
+		font-size: 1.4rem;
+		margin-bottom: 0.25em;
+	}
+
+	&-lead {
+		font-size: 1.1rem;
+		text-align: center;
+		color: $dark;
+		margin-bottom: $section-gap;
+	}
+
+	&-submit {
+		margin-top: $section-gap;
+
+		@at-root html[lang=ja] & {
+			letter-spacing: 1em;
+		}
+	}
+
+}

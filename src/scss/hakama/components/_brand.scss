@@ -1,0 +1,33 @@
+.brand-icon {
+	.entry-summary & {
+		background: #fff;
+		border: 1px solid #eee;
+		border-radius: 2px;
+		padding: 20px;
+	}
+
+	&-thumbnail {
+		width: auto;
+		height: auto;
+		max-width: 200px !important;
+		display: block;
+		margin: 0 auto 10px;
+		border-radius: 50%;
+	}
+
+	&-title {
+		font-size: 1.2rem;
+		text-align: center;
+		font-weight: 200;
+
+		a:link, a:visited {
+			color: #444;
+			text-decoration: underline;
+		}
+
+		a:hover, a:active {
+			color: #aaa;
+			text-decoration: none;
+		}
+	}
+}

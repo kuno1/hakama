@@ -1,0 +1,13 @@
+.related-blocks {
+	padding: $section-gap 0 0;
+	margin: $section-gap 0;
+	border-bottom: 1px solid $gray-300;
+
+	&-title {
+		margin-bottom: $section-gap;
+	}
+
+	.loop-list-faq {
+		margin-bottom: 0;
+	}
+}

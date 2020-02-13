@@ -1,0 +1,58 @@
+// Sizing
+$section-gap: 40px;
+
+$price-font-family: Lucida Grande, Helvetica, Arial, Verdana, sans-serif;
+
+%ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+$header-gradient-start: #343a40;
+$header-gradient-end: #6c757d;
+
+%header-gradient {
+	background-color: $header-gradient-start;
+	@include bg-gradient(100deg, $header-gradient-start, $header-gradient-end);
+}
+
+
+$block-theme-colors: map-merge( (
+		"pink": $pink,
+		"white": $white,
+		"black": $black,
+), $theme-colors );
+
+@each $color, $value in $block-theme-colors {
+
+	.has-#{$color}-color {
+		color: $value;
+	}
+
+	.has-#{$color}-background-color {
+		background-color: $value;
+	}
+}
+
+.f-serif {
+	font-family: $font-family-serif !important;
+}
+
+.f-sans {
+	font-family: $font-family-sans-serif !important;
+}
+
+.f-bold {
+	font-weight: $font-weight-bold !important;
+}
+
+.gap-element {
+	padding-top: $section-gap;
+	padding-bottom: $section-gap;
+}
+
+.margin-auto {
+	margin-right: auto !important;
+	margin-left: auto !important;
+}

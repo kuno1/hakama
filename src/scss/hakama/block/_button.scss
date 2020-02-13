@@ -1,0 +1,32 @@
+$button-theme-colors: map-merge((
+), $theme-colors);
+
+.wp-block-button {
+
+	&__link {
+
+		@extend .btn;
+		min-width: 180px;
+	}
+
+	@each $color, $value in $button-theme-colors {
+
+		&.is-style-#{$color} .wp-block-button__link {
+
+			@extend .btn-#{$color};
+		}
+
+		&.is-style-#{$color}-outlined .wp-block-button__link {
+			background-color: transparent;
+
+			@extend .btn-outline-#{$color};
+		}
+	}
+}
+
+@if $is-editor {
+
+	.wp-block-button[class*="outlined"] .wp-block-button__link {
+		background-color: transparent !important;
+	}
+}

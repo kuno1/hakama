@@ -1,0 +1,202 @@
+$nav-item-padding: 1rem;
+
+
+.global-nav {
+	position: relative;
+	z-index: 99;
+	background: $gray-100;
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		list-style: none;
+
+		a {
+			display: block;
+			padding: $nav-item-padding $nav-item-padding / 2;
+
+			&:link,
+			&:visited {
+				text-decoration: none;
+				color: $black;
+				background: $gray-100;
+			}
+
+			&:hover,
+			&:active,
+			&.active {
+				text-decoration: none;
+				color: $white;
+				background: $black;
+			}
+		}
+	}
+
+	.sub-menu li {
+		border-top: 1px solid $gray-900;
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+
+
+	&-list {
+
+	}
+
+	&-item {
+
+		// Menu for wide screen
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			flex-wrap: nowrap;
+
+			%line-sep {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				display: block;
+				width: 1px;
+				height: 1em;
+				background-color: $gray-300;
+			}
+
+			// List
+			> li {
+				position: relative;
+				flex: 1;
+				overflow: visible;
+
+				&:first-child > a::before {
+
+					@extend %line-sep;
+					left: 0;
+				}
+
+
+				> a {
+					text-align: center;
+					position: relative;
+
+					&::after {
+
+						@extend %line-sep;
+						right: 0;
+					}
+
+					&:hover,
+					&:active,
+					&.active {
+
+						&::before,
+						&::after {
+							content: none;
+						}
+					}
+				}
+
+				// Child list
+				> .sub-menu {
+					position: absolute;
+					width: 100%;
+					left: 0;
+					display: none;
+
+					a {
+						position: relative;
+
+						&:link,
+						&:visited {
+							background-color: $black;
+							color: $white;
+						}
+
+						&:hover,
+						&:active {
+							background-color: $black;
+							color: $white;
+
+							&::after {
+								position: absolute;
+								content: "\f105";
+								font-family: $font-family-fa;
+								font-weight: 900;
+								top: 50%;
+								right: 10px;
+								transform: translateY(-50%);
+							}
+						}
+					}
+				}
+
+				&:hover > .sub-menu {
+					display: block;
+				}
+			}
+		}
+	}
+
+	// Menu for small device
+	@include media-breakpoint-down(md) {
+		display: none;
+		background-color: $black;
+
+		&.toggle {
+			position: fixed;
+			display: block;
+			width: 400px;
+			max-width: 80%;
+			top: 90px;
+			left: 0;
+			bottom: 0;
+		}
+		// List
+		li a {
+
+			&:link,
+			&:visited {
+				background-color: $black;
+				color: $white;
+			}
+
+			&:hover,
+			&:active {
+				background-color: $gray-900;
+				color: $white;
+			}
+		}
+
+		&-item > li {
+
+			border-bottom: 1px solid $gray-900;
+
+			> a {
+				position: relative;
+
+				&::after {
+					position: absolute;
+					content: "\f105";
+					font-family: $font-family-fa;
+					font-weight: 900;
+					top: 50%;
+					right: 10px;
+					transform: translateY(-50%);
+				}
+			}
+		}
+
+		.sub-menu li {
+			padding-left: 1rem;
+
+			&:first-child {
+				border-top: 1px solid $gray-900;
+			}
+		}
+	}
+
+}

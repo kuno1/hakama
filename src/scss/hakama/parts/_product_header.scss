@@ -1,0 +1,149 @@
+//
+// General WooCommerce setting.
+//
+.price {
+	font-family: $font-family-sans-serif;
+}
+
+.price,
+.price .amount {
+	color: $danger;
+}
+
+.price .amount {
+	font-weight: $font-weight-bold;
+}
+
+.woocommerce-Price-amount {
+
+}
+
+//
+// Product page.
+//
+.product {
+
+	&-header {
+		padding: $section-gap 0;
+		text-align: center;
+
+		.price {
+			font-size: 20px;
+			display: block;
+
+			.amount {
+				font-size: 32px;
+			}
+
+			.subscription-details {
+				font-size: 20px;
+			}
+		}
+
+		.woocommerce-product-rating .star-rating {
+			display: inline-block;
+			float: none;
+		}
+	}
+
+	&-title {
+		position: relative;
+		font-family: $font-family-serif;
+		font-weight: $font-weight-bolder;
+		color: $gray-900;
+		font-size: $h2-font-size;
+		margin-bottom: 10px;
+	}
+
+	&-type {
+		display: inline-block;
+		font-size: $font-size-sm;
+		padding: 3px 1em;
+		line-height: 1;
+		margin-bottom: 20px;
+		background-color: $gray-600;
+		color: $white;
+
+		&-verified {
+			color: $black;
+			background-color: $success;
+		}
+	}
+
+	&-excerpt {
+		font-family: $font-family-serif;
+		font-size: $h4-font-size;
+		color: $gray-900;
+		margin-bottom: 10px;
+		p {
+			margin: 0;
+		}
+	}
+
+	&-meta {
+		background-color: $gray-100;
+		padding-top: $section-gap;
+		padding-bottom: $section-gap;
+		font-size: $font-size-sm;
+
+		&-inner {
+
+			@extend %entry-wrapper;
+		}
+
+		&-paragraph {
+			margin: 0 0 20px;
+		}
+
+		&-divider {
+			margin: 0 1em;
+			display: inline-block;
+			background-color: $gray-600;
+			width: 1px;
+			height: 1em;
+		}
+	}
+
+	&-demo {
+		margin-bottom: 20px;
+
+		&-btn {
+			width: 200px;
+			max-width: 40%;
+
+			& + & {
+				margin-left: 20px;
+			}
+		}
+	}
+
+	&-tags {
+		max-width: 600px;
+		font-size: $font-size-sm;
+		margin: 0 auto 20px;
+		padding-left: 30px;
+		position: relative;
+		min-height: 20px;
+
+		i {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		a:link,
+		a:visited {
+			text-decoration: none;
+			color: $black;
+		}
+
+		a:hover,
+		a:active {
+			text-decoration: underline;
+			color: $gray-600;
+		}
+	}
+}
+
+
