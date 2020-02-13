@@ -4,16 +4,19 @@ $align-padding: 20px;
 	max-width: 100%;
 
 	&-text {
-		@extend .text-muted;
 		font-size: 0.8rem;
 		margin-top: 0.5em;
 
-		a:link, a:visited {
+		@extend .text-muted;
+
+		a:link,
+		a:visited {
 			color: #888;
 			text-decoration: underline;
 		}
 
-		a:hover, a:active {
+		a:hover,
+		a:active {
 			color: #222;
 			text-decoration: none;
 		}

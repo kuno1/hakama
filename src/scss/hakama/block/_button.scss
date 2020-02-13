@@ -1,5 +1,5 @@
-$button-theme-colors: map-merge( (
-), $theme-colors );
+$button-theme-colors: map-merge((
+), $theme-colors);
 
 .wp-block-button {
 
@@ -11,12 +11,12 @@ $button-theme-colors: map-merge( (
 
 	@each $color, $value in $button-theme-colors {
 
-		&.is-style-#{$color} .wp-block-button__link{
+		&.is-style-#{$color} .wp-block-button__link {
 
 			@extend .btn-#{$color};
 		}
 
-		&.is-style-#{$color}-outlined .wp-block-button__link{
+		&.is-style-#{$color}-outlined .wp-block-button__link {
 			background-color: transparent;
 
 			@extend .btn-outline-#{$color};

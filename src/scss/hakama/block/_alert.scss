@@ -19,8 +19,10 @@
 
 	@each $style in (primary, secondary, success, danger, info, warning, dark, light) {
 		$color: map_get($theme-colors, $style);
+
 		&.is-style-#{$style} {
 			background-color: $color;
+
 			@if light==$style {
 				color: $dark;
 			} @else {

@@ -1,10 +1,9 @@
 .seller-submission {
-
 	margin: 3em auto;
 	padding: 2em;
 	max-width: 680px;
 	background: #fff;
 	border-radius: 3px;
-	@include white-box-shadow();
 
+	@include white-box-shadow();
 }

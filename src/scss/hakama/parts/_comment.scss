@@ -10,7 +10,7 @@
 	@extend %entry-wrapper;
 }
 
-$small-screen: map_get( $grid-breakpoints, 'sm' );
+$small-screen: map_get($grid-breakpoints, 'sm');
 
 .hamethread-form {
 
@@ -49,7 +49,7 @@ $small-screen: map_get( $grid-breakpoints, 'sm' );
 
 	label {
 		font-size: 1.1em;
-		font-weight: bold;
+		font-weight: $font-weight-bold;
 	}
 }
 
@@ -138,6 +138,7 @@ ul.children ul.children {
 		box-sizing: border-box;
 		width: $avatar-col-width;
 		padding: 0 $avatar-padding;
+
 		@media only screen and (max-width: $small-screen) {
 			width: $avatar-col-width / 3 * 2;
 			padding: 0 $avatar-padding / 2;
@@ -145,17 +146,19 @@ ul.children ul.children {
 
 		img {
 			max-width: $img-size;
-			@media only screen and (max-width: $small-screen) {
-				width: $img-size / 3 * 2;
-			}
 			width: auto;
 			height: auto;
 			border-radius: 50%;
+
+			@media only screen and (max-width: $small-screen) {
+				width: $img-size / 3 * 2;
+			}
 		}
 	}
 
 	&-body {
 		margin-left: $avatar-col-width;
+
 		@media only screen and (max-width: $small-screen) {
 			margin-left: 0;
 		}
@@ -165,6 +168,7 @@ ul.children ul.children {
 		position: relative;
 		font-size: 0.85em;
 		padding: 30px 0 $avatar-padding / 2;
+
 		@media only screen and (max-width: $small-screen) {
 			margin-left: $avatar-col-width / 3 * 2;
 			padding-bottom: $avatar-padding;
@@ -205,6 +209,7 @@ ul.children ul.children {
 		margin-top: 20px;
 
 		&-label {
+
 			@media only screen and (max-width: $small-screen) {
 				display: none;
 			}
@@ -236,6 +241,7 @@ ul.children ul.children {
 }
 
 .hamethread-post {
+
 	&-comment {
 		text-align: center;
 	}
@@ -274,6 +280,7 @@ ul.children ul.children {
 }
 
 .hamethread-controller {
+
 	.btn-group {
 		float: right;
 
@@ -295,10 +302,6 @@ ul.children ul.children {
 
 	margin: 40px 0;
 
-	&-no {
-
-	}
-
 	&-item {
 		display: inline-block;
 		margin: 0 10px 10px 0;
@@ -317,6 +320,7 @@ ul.children ul.children {
 	}
 
 	.btn-following {
+
 		.on {
 			display: inline;
 		}
@@ -326,6 +330,7 @@ ul.children ul.children {
 		}
 
 		&:hover {
+
 			.on {
 				display: none;
 			}
