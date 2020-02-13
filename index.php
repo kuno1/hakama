@@ -1,9 +1,9 @@
 <?php
 get_header();
 hakama_template( 'breadcrumb' );
+hakama_template( 'before-main', hakama_template_group() );
 ?>
 
-	<?php hakama_template( 'before-main', hakama_template_group() ) ?>
 
 	<section class="section-main">
 

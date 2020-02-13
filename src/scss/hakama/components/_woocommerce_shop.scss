@@ -1,0 +1,15 @@
+.woocommerce-ordering {
+
+	select {
+
+		@extend .form-control;
+	}
+
+
+}
+
+.woocommerce-result-count {
+	height: 35px;
+	line-height: 35px;
+	font-weight: $font-weight-bold;
+}

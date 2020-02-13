@@ -67,3 +67,12 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
 	// Arrange.
 	return $fields;
 } );
+
+/**
+ * Filter loop wrapper start.
+ *
+ * @return string
+ */
+add_filter( 'woocommerce_product_loop_start', function() {
+	return '<ul class="product-list">';
+} );

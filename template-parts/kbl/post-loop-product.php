@@ -8,6 +8,11 @@ $thumbnail = has_post_thumbnail() ? sprintf( 'background-image: url(\'%s\')', es
 ?>
 <li <?php post_class( 'product-list-item' ); ?>>
 	<div class="product-list-thumbnail" style="<?php echo esc_attr( $thumbnail ) ?>">
+		<?php if ( $category = hakama_top_category() ) : ?>
+			<a class="product-list-term" href="<?php echo get_term_link( $category ) ?>">
+				<?php echo esc_html( $category->name ) ?>
+			</a>
+		<?php endif;?>
 	</div>
 	<div class="product-list-body">
 

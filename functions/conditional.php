@@ -30,6 +30,7 @@ function hakama_is_platform_page() {
 				return ! get_queried_object()->post_parent;
 		}
 	}
+	return true;
 }
 
 /**

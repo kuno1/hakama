@@ -5,6 +5,7 @@
 	padding: 2px 1em;
 	background-color: $black;
 	color: $white;
+	text-decoration: none;
 }
 
 %post-list-bg {
@@ -310,6 +311,7 @@
 }
 
 .product-list {
+	clear: both;
 	display: flex;
 	margin: $section-gap 0 $section-gap / 2;
 	padding: 0;
@@ -325,6 +327,7 @@
 	}
 
 	&-thumbnail {
+		position: relative;
 		background-color: $gray-200;
 		text-align: center;
 		min-height: 386px;
@@ -386,5 +389,14 @@
 			text-decoration: none;
 			background-color: $black;
 		}
+	}
+
+	&-term {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 3px 12px;
+
+		@extend %term-badge;
 	}
 }
