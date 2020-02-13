@@ -8,57 +8,70 @@
 				  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
 				  target="_blank" novalidate>
 				<div id="mc_embed_signup_scroll">
-					
+
 					<h2 class="submission-title">
-						<i class="far fa-envelope-open"></i><br/>
-						<?php esc_html_e( 'Subscribe to our Newsletter!', 'hakama' ) ?>
+						<?php esc_html_e( 'News Letter', 'hakama' ) ?>
 					</h2>
-					
+
 					<p class="submission-lead">
-						<?php esc_html_e( 'Subscribe to our newsletter for the latest updates and early access our new features.', 'hakama' ) ?>
+						<?php esc_html_e( 'Subscribe to our newsletter and keep up-to-date.', 'hakama' ) ?>
 					</p>
 
-					<div class="form-row">
-						<div class="form-group col">
-							<label for="mce-EMAIL"><?php esc_html_e( 'Email', 'hakama' ) ?></label>
+					<div class="form-group row">
+                        <label for="mce-EMAIL" class="col col-sm-2 text-right col-form-label">E-mail</label>
+						<div class="col-sm-10">
 							<input type="email" class="form-control" id="mce-EMAIL" name="EMAIL"
 								   placeholder="email@example.com"/>
 						</div>
-						<div class="form-group col">
-							<label for="mce-LANGUAGE"><?php esc_html_e( 'Language', 'hakama' ) ?></label>
-							<select id="mce-LANGUAGE" name="LANGUAGE" class="form-control">
+					</div>
+                    <div class="form-group row">
+						<label for="mce-LANGUAGE" class="col col-sm-2 text-right col-form-label">
+							<?php esc_html_e( 'Language', 'hakama' ) ?>
+						</label>
+                        <div class="col-sm-3">
+                            <select id="mce-LANGUAGE" name="LANGUAGE" class="form-control">
 								<?php foreach ( [
-									[ '日本語', 'ja' ],
-									[ 'English', 'en_US' ],
-								] as $index => list( $label, $value ) ) : ?>
-									<option value="<?php echo esc_attr( $value ) ?>" <?php selected( $value, get_user_locale() ) ?>>
+													[ '日本語', 'ja' ],
+													[ 'English', 'en_US' ],
+												] as $index => list( $label, $value ) ) : ?>
+                                    <option value="<?php echo esc_attr( $value ) ?>" <?php selected( $value, get_user_locale() ) ?>>
 										<?php echo esc_html( $label ); ?>
-									</option>
+                                    </option>
 								<?php endforeach; ?>
-							</select>
-						</div>
+                            </select>
+                        </div>
 					</div>
 
-					<div class="form-row">
+
+					<div class="form-group row">
 						<?php
 						$cols = [
 							[
 								'mce-FNAME',
-								__( 'First Name', 'hakama' ),
-								'<input type="text" value="" placeholder="John" name="FNAME" class="form-control" id="mce-FNAME" />'
+                                sprintf(
+									'<input type="text" value="" aria-label="%1$s" placeholder="%1$s" name="FNAME" class="form-control" id="mce-FNAME" />',
+									__( 'First Name', 'hakama' )
+                                ),
 							],
 							[
 								'mce-LNAME',
-								__( 'Last Name', 'hakama' ),
-								'<input type="text" value="" placeholder="Doe" name="LNAME" class="form-control" id="mce-LNAME" />'
+								sprintf(
+									'<input type="text" value="" aria-label="%1$s" placeholder="%1$s" name="LNAME" class="form-control" id="mce-LNAME" />',
+									__( 'Last Name', 'hakama' )
+								),
 							],
 						];
 						if ( hakama_is_jp() ) {
 							$cols = array_reverse( $cols );
 						}
+						?>
+						<label for="<?php echo esc_attr( $cols[0][0] ) ?>" class="col col-sm-2 text-right col-form-label">
+							<?php esc_html_e( 'Name', 'hakama' ) ?>
+						</label>
+						<?php
 						array_map( function ( $col ) {
-							list( $id, $label, $input ) = $col;
-							printf( '<div class="form-group col"><label for="%s">%s</label>%s</div>', esc_attr( $id ), esc_html( $label ), $input );
+							list( $id, $input ) = $col;
+							printf( '<div class="col-sm-5">%s</div>', $input );
 						}, $cols );
 						?>
 					</div><!-- //.row -->
@@ -75,9 +88,8 @@
 					<div class="submission-submit text-center clear">
 						<button type="submit" name="subscribe"
 								id="mc-embedded-subscribe"
-								class="btn btn-outline-light btn-lg">
-							<i class="far fa-hand-pointer"></i>
-							<?php esc_html_e( 'Subscribe!', 'hakama' ) ?>
+								class="btn btn-primary">
+							<?php echo esc_html_x( 'Subscribe', 'email-submit', 'hakama' ) ?>
 						</button>
 					</div>
 				</div>

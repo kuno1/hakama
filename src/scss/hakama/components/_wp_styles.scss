@@ -1,0 +1,39 @@
+$align-padding: 20px;
+
+.wp-caption {
+	max-width: 100%;
+
+	&-text {
+		font-size: 0.8rem;
+		margin-top: 0.5em;
+
+		@extend .text-muted;
+
+		a:link,
+		a:visited {
+			color: #888;
+			text-decoration: underline;
+		}
+
+		a:hover,
+		a:active {
+			color: #222;
+			text-decoration: none;
+		}
+	}
+}
+
+.alignright {
+	margin: $align-padding 0 $align-padding $align-padding;
+	float: right;
+}
+
+.alignleft {
+	float: left;
+	margin: $align-padding $align-padding $align-padding 0;
+}
+
+.aligncenter {
+	display: block;
+	margin: $align-padding auto;
+}

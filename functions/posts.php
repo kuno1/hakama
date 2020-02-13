@@ -157,3 +157,73 @@ function hakama_the_author( $post = null ) {
 		the_author_posts_link();
 	}
 }
+
+/**
+ * Get top categories.
+ *
+ * @param null|int|WP_Post $post
+ * @return WP_Term
+ */
+function hakama_top_category( $post = null ) {
+	$post = get_post( $post );
+	$result = null;
+	switch ( $post->post_type ) {
+		case 'product':
+			$taxonomies = [ 'product_cat' ];
+			break;
+		case 'post':
+			$taxonomies = [ 'category' ];
+			break;
+		case 'thread':
+			$taxonomies = [ 'topic' ];
+			break;
+		case 'faq':
+			$taxonomies = [ 'faq_cat' ];
+			break;
+		default:
+			$taxonomies = get_post_taxonomies( $post );
+			break;
+	}
+	foreach ( $taxonomies as $taxonomy ) {
+		$terms = get_the_terms( $post, $taxonomy );
+		if ( ! $terms || is_wp_error( $terms ) ) {
+			continue;
+		}
+		foreach ( $terms as $term ) {
+			$result = $term;
+			break 2;
+		}
+	}
+	return $result;
+}
+
+/**
+ * Get subscribers.
+ *
+ * @param null|int|WP_Post $post
+ * @return int[]
+ */
+function hakama_thread_subscribers( $post = null ) {
+	if ( ! class_exists( '\Hametuha\Thread\Hooks\SupportNotification' ) ) {
+		return [];
+	}
+	return \Hametuha\Thread\Hooks\SupportNotification::get_instance()->get_subscribers( $post );
+}
+
+/**
+ * Get latest updated time.
+ *
+ * @param null|int|WP_Post $post
+ * @return string
+ */
+function hakama_post_updated( $post = null ) {
+	$post = get_post( $post );
+	$updated = get_post_modified_time( 'Y-m-d H:i:s', false, $post );
+	if ( function_exists( 'hamethread_get_latest_comment_date' ) ) {
+		$comment_updated = hamethread_get_latest_comment_date( $post );
+		if ( $comment_updated && $comment_updated > $updated ) {
+			$updated = $comment_updated;
+		}
+	}
+	return $post->post_date < $updated ? $updated : '';
+}

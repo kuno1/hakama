@@ -1,37 +1,26 @@
-<?php get_header(); ?>
+<?php
+get_header();
+get_template_part( 'template-parts/breadcrumb' );
+?>
 
-<section class="section-main">
+	<section class="section-main">
 
-	<div class="container">
-
-		<div class="row">
-
-			<main id="content" class="col-sm-12 col-md-9">
+			<main id="content">
 				<?php the_post(); ?>
 
 				<article class="entry">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large' ) ?>
-					<?php endif; ?>
 					<header class="entry-meta">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h1 class="entry-title entry-title-wide has-text-align-center is-style-overline">
+							<?php the_title(); ?>
+						</h1>
 					</header>
 					<div class="entry-content">
-						<?php if ( function_exists( 'shouyaku_post_notification' ) ) {
-							shouyaku_post_notification();
-						} ?>
 						<?php the_content(); ?>
 					</div>
-					<?php hakama_template( 'entry-footer-page-normal', get_post()->post_name ); ?>
+					<?php hakama_template( 'entry-footer-page', get_post()->post_name ); ?>
 				</article>
 			</main>
 
-			<div class="col-sm-12 col-md-3">
-				<?php get_sidebar() ?>
-			</div>
-		</div>
-	</div>
-	
-</section>
+	</section>
 
 <?php get_footer();

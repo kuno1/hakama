@@ -1,0 +1,44 @@
+$footer-gap: $section-gap !default;
+
+.colophon {
+	background-color: $primary;
+	color: $white;
+	padding: $footer-gap 0;
+
+	&-narrow {
+		padding: $footer-gap / 2 0;
+	}
+
+	&-divider {
+		margin: $footer-gap / 2 auto;
+		display: block;
+		height: 0;
+		border: none;
+		border-top: 1px solid #eee;
+		width: 40%;
+		min-width: 200px;
+	}
+
+	p.copyright {
+		text-align: center;
+		font-size: 0.8rem;
+		margin: 0;
+		color: $white;
+
+		a {
+			transition: color 0.3s $ease-in-out-sine;
+		}
+
+		a:link,
+		a:visited {
+			text-decoration: none;
+			color: $white;
+		}
+
+		a:hover,
+		a:active {
+			text-decoration: underline;
+			color: $white;
+		}
+	}
+}

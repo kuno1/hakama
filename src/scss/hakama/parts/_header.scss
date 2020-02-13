@@ -1,0 +1,221 @@
+$header-height: 90px;
+$header-side-pad: 15px;
+
+body.with-header-nav {
+	padding-top: $header-height;
+
+}
+
+.site-header {
+	background-color: $white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	height: $header-height;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	&-container {
+		position: relative;
+	}
+
+	&-brand {
+		position: relative;
+
+		&-link {
+			position: relative;
+			z-index: 3;
+			transition: opacity .3s ease-in-out;
+
+			&:link,
+			&:visited {
+				text-decoration: none;
+				opacity: 1;
+			}
+
+			&:hover,
+			&:active {
+				text-decoration: none;
+				opacity: .6;
+			}
+		}
+	}
+
+	&-logo {
+		&-type {
+			margin-left: 10px;
+		}
+	}
+
+	&-nav {
+		position: absolute;
+		z-index: 1;
+		margin: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: block;
+	}
+
+	&-lists {
+		margin: 0;
+		padding: 0;
+	}
+
+	&-list {
+		display: inline-block;
+		list-style: none;
+		position: relative;
+		&::after {
+			position: absolUte;
+			display: block;
+			content: "";
+			top: 10px;
+			bottom: 10px;
+			right: 0;
+			width: 1px;
+			background-color: $gray-200;
+		}
+		&:last-child::after {
+			content: none;
+		}
+	}
+
+	&-button {
+		display: inline-block;
+		border: none;
+		padding: 10px;
+		height: 30px;
+		line-height: 30px;
+		box-sizing: content-box;
+		background: transparent;
+		cursor: pointer;
+		font-size: $h4-font-size;
+		text-decoration: none;
+
+		&:hover {
+			background-color: $gray-200;
+		}
+
+		i {
+			margin-right: 6px;
+		}
+	}
+
+	&-menu {
+		display: none;
+
+		button {
+			width: 18px;
+			text-align: center;
+		}
+
+		.fa-times {
+			display: none;
+		}
+
+		.toggle {
+
+			.fa-bars {
+				display: none;
+			}
+
+			.fa-times {
+				display: inline-block;
+			}
+		}
+	}
+
+	&-count {
+		color: $danger;
+		font-size: $font-size-base;
+	}
+
+	&-avatar {
+		border-radius: 50%;
+		border: 1px solid $black;
+		vertical-align: middle;
+
+		& + span {
+			margin-left: 5px;
+		}
+	}
+
+	// Narrow header.
+	@include media-breakpoint-down(md) {
+
+		&-brand {
+			z-index: 3;
+			text-align: center;
+			width: 50px;
+			margin: 0 auto;
+		}
+
+		&-logo {
+
+			&-type {
+				display: none;
+			}
+		}
+
+		&-label {
+			display: none;
+		}
+
+		&-list {
+
+			&-left {
+				float: left;
+			}
+
+			&-search::after {
+				content: none;
+			}
+		}
+
+		&-nav {
+			left: 0;
+		}
+
+		&-menu {
+			display: inline-block;
+		}
+
+		&-button {
+
+			i {
+				margin-right: 0;
+			}
+		}
+
+		&-lists {
+			width: 100%;
+			text-align: right;
+
+			&::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+
+		&-list-signup {
+			display: none;
+		}
+	}
+}
+
+
+.woocommerce-breadcrumb {
+	a:first-child:before {
+		content: "\f015";
+		font-weight: 900;
+		font-family: "Font Awesome 5 Free";
+		margin-right: 0.25em;
+	}
+}

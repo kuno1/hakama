@@ -1,0 +1,402 @@
+%term-badge {
+	font-size: $font-size-sm;
+	line-height: 1;
+	display: inline-block;
+	padding: 2px 1em;
+	background-color: $black;
+	color: $white;
+	text-decoration: none;
+}
+
+%post-list-bg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* List */
+.post-list {
+	margin: $section-gap 0 $section-gap / 2;
+	padding: 0;
+
+	&-item {
+		border-bottom: 1px solid $gray-200;
+		list-style: none;
+		margin: 0;
+		position: relative;
+	}
+
+	&-link {
+		display: flex;
+		flex-wrap: nowrap;
+		position: relative;
+
+		&:link,
+		&:visited {
+			color: $primary;
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:active {
+			color: $primary;
+			text-decoration: none;
+		}
+		& + i {
+			position: absolute;
+			right: 10px;
+			font-size: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $black;
+			transition: background-color .5s ease-in-out;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			border-radius: 50%;
+			text-align: center;
+		}
+		&:hover + i {
+			background-color: $black;
+			color: $white;
+		}
+	}
+
+	&-thumbnail {
+		padding: 20px 0;
+	}
+
+	.post-list-img {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+	}
+
+	&-body {
+		flex-basis: 100%;
+		padding: 20px 60px 20px 20px;
+		line-height: 1.1;
+	}
+
+	&-category {
+		margin: 0 0 15px;
+	}
+
+	&-term {
+		margin-right: 10px;
+
+		@extend %term-badge;
+	}
+
+	&-title {
+		font-weight: $font-weight-bold;
+		font-size: $h5-font-size;
+		margin: 0 0 10px;
+	}
+
+	&-meta {
+		font-size: $font-size-sm;
+	}
+
+	&-date {
+		margin-right: 1em;
+	}
+}
+
+.kbl-post-list-button {
+	text-align: center;
+	margin-bottom: $section-gap;
+
+	&-link {
+		min-width: 180px;
+
+		@extend .btn;
+		@extend .btn-outline-primary;
+	}
+}
+
+/* Card */
+.post-card {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	margin: $section-gap 0 $section-gap / 2;
+
+	&-container {
+		margin-top: $section-gap / 2;
+		margin-bottom: $section-gap / 2;
+	}
+
+	&-item {
+		margin-right: 20px;
+		flex-basis: 100%;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&-thumbnail {
+		height: auto;
+		background-color: $white;
+
+		@extend %post-list-bg;
+	}
+
+	&-title {
+		font-size: $font-size-base;
+		font-weight: $font-weight-bold;
+		margin: 0 0 10px;
+	}
+
+	&-meta {
+		margin: 0;
+
+		& + & {
+			margin-top: 10px;
+		}
+	}
+
+	&-link {
+		display: block;
+		position: relative;
+		border: 1px solid $gray-200;
+		font-size: $font-size-sm;
+		transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+		background-color: $white;
+		&:link,
+		&:visited {
+			color: $black;
+			text-decoration: none;
+		}
+
+		&:active,
+		&:hover {
+			color: $black;
+			text-decoration: none;
+			background-color: $light;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&-body {
+		padding: 20px 10px 40px;
+	}
+
+	&-term {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 100%;
+
+		@extend %term-badge;
+
+		padding: 1em 2px;
+	}
+}
+
+
+// Slider circle
+.post-circle {
+
+	&-thumbnail {
+		margin-bottom: 20px;
+	}
+
+	&-link {
+		text-align: center;
+		display: block;
+		transition: color 0.3s ease-in-out;
+
+		&:link,
+		&:visited {
+			text-decoration: none;
+			color: $primary;
+		}
+
+		&:hover,
+		&:active {
+			text-decoration: none;
+			color: $danger;
+		}
+	}
+
+	&-img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		border-radius: 50%;
+		background-color: $light;
+		transition: box-shadow 0.3s ease-in-out;
+
+	}
+
+	a:hover &-img,
+	a:active &-img {
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	}
+
+	&-category {
+		margin: 0;
+	}
+
+	&-title {
+		font-weight: $font-weight-bold;
+		margin: 10px 0 0;
+		overflow-x: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&-term {
+		display: block;
+		padding: 3px 0.8em;
+		max-width: 100%;
+		background-color: $gray-600;
+		overflow-x: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		@extend %term-badge;
+	}
+}
+
+@if $is-editor {
+
+	.post-circle {
+		white-space: nowrap;
+		overflow-x: hidden;
+		margin: $section-gap 0;
+
+		&-item {
+			display: inline-block;
+			margin-right: $section-gap - 10px;
+			width: 200px;
+		}
+	}
+} @else {
+
+	.post-circle {
+
+		&-item {
+			display: block;
+			width: 100%;
+		}
+
+		&-container + .kbl-post-list-button {
+			margin-top: $section-gap / 2;
+			margin-bottom: $section-gap;
+		}
+
+		&-container:not(.swiper-container-initialized) {
+
+			.post-circle-wrapper {
+				display: flex;
+				flex-wrap: nowrap;
+				overflow-x: hidden;
+			}
+
+			.post-circle-item {
+				margin-right: 40px;
+				flex-basis: 20%;
+				max-width: 20%;
+			}
+
+			.post-circle-img {
+				min-height: 120px;
+			}
+		}
+	}
+}
+
+.product-list {
+	clear: both;
+	display: flex;
+	margin: $section-gap 0 $section-gap / 2;
+	padding: 0;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	&-item {
+		list-style: none;
+		flex: 1 1 32%;
+		margin: 0 0 20px;
+		padding: 0;
+		max-width: 32%;
+	}
+
+	&-thumbnail {
+		position: relative;
+		background-color: $gray-200;
+		text-align: center;
+		min-height: 386px;
+		height: 386px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+
+	&-img {
+		max-width: 100%;
+		width: auto;
+		height: auto;
+	}
+
+	&-title {
+		background-color: $gray-200;
+		font-size: $h4-font-size;
+		font-family: $font-family-serif;
+		margin: 0;
+		padding: $section-gap 10px 10px;
+		color: $black;
+		font-weight: $font-weight-bold;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&-meta {
+		background-color: $gray-200;
+		padding: 0 10px 20px;
+		margin: 0;
+
+		p {
+			margin: 0;
+			line-height: 1.2;
+		}
+	}
+
+	&-link {
+		display: block;
+		padding: 20px;
+		border-top: 1px solid $gray-400;
+		text-align: center;
+		font-weight: $font-weight-bold;
+		transition: background-color 0.3s ease-in-out;
+		text-transform: uppercase;
+
+		&:link,
+		&:visited {
+			color: $black;
+			text-decoration: none;
+			background-color: $gray-200;
+		}
+
+		&:hover,
+		&:active {
+			color: $white;
+			text-decoration: none;
+			background-color: $black;
+		}
+	}
+
+	&-term {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 3px 12px;
+
+		@extend %term-badge;
+	}
+}

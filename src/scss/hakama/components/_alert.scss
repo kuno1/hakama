@@ -1,0 +1,20 @@
+.alert * {
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.alert-muted {
+	color: $gray-600;
+	border-color: $gray-600;
+}
+
+.alert-heading {
+	font-weight: $font-weight-bold;
+	font-size: $h4-font-size;
+}

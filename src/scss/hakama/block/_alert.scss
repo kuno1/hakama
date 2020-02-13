@@ -1,0 +1,40 @@
+.kbl-alert {
+
+	@extend .alert;
+
+	&:not([class*="is-style"]) {
+		background-color: $info;
+		color: $white;
+	}
+
+	&-title {
+
+		&::before {
+			font-family: $font-family-fa;
+			font-weight: 600;
+			content: "\f06a";
+			margin-right: 0.5em;
+		}
+	}
+
+	@each $style in (primary, secondary, success, danger, info, warning, dark, light) {
+		$color: map_get($theme-colors, $style);
+
+		&.is-style-#{$style} {
+			background-color: $color;
+
+			@if light==$style {
+				color: $dark;
+			} @else {
+				color: $white;
+			}
+		}
+
+		&.is-style-#{$style}-outlined {
+			border-color: $color;
+			color: $color;
+		}
+	}
+
+}
+

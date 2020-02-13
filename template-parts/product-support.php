@@ -7,7 +7,7 @@ global $product;
 	<h2 class="widget-title widget-product-title">
 		<i class="fa fa-file-signature"></i> <?php esc_html_e( 'Documentation', 'hakama' ) ?>
 	</h2>
-	
+
 	<?php if ( $terms = hakama_terms( $product->get_id() ) ) : ?>
 		<ul class="product-support-list nav flex-column  nav-pills">
 			<?php foreach ( $terms as $term ) : ?>
@@ -39,15 +39,6 @@ global $product;
 		</li>
 	</ul>
 
-	<h2 class="widget-title widget-product-contact">
-		<i class="far fa-envelope"></i>
-		<?php esc_html_e( 'Contact Author', 'hakama' ) ?>
-	</h2>
-	
-	<a href="<?php echo add_query_arg( [ 'product-id' => get_the_ID() ], home_url( 'contact-author' ) ); ?>" class="btn btn-block btn-outline-secondary"><?php esc_html_e( 'Contact', 'hakama' ) ?></a>
-	
-	<p class="description text-muted mt-1">
-		<?php esc_html_e( 'Do you have something to ask plugin/theme to? Feel free to contact.', 'hakama' ) ?>
-	</p>
-	
+
+
 </div>

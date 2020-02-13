@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+@import "hakama/overrides";
+
+$hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/img' !default;
+
+@import "hb_bootstrap_override";
+@import "bootstrap";
+@import "hb_globals";
+@import "hb-components/*";
+// Import theme pats.
+@import "hakama/mixins/*";
+@import "hakama/globals";
+@import "hakama/front_global";
+@import "hakama/components/*";
+@import "hakama/parts/*";
+
+@import "hakama/block/*";

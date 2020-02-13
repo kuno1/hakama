@@ -1,0 +1,126 @@
+.product-buy {
+
+	&-wrapper {
+		background-color: $gray-100;
+		padding-top: $section-gap;
+		padding-bottom: $section-gap * 2;
+	}
+
+	@extend %entry-wrapper;
+
+	&-title,
+	&-subtitle {
+		margin-top: $section-gap;
+		margin-bottom: $section-gap / 2;
+		font-family: $font-family-serif;
+	}
+
+	&-table {
+		max-width: 600px;
+	}
+}
+
+
+.product-spec-table {
+	margin-right: auto;
+	margin-left: auto;
+
+	tbody th {
+		text-align: right;
+	}
+}
+
+.product-add-to-cart {
+	background-color: $white;
+
+	&-header {
+		margin-bottom: 0;
+	}
+
+	&-meta {
+		margin: $section-gap / 2;
+		padding: $section-gap / 2;
+		background-color: $gray-100;
+	}
+
+	&-footer {
+		padding: $section-gap;
+		border-top: 1px solid $gray-300;
+		font-size: $font-size-sm;
+	}
+
+	&-buttons {
+		padding-bottom: $section-gap;
+	}
+}
+
+.product-file {
+	display: inline-block;
+	padding: 5px 1em;
+	font-size: $font-size-sm;
+	font-family: $font-family-monospace;
+	background-color: $gray-300;
+	color: $info;
+}
+
+button.single_add_to_cart_button[name="add-to-cart"] {
+	max-width: 420px;
+	margin-right: auto;
+	margin-left: auto;
+
+	@extend .btn;
+
+	@extend .btn-lg;
+
+	@extend .btn-primary;
+
+	&::before {
+		content: "\f055";
+		font-weight: 600;
+		font-family: $font-family-fa;
+		margin-right: 0.5em;
+	}
+}
+
+.product-floater {
+	position: fixed;
+	z-index: 10;
+	bottom: 10px;
+	left: 20px;
+	right: 20px;
+
+	.container {
+		padding-top: $grid-gutter-width / 2;
+		padding-bottom: $grid-gutter-width / 2;
+		background-color: rgba(0, 0, 0, .8);
+
+		&::after {
+			content: "";
+			clear: both;
+			height: 0;
+			display: block;
+		}
+	}
+
+	&-image {
+		width: auto;
+		height: auto;
+		max-width: 50px !important;
+		float: left;
+	}
+
+	.single_add_to_cart_button {
+		display: inline-block !important;
+		width: auto !important;
+		float: right !important;
+
+		@extend .btn;
+
+		color: $black !important;
+		background-color: $gray-100 !important;
+		border-color: $black !important;
+		background-image: none !important;
+
+		@extend .btn-light;
+	}
+}

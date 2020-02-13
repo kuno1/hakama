@@ -10,17 +10,47 @@ add_action( 'after_setup_theme', function() {
 	set_post_thumbnail_size( 512, 512, true );
 	// For slide show, same aspect ratio with WP plugin dir. (772x250)
 	add_image_size( 'carousel', 2316, 750, true );
+	// Support alignfull
+	add_theme_support( 'align-wide' );
 } );
 
 /**
  * Register files.
  */
 add_action( 'init', function() {
-	$version = wp_get_theme()->get( 'Version' );
-	wp_register_script( 'hakama', get_template_directory_uri() . '/assets/js/hakama.app.js', [ 'bootstrap', 'jquery-masonry' ], $version, true );
+	// Register external libraries.
 	wp_register_style( 'fontawesome5', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', null,  '5.2.0' );
-	wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/style.css', [ 'material-design-icon' ], $version );
-	wp_register_style( 'hakama-editor', get_template_directory_uri() . '/assets/css/editor.css', [], $version );
+	// All
+	$version = wp_get_theme()->get( 'Version' );
+	foreach ( [
+		[ 'hakama-i18n', 'js/hakama.js', [ 'wp-i18n' ] ],
+		[ 'hakama', 'js/hakama.app.js', [ 'hakama-i18n' ] ],
+		[ 'bootstrap', 'css/hakama.css', [ 'fontawesome5', 'material-design-icon' ] ],
+		[ 'hakama-editor', 'css/hakama-editor.css', [] ],
+		[ 'hakama-block-editor-style', 'css/hakama-editor-style.css', [ 'fontawesome5' ] ],
+		[ 'hakama-block-style', 'js/editor-styles.js', [ 'hakama-i18n', 'wp-blocks'] ],
+		[ 'swiper-custom', 'css/hakama-swiper.css', [ 'bootstrap' ] ],
+		[ 'swiper', 'js/swiper.min.js', [] ],
+		[ 'swiper-helper', 'js/hakama-swiper.js', [ 'swiper', 'jquery' ] ],
+	] as list( $handle, $path, $deps ) ) {
+		$path = '/assets/' . $path;
+		$js = preg_match( '/\.jsx?$/u', $path );
+		$full_path = get_template_directory() . $path;
+		if ( ! file_exists( $full_path ) ) {
+			trigger_error( sprintf( 'File %s doesn\'t exist', $path ) );
+			continue;
+		}
+		$url = get_template_directory_uri() . $path;
+		$version = filemtime( $full_path );
+		if ( $js ) {
+			wp_register_script( $handle, $url, $deps, $version, true );
+		} else {
+			wp_register_style( $handle, $url, $deps, $version );
+		}
+	}
+
+	// Register translations.
+	wp_set_script_translations( 'hakama-i18n', 'hakama', get_template_directory() . '/languages' );
 } );
 
 //<link rel="stylesheet" href="">
@@ -45,4 +75,9 @@ add_action('wp_enqueue_scripts', function() {
 	}
 	wp_enqueue_script( 'hakama' );
 	wp_enqueue_style( 'bootstrap' );
+
+	if ( is_singular( 'product' ) ) {
+		wp_enqueue_script( 'swiper-helper' );
+		wp_enqueue_style( 'swiper-custom' );
+	}
 });

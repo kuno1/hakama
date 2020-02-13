@@ -1,0 +1,38 @@
+.header-notification {
+
+	text-align: center;
+
+	&-text {
+		padding: 0.75rem 0;
+		color: $white;
+
+		@extend %ellipsis;
+
+		@include media-breakpoint-down(sm) {
+			overflow: auto;
+			white-space: normal;
+			text-overflow: "";
+			text-align: justify;
+			text-justify: inter-ideograph;
+		}
+
+		a {
+
+			&:link,
+			&:visited {
+				color: $white;
+				text-decoration: underline;
+			}
+
+			&:hover,
+			&:active {
+				color: $gray-200;
+				text-decoration: none;
+			}
+		}
+
+		strong {
+			font-weight: $font-weight-bold;
+		}
+	}
+}

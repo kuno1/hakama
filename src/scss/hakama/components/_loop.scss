@@ -1,0 +1,227 @@
+.loop {
+	// Wrapper
+	&-list {
+		padding: 0;
+		margin: 0 0 $section-gap;
+
+		&-faq {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+
+	&-item {
+		list-style: none;
+	}
+
+	&-type {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		@include gradient-bg($gray-800);
+		color: #fff;
+		padding: 5px 10px;
+		font-size: 0.7rem;
+		border-top-right-radius: $card-border-radius;
+	}
+
+	&-card {
+
+	}
+
+	&-title {
+		.fa-lock {
+			color: $brand-yellow;
+		}
+
+		h2#{&}:after {
+			content: none;
+		}
+	}
+
+	&-products {
+		clear: both;
+		padding-top: $section-gap;
+	}
+}
+
+.price,
+.product_list_widget {
+	font-family: $price-font-family;
+
+	.amount {
+		color: $warning;
+	}
+
+	del {
+		color: $warning;
+		opacity: .5;
+		margin-right: 0.25em;
+
+		.widget-product & .amount {
+			font-size: 1rem !important;
+		}
+	}
+
+	ins {
+		color: $warning;
+		text-decoration: none;
+	}
+}
+
+// Add to cart button
+.btn-outline-primary {
+
+	&.loading {
+
+		@extend %loading-pos;
+	}
+
+	&.added {
+
+		&::after {
+			content: "\f058";
+			font-family: "Font Awesome 5 Free", sans-serif;
+			margin-left: 0.25em;
+		}
+
+		+ .added_to_cart {
+			display: block;
+			text-align: center;
+			padding: 5px;
+			font-size: 0.8rem;
+		}
+	}
+}
+
+.pagination {
+	justify-content: center;
+}
+
+// Meta item.
+.loop-meta {
+	line-height: 1.8;
+	margin: 1em 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&-item {
+		color: $black;
+		font-size: $font-size-sm;
+
+		& + & {
+			margin-left: 1em;
+		}
+
+		i {
+			margin-right: 0.25em;
+		}
+	}
+}
+
+// icons
+.loop-icon {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 18px;
+	font-size: 18px;
+	i {
+		color: $gray-600;
+	}
+}
+
+// Thread
+.loop-thread {
+	list-style: none;
+	border-bottom: 1px solid $gray-300;
+
+	&:first-child {
+		border-top: 1px solid $gray-300;
+	}
+
+	&-link {
+		position: relative;
+		transition: background-color .3s ease-in-out;
+		display: block;
+		padding: 20px;
+		background-color: $white;
+
+		@at-root li:nth-child(odd) &{
+			background-color: $gray-100;
+			&:hover, &:active {
+				background-color: $gray-300;
+			}
+		}
+
+		&:link,
+		&:visited {
+			color: $black;
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:active {
+			background-color: $gray-300;
+			color: $black;
+			text-decoration: none;
+		}
+	}
+
+	&-title {
+		font-size: $h4-font-size;
+		font-weight: $font-weight-bold;
+	}
+
+	&-meta {
+
+		@extend .loop-meta;
+	}
+}
+
+.loop-faq {
+	list-style: none;
+	flex-basis: calc(50% - 20px);
+	border: 1px solid $gray-300;
+	margin-bottom: 40px;
+
+	&-link {
+		display: block;
+		height: 100%;
+		transition: background-color .3s ease-in-out;
+		padding: 20px;
+
+		&:link,
+		&:visited {
+			text-decoration: none;
+			color: $black;
+			background-color: $white;
+		}
+
+		&:hover,
+		&:active {
+			text-decoration: none;
+			color: $black;
+			background-color: $gray-100;
+		}
+	}
+
+	&-term {
+		padding: 3px 10px;
+		display: inline-block;
+		background-color: $gray-600;
+		color: $white;
+		font-size: $font-size-sm;
+		margin-bottom: $section-gap / 2;
+	}
+
+	&-title {
+		font-weight: $font-weight-bold;
+		margin: 0 0 $section-gap / 2;
+		font-size: $h3-font-size;
+	}
+}

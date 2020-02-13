@@ -1,0 +1,13 @@
+.product-see-also,
+.product-popular{
+	padding: $section-gap 0;
+
+	&-inner {
+
+		@extend %entry-wrapper;
+	}
+}
+
+.product-see-also {
+	background-color: $gray-100;
+}

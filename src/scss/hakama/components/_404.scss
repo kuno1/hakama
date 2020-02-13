@@ -1,0 +1,33 @@
+.no-content {
+
+	padding-bottom: $section-gap;
+
+	&-title {
+		font-size: 215px;
+		font-weight: 900;
+		color: $black;
+		font-family: Impact, sans-serif;
+		line-height: 1;
+
+		small {
+			display: block;
+			font-size: 60px;
+		}
+		margin-bottom: $section-gap;
+	}
+
+	&-img {
+		width: 160px !important;
+		height: 160px !important;
+		border-radius: 50%;
+		border: 2px solid $black;
+		margin-bottom: $section-gap;
+	}
+
+	&-list {
+		li {
+			font-size: 1.4rem;
+			margin-bottom: $section-gap / 2;
+		}
+	}
+}

@@ -6,7 +6,67 @@
  */
 
 /**
+ * Get date diff.
  *
+ * @param string $date
+ * @param string $from
+ * @return int
+ */
+function hakama_date_diff( $date, $from = '' ) {
+	if ( ! $from ) {
+		$from = date_i18n( 'Y-m-d H:i:s' );
+	}
+	return strtotime( $from ) - strtotime( $date );
+}
+
+/**
+ * Echo class names.
+ *
+ * @param array $class_names
+ * @return void
+ */
+function hakama_class_names( $class_names = [] ) {
+	$valid = [];
+	foreach ( $class_names as $class_name => $is_valid ) {
+		if ( $is_valid ) {
+			$valid[] = $class_name;
+		}
+	}
+	echo esc_attr( implode( ' ', $valid ) );
+}
+
+/**
+ * Display date diff like "2 years ago"
+ *
+ * @param string $date
+ * @param string $from
+ * @return string
+ */
+function hakama_the_date_diff( $date, $from = '' ) {
+	$diff = (int) hakama_date_diff( $date, $from );
+	if ( 0 > $diff ) {
+		return __( 'Just Now', 'hakama' );
+	}
+	$diff = $diff / 60;
+	$days = $diff / 60 / 24;
+	if ( $diff < 60 ) {
+		return sprintf( _n( __( '%d minute ago', 'hakama' ), __( '%d minutes ago', 'hakama' ), $diff, 'hakama' ), $diff );
+	} elseif ( $days < 1 ) {
+		$hour = floor( $diff / 60 );
+		return sprintf( _n( __( '%d hour ago', 'hakama' ), __( '%d hours ago', 'hakama' ), $hour, 'hakama' ), $hour / 60 );
+	} elseif ( $days < 30 ) {
+		return sprintf( _n( __( '%d day ago', 'hakama' ), __( '%d days ago', 'hakama' ), $days, 'hakama' ), $days );
+	} elseif ( $days < 365 ) {
+		$month = max( 1, floor( $days / 30.5 ) );
+		return sprintf( _n( __( '%d month ago', 'hakama' ), __( '%d months ago', 'hakama' ), $month, 'hakama' ), $month );
+	} else {
+		$year = floor( $days / 365 );
+		return sprintf( _n( __( '%d year ago', 'hakama' ), __( '%d years ago', 'hakama' ), $year, 'hakama' ), $year );
+	}
+}
+
+/**
+ * Get template part.
  *
  * @param string $slug
  * @param string $suffix
@@ -54,11 +114,13 @@ function hakama_trim( $string, $glue = "\n" ) {
  *
  * @return string
  */
-function hakama_template_group() {
+function hakama_template_group( $prefix = '' ) {
 	if ( is_singular( 'faq' ) || is_post_type_archive( 'faq' ) || is_tax( 'faq_cat' ) ) {
-		return 'faq';
+		// FAQ.
+		return $prefix . 'faq';
 	} elseif ( is_singular( 'thread' ) || is_post_type_archive( 'thread' ) || is_tax( 'topic' ) ) {
-		return 'thread';
+		// Thead
+		return $prefix . 'support';
 	} else {
 		return '';
 	}
@@ -77,7 +139,7 @@ function hakama_copyright_year() {
 	 * @param string $year
 	 * @return string
 	 */
-	return (string) apply_filters( 'hakama_copyright_year', date_i18n( 'Y' ) );
+	return (string) apply_filters( 'hakama_copyright_year', 2018 );
 }
 
 /**
@@ -114,33 +176,21 @@ function hakama_avoid_the_content( $string ) {
  * @param null|WP_Query $query
  */
 function hakama_pagination( $query = null ) {
-	if ( ! $query ) {
-		global $wp_query;
-		$query = $wp_query;
+	if ( class_exists( 'Kunoichi\BootstraPress\PageNavi' ) ) {
+		\Kunoichi\BootstraPress\PageNavi::pagination();
 	}
-	$big = 999999999; // need an unlikely integer
-
-	$pagination = paginate_links( [
-		'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format'  => '?paged=%#%',
-		'current' => max( 1, $query->get('paged') ),
-		'total'   => $query->max_num_pages
-	] );
-	if ( ! $pagination ) {
-		return;
-	}
-	$pagination = implode( "\n", array_map( function( $line ) {
-		$classes = [ 'page-item' ];
-		if ( false !== strpos( $line, 'current' ) ) {
-			$classes[] = 'active';
-		}
-		if ( false !== strpos( $line, 'dots' ) ) {
-			$classes[] = 'disabled';
-		}
-
-		$line = str_replace( 'page-numbers', 'page-link', $line );
-		return sprintf( '<li class="%s">%s</li>', implode( ' ', $classes ), $line );
-	}, explode( "\n", $pagination ) ) );
-
-	echo sprintf( '<nav aria-label="%s"><ul class="pagination">%s</ul></nav>', esc_attr__( 'Pagination.', 'hakama' ), $pagination );
 }
+
+/**
+ * Render star rating.
+ *
+ * @param float $rating
+ * @return string
+ */
+function hakama_review_stars( $rating ) {
+	$rating = min( max( 0, $rating ), 5 );
+	$ratio  = floor( $rating / 5 * 100 );
+	$label = sprintf( esc_html__( 'Rated %s out of 5', 'woocommerce' ), $rating );
+	return sprintf( '<span class="hakama-stars" aria-label="%s"><span class="hakama-stars-value" style="width: %d%%;"></span></span>', esc_attr( $label ), $ratio );
+}
+

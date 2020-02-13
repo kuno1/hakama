@@ -1,0 +1,63 @@
+$pull-quote-border-style: $gray-200 solid 0.25em !default;
+
+// Pull quote
+.wp-block-pullquote {
+	position: relative;
+
+	&.has-background {
+		padding: 2em;
+	}
+
+	blockquote {
+		position: relative;
+		z-index: 2;
+		margin: 0 !important;
+		padding: 0 2em !important;
+		border: none !important;
+		font-family: $font-family-serif;
+	}
+
+	&.is-style-solid-color {
+
+		blockquote {
+			margin-left: auto !important;
+			margin-right: auto !important;
+			text-align: inherit;
+		}
+	}
+}
+
+.wp-block-quote {
+
+	&.has-text-align-right {
+		padding: 0 0.75em 0  0;
+		border-left: none;
+		border-right: $pull-quote-border-style;
+	}
+
+	&.has-text-align-center {
+		padding: 0.75em 0;
+		border-left: none;
+		border-top: $pull-quote-border-style;
+		border-bottom: $pull-quote-border-style;
+	}
+}
+
+@if $is-editor {
+
+	blockquote {
+		margin: 2em 0;
+		font-weight: 400;
+		padding-left: 0.75em;
+		border-left: $pull-quote-border-style;
+	}
+
+} @else {
+
+	.entry-content blockquote {
+		margin: 2em 0;
+		font-weight: 400;
+		padding-left: 0.75em;
+		border-left: $pull-quote-border-style;
+	}
+}
