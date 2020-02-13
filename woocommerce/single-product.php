@@ -53,12 +53,18 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 							<a class="product-demo-btn btn btn-<?php echo $demo_url ? 'primary' : 'outline-primary disabled' ?>"
 								href="<?php echo $demo_url ? esc_url( $demo_url ) : '#' ?>" target="_blank"
 								title="<?php echo $demo_url ? '' : esc_attr__( 'This product has no demo.', 'hakama' ) ?>">
-								<i class="far fa-eye"></i>
-								<?php esc_html_e( 'See Demo', 'hakama' ) ?>
+								<?php if ( $demo_url ) : ?>
+									<i class="far fa-eye"></i>
+									<?php esc_html_e( 'Preview', 'hakama' ) ?>
+								<?php else : ?>
+									<i class="fas fa-eye-slash"></i>
+									<?php esc_html_e( 'No Preview', 'hakama' ) ?>
+								<?php endif; ?>
 							</a>
-							<a class="product-demo-btn btn btn-outline-primary disabled" href="#" title="<?php esc_html_e( 'Coming Soon', 'hakama' ) ?>">
+							<a class="product-demo-btn btn btn-outline-primary disabled" href="#"
+							   title="<?php esc_html_e( 'Coming Soon', 'hakama' ) ?>">
 								<i class="fas fa-tachometer-alt"></i>
-								<?php esc_html_e( 'Try Admin Demo', 'hakama' ) ?>
+								<?php esc_html_e( 'Live(Coming Soon)', 'hakama' ) ?>
 							</a>
 						</div>
 
@@ -187,5 +193,15 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 		</main>
 
 	</section>
+
+<footer class="product-floater">
+	<div class="container">
+		<?php the_post_thumbnail( 'thumbnail', [ 'class' => 'product-floater-image' ] ); ?>
+
+		<div class="product-floater-buttons">
+			<?php woocommerce_template_single_add_to_cart() ?>
+		</div>
+	</div>
+</footer>
 
 <?php get_footer();
