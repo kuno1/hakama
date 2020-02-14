@@ -9,8 +9,6 @@ const { __ } = wp.i18n;
 const { RichText, InspectorControls } = wp.blockEditor;
 const { ServerSideRender, PanelBody, SelectControl, TextControl, RadioControl, ToggleControl } = wp.components;
 
-alert( 'hoge' );
-
 registerBlockType( 'hakama/brand-title', {
 
 	title: __( 'Brand Title', 'hakama' ),

@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2019-06-17 20:32+0900\n"
+"POT-Creation-Date: 2020-02-14 12:08+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -24,50 +24,65 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: vendor\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: comments.php:15
+#: app/Kunoichi/Hakama/Blocks/BrandTitle.php:27
+#: app/Kunoichi/Hakama/Blocks/BrandTitle.php:80
+#, php-format
+msgid "Contact to %s"
+msgstr ""
+
+#: app/Kunoichi/Hakama/Blocks/BrandTitle.php:66
+msgid "No Brand Found"
+msgstr ""
+
+#: app/Kunoichi/Hakama/Blocks/BrandTitle.php:66
+msgid ""
+"Specify brand ID or else brand will be automatically retrieved. If no brand, "
+"simply ignored."
+msgstr ""
+
+#: comments.php:14
 #, php-format
 msgid "One response to %s"
 msgstr ""
 
-#: comments.php:18
+#: comments.php:17
 #, php-format
 msgid "%1$s response to %2$s"
 msgid_plural "%1$s responses to %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:44
+#: comments.php:43
 msgid "Comments are closed."
 msgstr ""
 
-#: footer-entry.php:14
-msgid "Subscribe to our Newsletter!"
+#: footer-entry.php:13
+msgid "News Letter"
 msgstr ""
 
-#: footer-entry.php:18
-msgid ""
-"Subscribe to our newsletter for the latest updates and early access our new "
-"features."
+#: footer-entry.php:17
+msgid "Subscribe to our newsletter and keep up-to-date."
 msgstr ""
 
-#: footer-entry.php:23
-msgid "Email"
-msgstr ""
-
-#: footer-entry.php:28
+#: footer-entry.php:29
 msgid "Language"
 msgstr ""
 
-#: footer-entry.php:47
+#: footer-entry.php:53
 msgid "First Name"
 msgstr ""
 
-#: footer-entry.php:52
+#: footer-entry.php:60
 msgid "Last Name"
 msgstr ""
 
-#: footer-entry.php:80
-msgid "Subscribe!"
+#: footer-entry.php:69
+msgid "Name"
+msgstr ""
+
+#: footer-entry.php:92
+msgctxt "email-submit"
+msgid "Subscribe"
 msgstr ""
 
 #: functions/account.php:75
@@ -78,11 +93,11 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: functions/posts.php:57
+#: functions/posts.php:57 functions/product.php:270
 msgid "Document"
 msgstr ""
 
-#: functions/posts.php:60 template-parts/content-product.php:17
+#: functions/posts.php:60
 msgid "Support"
 msgstr ""
 
@@ -90,60 +105,119 @@ msgstr ""
 msgid "Brand"
 msgstr ""
 
-#: functions/posts.php:66 functions/template.php:90
+#: functions/posts.php:66 functions/template.php:153
 msgid "Blog"
 msgstr ""
 
-#: functions/product.php:151 template-parts/after-main-thread.php:29
-#: template-parts/product-support.php:8
+#: functions/posts.php:155
+#, php-format
+msgid "%1$s from %2$s"
+msgstr ""
+
+#: functions/product.php:177 template-parts/product-support.php:8
 msgid "Documentation"
 msgstr ""
 
-#: functions/template.php:88
+#: functions/product.php:272 template-parts/product-support.php:28
+#: woocommerce/single-product.php:146
+msgid "Support Forum"
+msgstr ""
+
+#: functions/template.php:48
+msgid "Just Now"
+msgstr ""
+
+#: functions/template.php:53
+#, php-format
+msgid "%d minute ago"
+msgstr ""
+
+#: functions/template.php:53
+#, php-format
+msgid "%d minutes ago"
+msgstr ""
+
+#: functions/template.php:56
+#, php-format
+msgid "%d hour ago"
+msgstr ""
+
+#: functions/template.php:56
+#, php-format
+msgid "%d hours ago"
+msgstr ""
+
+#: functions/template.php:58
+#, php-format
+msgid "%d day ago"
+msgstr ""
+
+#: functions/template.php:58
+#, php-format
+msgid "%d days ago"
+msgstr ""
+
+#: functions/template.php:61
+#, php-format
+msgid "%d month ago"
+msgstr ""
+
+#: functions/template.php:61
+#, php-format
+msgid "%d months ago"
+msgstr ""
+
+#: functions/template.php:64
+#, php-format
+msgid "%d year ago"
+msgstr ""
+
+#: functions/template.php:64
+#, php-format
+msgid "%d years ago"
+msgstr ""
+
+#: functions/template.php:151
 #, php-format
 msgid "Search results for \"%s\""
 msgstr ""
 
-#: functions/template.php:92
+#: functions/template.php:155
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
-#: functions/template.php:144
-msgid "Pagination."
+#: functions/template.php:193
+#, php-format
+msgid "Rated %s out of 5"
 msgstr ""
 
 #: header-meta.php:19
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:21
+#: header.php:16 header.php:23
+msgid "Search Products"
+msgstr ""
+
+#: header.php:31
 #, php-format
 msgid "Howdy, %s!"
 msgstr ""
 
-#: header.php:27
+#: header.php:38
 msgid "Sign In"
 msgstr ""
 
-#: header.php:32 template-parts/form-register.php:30
+#: header.php:43 template-parts/form-register.php:30
 msgid "Sign Up"
 msgstr ""
 
-#: header.php:40 searchform.php:21 template-parts/content-no-faq.php:16
-#: template-parts/content-no.php:11
-msgid "Search"
-msgstr ""
-
-#: header.php:48
+#: header.php:52
 msgid "Cart"
 msgstr ""
 
-#: header.php:72
-msgid "Menu"
-msgstr ""
-
-#: hooks/admin-product-meta.php:13
+#: hooks/admin-product-meta.php:12
 msgid "Demo Setting"
 msgstr ""
 
@@ -155,15 +229,27 @@ msgstr ""
 msgid "Demo URL"
 msgstr ""
 
+#: hooks/block.php:65
+msgid "Card List"
+msgstr ""
+
+#: hooks/block.php:66
+msgid "Circle List"
+msgstr ""
+
+#: hooks/block.php:67
+msgid "Product List"
+msgstr ""
+
 #: hooks/cart.php:56
 msgid "Continue Shopping"
 msgstr ""
 
-#: hooks/comment.php:21
+#: hooks/comment.php:22
 msgid "e.g. Let me know how to use this plugin."
 msgstr ""
 
-#: hooks/comment.php:24
+#: hooks/comment.php:25
 msgid ""
 "e.g. Today, I bought this plugin. Would you let me know how to install and "
 "how to use it?"
@@ -174,18 +260,46 @@ msgctxt "admin"
 msgid "Global menu."
 msgstr ""
 
-#: hooks/notification.php:14
+#: hooks/notification.php:12
 msgid "Notification"
 msgstr ""
 
-#: hooks/notification.php:19
+#: hooks/notification.php:16
 msgid "e.g. This site is a demo of our service."
 msgstr ""
 
-#: hooks/notification.php:21
+#: hooks/notification.php:18
 msgid ""
-"This strings will be shown on every page. Only anchor(a) and strong tag will "
-"work."
+"This strings will be shown on every page. Only anchor(a), icon(i) and strong "
+"tag will work."
+msgstr ""
+
+#: hooks/notification.php:25
+msgid "Notification Style"
+msgstr ""
+
+#: hooks/notification.php:29
+msgid "Primary"
+msgstr ""
+
+#: hooks/notification.php:30
+msgid "Secondary"
+msgstr ""
+
+#: hooks/notification.php:31
+msgid "Infomation"
+msgstr ""
+
+#: hooks/notification.php:32
+msgid "Success"
+msgstr ""
+
+#: hooks/notification.php:33
+msgid "Warning"
+msgstr ""
+
+#: hooks/notification.php:34
+msgid "Danger"
 msgstr ""
 
 #: hooks/widgets.php:11
@@ -204,11 +318,6 @@ msgstr ""
 msgid "Displayed on footer. Limit 4 widgets."
 msgstr ""
 
-#: index.php:21
-#, php-format
-msgid "%s Found( %d / %d Page)"
-msgstr ""
-
 #: searchform.php:7
 msgid "Search Form"
 msgstr ""
@@ -219,6 +328,10 @@ msgstr ""
 
 #: searchform.php:18
 msgid "Enter keyword..."
+msgstr ""
+
+#: searchform.php:21
+msgid "Search"
 msgstr ""
 
 #: single-brand.php:21
@@ -233,174 +346,139 @@ msgstr ""
 msgid "This brand has no business information yet."
 msgstr ""
 
-#: template-parts/after-main-thread.php:8
-msgid "Product Support"
+#: template-parts/add-to-cart.php:26
+msgid "Downloadable Files"
 msgstr ""
 
-#: template-parts/after-main-thread.php:10
-msgid "Kunoichi Support"
+#: template-parts/add-to-cart.php:53
+msgid "Required WordPress Version"
 msgstr ""
 
-#: template-parts/after-main-thread.php:16
-#, php-format
-msgid "Get Supported for %s."
+#: template-parts/add-to-cart.php:53 template-parts/add-to-cart.php:55
+msgid " and over"
 msgstr ""
 
-#: template-parts/after-main-thread.php:18
-msgid "Marketplace Support."
+#: template-parts/add-to-cart.php:54
+msgid "Tested Up To"
 msgstr ""
 
-#: template-parts/after-main-thread.php:32
-#, php-format
-msgid ""
-"You may find helpful documents for %s. And if not, please feel free to "
-"request."
+#: template-parts/add-to-cart.php:55
+msgid "Required PHP Version"
 msgstr ""
 
-#: template-parts/after-main-thread.php:34
-msgid ""
-"These documents are for Kunoichi Marketplace. Feel free to make request for "
-"what you want to know!"
+#: template-parts/after-main-support.php:5
+msgid "Contact"
 msgstr ""
 
-#: template-parts/after-main-thread.php:38
-msgid "See Documents"
+#: template-parts/content-no-support.php:26
+msgid "There is no content."
 msgstr ""
 
-#: template-parts/after-main-thread.php:49
-msgid "Get Supported By"
+#: template-parts/content-no-support.php:27
+msgid "Start new thread and get supported."
 msgstr ""
 
-#: template-parts/after-main-thread.php:56
-msgid ""
-"All customers can get supported by product creator. You can refer resolved "
-"threads or start new one!"
+#: template-parts/content-no.php:13
+msgid "Nothing found for your criteria."
 msgstr ""
 
-#: template-parts/after-main-thread.php:63
-msgid "Buy Product & Get Supported"
+#: template-parts/content-no.php:16
+msgid "If you are from external site, the link might be wrong."
 msgstr ""
 
-#: template-parts/after-main-thread.php:66
-msgid "Start Thread"
+#: template-parts/content-no.php:17
+msgid "Please check URL."
 msgstr ""
 
-#: template-parts/after-main-thread.php:74
-msgid "See Threads"
+#: template-parts/content-no.php:20
+msgid "Also please try search with other keywords."
 msgstr ""
 
-#: template-parts/after-main-thread.php:86
-msgid "Contact Platform"
-msgstr ""
-
-#: template-parts/after-main-thread.php:88
-msgid ""
-"Need platform support? Please feel free to contact KUNOICHI support team."
-msgstr ""
-
-#: template-parts/after-main-thread.php:93
-msgid "Contact To Support"
-msgstr ""
-
-#: template-parts/after-main-thread.php:97
-msgid "Login to Get Support"
-msgstr ""
-
-#: template-parts/before-main-faq.php:15
-#, php-format
-msgid "Help document of <a href=\"%s\">%s</a>"
-msgstr ""
-
-#: template-parts/before-main-faq.php:17
-msgid "Help Center"
-msgstr ""
-
-#: template-parts/before-main-faq.php:29
-msgid "See all document"
-msgstr ""
-
-#: template-parts/before-main-faq.php:33
-#: template-parts/before-main-thread.php:32
-#: template-parts/entry-footer-faq.php:19
-msgid "Product page"
-msgstr ""
-
-#: template-parts/before-main-faq.php:38
-msgid "Help Center Home"
-msgstr ""
-
-#: template-parts/before-main-thread.php:15
-#, php-format
-msgid "Support Forum of <a href=\"%s\">%s</a>"
-msgstr ""
-
-#: template-parts/before-main-thread.php:17
-#: template-parts/product-support.php:28
-msgid "Support Forum"
-msgstr ""
-
-#: template-parts/before-main-thread.php:28
-#: template-parts/before-main-thread.php:37
-msgid "Support Forum Home"
-msgstr ""
-
-#: template-parts/content-no-faq.php:9 template-parts/content-no.php:4
-msgid "Nothing found for your criteria..."
-msgstr ""
-
-#: template-parts/content-no-faq.php:14 template-parts/content-no.php:9
-msgid "Please try searching with other keywords."
-msgstr ""
-
-#: template-parts/content-no-faq.php:20 template-parts/content-no.php:15
-msgid "If you are from external site, link might be wrong. Please check URL."
-msgstr ""
-
-#: template-parts/content-no-faq.php:24
-#, php-format
-msgid "You can <a href=\"%s\">request support</a> for the product author."
-msgstr ""
-
-#: template-parts/content-no-faq.php:28 template-parts/content-no.php:18
+#: template-parts/content-no.php:23
 #, php-format
 msgid ""
-"In case you find any alternatives, please get our <a href=\"%s\">support</a>."
+"In case you cannnot find any alternatives, please get our <a href=\"%s"
+"\">support</a>."
 msgstr ""
 
-#: template-parts/content-no-thread.php:9
-msgid "There's no support yet."
-msgstr ""
-
-#: template-parts/content-product-gallery.php:33
-msgid "Previous"
-msgstr ""
-
-#: template-parts/content-product-gallery.php:37
-msgid "Next"
-msgstr ""
-
-#: template-parts/content-product.php:12
-msgid "Demo"
-msgstr ""
-
-#: template-parts/entry-footer-faq.php:10
-msgid "All Documentation"
+#: template-parts/content-no.php:28
+msgid ""
+"There will always, one can assume, be need for some selling. But the aim of "
+"marketing is to make selling superfluous."
 msgstr ""
 
 #: template-parts/entry-footer-page-normal.php:7
 msgid "Related Pages"
 msgstr ""
 
-#: template-parts/entry-meta-data.php:9
+#: template-parts/entry-footer-thread.php:11
+msgid "Replies"
+msgstr ""
+
+#: template-parts/entry-footer-thread.php:15
+#, php-format
+msgid ""
+"This thread is only for customers. Please <a href=\"%s\" class=\"alert-link"
+"\">login</a> or <a class=\"alert-link\" href=\"%s\">buy the product</a> to "
+"see the details."
+msgstr ""
+
+#: template-parts/entry-meta-data-thread.php:7
+msgid "Published"
+msgstr ""
+
+#: template-parts/entry-meta-data-thread.php:12
+msgid "Updated: "
+msgstr ""
+
+#: template-parts/entry-meta-data-thread.php:16 template-parts/loop.php:11
+#: template-parts/loop.php:14
+msgid "Comment Count"
+msgstr ""
+
+#: template-parts/entry-meta-data-thread.php:20
+msgid "Subscribers"
+msgstr ""
+
+#: template-parts/entry-meta-data-thread.php:28 template-parts/entry-meta.php:6
+#: template-parts/entry-meta.php:31
 msgid "Private"
 msgstr ""
 
-#: template-parts/entry-meta-data.php:15
+#: template-parts/entry-meta-thread.php:8
 msgid "Resolved"
 msgstr ""
 
-#: template-parts/entry-meta.php:9
+#: template-parts/entry-meta-thread.php:18 template-parts/loop-thread.php:17
+msgid "Author: "
+msgstr ""
+
+#: template-parts/entry-meta.php:8
+msgid "Public"
+msgstr ""
+
+#: template-parts/entry-meta.php:12
 msgid "Customer Only"
+msgstr ""
+
+#: template-parts/entry-nav-parent.php:12
+msgid "Return to Support Forum"
+msgstr ""
+
+#: template-parts/entry-nav-parent.php:15
+msgid "Return to Documents List"
+msgstr ""
+
+#: template-parts/entry-nav-support.php:27
+msgid "Product Detail"
+msgstr ""
+
+#: template-parts/entry-nav-support.php:33
+msgid "Documents"
+msgstr ""
+
+#: template-parts/entry-nav-support.php:38
+msgid "Forum"
 msgstr ""
 
 #: template-parts/form-register.php:10
@@ -462,44 +540,33 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: template-parts/loop.php:22
-msgid "on Sale!"
-msgstr ""
-
-#: template-parts/loop.php:45
-msgid "0 comment"
-msgstr ""
-
-#: template-parts/loop.php:72
+#: template-parts/kbl/post-loop-product.php:27
+msgctxt "product-link"
 msgid "Detail"
 msgstr ""
 
-#: template-parts/loop.php:80
-msgid "Read More"
+#: template-parts/link-share.php:8
+msgid "Share This"
+msgstr ""
+
+#: template-parts/link-share.php:33
+msgid "Hatena Bookmark"
+msgstr ""
+
+#: template-parts/loop.php:20
+msgid "This post is restricted."
 msgstr ""
 
 #: template-parts/product-brand.php:12
 msgid "Crafted By"
 msgstr ""
 
-#: template-parts/product-files.php:12
-msgid "Files"
+#: template-parts/product-popular.php:20
+msgid "Popular Products"
 msgstr ""
 
-#: template-parts/product-meta.php:17
-msgid "Required WordPress Version"
-msgstr ""
-
-#: template-parts/product-meta.php:17 template-parts/product-meta.php:19
-msgid " and over"
-msgstr ""
-
-#: template-parts/product-meta.php:18
-msgid "Tested Up To"
-msgstr ""
-
-#: template-parts/product-meta.php:19
-msgid "Required PHP Version"
+#: template-parts/product-see-also.php:19
+msgid "Related Products"
 msgstr ""
 
 #: template-parts/product-support.php:23
@@ -514,16 +581,70 @@ msgstr ""
 msgid "Every customer can make new thread to get support."
 msgstr ""
 
-#: template-parts/product-support.php:44
-msgid "Contact Author"
+#: template-parts/related-faq.php:22
+msgid "Related Documents"
 msgstr ""
 
-#: template-parts/product-support.php:47
-msgid "Contact"
+#: template-parts/related-faq.php:36
+msgid "This product has no related document."
 msgstr ""
 
-#: template-parts/product-support.php:50
+#: template-parts/support-author.php:15
+#, php-format
+msgid "Contact About %s"
+msgstr ""
+
+#: template-parts/support-author.php:19
 msgid "Do you have something to ask plugin/theme to? Feel free to contact."
+msgstr ""
+
+#: template-parts/support-author.php:34
+msgid "Contact About Product"
+msgstr ""
+
+#: template-parts/support-brand.php:25
+msgid "Get Support"
+msgstr ""
+
+#: template-parts/support-brand.php:39
+msgid "Informations"
+msgstr ""
+
+#: template-parts/support-platform.php:5
+msgctxt "platform-support"
+msgid "Need Help For Shopping?"
+msgstr ""
+
+#: template-parts/support-platform.php:8
+msgid ""
+"Need platform support? Please feel free to contact KUNOICHI support team."
+msgstr ""
+
+#: template-parts/support-platform.php:14
+msgid "Contact to Kunoichi Support"
+msgstr ""
+
+#: template-parts/support-platform.php:20 template-parts/support-thread.php:31
+msgid "Login to Get Support"
+msgstr ""
+
+#: template-parts/support-thread.php:10
+msgctxt "platform-support"
+msgid "Get Support"
+msgstr ""
+
+#: template-parts/support-thread.php:13
+msgid ""
+"Are you in trouble or having something to ask about this product?<br />You "
+"can get support from product author!"
+msgstr ""
+
+#: template-parts/support-thread.php:19
+msgid "Start Support Thread"
+msgstr ""
+
+#: template-parts/support-thread.php:26
+msgid "Go Shopping to Get Support"
 msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:27
@@ -532,6 +653,84 @@ msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:63
 msgid "Your order"
+msgstr ""
+
+#: woocommerce/single-product.php:55
+msgid "This product has no demo."
+msgstr ""
+
+#: woocommerce/single-product.php:58
+msgid "Preview"
+msgstr ""
+
+#: woocommerce/single-product.php:61
+msgid "No Preview"
+msgstr ""
+
+#: woocommerce/single-product.php:65
+msgid "Coming Soon"
+msgstr ""
+
+#: woocommerce/single-product.php:67
+msgid "Live(Coming Soon)"
+msgstr ""
+
+#: woocommerce/single-product.php:79
+msgid "Last Updated: "
+msgstr ""
+
+#: woocommerce/single-product.php:82
+msgid "License: 100% GPL"
+msgstr ""
+
+#: woocommerce/single-product.php:97
+msgid "No Description"
+msgstr ""
+
+#: woocommerce/single-product.php:99
+msgid "This product has no description. Request author about details."
+msgstr ""
+
+#: woocommerce/single-product.php:109
+msgid "Buy Product"
+msgstr ""
+
+#: woocommerce/single-product.php:117
+msgid "Support for Customers"
+msgstr ""
+
+#: woocommerce/single-product.php:125
+msgid "Everyone"
+msgstr ""
+
+#: woocommerce/single-product.php:126
+msgid "Customers"
+msgstr ""
+
+#: woocommerce/single-product.php:131
+msgid "Download"
+msgstr ""
+
+#: woocommerce/single-product.php:136
+msgid "Public Documents"
+msgstr ""
+
+#: woocommerce/single-product.php:141
+msgid "Private Documents"
+msgstr ""
+
+#: woocommerce/single-product.php:156
+msgid "Product Reviews"
+msgstr ""
+
+#: woocommerce/single-product/review.php:26
+msgid "No Title"
+msgstr ""
+
+#: woocommerce/single-product/review.php:29
+#, php-format
+msgctxt "user-title"
+msgid "%s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -559,9 +758,5 @@ msgid "Wizard Page"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Single Column"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Wide Page"
+msgid "No Header"
 msgstr ""
