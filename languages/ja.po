@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-14 12:08+0900\n"
-"PO-Revision-Date: 2020-02-14 12:21+0900\n"
+"POT-Creation-Date: 2020-02-14 12:55+0900\n"
+"PO-Revision-Date: 2020-02-14 12:56+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -186,9 +186,14 @@ msgstr "%s/5の評価"
 msgid "Skip to content"
 msgstr "コンテンツへスキップ"
 
-#: header.php:16 header.php:23
+#: header.php:16
 msgid "Search Products"
 msgstr "製品検索"
+
+#: header.php:23
+msgctxt "header-search-button"
+msgid "Search Products"
+msgstr "検索"
 
 #: header.php:31
 #, php-format

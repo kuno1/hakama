@@ -20,7 +20,7 @@
 				<li class="site-header-list site-header-list-left site-header-list-search">
 					<button class="site-header-button" data-toggle="modal" data-target="#search-form">
 						<i class="fa fa-search"></i>
-						<span class="site-header-label"><?php esc_html_e( 'Search Products', 'hakama' ) ?></span>
+						<span class="site-header-label"><?php echo esc_html_x( 'Search Products', 'header-search-button', 'hakama' ) ?></span>
 					</button>
 				</li>
 

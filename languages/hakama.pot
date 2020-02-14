@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2020-02-14 12:08+0900\n"
+"POT-Creation-Date: 2020-02-14 12:55+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -196,7 +196,12 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:16 header.php:23
+#: header.php:16
+msgid "Search Products"
+msgstr ""
+
+#: header.php:23
+msgctxt "header-search-button"
 msgid "Search Products"
 msgstr ""
 
