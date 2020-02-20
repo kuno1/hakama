@@ -321,6 +321,9 @@ function hakama_get_last_updated( $post = null ) {
  * @return array
  */
 function hakama_get_plugin_info( $post = null ) {
+	if ( ! class_exists( 'Kunoichi\Makibishi\Controller\FileManager' ) ) {
+		return [];
+	}
 	$product = wc_get_product( $post );
 	return \Kunoichi\Makibishi\Controller\FileManager::get_downloads_api_value( $product );
 }

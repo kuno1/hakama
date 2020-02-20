@@ -28,7 +28,7 @@ if ( ! $product ) {
 		<p class="text-center">
 			<?php
 			$files = class_exists( 'Kunoichi\Makibishi\Controller\FileManager' )
-				? \Kunoichi\Makibishi\Controller\FileManager::get_latest_downloads( $product->ID )
+				? \Kunoichi\Makibishi\Controller\FileManager::get_downloads( $product->ID )
 				: [];
 			if ( $files ) : ?>
 				<?php foreach ( $files as $file ) : /** @var WC_Product_Download $file */ ?>
