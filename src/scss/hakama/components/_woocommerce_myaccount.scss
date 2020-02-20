@@ -104,3 +104,20 @@
 		background-color: $black !important;
 	}
 }
+
+.woocommerce-form-login,
+.woocommerce-form-register {
+
+	.woocommerce-form-row {
+		display: block;
+
+		@extend .form-group;
+
+		input[type="email"],
+		input[type="text"],
+		input[type="passowrd"] {
+
+			@extend .form-control;
+		}
+	}
+}
