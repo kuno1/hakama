@@ -56,6 +56,13 @@
 
 	> p {
 		text-align: justify;
+
+		@each $align in (left, center, right) {
+
+			&.has-text-align-#{$align} {
+				text-align: $align;
+			}
+		}
 		text-justify: inter-ideograph;
 		margin: 1em 0;
 	}
@@ -94,6 +101,7 @@
 		font-size: 4.5em;
 		line-height: 1;
 		margin: 0 .125em .125em 0;
+
 		@include media-breakpoint-down(sm) {
 			font-size: 3em;
 		}
@@ -152,8 +160,6 @@
 		border-radius: 3px;
 	}
 
-
-
 	address {
 		font-style: italic;
 	}
@@ -173,6 +179,7 @@
 
 	// Buttons
 	.wp-block-button {
+
 		&__link {
 			transition: color .3s $ease-in-out-sine, background-color .3s $ease-in-out-sine, border-color .3s $ease-in-out-sine;
 			background-color: $gray-700;
@@ -188,6 +195,7 @@
 		}
 
 		&.is-style-squared {
+
 			a {
 				background-color: $info;
 				border: 2px solid $info;
@@ -202,6 +210,7 @@
 		}
 
 		&.is-style-outline {
+
 			a {
 				background-color: transparent;
 				border-color: $gray-700;

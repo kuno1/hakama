@@ -9,7 +9,14 @@ $total = 0;
 foreach ( $rating as $count ) {
 	$total += $count;
 }
+if ( ! $total ) {
+	return;
+}
 ?>
+
+<h3 class="product-buy-subtitle has-text-align-center">
+	<?php esc_html_e( 'Product Reviews', 'hakama' ) ?>
+</h3>
 
 <div class="review-summary">
 	<div class="review-summary-rating">

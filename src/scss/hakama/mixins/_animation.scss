@@ -1,17 +1,17 @@
 @mixin transition($props, $duration:.3s) {
-	@each $prop in $props {
-
-	}
 }
 
 // Moving gradient with 3 colors.
 @keyframes keyframe-moving-gradient {
+
 	0% {
 		background-position: 0 50%;
 	}
+
 	33% {
 		background-position: 100% 50%;
 	}
+
 	66% {
 		background-position: 0 50%;
 	}
@@ -19,12 +19,15 @@
 
 // rotating
 @keyframes keyframe-rotate {
+
 	0% {
 		transform: rotate(0deg);
 	}
+
 	50% {
 		transform: rotate(180deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}
@@ -32,12 +35,15 @@
 
 @keyframes keyframe-shadow {
 	$color: #000;
+
 	0% {
 		box-shadow: 0 0 0 transparentize($color, 1);
 	}
+
 	50% {
 		box-shadow: 0 0 15px transparentize($color, .6);
 	}
+
 	100% {
 		box-shadow: 0 0 0 transparentize($color, 1);
 	}

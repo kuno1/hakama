@@ -30,9 +30,9 @@ case $1 in
 		wget "https://github.com/kuno1/hakama/releases/download/$VERSION/hakama.zip"
 		unzip hakama.zip
 		rm hakama.zip;;
-		
+
 	*)
 		exit "You must specify 'staging' or 'production'";;
 esac
 
-rsync -rvct --delete . nginx@$HOST:/var/web/wp/wp-content/themes/hakama
+rsync -rvct --delete --checksum . nginx@$HOST:/var/web/wp/wp-content/themes/hakama

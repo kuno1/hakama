@@ -93,14 +93,15 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 					<?php if ( get_post()->post_content ) : ?>
 						<?php the_content(); ?>
 					<?php else : ?>
-						<divc class="alert alert-warning text-center">
+						<div class="alert alert-warning text-center alert-transparent">
 							<div class="alert-heading"><i class="fas fa-exclamation-circle"></i> <?php esc_html_e( 'No Description', 'hakama' ) ?></div>
 							<div class="alert-body">
 								<?php esc_html_e( 'This product has no description. Request author about details.', 'hakama' ) ?>
 							</div>
-						</divc>
+						</div>
 					<?php endif; ?>
 				</div>
+
 				<?php hakama_template( 'link-share' ) ?>
 
 				<div class="alignfull product-buy-wrapper">
@@ -152,9 +153,6 @@ add_filter( 'woocommerce_reviews_title', function( $title ) {
 						</figure>
 
 						<div class="product-review">
-							<h3 class="product-buy-subtitle has-text-align-center">
-								<?php esc_html_e( 'Product Reviews', 'hakama' ) ?>
-							</h3>
 							<?php hakama_template( 'product-review' ) ?>
 							<?php comments_template(); ?>
 						</div>

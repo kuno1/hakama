@@ -69,9 +69,7 @@ button.single_add_to_cart_button[name="add-to-cart"] {
 	margin-left: auto;
 
 	@extend .btn;
-
 	@extend .btn-lg;
-
 	@extend .btn-primary;
 
 	&::before {

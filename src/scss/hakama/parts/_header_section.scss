@@ -27,12 +27,14 @@
 		font-size: 1.4rem;
 		font-weight: 200;
 
-		a:link, a:visited {
+		a:link,
+		a:visited {
 			text-decoration: underline;
 			color: inherit;
 		}
 
-		a:hover, a:active {
+		a:hover,
+		a:active {
 			text-decoration: none;
 			color: inherit;
 			opacity: .8;
@@ -52,12 +54,14 @@
 				margin-left: 1em;
 			}
 
-			&:link, &:visited {
+			&:link,
+			&:visited {
 				color: #666;
 				text-decoration: none;
 			}
 
-			&:hover, &:active {
+			&:hover,
+			&:active {
 				color: #000;
 				text-decoration: none;
 				background-color: rgba(0, 0, 0, .2);
