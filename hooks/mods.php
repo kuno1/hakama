@@ -69,3 +69,13 @@ add_filter( 'wp_dropdown_users_args', function( $query_args, $parsed_args ) {
 	}
 	return $query_args;
 }, 10, 2 );
+
+/**
+ * Remove recaptcha if it's not contact form.
+ */
+add_action( 'wp_enqueue_scripts', function() {
+	if ( is_singular() && has_shortcode( get_queried_object()->post_content, 'contact-form-7' ) ) {
+		return;
+	}
+	wp_dequeue_script( 'google-recaptcha' );
+}, 11 );
