@@ -277,7 +277,7 @@ function hakama_product_title( $post = null ) {
 }
 
 /**
- *
+ * Detect if user can read post.
  *
  * @param null|int|WP_Post $post
  * @param int|null         $user
@@ -288,8 +288,36 @@ function hakama_can_read_post( $post = null, $user = null ) {
 	if ( is_null( $user ) ) {
 		$user = get_current_user_id();
 	}
-	return false;
-
+	switch ( $post->post_type ) {
+		case 'post':
+			return true;
+			break;
+		case 'faq':
+			if ( ! function_exists( 'hamelp_get_accessibility' ) ) {
+				return true;
+			}
+			switch ( hamelp_get_accessibility( $post ) ) {
+				case 'customer':
+					if ( $post->post_parent ) {
+						// User is customer.
+						return hakama_is_customer( $post->post_parent, $user ) ?: user_can( $user, 'edit_others_posts' );
+					} else {
+						// Only logged in user.
+						return $user;
+					}
+				default:
+					return true;
+			}
+			break;
+		case 'thread':
+			if ( $post->post_parent ) {
+				return hakama_is_customer( $post->post_parent, $user ) ?: user_can( $user, 'edit_others_posts' );
+			} else {
+				return true;
+			}
+		default:
+			return true;
+	}
 }
 
 /**
