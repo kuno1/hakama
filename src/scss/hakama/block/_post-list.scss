@@ -313,28 +313,39 @@
 .product-list {
 	clear: both;
 	display: flex;
-	margin: $section-gap 0 $section-gap / 2;
+	margin: $section-gap -10px $section-gap / 2;
 	padding: 0;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 
 	&-item {
 		list-style: none;
-		flex: 1 1 32%;
-		margin: 0 0 20px;
-		padding: 0;
-		max-width: 32%;
+		flex-basis: 33.3333%;
+		margin: 0 0 10px;
+		padding: 0 10px;
+	}
+
+	&-inner {
+		height: 100%;
+		background-color: $gray-200;
+		padding-bottom: 61px;
+		position: relative;
 	}
 
 	&-thumbnail {
 		position: relative;
-		background-color: $gray-200;
+		width: 100%;
 		text-align: center;
-		min-height: 386px;
-		height: 386px;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
+
+		&::before {
+			content: "";
+			display: block;
+			position: relative;
+			padding-top: 100%;
+		}
 	}
 
 	&-img {
@@ -344,7 +355,6 @@
 	}
 
 	&-title {
-		background-color: $gray-200;
 		font-size: $h4-font-size;
 		font-family: $font-family-serif;
 		margin: 0;
@@ -357,7 +367,6 @@
 	}
 
 	&-meta {
-		background-color: $gray-200;
 		padding: 0 10px 20px;
 		margin: 0;
 
@@ -369,6 +378,10 @@
 
 	&-link {
 		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		padding: 20px;
 		border-top: 1px solid $gray-400;
 		text-align: center;
