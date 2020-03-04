@@ -10,9 +10,14 @@
 
 		label {
 			color: $black;
+			text-align: right;
 
 			&.form-check-label {
 				color: $white;
+			}
+
+			@include media-breakpoint-down(sm) {
+				text-align: left;
 			}
 		}
 	}

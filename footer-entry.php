@@ -18,14 +18,14 @@
 					</p>
 
 					<div class="form-group row">
-                        <label for="mce-EMAIL" class="col col-sm-2 text-right col-form-label">E-mail</label>
+                        <label for="mce-EMAIL" class="col col-sm-2 col-form-label">E-mail</label>
 						<div class="col-sm-10">
 							<input type="email" class="form-control" id="mce-EMAIL" name="EMAIL"
 								   placeholder="email@example.com"/>
 						</div>
 					</div>
                     <div class="form-group row">
-						<label for="mce-LANGUAGE" class="col col-sm-2 text-right col-form-label">
+						<label for="mce-LANGUAGE" class="col col-sm-2 col-form-label">
 							<?php esc_html_e( 'Language', 'hakama' ) ?>
 						</label>
                         <div class="col-sm-3">
@@ -65,13 +65,13 @@
 							$cols = array_reverse( $cols );
 						}
 						?>
-						<label for="<?php echo esc_attr( $cols[0][0] ) ?>" class="col col-sm-2 text-right col-form-label">
+						<label for="<?php echo esc_attr( $cols[0][0] ) ?>" class="col-12 col-sm-2 col-form-label">
 							<?php esc_html_e( 'Name', 'hakama' ) ?>
 						</label>
 						<?php
 						array_map( function ( $col ) {
 							list( $id, $input ) = $col;
-							printf( '<div class="col-sm-5">%s</div>', $input );
+							printf( '<div class="col-6 col-sm-5">%s</div>', $input );
 						}, $cols );
 						?>
 					</div><!-- //.row -->
