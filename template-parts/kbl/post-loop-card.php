@@ -3,7 +3,9 @@
  * Post loop for KBL Post list in card layout..
  */
 
-$thumbnail = has_post_thumbnail() ? sprintf( 'background-image: url(\'%s\')', esc_url( get_the_post_thumbnail_url( get_post() ) ) ) : '';
+$thumbnail = sprintf( 'background-image: url(\'%s\')', esc_url(
+	has_post_thumbnail() ? get_the_post_thumbnail_url( get_post() ): get_template_directory_uri() . '/assets/img/kunoichi-dammy.png'
+	) );
 ?>
 <div class="post-card-item">
 	<a href="<?php the_permalink(); ?>" class="post-card-link">

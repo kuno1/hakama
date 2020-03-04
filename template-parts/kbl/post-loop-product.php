@@ -3,7 +3,9 @@
  * Post loop for KBL Post list.
  */
 
-$thumbnail = has_post_thumbnail() ? sprintf( 'background-image: url(\'%s\')', esc_url( get_the_post_thumbnail_url( get_post() ) ) ) : '';
+$thumbnail = sprintf( 'background-image: url(\'%s\')', esc_url(
+	has_post_thumbnail() ? get_the_post_thumbnail_url( get_post() ): get_template_directory_uri() . '/assets/img/kunoichi-dammy.png'
+) );
 // TODO: change thumbnail size as of product taxonomy.
 ?>
 <li <?php post_class( 'product-list-item' ); ?>>

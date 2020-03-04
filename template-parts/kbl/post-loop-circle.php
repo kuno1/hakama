@@ -10,7 +10,7 @@
 			<?php if ( has_post_thumbnail() ) : ?>
 				<?php the_post_thumbnail( 'thumbnail', [ 'class' => 'post-circle-img', ] ); ?>
 			<?php else : ?>
-				<img src="<?php echo get_template_directory_uri() ?>/assets/icon/kunoichi-dammy.svg" alt="" class="post-circle-img" width="200" height="200" />
+				<img src="<?php echo get_template_directory_uri() ?>/assets/img/kunoichi-dammy.png" alt="" class="post-circle-img" width="200" height="200" />
 			<?php endif; ?>
 		</div>
 

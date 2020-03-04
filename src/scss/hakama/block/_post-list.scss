@@ -120,7 +120,11 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: nowrap;
-	margin: $section-gap 0 $section-gap / 2;
+	margin: $section-gap -10px $section-gap / 2;
+
+	@include media-breakpoint-down(sm) {
+		overflow-x: scroll;
+	}
 
 	&-container {
 		margin-top: $section-gap / 2;
@@ -128,17 +132,26 @@
 	}
 
 	&-item {
-		margin-right: 20px;
-		flex-basis: 100%;
+		padding: 0 10px;
+		margin-bottom: 20px;
+		width: 100%;
 
-		&:last-child {
-			margin-right: 0;
+		@include media-breakpoint-down(sm) {
+			flex-basis: 270px;
+			min-width: 270px;
 		}
 	}
 
 	&-thumbnail {
 		height: auto;
 		background-color: $white;
+		position: relative;
+
+		&::before {
+			display: block;
+			content: "";
+			padding-top: 75%;
+		}
 
 		@extend %post-list-bg;
 	}
@@ -324,6 +337,11 @@
 		width: 33.3333%;
 		margin: 0 0 20px;
 		padding: 0 10px;
+
+		@include media-breakpoint-down(sm) {
+			flex-basis: 100%;
+			width: 100%;
+		}
 	}
 
 	&-inner {
@@ -337,9 +355,8 @@
 		position: relative;
 		width: 100%;
 		text-align: center;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-size: cover;
+
+		@extend %post-list-bg;
 
 		&::before {
 			content: "";
