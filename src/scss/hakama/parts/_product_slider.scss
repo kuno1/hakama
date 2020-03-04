@@ -24,6 +24,15 @@
 			width: 100%;
 		}
 
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+
+			&:first-child {
+				background-size: contain;
+				background-position: center top;
+			}
+		}
+
 		&.current {
 			display: block;
 		}
