@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2020-02-14 12:55+0900\n"
+"POT-Creation-Date: 2020-03-05 20:49+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -119,7 +119,7 @@ msgid "Documentation"
 msgstr ""
 
 #: functions/product.php:272 template-parts/product-support.php:28
-#: woocommerce/single-product.php:146
+#: woocommerce/single-product.php:147
 msgid "Support Forum"
 msgstr ""
 
@@ -263,6 +263,17 @@ msgstr ""
 #: hooks/menu.php:11
 msgctxt "admin"
 msgid "Global menu."
+msgstr ""
+
+#: hooks/meta.php:48
+msgctxt "document_title"
+msgid "WordPress Themes & Plugins"
+msgstr ""
+
+#: hooks/meta.php:72
+#, php-format
+msgctxt "document_title"
+msgid "List of %s"
 msgstr ""
 
 #: hooks/notification.php:12
@@ -545,7 +556,7 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: template-parts/kbl/post-loop-product.php:27
+#: template-parts/kbl/post-loop-product.php:31
 msgctxt "product-link"
 msgid "Detail"
 msgstr ""
@@ -568,6 +579,10 @@ msgstr ""
 
 #: template-parts/product-popular.php:20
 msgid "Popular Products"
+msgstr ""
+
+#: template-parts/product-review.php:18
+msgid "Product Reviews"
 msgstr ""
 
 #: template-parts/product-see-also.php:19
@@ -696,36 +711,32 @@ msgstr ""
 msgid "This product has no description. Request author about details."
 msgstr ""
 
-#: woocommerce/single-product.php:109
+#: woocommerce/single-product.php:110
 msgid "Buy Product"
 msgstr ""
 
-#: woocommerce/single-product.php:117
+#: woocommerce/single-product.php:118
 msgid "Support for Customers"
 msgstr ""
 
-#: woocommerce/single-product.php:125
+#: woocommerce/single-product.php:126
 msgid "Everyone"
 msgstr ""
 
-#: woocommerce/single-product.php:126
+#: woocommerce/single-product.php:127
 msgid "Customers"
 msgstr ""
 
-#: woocommerce/single-product.php:131
+#: woocommerce/single-product.php:132
 msgid "Download"
 msgstr ""
 
-#: woocommerce/single-product.php:136
+#: woocommerce/single-product.php:137
 msgid "Public Documents"
 msgstr ""
 
-#: woocommerce/single-product.php:141
+#: woocommerce/single-product.php:142
 msgid "Private Documents"
-msgstr ""
-
-#: woocommerce/single-product.php:156
-msgid "Product Reviews"
 msgstr ""
 
 #: woocommerce/single-product/review.php:26
@@ -743,7 +754,8 @@ msgid "Hakama"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://kunoichi.shop"
+#. Author URI of the plugin/theme
+msgid "https://kunoichiwp.com"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -751,11 +763,7 @@ msgid "Market place theme for WooCommerce."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Kunoichi"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://kunoichiwp.com"
+msgid "Kunoichi INC."
 msgstr ""
 
 #. Template Name of the plugin/theme

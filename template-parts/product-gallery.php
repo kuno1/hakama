@@ -16,9 +16,11 @@ if ( ! $images ) {
 <div class="alignfull">
 
 	<div class="product-gallery-screen">
-		<?php $counter = 0; foreach ( $images as $image ) : ?>
+		<?php $counter = 0; foreach ( $images as $image ) :
+			$size = $counter ? 'card' : 'carousel';
+			?>
 		<div id="product-slide-<?php echo $image->ID ?>" class="product-gallery-item <?php echo $counter ? '' : 'current' ?>"
-			 style="background-image: url(<?php echo esc_url( wp_get_attachment_image_url( $image->ID, 'carousel' ) ) ?>);"
+			 style="background-image: url(<?php echo esc_url( wp_get_attachment_image_url( $image->ID, $size ) ) ?>);"
 			 title="<?php echo esc_attr( get_the_title( $image ) ) ?>">
 		</div>
 		<?php $counter++; endforeach; ?>

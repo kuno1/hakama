@@ -241,13 +241,14 @@
 		max-width: 100%;
 		border-radius: 50%;
 		background-color: $light;
-		transition: box-shadow 0.3s ease-in-out;
+		border: 1px solid transparent;
+		transition: border-color 0.3s ease-in-out;
 
 	}
 
 	a:hover &-img,
 	a:active &-img {
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+		border-color: $black;
 	}
 
 	&-category {
