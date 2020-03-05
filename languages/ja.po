@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-14 12:55+0900\n"
-"PO-Revision-Date: 2020-03-05 20:04+0900\n"
+"POT-Creation-Date: 2020-03-05 20:49+0900\n"
+"PO-Revision-Date: 2020-03-05 20:50+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -109,7 +109,7 @@ msgid "Documentation"
 msgstr "ドキュメント"
 
 #: functions/product.php:272 template-parts/product-support.php:28
-#: woocommerce/single-product.php:146
+#: woocommerce/single-product.php:147
 msgid "Support Forum"
 msgstr "サポートフォーラム"
 
@@ -255,6 +255,17 @@ msgstr ""
 msgctxt "admin"
 msgid "Global menu."
 msgstr "グローバルメニュー"
+
+#: hooks/meta.php:48
+msgctxt "document_title"
+msgid "WordPress Themes & Plugins"
+msgstr "WordPressテーマ＆プラグイン"
+
+#: hooks/meta.php:72
+#, php-format
+msgctxt "document_title"
+msgid "List of %s"
+msgstr "%s 一覧"
 
 #: hooks/notification.php:12
 msgid "Notification"
@@ -554,7 +565,7 @@ msgstr "一覧に戻る"
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: template-parts/kbl/post-loop-product.php:27
+#: template-parts/kbl/post-loop-product.php:31
 msgctxt "product-link"
 msgid "Detail"
 msgstr "詳細を見る"
@@ -578,6 +589,10 @@ msgstr "作者"
 #: template-parts/product-popular.php:20
 msgid "Popular Products"
 msgstr "人気の製品"
+
+#: template-parts/product-review.php:18
+msgid "Product Reviews"
+msgstr "製品レビュー"
 
 #: template-parts/product-see-also.php:19
 msgid "Related Products"
@@ -712,37 +727,33 @@ msgid "This product has no description. Request author about details."
 msgstr ""
 "このプロダクトには説明文がありません。開発者に詳細をリクエストしてください。"
 
-#: woocommerce/single-product.php:109
+#: woocommerce/single-product.php:110
 msgid "Buy Product"
 msgstr "製品を購入"
 
-#: woocommerce/single-product.php:117
+#: woocommerce/single-product.php:118
 msgid "Support for Customers"
 msgstr "ご購入者サポート"
 
-#: woocommerce/single-product.php:125
+#: woocommerce/single-product.php:126
 msgid "Everyone"
 msgstr "誰でも"
 
-#: woocommerce/single-product.php:126
+#: woocommerce/single-product.php:127
 msgid "Customers"
 msgstr "購入者"
 
-#: woocommerce/single-product.php:131
+#: woocommerce/single-product.php:132
 msgid "Download"
 msgstr "ダウンロード"
 
-#: woocommerce/single-product.php:136
+#: woocommerce/single-product.php:137
 msgid "Public Documents"
 msgstr "公開ドキュメント"
 
-#: woocommerce/single-product.php:141
+#: woocommerce/single-product.php:142
 msgid "Private Documents"
 msgstr "限定ドキュメント"
-
-#: woocommerce/single-product.php:156
-msgid "Product Reviews"
-msgstr "製品レビュー"
 
 #: woocommerce/single-product/review.php:26
 msgid "No Title"
@@ -759,20 +770,17 @@ msgid "Hakama"
 msgstr "袴"
 
 #. Theme URI of the plugin/theme
-msgid "https://kunoichi.shop"
-msgstr "https://kunoichi.shop"
+#. Author URI of the plugin/theme
+msgid "https://kunoichiwp.com"
+msgstr "https://kunoichiwp.com"
 
 #. Description of the plugin/theme
 msgid "Market place theme for WooCommerce."
 msgstr "WooCommerceのためのマーケットプレース"
 
 #. Author of the plugin/theme
-msgid "Kunoichi"
-msgstr "株式会社KUNOICHI"
-
-#. Author URI of the plugin/theme
-msgid "https://kunoichiwp.com"
-msgstr "https://kunoichiwp.com"
+msgid "Kunoichi INC."
+msgstr "KUNOICHI INC."
 
 #. Template Name of the plugin/theme
 msgid "Wizard Page"
@@ -781,6 +789,9 @@ msgstr "ウィザード型ページ"
 #. Template Name of the plugin/theme
 msgid "No Header"
 msgstr "ヘッダーなし"
+
+#~ msgid "https://kunoichi.shop"
+#~ msgstr "https://kunoichi.shop"
 
 #~ msgid ""
 #~ "Subscribe to our newsletter for the latest updates and early access our "
@@ -918,9 +929,6 @@ msgstr "ヘッダーなし"
 
 #~ msgid "Get Customer Support"
 #~ msgstr "カスタマーサポートを受ける"
-
-#~ msgid "WordPress Admin"
-#~ msgstr "WordPress管理画面"
 
 #~ msgid "Seller Dashboard"
 #~ msgstr "販売者ダッシュボード"

@@ -18,9 +18,10 @@
 		height: 100%;
 		background-position: center center;
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 
 		&:first-child {
+			background-size: cover;
 			width: 100%;
 		}
 

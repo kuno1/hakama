@@ -26,3 +26,56 @@ add_action( 'hakama_after_body_tag_open', function() {
 <!-- End Google Tag Manager (noscript) -->
 HTML;
 }, 1 );
+
+add_filter( 'document_title_parts', function( $title ) {
+
+	$insert = function( $array, $where, $key, $value, $before = true ) {
+		$new_array = [];
+		foreach ( $array as $k => $v ) {
+			if ( $before && $where === $k ) {
+				$new_array[ $key ] = $value;
+			}
+			$new_array[ $k ] = $v;
+			if ( ! $before && $where === $k) {
+				$new_array[ $key ] = $value;
+			}
+		}
+		return $new_array;
+	};
+
+	//  Add "WordPress themes and plugins.".
+	if ( ! is_front_page() && ! is_singular( 'product' ) ) {
+		$title = $insert( $title, 'site', 'wp', _x( 'WordPress Themes & Plugins', 'document_title', 'hakama' ) );
+	}
+	if ( is_singular() ) {
+		$category = hakama_top_category( get_queried_object() );
+
+		switch ( get_queried_object()->post_type ) {
+			case 'post':
+				if ( $category ) {
+					$title = $insert( $title, 'title', 'category', $category->name, false );
+				}
+				break;
+			case 'product':
+				if ( $category ) {
+					$title = $insert( $title, 'title', 'category', sprintf( 'WordPress %s', $category->name ), false );
+				}
+				break;
+		}
+	}
+	if ( is_category() || is_tax() || is_tag() ) {
+		$term     = get_queried_object();
+		$taxonomy = get_taxonomy( $term->taxonomy );
+		switch ( $term->taxonomy ) {
+			case 'product_cat':
+			case 'product_tag':
+				$title['title'] = sprintf( _x( 'List of %s', 'document_title', 'hakama' ), $title['title'] );
+				break;
+			default:
+				$label = $taxonomy->label;
+				$title = $insert( $title, 'title', 'taxonomy', $label, false );
+				break;
+		}
+	}
+	return $title;
+} );
