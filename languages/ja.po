@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-02-14 12:55+0900\n"
-"PO-Revision-Date: 2020-02-14 12:56+0900\n"
+"PO-Revision-Date: 2020-03-05 20:04+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -48,11 +48,11 @@ msgstr "コメントは受け付けていません。"
 
 #: footer-entry.php:13
 msgid "News Letter"
-msgstr "ニュースレター"
+msgstr "メールマガジン"
 
 #: footer-entry.php:17
 msgid "Subscribe to our newsletter and keep up-to-date."
-msgstr "ニュースレターを購読して最新情報を受け取りましょう。"
+msgstr "メールマガジンを購読して最新情報を受け取りましょう。"
 
 #: footer-entry.php:29
 msgid "Language"
