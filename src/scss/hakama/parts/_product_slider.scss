@@ -1,20 +1,23 @@
 .product-gallery {
 
+	// Same as WP.
+	$slider-height-ratio: 100vw / 772 * 250;
+
 	&-screen {
 		width: 100vw;
-		height: 100vw / 772 * 250; // Same as WP
+		height: $slider-height-ratio;
+		overflow: hidden;
 
 		@include media-breakpoint-down(sm) {
 			height: 100vw;
 		}
-		overflow: hidden;
 	}
 
 	&-item {
 		display: none;
-		width: 100vw / 772 * 250;
 		margin-right: auto;
 		margin-left: auto;
+		width: 100%;
 		height: 100%;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -22,16 +25,11 @@
 
 		&:first-child {
 			background-size: cover;
-			width: 100%;
 		}
 
 		@include media-breakpoint-down(sm) {
 			width: 100%;
-
-			&:first-child {
-				background-size: contain;
-				background-position: center top;
-			}
+			background-size: cover;
 		}
 
 		&.current {

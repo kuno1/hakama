@@ -3,13 +3,17 @@ $product = hakama_get_current_product();
 if ( ! $product || ! ( $brand = get_post( $product->post_parent ) ) ) {
 	return;
 }
-
 $sub_query = new WP_Query( [
 	'post_type' 	 => 'product',
 	'meta_key'  	 => 'total_sales',
 	'orderby'   	 => 'meta_value_num',
 	'order' 		 => 'desc',
-  	'posts_per_page' => 3
+  	'tax_query'      => [ [
+		'taxonomy' => 'product_cat',
+		'terms'    => [ 'theme', 'plugin' ],
+		'field'    => 'slug',
+	] ],
+  	'posts_per_page' => 5,
 ] );
 if ( ! $sub_query->have_posts() ) {
 	return;
