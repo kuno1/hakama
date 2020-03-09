@@ -15,6 +15,27 @@ add_action( 'after_setup_theme', function() {
 } );
 
 /**
+ * Remove jQuery migrate
+ */
+add_action( 'init', function() {
+	// If admin, skip.
+	if ( is_admin() ) {
+		return;
+	}
+	global $wp_scripts;
+	$jquery = $wp_scripts->registered['jquery-core'];
+	$jquery_ver = $jquery->ver;
+	$jquery_src = $jquery->src;
+	// Deregister.
+	wp_deregister_script( 'jquery' );
+	wp_deregister_script( 'jquery-core' );
+	// Re-register.
+	wp_register_script( 'jquery-core', $jquery_src, [], $jquery_ver, false );
+	wp_register_script( 'jquery', false, ['jquery-core'], $jquery_ver, false );
+
+}, 1 );
+
+/**
  * Register files.
  */
 add_action( 'init', function() {
