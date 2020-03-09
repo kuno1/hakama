@@ -45,7 +45,7 @@ add_action( 'init', function() {
 	$version = wp_get_theme()->get( 'Version' );
 	foreach ( [
 		[ 'hakama-i18n', 'js/hakama.js', [ 'wp-i18n' ] ],
-		[ 'hakama', 'js/hakama.app.js', [ 'hakama-i18n' ] ],
+		[ 'hakama', 'js/hakama.app.js', [ 'hakama-i18n', 'bootstrap' ] ],
 		[ 'bootstrap', 'css/hakama.css', [ 'fontawesome5', 'material-design-icon' ] ],
 		[ 'hakama-editor', 'css/hakama-editor.css', [] ],
 		[ 'hakama-block-editor-style', 'css/hakama-editor-style.css', [ 'fontawesome5' ] ],
