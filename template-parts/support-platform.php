@@ -16,7 +16,7 @@
 				] );
 			} ?>
 		<?php else : ?>
-			<a class="btn btn-outline-primary" href="<?php hakama_login_url( $_SERVER['REQUEST_URI'] ) ?>">
+			<a class="btn btn-outline-primary" href="<?php echo hakama_login_url( $_SERVER['REQUEST_URI'] ) ?>">
 				<?php esc_html_e( 'Login to Get Support', 'hakama' ) ?>
 			</a>
 		<?php endif; ?>
