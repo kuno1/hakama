@@ -13,7 +13,7 @@
 			<div class="alert-body">
 				<?php echo wp_kses_post( sprintf(
 					__( 'This thread is only for customers. Please <a href="%s" class="alert-link">login</a> or <a class="alert-link" href="%s">buy the product</a> to see the details.', 'hakama' ),
-					wp_login_url( get_permalink() ),
+					hakama_login_url( get_permalink() ),
 					get_permalink( get_post()->post_parent )
 				) ) ?>
 			</div>
@@ -22,5 +22,5 @@
 	<?php endif; ?>
 
 	<?php hakama_template( 'support-thread' ); ?>
-	
+
 </footer>
