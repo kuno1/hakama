@@ -106,7 +106,9 @@
 }
 
 .woocommerce-form-login,
-.woocommerce-form-register {
+.woocommerce-form-register,
+.woocommerce-EditAccountForm,
+.woocommerce-ResetPassword {
 
 	.woocommerce-form-row {
 		display: block;
