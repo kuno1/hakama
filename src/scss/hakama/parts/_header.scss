@@ -206,10 +206,21 @@ body.with-header-nav {
 
 
 .woocommerce-breadcrumb {
-	a:first-child:before {
+
+	a:first-child::before {
 		content: "\f015";
 		font-weight: 900;
 		font-family: "Font Awesome 5 Free";
 		margin-right: 0.25em;
+	}
+}
+
+.top-nav-over .btn.btn-link.btn-floating {
+	background-color: $white;
+	transition: box-shadow .2s ease-in-out, color .2s ease-in-out;
+	box-shadow: 0 0 5px $gray-700;
+
+	&:active {
+		box-shadow: 0 0 5px transparent;
 	}
 }
