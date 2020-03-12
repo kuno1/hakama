@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'init', function() {
 	// If admin, skip.
-	if ( is_admin() ) {
+	if ( is_admin() || ( isset( $_SERVER['SCRIPT_FILENAME'] ) && 'wp-login.php' === basename( $_SERVER['SCRIPT_FILENAME'] ) ) ) {
 		return;
 	}
 	global $wp_scripts;

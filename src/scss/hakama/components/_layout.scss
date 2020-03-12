@@ -27,9 +27,26 @@ section {
 
 	.col-1,
 	.col-2 {
-		flex: 1;
-		max-width: 100%;
 	}
+}
+
+.woocommerce-Address {
+
+	&.col-1,
+	&.col-2 {
+		flex-basis: 50%;
+		max-width: 50%;
+		margin-bottom: $section-gap;
+
+		@include media-breakpoint-down(sm) {
+			flex-basis: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+.woocommerce-account .entry-content {
+	padding-bottom: $section-gap;
 }
 
 %entry-wrapper {
