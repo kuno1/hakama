@@ -63,18 +63,33 @@
 				margin-bottom: $section-gap;
 			}
 
-			.table th {
-				box-sizing: content-box;
-				width: 10em;
-			}
-
 			.table {
+
+				th {
+					box-sizing: content-box;
+					width: 10em;
+				}
+
+				@include media-breakpoint-down(sm) {
+
+					th,
+					td {
+						display: block;
+						box-sizing: border-box;
+						width: 100%;
+						border-bottom: none;
+					}
+
+					tr:last-child td {
+						border-bottom: 1px solid $table-border-color;
+					}
+				}
 
 				&:first-child {
 					margin-bottom: 0;
 
 					tr:last-child {
-						
+
 						th,
 						td {
 							border-bottom: 0;
