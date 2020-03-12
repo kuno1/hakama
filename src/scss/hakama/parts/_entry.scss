@@ -52,6 +52,42 @@
 		&-thread {
 			padding: 0 $section-gap / 2 $section-gap;
 		}
+
+		&-brand {
+			padding: $section-gap 0 $section-gap / 2;
+		}
+
+		&-business {
+
+			.hb-loading-indicator {
+				margin-bottom: $section-gap;
+			}
+
+			.table th {
+				box-sizing: content-box;
+				width: 10em;
+			}
+
+			.table {
+
+				&:first-child {
+					margin-bottom: 0;
+
+					tr:last-child {
+						
+						th,
+						td {
+							border-bottom: 0;
+						}
+					}
+				}
+
+				&:last-child {
+					margin-top: 0;
+				}
+
+			}
+		}
 	}
 
 	&-footer {
@@ -94,9 +130,11 @@
 		float: left;
 		margin-right: $section-gap / 2;
 		text-align: center;
+
 		i {
 			font-size: 36px;
 		}
+
 		span {
 			display: block;
 			font-size: $font-size-sm;
@@ -183,10 +221,12 @@
 		top: 0;
 		right: 0;
 		text-align: right;
+
 		i {
 			color: $black;
 			font-size: 18px;
 		}
+
 		i + i {
 			margin-left: 0.25em;
 		}

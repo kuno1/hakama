@@ -27,6 +27,8 @@ section {
 
 	.col-1,
 	.col-2 {
+		flex: 1;
+		max-width: 100%;
 	}
 }
 

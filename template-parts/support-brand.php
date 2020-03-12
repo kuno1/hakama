@@ -36,7 +36,7 @@ $brand = get_post( $product->post_parent );
 	?>
 	<div class="brand-info">
 		<h3 class="has-text-align-center is-style-separator f-sans">
-			<?php esc_html_e( 'Informations', 'hakama' ) ?>
+			<?php esc_html_e( 'Information', 'hakama' ) ?>
 		</h3>
 		<ul class="post-list">
 			<?php while( $sub_query->have_posts() ) {
