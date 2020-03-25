@@ -102,3 +102,46 @@ add_action('wp_enqueue_scripts', function() {
 		wp_enqueue_style( 'swiper-custom' );
 	}
 });
+
+/**
+ * Remove not serif jp to be loaded.
+ */
+add_filter( 'gettext_with_context', function( $translation, $text, $context, $domain ) {
+	switch ( $context ) {
+		case 'Google Font Name and Variants':
+			$translation = 'off';
+			break;
+		case 'CSS Font Family for Editor Font':
+			$translation = 'YuMincho';
+			break;
+	}
+	return $translation;
+}, 10, 4 );
+
+/**
+ * Start buffer for replacing img tag.
+ */
+add_action( 'wp_head', function() {
+	ob_start();
+}, 9999 );
+
+/**
+ * Replace img tag.
+ */
+add_action( 'wp_footer', function() {
+	$body     = ob_get_contents();
+	$replaced = preg_replace_callback( '#<img([^>]+)>#u', function( $matches ) {
+		list( $match, $attr ) = $matches;
+		foreach ( [
+					  'loading'  => 'lazy',
+				  ] as $key => $val ) {
+			if ( false !== strpos( $attr, $key . '=' ) ) {
+				continue;
+			}
+			$attr = sprintf( ' %s="%s"%s', $key, $val, $attr );
+		}
+		return sprintf( '<img%s>', $attr );
+	}, $body );
+	ob_end_clean();
+	echo $replaced;
+}, 9999 );
