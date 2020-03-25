@@ -96,6 +96,11 @@ function hakama_admin_back_link() {
 					$url = \Hametuha\Hashboard::screen_url( 'brand' );
 				}
 				break;
+			case 'faq':
+				if ( current_user_can( 'seller' ) ) {
+					$url = \Hametuha\Hashboard::screen_url( 'documentation' );
+				}
+				break;
 			case 'product':
 				if ( $parent = wp_get_post_parent_id( filter_input( INPUT_GET, 'post' ) ) ) {
 					$url = \Hametuha\Hashboard::screen_url( sprintf( 'editor/brand/%d#products', $parent ) );
