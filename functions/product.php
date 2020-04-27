@@ -90,7 +90,22 @@ function hakama_is_customer( $post = null, $user_id = 0 ) {
  * @return WP_Post
  */
 function hakama_get_brand( $post = null ) {
-	return get_post( get_post( $post )->post_parent );
+	$post = get_post( $post );
+	if ( 'brand' === $post->post_type ) {
+		return $post;
+	} elseif ( $post->post_parent && ( $brand = get_post( $post->post_parent ) ) ) {
+		if ( 'brand' === $brand->post_type ) {
+			return $brand;
+		} else {
+			if ( $brand->post_parent && 'brand' === get_post_type( $brand->post_parent ) ) {
+				return get_post( $brand->post_parent );
+			} else {
+				return null;
+			}
+		}
+	} else {
+		return null;
+	}
 }
 
 

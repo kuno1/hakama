@@ -28,9 +28,10 @@ case $1 in
 		VERSION=`get_latest_release "kuno1/hakama"`
 		echo -e "Deploying version $VERSION"
 		wget "https://github.com/kuno1/hakama/releases/download/$VERSION/hakama.zip"
-		unzip hakama.zip
-		rm hakama.zip;;
-
+		unzip -d hakama hakama.zip
+		rm hakama.zip
+    cd hakama
+		echo -e "Unziped latest release.";;
 	*)
 		exit "You must specify 'staging' or 'production'";;
 esac

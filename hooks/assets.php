@@ -46,6 +46,7 @@ add_action( 'init', function() {
 	foreach ( [
 		[ 'hakama-i18n', 'js/hakama.js', [ 'wp-i18n' ] ],
 		[ 'hakama', 'js/hakama.app.js', [ 'hakama-i18n', 'bootstrap' ] ],
+		[ 'hakama-tracking', 'js/hakama-tracking.js', [ 'jquery' ] ],
 		[ 'bootstrap', 'css/hakama.css', [ 'fontawesome5', 'material-design-icon' ] ],
 		[ 'hakama-editor', 'css/hakama-editor.css', [] ],
 		[ 'hakama-block-editor-style', 'css/hakama-editor-style.css', [ 'fontawesome5' ] ],
@@ -100,6 +101,16 @@ add_action('wp_enqueue_scripts', function() {
 	if ( is_singular( 'product' ) ) {
 		wp_enqueue_script( 'swiper-helper' );
 		wp_enqueue_style( 'swiper-custom' );
+	}
+
+	if ( is_singular() ) {
+		$brand = hakama_get_brand();
+		wp_enqueue_script( 'hakama-tracking' );
+		wp_localize_script( 'hakama-tracking', 'HakamaTracking', [
+			'id'     => get_queried_object_id(),
+			'type'   => get_queried_object()->post_type,
+			'parent' => $brand ? $brand->ID : 0,
+		] );
 	}
 });
 
