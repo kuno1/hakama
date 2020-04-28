@@ -28,7 +28,7 @@ add_action( 'admin_init', function() {
 			<?php foreach ( [
 					'primary'   => __( 'Primary', 'hakama' ),
 					'secondary' => __( 'Secondary', 'hakama' ),
-					'info'      => __( 'Infomation', 'hakama' ),
+					'info'      => __( 'Information', 'hakama' ),
 					'success'   => __( 'Success', 'hakama' ),
 					'warning'   => __( 'Warning', 'hakama' ),
 					'danger'    => __( 'Danger', 'hakama' ),

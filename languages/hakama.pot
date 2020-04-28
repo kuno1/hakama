@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2020-03-05 20:49+0900\n"
+"POT-Creation-Date: 2020-04-28 15:20+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -89,36 +89,36 @@ msgstr ""
 msgid "Guest"
 msgstr ""
 
-#: functions/posts.php:53
+#: functions/posts.php:62
 msgid "Product"
 msgstr ""
 
-#: functions/posts.php:57 functions/product.php:270
+#: functions/posts.php:66 functions/product.php:286
 msgid "Document"
 msgstr ""
 
-#: functions/posts.php:60
+#: functions/posts.php:69
 msgid "Support"
 msgstr ""
 
-#: functions/posts.php:63
+#: functions/posts.php:72
 msgid "Brand"
 msgstr ""
 
-#: functions/posts.php:66 functions/template.php:153
+#: functions/posts.php:75 functions/template.php:153
 msgid "Blog"
 msgstr ""
 
-#: functions/posts.php:155
+#: functions/posts.php:164
 #, php-format
 msgid "%1$s from %2$s"
 msgstr ""
 
-#: functions/product.php:177 template-parts/product-support.php:8
+#: functions/product.php:192 template-parts/product-support.php:8
 msgid "Documentation"
 msgstr ""
 
-#: functions/product.php:272 template-parts/product-support.php:28
+#: functions/product.php:288 template-parts/product-support.php:28
 #: woocommerce/single-product.php:147
 msgid "Support Forum"
 msgstr ""
@@ -350,16 +350,16 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: single-brand.php:21
+#: single-brand.php:47
+msgid "This brand has no business information yet."
+msgstr ""
+
+#: single-brand.php:57
 msgid "Products"
 msgstr ""
 
-#: single-brand.php:43
+#: single-brand.php:75
 msgid "This brand has no content yet."
-msgstr ""
-
-#: single-brand.php:68
-msgid "This brand has no business information yet."
 msgstr ""
 
 #: template-parts/add-to-cart.php:26
@@ -573,11 +573,11 @@ msgstr ""
 msgid "This post is restricted."
 msgstr ""
 
-#: template-parts/product-brand.php:12
+#: template-parts/product-brand.php:21
 msgid "Crafted By"
 msgstr ""
 
-#: template-parts/product-popular.php:20
+#: template-parts/product-popular.php:24
 msgid "Popular Products"
 msgstr ""
 
@@ -601,12 +601,21 @@ msgstr ""
 msgid "Every customer can make new thread to get support."
 msgstr ""
 
-#: template-parts/related-faq.php:22
+#: template-parts/related-faq.php:17 template-parts/related-faq.php:30
+#, php-format
+msgid "See documents in %s"
+msgstr ""
+
+#: template-parts/related-faq.php:33
+msgid "Documentation Top"
+msgstr ""
+
+#: template-parts/related-faq.php:45
 msgid "Related Documents"
 msgstr ""
 
-#: template-parts/related-faq.php:36
-msgid "This product has no related document."
+#: template-parts/related-faq.php:59
+msgid "No related document."
 msgstr ""
 
 #: template-parts/support-author.php:15
@@ -627,7 +636,7 @@ msgid "Get Support"
 msgstr ""
 
 #: template-parts/support-brand.php:39
-msgid "Informations"
+msgid "Information"
 msgstr ""
 
 #: template-parts/support-platform.php:5

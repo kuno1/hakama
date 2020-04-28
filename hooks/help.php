@@ -48,3 +48,15 @@ SQL;
 	}
 }
 
+/**
+ * Filter post list from mail loop.
+ */
+add_action( 'pre_get_posts', function( WP_Query &$wp_query ) {
+	if ( is_admin() || ! $wp_query->is_main_query() || ! ( is_tax( 'faq_cat' ) || is_post_type_archive( 'faq' ) ) ) {
+		return;
+	}
+	// Ensure post parent.
+	if ( ! $wp_query->get( 'post_parent' ) ) {
+		$wp_query->set( 'post_parent', 0 );
+	}
+} );

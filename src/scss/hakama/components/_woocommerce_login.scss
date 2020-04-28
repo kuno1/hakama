@@ -1,11 +1,14 @@
 #customer_login {
+
 	h2 {
 		text-align: center;
 	}
 }
 
 .woocommerce {
+
 	&-address-fields {
+
 		.form-row {
 			display: block;
 		}
@@ -18,17 +21,22 @@
 	}
 
 	&-form {
+
 		@at-root .woocommerce-account & {
 			background: #fff;
 			border: none !important;
 		}
 
 		&-row {
+
 			label {
 				color: #888;
 			}
 
-			input[type=text], input[type=password], input[type=email] {
+			input[type=text],
+			input[type=password],
+			input[type=email] {
+
 				@extend .form-control;
 			}
 
@@ -40,6 +48,7 @@
 
 			.woocommerce-password-hint {
 				margin-top: 0.25em;
+
 				@extend .text-muted;
 			}
 		}
@@ -56,5 +65,4 @@
 			}
 		}
 	}
-
 }

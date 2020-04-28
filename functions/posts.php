@@ -36,6 +36,15 @@ function hakama_page_link( $post = null ) {
 }
 
 /**
+ * Get documentation root.
+ *
+ * @return string
+ */
+function hakama_documentation_top_page() {
+	return get_post_type_archive_link( 'faq' );
+}
+
+/**
  * Get loop type
  *
  * @param null $post

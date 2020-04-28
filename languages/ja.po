@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-05 20:49+0900\n"
-"PO-Revision-Date: 2020-03-05 20:50+0900\n"
+"POT-Creation-Date: 2020-04-28 15:20+0900\n"
+"PO-Revision-Date: 2020-04-28 15:21+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -79,36 +79,36 @@ msgstr "購読"
 msgid "Guest"
 msgstr "ゲスト"
 
-#: functions/posts.php:53
+#: functions/posts.php:62
 msgid "Product"
 msgstr "商品"
 
-#: functions/posts.php:57 functions/product.php:270
+#: functions/posts.php:66 functions/product.php:286
 msgid "Document"
 msgstr "ドキュメント"
 
-#: functions/posts.php:60
+#: functions/posts.php:69
 msgid "Support"
 msgstr "サポート"
 
-#: functions/posts.php:63
+#: functions/posts.php:72
 msgid "Brand"
 msgstr "ブランド"
 
-#: functions/posts.php:66 functions/template.php:153
+#: functions/posts.php:75 functions/template.php:153
 msgid "Blog"
 msgstr "ブログ"
 
-#: functions/posts.php:155
+#: functions/posts.php:164
 #, php-format
 msgid "%1$s from %2$s"
 msgstr "%2$sから%1$s"
 
-#: functions/product.php:177 template-parts/product-support.php:8
+#: functions/product.php:192 template-parts/product-support.php:8
 msgid "Documentation"
 msgstr "ドキュメント"
 
-#: functions/product.php:272 template-parts/product-support.php:28
+#: functions/product.php:288 template-parts/product-support.php:28
 #: woocommerce/single-product.php:147
 msgid "Support Forum"
 msgstr "サポートフォーラム"
@@ -343,17 +343,17 @@ msgstr "キーワードを入れてください。"
 msgid "Search"
 msgstr "検索"
 
-#: single-brand.php:21
+#: single-brand.php:47
+msgid "This brand has no business information yet."
+msgstr "このブランドにはビジネス情報が設定されていません。"
+
+#: single-brand.php:57
 msgid "Products"
 msgstr "プロダクト"
 
-#: single-brand.php:43
+#: single-brand.php:75
 msgid "This brand has no content yet."
 msgstr "このブランドにはまだ商品がありません。"
-
-#: single-brand.php:68
-msgid "This brand has no business information yet."
-msgstr "このブランドにはビジネス情報が設定されていません。"
 
 #: template-parts/add-to-cart.php:26
 msgid "Downloadable Files"
@@ -582,11 +582,11 @@ msgstr "はてなブックマーク"
 msgid "This post is restricted."
 msgstr "この投稿は制限されています。"
 
-#: template-parts/product-brand.php:12
+#: template-parts/product-brand.php:21
 msgid "Crafted By"
 msgstr "作者"
 
-#: template-parts/product-popular.php:20
+#: template-parts/product-popular.php:24
 msgid "Popular Products"
 msgstr "人気の製品"
 
@@ -610,13 +610,22 @@ msgstr "サポートフォーラムを見る"
 msgid "Every customer can make new thread to get support."
 msgstr "お客様はサポートを受けるためにスレッドを始めることができます。"
 
-#: template-parts/related-faq.php:22
+#: template-parts/related-faq.php:17 template-parts/related-faq.php:30
+#, php-format
+msgid "See documents in %s"
+msgstr "%sのドキュメントを見る"
+
+#: template-parts/related-faq.php:33
+msgid "Documentation Top"
+msgstr "ドキュメントトップ"
+
+#: template-parts/related-faq.php:45
 msgid "Related Documents"
 msgstr "関連ドキュメント"
 
-#: template-parts/related-faq.php:36
-msgid "This product has no related document."
-msgstr "この製品には関連ドキュメントがありません。"
+#: template-parts/related-faq.php:59
+msgid "No related document."
+msgstr "関連ドキュメントはありません。"
 
 #: template-parts/support-author.php:15
 #, php-format
@@ -638,7 +647,7 @@ msgid "Get Support"
 msgstr "サポートを受ける"
 
 #: template-parts/support-brand.php:39
-msgid "Informations"
+msgid "Information"
 msgstr "お知らせ"
 
 #: template-parts/support-platform.php:5
@@ -790,6 +799,9 @@ msgstr "ウィザード型ページ"
 msgid "No Header"
 msgstr "ヘッダーなし"
 
+#~ msgid "This product has no related document."
+#~ msgstr "この製品には関連ドキュメントがありません。"
+
 #~ msgid "https://kunoichi.shop"
 #~ msgstr "https://kunoichi.shop"
 
@@ -863,9 +875,6 @@ msgstr "ヘッダーなし"
 
 #~ msgid "Help Center"
 #~ msgstr "ヘルプセンター"
-
-#~ msgid "See all document"
-#~ msgstr "すべてのドキュメントを見る"
 
 #~ msgid "Help Center Home"
 #~ msgstr "ヘルプセンターホーム"

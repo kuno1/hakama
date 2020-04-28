@@ -280,13 +280,12 @@ function hakama_document_owner( $post = null ) {
  * @return string
  */
 function hakama_product_title( $post = null ) {
-	$post = get_post( $post );
+	$post  = get_post( $post );
+	$title = $post ? get_the_title( $post ) : get_bloginfo( 'name' );
 	if ( is_singular( 'faq' ) || is_post_type_archive( 'faq' ) || is_tax( 'faq_cat' ) ) {
-		$title = sprintf( '%s<small>%s</small>', get_the_title( $post ), __( 'Document', 'hakama' ) );
+		$title = sprintf( '%s<small>%s</small>', $title, __( 'Document', 'hakama' ) );
 	} elseif ( is_singular( 'thread' ) || is_post_type_archive( 'thread' ) || is_tax( 'topic' ) ) {
-		$title = sprintf( '%s<small>%s</small>', get_the_title( $post ), __( 'Support Forum', 'hakama' ) );
-	} else {
-		$title = get_the_title( $post );
+		$title = sprintf( '%s<small>%s</small>', $title, __( 'Support Forum', 'hakama' ) );
 	}
 	return wp_kses_post( $title );
 }
