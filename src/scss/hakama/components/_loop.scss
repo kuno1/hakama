@@ -189,6 +189,11 @@
 	border: 1px solid $gray-300;
 	margin-bottom: 40px;
 
+	@include media-breakpoint-down(sm) {
+		flex-basis: 100%;
+		margin-bottom: $grid-gutter-width / 2;
+	}
+
 	&-link {
 		display: block;
 		height: 100%;
