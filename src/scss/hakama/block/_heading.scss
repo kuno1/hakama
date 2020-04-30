@@ -1,4 +1,10 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
 	&.is-style-overline {
 		padding-top: 0.55em;
 		position: relative;
@@ -15,10 +21,12 @@ h1, h2, h3, h4, h5, h6 {
 			top: 0;
 			left: 0;
 		}
+
 		&.has-text-align-center::before {
 			left: 50%;
 			transform: translateX(-50%);
 		}
+
 		&.has-text-align-right::before {
 			right: 0;
 			left: auto;
@@ -57,6 +65,27 @@ h1, h2, h3, h4, h5, h6 {
 		&.has-text-align-right::after {
 			content: none;
 		}
+
+		@include media-breakpoint-down(sm) {
+			display: block;
+			white-space: normal;
+			text-shadow: 0 0 3px $white;
+			position: relative;
+			z-index: 1;
+
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				transform: translateY(-50%);
+				z-index: -1;
+			}
+
+			&::after {
+				content: none !important;
+			}
+		}
 	}
 
 	&.is-style-underline {
@@ -68,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @if $is-editor {
+
 	.is-style-separator {
 		white-space: nowrap !important;
 	}
