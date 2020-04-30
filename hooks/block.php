@@ -37,6 +37,8 @@ add_action( 'after_setup_theme', function() {
 		}
 		add_theme_support( 'editor-color-palette', $colors );
 	}
+	// Align Wide
+	add_theme_support( 'align-wide' );
 	// Icons
 	if ( class_exists( 'Kunoichi\Icon\Manager' ) ) {
 		Kunoichi\Icon\Manager::register( [
@@ -133,8 +135,8 @@ add_filter( 'render_block', function( $block_content, $block ) {
 	if ( is_singular() ) {
 		switch ( $block['blockName'] ) {
 			case 'kunoichi/posts':
-				if ( 'circle' !== $block['attrs']['template'] ) {
-					break;
+				if ( ! isset( $block['attrs']['template'] ) || ( 'circle' !== $block['attrs']['template'] ) ) {
+					break	;
 				}
 				// Remove button.
 				list( $items, $button ) = explode( '<div class="kbl-post-list-button">', $block_content );

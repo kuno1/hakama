@@ -26,12 +26,13 @@ $block-theme-colors: map-merge( (
 
 @each $color, $value in $block-theme-colors {
 
-	.has-#{$color}-color {
-		color: $value;
+	.has-#{ $color }-text-color,
+	.has-#{ $color }-color {
+		color: $value !important;
 	}
 
-	.has-#{$color}-background-color {
-		background-color: $value;
+	.has-#{ $color }-background-color {
+		background-color: $value !important;
 	}
 }
 

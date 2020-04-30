@@ -6,13 +6,11 @@
 ?>
 <li class="post-list-item">
 	<a href="<?php the_permalink(); ?>" class="post-list-link">
-        <div class="post-list-thumbnail">
-            <?php if ( has_post_thumbnail() ) : ?>
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="post-list-thumbnail">
                 <?php the_post_thumbnail( 'thumbnail', [ 'class' => 'post-list-img', ] ); ?>
-            <?php else : ?>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/icon/kunoichi-dammy.svg" alt="" class="post-list-img" width="60" height="60" />
-            <?php endif; ?>
-        </div>
+	        </div>
+		<?php endif; ?>
         <div class="post-list-body">
 
             <p class="post-list-category">

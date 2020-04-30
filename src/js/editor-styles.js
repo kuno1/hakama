@@ -29,9 +29,9 @@ wp.domReady( function() {
 	for ( const suffix of [ '', 'outlined' ] ) {
 		for ( const theme of [ 'primary', 'secondary', 'danger', 'warning', 'success', 'info', 'light', 'dark', 'white' ] ) {
 			registerBlockStyle( 'core/button', {
-				name: theme + '-' + suffix,
+				name: theme + ( suffix ? ( '-' + suffix ) : '' ),
 				label: [ theme, suffix ].map( ( text ) => {
-					return text.charAt( 0 ).toUpperCase() + text.slice( 1 );
+					return __( text.charAt( 0 ).toUpperCase() + text.slice( 1 ), 'hakama' );
 				} ).join( ' ' ),
 			} );
 		}

@@ -1,3 +1,8 @@
 .wp-block-hakama-section {
 	padding: 40px;
+
+	&-inner {
+
+		@extend .container;
+	}
 }

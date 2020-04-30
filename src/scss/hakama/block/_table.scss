@@ -2,18 +2,13 @@
 .entry-content {
 
 	table {
+		max-width: 100%;
 
 		@extend .table;
 
 		th {
 			background-color: $gray-600;
 			color: $white;
-		}
-
-		tbody th {
-			background-color: $white;
-			color: $black;
-			font-weight: $font-weight-bold;
 		}
 
 		td {
@@ -23,8 +18,25 @@
 		th,
 		td {
 			border: 1px solid $table-border-color;
+			white-space: normal;
+		}
+
+		tbody th {
+			background-color: $white;
+			color: $black;
+			font-weight: $font-weight-bold;
+			white-space: nowrap;
+		}
+
+		tbody td {
+			word-break: break-all;
 		}
 	}
+}
+
+.xdebug-error th {
+	white-space: normal;
+	word-break: break-all;
 }
 
 .wp-block-table.is-style-stripes table {

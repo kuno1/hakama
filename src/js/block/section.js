@@ -19,6 +19,11 @@ registerBlockType( 'hakama/section', {
 
 	keywords: [ 'section', 'layout' ],
 
+	supports: {
+		alignWide: true,
+		align: [ 'wide', 'full' ],
+	},
+
 	attributes: {
 		backgroundColor: {
 			type: 'string',
@@ -44,7 +49,9 @@ registerBlockType( 'hakama/section', {
 					</PanelColorSettings>
 				</InspectorControls>
 				<div className={ className } style={ { backgroundColor: attributes.backgroundColor } }>
-					<InnerBlocks templateLock={ false } />
+					<div className="wp-block-hakama-section-inner">
+						<InnerBlocks templateLock={ false } />
+					</div>
 				</div>
 			</Fragment>
 		);
@@ -53,7 +60,9 @@ registerBlockType( 'hakama/section', {
 	save( { className, attributes } ) {
 		return (
 			<section className={ className } style={ { backgroundColor: attributes.backgroundColor } }>
-				<InnerBlocks.Content />
+				<div className="wp-block-hakama-section-inner">
+					<InnerBlocks.Content />
+				</div>
 			</section>
 		);
 	},
