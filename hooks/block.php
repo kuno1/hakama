@@ -22,7 +22,7 @@
 add_action( 'after_setup_theme', function() {
 	// Color setting.
 	if ( class_exists( 'Kunoichi\BootstraPress\Css\Extractor' ) ) {
-		$extractor = new Kunoichi\BootstraPress\Css\Extractor( get_template_directory() . '/assets/css/style.css' );
+		$extractor = new Kunoichi\BootstraPress\Css\Extractor( get_template_directory() . '/assets/css/hakama.css' );
 		$pallets = $extractor->get_color_palette();
 		if ( ! $pallets ) {
 			return;

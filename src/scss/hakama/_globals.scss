@@ -14,15 +14,15 @@ $header-gradient-end: #6c757d;
 
 %header-gradient {
 	background-color: $header-gradient-start;
+
 	@include bg-gradient(100deg, $header-gradient-start, $header-gradient-end);
 }
 
-
-$block-theme-colors: map-merge( (
-		"pink": $pink,
-		"white": $white,
-		"black": $black,
-), $theme-colors );
+$block-theme-colors: map-merge((
+	"pink": $pink,
+	"white": $white,
+	"black": $black,
+), $theme-colors);
 
 @each $color, $value in $block-theme-colors {
 
@@ -57,3 +57,4 @@ $block-theme-colors: map-merge( (
 	margin-right: auto !important;
 	margin-left: auto !important;
 }
+
