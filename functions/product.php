@@ -74,12 +74,7 @@ function hakama_child_url( $post = null, $term = null, $taxonomy = '', $single_u
  * @return bool
  */
 function hakama_is_customer( $post = null, $user_id = 0 ) {
-	if ( ! $user_id && ! ( $user_id = get_current_user_id() ) ) {
-		return false;
-	}
-	$product = wc_get_product( get_post( $post ) );
-	// Todo prepare for recurring payment.
-	return wc_customer_bought_product( '', $user_id, $product->get_id() );
+	return \Kunoichi\Makibishi::is_customer( $post, $user_id );
 }
 
 /**
@@ -325,7 +320,11 @@ function hakama_can_read_post( $post = null, $user = null ) {
 			break;
 		case 'thread':
 			if ( $post->post_parent ) {
-				return hakama_is_customer( $post->post_parent, $user ) ?: user_can( $user, 'edit_others_posts' );
+				if ( hakama_is_customer( $post->post_parent, $user ) ) {
+					return true;
+				} else {
+					return \Kunoichi\Makibishi::is_shop_staff( $post->post_parent, $user );
+				}
 			} else {
 				return true;
 			}
