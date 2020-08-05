@@ -121,7 +121,7 @@ jobs:
         run: bash bin/cleanup.sh
 
       - name: Deploy to Staging Server
-        id: deploymaster
+        id: deploystaging
         uses: Pendect/action-rsyncer@v1.1.0
         env:
           DEPLOY_KEY: ${{secrets.KUNOICHI_DEPLOY_KEY}}
@@ -131,6 +131,42 @@ jobs:
           ssh_options: ''
           src: './'
           dest: 'nginx@ssh.gutenberg.ts-kunoichimarket-staging.click:/var/web/wp/wp-content/themes/hakama/'
+
+      - name: Display Deploy Status
+        run: echo "${{ steps.deploystaging.outputs.status }}"
+
+  deploy_production:
+    name: Deploy Production
+    needs: release
+    runs-on: ubuntu-16.04
+    if: contains(github.ref, 'tags/')
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: '7.1'
+
+      - name: Install NPM
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10'
+
+      - name: Build package via Bash
+        run: bash bin/cleanup.sh
+
+      - name: Deploy to Production Server
+        id: deploymaster
+        uses: Pendect/action-rsyncer@v1.1.0
+        env:
+          DEPLOY_KEY: ${{secrets.KUNOICHI_DEPLOY_KEY}}
+        with:
+          flags: '-rptv --checksum --delete'
+          options: ''
+          ssh_options: ''
+          src: './'
+          dest: 'nginx@ssh.gutenberg.kunoichiwp.com:/var/web/wp/wp-content/themes/hakama/'
 
       - name: Display Deploy Status
         run: echo "${{ steps.deploymaster.outputs.status }}"
