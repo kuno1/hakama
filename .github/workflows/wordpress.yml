@@ -49,7 +49,7 @@ jobs:
         run: composer test
 
   release:
-    name: Build Plugin
+    name: Build Release
     needs: test
     if: contains(github.ref, 'tags/')
     runs-on: ubuntu-16.04
@@ -98,3 +98,39 @@ jobs:
           asset_path: ./${{ matrix.zip }}.zip
           asset_name: ${{ matrix.zip }}.zip
           asset_content_type: application/zip
+
+  deploy_stg:
+    name: Deploy Staging
+    needs: test
+    runs-on: ubuntu-16.04
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: '7.1'
+
+      - name: Install NPM
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10'
+
+      - name: Build package via Bash
+        run: bash bin/cleanup.sh
+
+      - name: Deploy to Staging Server
+        id: deploymaster
+        uses: Pendect/action-rsyncer@v1.1.0
+        env:
+          DEPLOY_KEY: ${{secrets.KUNOICHI_DEPLOY_KEY}}
+        with:
+          flags: '-rptv --checksum --delete'
+          options: ''
+          ssh_options: ''
+          src: './'
+          dest: 'nginx@ssh.gutenberg.ts-kunoichimarket-staging.click:/var/web/wp/wp-content/themes/hakama/'
+
+      - name: Display Deploy Status
+        run: echo "${{ steps.deploymaster.outputs.status }}"
