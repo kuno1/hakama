@@ -58,3 +58,20 @@ $block-theme-colors: map-merge((
 	margin-left: auto !important;
 }
 
+%wp-caption-text {
+	font-size: 0.8rem;
+	margin-top: 0.5em;
+	color: $gray-700;
+
+	a:link,
+	a:visited {
+		color: $gray-700;
+		text-decoration: underline;
+	}
+
+	a:hover,
+	a:active {
+		color: $gray-400;
+		text-decoration: none;
+	}
+}

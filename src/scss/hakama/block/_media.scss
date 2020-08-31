@@ -1,0 +1,21 @@
+.wp-block-image {
+	margin-top: $section-gap;
+	margin-bottom: $section-gap;
+
+	.aligncenter {
+		text-align: center;
+	}
+
+	.alignleft {
+		text-align: left;
+	}
+
+	.alignright {
+		text-align: right;
+	}
+
+	figcaption {
+
+		@extend %wp-caption-text;
+	}
+}

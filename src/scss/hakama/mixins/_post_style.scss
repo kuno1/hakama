@@ -114,6 +114,12 @@
 	}
 
 
+
+	figcaption {
+
+		@extend %wp-caption-text;
+	}
+
 	iframe {
 		display: block;
 		margin-right: auto;

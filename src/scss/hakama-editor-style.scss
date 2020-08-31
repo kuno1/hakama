@@ -6,14 +6,12 @@ $is-editor: true;
 
 $hb-img-path: '../../../../plugins/makibishi/vendor/hametuha/hashboard/assets/img' !default;
 
-
 .editor-styles-wrapper {
 
 	@import "hb_bootstrap_override";
 	@import "bootstrap";
 	@import "hb_globals";
 	@import "hb-components/*";
-
 	@import "hakama/mixins/*";
 	@import "hakama/globals";
 
