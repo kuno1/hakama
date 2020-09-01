@@ -39,6 +39,10 @@
 		position: relative;
 		min-height: 180px;
 		overflow: hidden;
+
+		&:hover .kbl-link-card-text {
+			background-color: $danger;
+		}
 	}
 
 	&-img {
@@ -55,13 +59,19 @@
 
 	&-text {
 		position: absolute;
+		display: inline-block;
+		box-sizing: border-box;
+		text-align: left;
 		z-index: 2;
+		background-color: $black;
 		color: $white;
+		padding: 5px;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		font-size: $h4-font-size;
 		font-family: $font-family-serif;
+		transition: background-color .3s ease-in-out;
 
 		strong {
 			font-weight: $font-weight-base;

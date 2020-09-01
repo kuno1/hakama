@@ -13,7 +13,6 @@
 $small-screen: map_get($grid-breakpoints, 'sm');
 
 .hamethread-form {
-
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -61,6 +60,7 @@ $avatar-padding: 20px;
 	padding: 0;
 
 	.children {
+
 		li {
 			padding-left: 0;
 		}

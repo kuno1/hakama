@@ -1,0 +1,31 @@
+.kbl-dl {
+	margin: $section-gap auto;
+	border-bottom: 1px solid $gray-300;
+
+	@include media-breakpoint-up(md) {
+
+		&-term,
+		&-description {
+			padding-left: $section-gap;
+			padding-right: $section-gap;
+		}
+	}
+
+	&-term {
+		margin-bottom: $section-gap / 2;
+		padding-top: $section-gap / 2;
+		border-top: 1px solid $gray-300;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&-description {
+		margin-bottom: $section-gap / 2;
+	}
+
+	&[data-faq="faq"] .kbl-dl-term::before {
+		content: "Q. ";
+	}
+}

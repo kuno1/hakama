@@ -6,7 +6,7 @@ $panel-themes: map-merge($theme-colors, (
 .kbl-panel {
 	margin: $section-gap 0;
 	background-color: $white;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
 	&-heading {
 		font-weight: $font-weight-bold;
