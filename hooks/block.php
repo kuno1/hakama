@@ -47,7 +47,10 @@ add_action( 'after_setup_theme', function() {
 	}
 	// Block Library
 	if ( class_exists( 'Kunoichi\BlockLibrary' ) ) {
-		\Kunoichi\BlockLibrary::enable();
+		\Kunoichi\BlockLibrary::enable( [], [
+			Kunoichi\BlockLibrary\Blocks\Offer::class,
+			Kunoichi\BlockLibrary\Blocks\OfferList::class,
+		] );
 	}
 } );
 
