@@ -16,9 +16,6 @@ const bulkImport = require( './src/gulp/bulk-importer' );
 // Lint SCSS
 gulp.task( 'scss:lint', function() {
 	return gulp.src( './src/scss/**/*.scss' )
-		.pipe( $.plumber( {
-			errorHandler: $.notify.onError( 'Stylelint: <%= error.message %>' ),
-		} ) )
 		.pipe( $.stylelint( {
 			reporters: [
 				{

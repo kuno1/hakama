@@ -1,0 +1,99 @@
+.kbl-step {
+
+	&-wrap {
+		margin: $section-gap 0;
+		padding: $section-gap $section-gap / 2;
+		border: 1px solid $breadcrumb-divider-color;
+	}
+
+	&-title {
+		display: inline-block;
+		background-color: $primary;
+		padding: $section-gap / 2;
+		font-family: $font-family-sans-serif !important;
+		color: $white;
+	}
+
+	&-list {
+		padding: 0;
+		margin: 0;
+		counter-reset: step-counter;
+	}
+
+	&-item {
+		counter-increment: step-counter;
+		list-style: none;
+		border-top: 1px dashed $gray-400;
+		padding: $section-gap / 2 0;
+		display: flex;
+		flex-wrap: wrap;
+
+		&-last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	&-tip {
+		font-weight: $font-weight-bold;
+		color: $attention;
+		padding-left: 30px;
+		position: relative;
+
+		&::before {
+			content: "\f06a";
+			font-family: "Font Awesome 5 Free";
+			font-weight: 700;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			font-size: 18px;
+		}
+	}
+
+	&-header {
+		flex-basis: 100%;
+		margin-bottom: $section-gap / 2;
+	}
+
+	&-body {
+		flex: 1;
+	}
+
+	&-images {
+		flex-basis: 40%;
+
+		@include media-breakpoint-down(sm) {
+			flex-basis: 100%;
+		}
+
+		figure {
+			margin: 0;
+
+			+ figure {
+				margin-top: $section-gap / 2;
+			}
+		}
+	}
+
+	&-name {
+		display: inline;
+	}
+
+	&-counter {
+		display: inline-block;
+		width: $h3-font-size;
+		height: $h3-font-size;
+		line-height: $h3-font-size;
+		vertical-align: top;
+		text-align: center;
+		color: $white;
+		background-color: $black;
+		border-radius: 50%;
+		margin-right: 0.5em;
+
+		&-empty::before {
+			content: counter(step-counter);
+		}
+	}
+}

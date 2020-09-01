@@ -6,30 +6,17 @@ h5,
 h6 {
 
 	&.is-style-overline {
-		padding-top: 0.55em;
-		position: relative;
 
-		&::before {
-			position: absolute;
-			display: block;
-			content: "";
-			border-width: 0;
-			border-top-width: 1px;
-			border-top-style: solid;
-			width: 20px;
-			height: 1px;
-			top: 0;
-			left: 0;
+		@extend %overline-heading;
+
+		&.has-text-align-center {
+
+			@extend %overline-heading-center;
 		}
 
-		&.has-text-align-center::before {
-			left: 50%;
-			transform: translateX(-50%);
-		}
+		&.has-text-align-right {
 
-		&.has-text-align-right::before {
-			right: 0;
-			left: auto;
+			@extend %overline-heading-right;
 		}
 	}
 

@@ -1,0 +1,39 @@
+$panel-themes: map-merge($theme-colors, (
+	"black": $black,
+	"white": $white,
+));
+
+.kbl-panel {
+	margin: $section-gap 0;
+	background-color: $white;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+	&-heading {
+		font-weight: $font-weight-bold;
+		padding: 20px;
+	}
+
+	&-body {
+		padding: 0 $section-gap / 2 $section-gap / 2;
+
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@each $theme, $color in $panel-themes {
+
+		&.has-#{$theme}-panel-title-color .kbl-panel-heading{
+			color: $color;
+		}
+
+		&.has-#{$theme}-panel-color {
+			background-color: $color;
+		}
+	}
+}
+

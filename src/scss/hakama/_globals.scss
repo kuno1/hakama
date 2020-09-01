@@ -75,3 +75,38 @@ $block-theme-colors: map-merge((
 		text-decoration: none;
 	}
 }
+
+// Headings
+%overline-heading {
+	padding-top: 0.55em;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		display: block;
+		content: "";
+		border-width: 0;
+		border-top-width: 1px;
+		border-top-style: solid;
+		width: 20px;
+		height: 1px;
+		top: 0;
+		left: 0;
+	}
+}
+
+%overline-heading-center {
+
+	&::before {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+%overline-heading-right {
+
+	&::before {
+		right: 0;
+		left: auto;
+	}
+}
