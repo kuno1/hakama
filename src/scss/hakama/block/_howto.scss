@@ -58,6 +58,12 @@
 
 	&-body {
 		flex: 1;
+		padding-right: $section-gap / 2;
+		min-width: 200px;
+
+		@include media-breakpoint-down(sm) {
+			padding-right: 0;
+		}
 	}
 
 	&-images {
