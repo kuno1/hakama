@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-28 15:20+0900\n"
-"PO-Revision-Date: 2020-04-28 15:21+0900\n"
+"POT-Creation-Date: 2020-09-07 14:25+0900\n"
+"PO-Revision-Date: 2020-09-07 14:27+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
@@ -83,7 +83,7 @@ msgstr "ゲスト"
 msgid "Product"
 msgstr "商品"
 
-#: functions/posts.php:66 functions/product.php:286
+#: functions/posts.php:66 functions/product.php:281
 msgid "Document"
 msgstr "ドキュメント"
 
@@ -104,11 +104,11 @@ msgstr "ブログ"
 msgid "%1$s from %2$s"
 msgstr "%2$sから%1$s"
 
-#: functions/product.php:192 template-parts/product-support.php:8
+#: functions/product.php:187 template-parts/product-support.php:8
 msgid "Documentation"
 msgstr "ドキュメント"
 
-#: functions/product.php:288 template-parts/product-support.php:28
+#: functions/product.php:283 template-parts/product-support.php:28
 #: woocommerce/single-product.php:147
 msgid "Support Forum"
 msgstr "サポートフォーラム"
@@ -224,21 +224,17 @@ msgstr "テーマ/プラグインのデモURLを入力してください。"
 msgid "Demo URL"
 msgstr "デモURL"
 
-#: hooks/block.php:65
+#: hooks/block.php:70
 msgid "Card List"
 msgstr "カードリスト"
 
-#: hooks/block.php:66
+#: hooks/block.php:71
 msgid "Circle List"
 msgstr "サークルリスト"
 
-#: hooks/block.php:67
+#: hooks/block.php:72
 msgid "Product List"
 msgstr "プロダクトリスト"
-
-#: hooks/cart.php:56
-msgid "Continue Shopping"
-msgstr "ショッピングを続ける"
 
 #: hooks/comment.php:22
 msgid "e.g. Let me know how to use this plugin."
@@ -295,8 +291,8 @@ msgstr "メイン"
 msgid "Secondary"
 msgstr "サブ"
 
-#: hooks/notification.php:31
-msgid "Infomation"
+#: hooks/notification.php:31 template-parts/support-brand.php:39
+msgid "Information"
 msgstr "お知らせ"
 
 #: hooks/notification.php:32
@@ -582,6 +578,22 @@ msgstr "はてなブックマーク"
 msgid "This post is restricted."
 msgstr "この投稿は制限されています。"
 
+#: template-parts/navigation-checkout.php:18
+msgid "Checking Cart"
+msgstr "カートの確認"
+
+#: template-parts/navigation-checkout.php:23
+msgid "Checkout"
+msgstr "お支払い情報"
+
+#: template-parts/navigation-checkout.php:28
+msgid "Order Received"
+msgstr "ご注文完了"
+
+#: template-parts/navigation-return-shop.php:16
+msgid "Continue Shopping"
+msgstr "ショッピングを続ける"
+
 #: template-parts/product-brand.php:21
 msgid "Crafted By"
 msgstr "作者"
@@ -645,10 +657,6 @@ msgstr "製品についてのお問い合わせ"
 #: template-parts/support-brand.php:25
 msgid "Get Support"
 msgstr "サポートを受ける"
-
-#: template-parts/support-brand.php:39
-msgid "Information"
-msgstr "お知らせ"
 
 #: template-parts/support-platform.php:5
 msgctxt "platform-support"
@@ -798,6 +806,9 @@ msgstr "ウィザード型ページ"
 #. Template Name of the plugin/theme
 msgid "No Header"
 msgstr "ヘッダーなし"
+
+#~ msgid "Infomation"
+#~ msgstr "お知らせ"
 
 #~ msgid "This product has no related document."
 #~ msgstr "この製品には関連ドキュメントがありません。"

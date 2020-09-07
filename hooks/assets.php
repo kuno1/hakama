@@ -40,7 +40,7 @@ add_action( 'init', function() {
  */
 add_action( 'init', function() {
 	// Register external libraries.
-	wp_register_style( 'fontawesome5', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', null,  '5.2.0' );
+	wp_register_style( 'fontawesome5', 'https://use.fontawesome.com/releases/v5.14.0/css/all.css', null,  '5.14.0' );
 	// All
 	$version = wp_get_theme()->get( 'Version' );
 	foreach ( [
@@ -80,7 +80,7 @@ add_action( 'init', function() {
 // Change src for font awesome.
 add_filter( 'style_loader_tag', function ( $tag, $handle ) {
 	if ( 'fontawesome5' === $handle ) {
-		$tag = str_replace( '/>', " integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ' crossorigin='anonymous'/>", $tag );
+		$tag = str_replace( '/>', " integrity='sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc' crossorigin='anonymous'/>", $tag );
 	}
 	return $tag;
 }, 10, 2 );
