@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2020-09-07 14:25+0900\n"
+"POT-Creation-Date: 2020-09-07 15:19+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
@@ -38,6 +38,18 @@ msgstr ""
 msgid ""
 "Specify brand ID or else brand will be automatically retrieved. If no brand, "
 "simply ignored."
+msgstr ""
+
+#: app/Kunoichi/Hakama/Customizers/ShoppingNavigation.php:16
+msgid "Display Setting"
+msgstr ""
+
+#: app/Kunoichi/Hakama/Customizers/ShoppingNavigation.php:23
+msgid "Shopping Guide Path"
+msgstr ""
+
+#: app/Kunoichi/Hakama/Customizers/ShoppingNavigation.php:24
+msgid "Enter shopping guide page path with relative url."
 msgstr ""
 
 #: comments.php:14
@@ -583,6 +595,10 @@ msgstr ""
 
 #: template-parts/navigation-return-shop.php:16
 msgid "Continue Shopping"
+msgstr ""
+
+#: template-parts/navigation-shopping-guide.php:20
+msgid "Shoppin Guide"
 msgstr ""
 
 #: template-parts/product-brand.php:21

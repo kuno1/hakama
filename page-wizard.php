@@ -5,9 +5,11 @@
 get_header( 'meta' );
 ?>
 
-	<header class="site-header" role="banner">
+	<header class="site-header site-header-thin" role="banner">
 		<div class="container site-header-container">
 			<?php hakama_template( 'header-brand' ) ?>
+
+			<?php get_template_part( 'template-parts/navigation', 'shopping-guide' ); ?>
 		</div>
 	</header>
 

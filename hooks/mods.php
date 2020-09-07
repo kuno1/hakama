@@ -79,3 +79,12 @@ add_action( 'wp_enqueue_scripts', function() {
 	}
 	wp_dequeue_script( 'google-recaptcha' );
 }, 11 );
+
+/**
+ * Register customizers
+ */
+add_action( 'after_setup_theme', function() {
+	\Kunoichi\ThemeCustomizer::register( 'Kunoichi\\Hakama\\Customizers', get_template_directory() . '/app' );
+} );
+
+

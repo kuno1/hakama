@@ -23,7 +23,8 @@
     "kuno1/redirect-to-woocommerce": "^1.0",
     "kunoichi/block-library": "^1.7",
     "kunoichi/icon": "^0.8.0",
-    "hametuha/wp-block-creator": "^1.1"
+    "hametuha/wp-block-creator": "^1.1",
+    "kunoichi/theme-customizer": "^0.5.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.7",

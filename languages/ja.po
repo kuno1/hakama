@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-07 14:25+0900\n"
-"PO-Revision-Date: 2020-09-07 14:27+0900\n"
+"POT-Creation-Date: 2020-09-07 15:19+0900\n"
+"PO-Revision-Date: 2020-09-07 15:20+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -30,6 +30,18 @@ msgid ""
 msgstr ""
 "ブランドIDを指定するか、自動的に取得されたものを利用します。ブランドがない場"
 "合、表示されます。"
+
+#: app/Kunoichi/Hakama/Customizers/ShoppingNavigation.php:16
+msgid "Display Setting"
+msgstr "表示設定"
+
+#: app/Kunoichi/Hakama/Customizers/ShoppingNavigation.php:23
+msgid "Shopping Guide Path"
+msgstr "買い物ガイドパス"
+
+#: app/Kunoichi/Hakama/Customizers/ShoppingNavigation.php:24
+msgid "Enter shopping guide page path with relative url."
+msgstr "買い物ガイドページへの相対パスを入力してください。"
 
 #: comments.php:14
 #, php-format
@@ -593,6 +605,10 @@ msgstr "ご注文完了"
 #: template-parts/navigation-return-shop.php:16
 msgid "Continue Shopping"
 msgstr "ショッピングを続ける"
+
+#: template-parts/navigation-shopping-guide.php:20
+msgid "Shoppin Guide"
+msgstr "買い物ガイド"
 
 #: template-parts/product-brand.php:21
 msgid "Crafted By"
