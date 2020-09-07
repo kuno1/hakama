@@ -102,3 +102,87 @@
 		}
 	}
 }
+
+.cart-progress {
+	margin: $section-gap * 2 auto $section-gap;
+	max-width: 525px;
+
+	&-nav {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	&-item {
+		flex: 1 1 33.3%;
+		text-align: center;
+		margin: 0;
+		list-style: none;
+		position: relative;
+
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			content: "";
+			bottom: 14px;
+			height: 3px;
+			width: 50%;
+			background-color: $primary;
+			z-index: 1;
+		}
+
+		&::before {
+			left: 0;
+		}
+
+		&::after {
+			right: 0;
+		}
+
+		&:first-child::before,
+		&:last-child::after {
+			background-color: transparent;
+		}
+	}
+
+	&-icon {
+		display: block;
+		margin: 0 auto 8px;
+		font-size: $h3-font-size;
+	}
+
+	&-label {
+		display: block;
+	}
+
+	&-dot {
+		display: block;
+		margin: 8px auto 0;
+		width: 30px;
+		height: 30px;
+		box-sizing: border-box;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		position: relative;
+		z-index: 2;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: $primary;
+			border-radius: 50%;
+			width: 14px;
+			height: 14px;
+		}
+
+		@at-root .active & {
+			border-color: $primary;
+			background-color: $white;
+		}
+	}
+}
