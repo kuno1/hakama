@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Hakama\n"
-"POT-Creation-Date: 2020-04-28 15:20+0900\n"
+"POT-Creation-Date: 2020-09-07 14:25+0900\n"
 "PO-Revision-Date: 2018-09-15 11:22+0900\n"
 "Last-Translator: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "Language-Team: Takahashi Fumiki <takahashi.fumiki@hametuha.co.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: functions/posts.php:66 functions/product.php:286
+#: functions/posts.php:66 functions/product.php:281
 msgid "Document"
 msgstr ""
 
@@ -114,11 +114,11 @@ msgstr ""
 msgid "%1$s from %2$s"
 msgstr ""
 
-#: functions/product.php:192 template-parts/product-support.php:8
+#: functions/product.php:187 template-parts/product-support.php:8
 msgid "Documentation"
 msgstr ""
 
-#: functions/product.php:288 template-parts/product-support.php:28
+#: functions/product.php:283 template-parts/product-support.php:28
 #: woocommerce/single-product.php:147
 msgid "Support Forum"
 msgstr ""
@@ -234,20 +234,16 @@ msgstr ""
 msgid "Demo URL"
 msgstr ""
 
-#: hooks/block.php:65
+#: hooks/block.php:70
 msgid "Card List"
 msgstr ""
 
-#: hooks/block.php:66
+#: hooks/block.php:71
 msgid "Circle List"
 msgstr ""
 
-#: hooks/block.php:67
+#: hooks/block.php:72
 msgid "Product List"
-msgstr ""
-
-#: hooks/cart.php:56
-msgid "Continue Shopping"
 msgstr ""
 
 #: hooks/comment.php:22
@@ -302,8 +298,8 @@ msgstr ""
 msgid "Secondary"
 msgstr ""
 
-#: hooks/notification.php:31
-msgid "Infomation"
+#: hooks/notification.php:31 template-parts/support-brand.php:39
+msgid "Information"
 msgstr ""
 
 #: hooks/notification.php:32
@@ -573,6 +569,22 @@ msgstr ""
 msgid "This post is restricted."
 msgstr ""
 
+#: template-parts/navigation-checkout.php:18
+msgid "Checking Cart"
+msgstr ""
+
+#: template-parts/navigation-checkout.php:23
+msgid "Checkout"
+msgstr ""
+
+#: template-parts/navigation-checkout.php:28
+msgid "Order Received"
+msgstr ""
+
+#: template-parts/navigation-return-shop.php:16
+msgid "Continue Shopping"
+msgstr ""
+
 #: template-parts/product-brand.php:21
 msgid "Crafted By"
 msgstr ""
@@ -633,10 +645,6 @@ msgstr ""
 
 #: template-parts/support-brand.php:25
 msgid "Get Support"
-msgstr ""
-
-#: template-parts/support-brand.php:39
-msgid "Information"
 msgstr ""
 
 #: template-parts/support-platform.php:5

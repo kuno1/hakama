@@ -6,7 +6,7 @@
  */
 
 if ( ! hakama_has_woo() || ! ( is_cart() || is_checkout() || is_order_received_page() ) ) {
-//	return;
+	return;
 }
 ?>
 <div class="row mt-4 justify-content-end">
